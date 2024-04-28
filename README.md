@@ -1,2 +1,2 @@
 # phd-thesis
-Monolithic Piezoresistive Elastomer Composite Sensor and Actuator Bodies
+Monolithic Piezoresistive Elastomer Composite Artificial Skin and Muscle Bodies
