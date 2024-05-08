@@ -1,45 +1,52 @@
 \chapter{\chapiiname}
 \label{chapter2}
-To replace and supersede tasks that can currently only be performed by humans due to their dexterity, physical makeup, and intelligence; the skin and muscles completing these tasks must first be understood and quantified. Subsequently a review of various electrically driven artificial skin and muscle technologies was completed. Finally, background theory on two specific technologies soft sensing and actuating devices is given to setup a foundational knowledge base and reference for the rest of the thesis. 
+To replace and supersede tasks that can currently only be performed by humans due to their dexterity, physical makeup, and intelligence; the skin and muscles completing these tasks can first be understood and quantified. Subsequently a review of various electrically driven artificial skin and muscle technologies was completed. Finally, background theory on piezoresistive elastomer composites and two specific technologies of soft sensing and actuating devices is given to setup a foundational knowledge base and reference for the rest of the thesis. 
     
 \section{Biological Skin form and function}
-Skin is the largest organ in the human body with many functions, however this thesis only aims to replicate the pressure-sensitive functions of skin. Two pressure-sensitive categories of skin and muscle tissue which allow for dexterous manipulation of objects are:
+Skin is the largest organ in the human body with many functions, however this thesis only aims to replicate some pressure-sensitive functions of skin. Two pressure-sensitive categories of skin and muscle tissue transducers which allow for dexterous manipulation of objects are:
 \begin{enumerate} 
-    \item Proprioceptors: respond to mechanical stimuli in a joint capsule, tendon, or muscle to give the sense of motion.
-    \item Cutaneous mechanoreceptors:  respond to mechanical stimuli usually external to the body, including pressure and vibration, for the localisation of sensations. Cutaneous mechanoreceptors include Meissner's corpuscles, Merkel disks, Ruffini endings, and free nerve endings. 
+    \item Proprioceptors: respond to internal mechanical stimuli in a joint capsule, tendon, or muscle to give the sense of motion.
+    \item Cutaneous mechanoreceptors:  respond to mechanical stimuli usually external to the body, including pressure and vibration, for the localisation of sensations. 
 \end{enumerate} 
 Locations of both proprioceptors and cutaneous mechanoreceptors are shown diagrammatically in Figure \ref{fig:proprioceptors-mechanoreceptors}. Proprioceptors aid in determining pose estimates of body parts in space, acting as sensors providing feedback closed-loop control for the neurological motion control of body parts. Whereas cutaneous mechanoreceptors have various roles including object recognition, manipulation control, as well as motion control.
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=10cm]{Figures/propriocetors_n_cutaneous_mechanoreceptors_labelled.png}
     \caption{Examples of the locations of proprioceptors and cutaneous mechanoreceptors in the human body.}
     \label{fig:proprioceptors-mechanoreceptors}
 \end{figure}
 
-The function of both kinds of receptors have been mimicked by certain device technologies. For example proprioceptors have been mimicked in wearables where joint motion has been estimated by the stretch of sensors placed over the joints to calculate pose estimates of different body parts. Examples of such devices are displayed in Figure \ref{fig:proprio-tech}
+The function of both kinds of receptor have been mimicked by certain device technologies. For example proprioceptors have been mimicked in wearables and human assistive devices where joint motion has been estimated by sensors such as rotary/linear encoders, IMUs, and stretch sensors fixed adjacent to joints to calculate pose estimates of limbs\cite{OBrien2014,Eguchi2020,Chatfield2021,Kim2022}. Examples of such devices are displayed in Figure \ref{fig:proprio-tech}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=6cm]{ADD -> picture of stretchsense glove and other wearables etc.png}
-    \caption{Caption}
+    \includegraphics[width=6cm]{Figures/imu-pose-tracker-kim2022.jpg}
+    \includegraphics[width=6cm]{Figures/knee-stretch-sense-eguchi2020.jpg}
+    \includegraphics[width=6cm]{Figures/logan-assitive-arm-device.jpg}
+    \includegraphics[width=6cm]{Figures/stretch-sense-OBrien2014.jpg}
+    \caption{Clockwise from top left: IMU pose estimation\cite{Kim2022}, stretch sensor knee joint pose estimation\cite{Eguchi2020}, stretch sensor hand joint pose estimations\cite{OBrien2014}, encoder elbow pose joint estimation\cite{Chatfield2021}.}
     \label{fig:proprio-tech}
 \end{figure}
 Cutaneous mechanoreceptors have been mimicked by the development of pressure mapping of flexible surfaces. Examples of such technologies include, foot pressure based gait analysis, wheelchair seat pressure mapping. Examples of these sensors are shown in Figure \ref{fig:mechano-tech}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=6cm]{ADD -> picture of poweron gripper and xsensor etc.png}
-    \caption{Caption}
+    \includegraphics[width=6cm]{Figures/xsensor.png}
+    \includegraphics[width=6cm]{Figures/Robotic+arm+with+PPS+sensors.png}
+    \includegraphics[width=6cm]{Figures/powerOn_gripper_apple.jpg}
+    \includegraphics[width=6cm]{Figures/tekscan-pressure-sensor.jpg}
+    \includegraphics[width=6cm]{Figures/tactilus-pressuremap-sensor-laptop.jpg}
+    \caption{Various pressure mapping devices. From top-left clockwise: Xsensor wheelchair pressure mapping sheet\cite{Xsensor}, Pressure Profile Systems pressure sensors on a robotic hand\cite{PressureProfile2023}, Soft pressure mapping gripper\cite{PowerOn}, Tekscan thin pressure mapping platform\cite{Tekscan}, Tactilus seat pressure mapping system\cite{SensorProducts}}
     \label{fig:mechano-tech}
 \end{figure}
-Many of these pressure mapping technologies don't accurately mimic desirable qualities of regular biological skin and are specialised for their specific use cases.
+Many of these pressure mapping technologies don't accurately mimic desirable qualities of regular biological skin and are specialised for their specific use cases. The following sections quantify characteristics of pressure sensitive skin.
 
 \subsection{Skin Construction and Types}
 Skin is a laminate structure consisting of three main layers, the epidermis, dermis, and hypodermis. The top two layers the epidermis and dermis are a subset of the cutaneous layer which contain the majority of the pressure-sensitive mechanoreceptors \cite{}.
 
-The skin contains can be categorised as glabrous/hairless or non-glabrous/hairy. Glabrous skin contains contains many of the mechanoreceptors given in Figure \ref{fig:proprioceptors-mechanoreceptors} whereas non-glabrous skin will also contain C-tactile afferent receptors for obtaining sensations through hair follicles. However this work is exploring simple monolithic bodies so will not be replicating the sensor function of non-glabrous skin.
+The skin can be categorised as glabrous/hairless or non-glabrous/hairy. Glabrous skin contains many of the mechanoreceptors given in Figure \ref{fig:proprioceptors-mechanoreceptors} whereas non-glabrous skin will also contain C-tactile afferent receptors for obtaining sensations through hair follicles. However this work is exploring simple monolithic bodies so will not be replicating the sensor function of non-glabrous skin.
 
 Depending on the region of skin different force resolution and spatial resolution will incur. The tensile properties of skin is governed by skin tension lines, also called Lager's lines, which show the direction in which the maximal stretch can occur. 
 
-Cutaneous mechanoreceptors and their functions are given in Table ,
+Cutaneous mechanoreceptors and their functions are given in Table \ref{tab:mechanoreceptors-table}.
 \begin{table}[H]
     \centering
     \caption{Comparison of typical mammalian mechanoreceptors characteristics \cite{Roudaut2012}.}
@@ -47,43 +54,44 @@ Cutaneous mechanoreceptors and their functions are given in Table ,
     \includegraphics[width=9cm]{Figures/mechanoreceptors-table-cropped.jpg}
 \end{table}
 
+
 \subsection{Characterising skin}
-The sensing qualities of skin is crucial for the sensory feedback in complex manipulation tasks. To aid the creations of technology that mimics qualities of biological pressure sensitive skin, the mechanical properties of must be characterised. Biological human skin is highly variable in terms of its mechanical and sensing properties depending on the location of skin, giving large variation in skin characteristics. Skin can be characterised in terms of the following mechanical characteristics:
+The sensing qualities of skin is crucial for the sensory feedback in complex manipulation tasks. To aid the creations of technology that mimics qualities of biological pressure sensitive skin, the mechanical properties of must be characterised. Biological human skin is highly variable in terms of its mechanical and sensing properties depending on the region of skin, giving large variation in skin characteristics. Skin can be characterised in terms of the following mechanical characteristics:
 \begin{enumerate}
-    \item Young's modulus -  The static elastic properties determined by a linear region of stress and strain of the material [Pa]
+    \item Elastic modulus -  The static elastic properties determined by a linear region of stress and strain of the material [Pa]
     \item Storage and loss modulus - The dynamic elastic and viscoelastic properties determining the relationship between stress and strain [Pa]
     \item Shear modulus - The relationship between the shear stress and shear strain in the linear region of the stress-strain characteristic curve [Pa]
     \item Ultimate tensile stress (UTS) - The maximum tensile stress that a material can tolerate before breaking [Pa]
     \item Life cycle - The time or number of actuation cycles in which it takes for the actuator to degrade such that it cannot perform its intended purpose to specified standards
-    \item Strain creep - All viscoelastic materials will experience strain creep to varying degrees depending on the viscoelastic properties of the material [mm.s$^{-1}$]
-    \item Stress relaxation - All viscoelastic materials will experience stress relaxation to varying degrees depending on the viscoelastic properties of the material [s]
+    \item Viscoelastic creep and relaxation - All viscoelastic materials will experience strain creep and stress relaxation to varying degrees depending on the viscoelastic properties of the material [mm.s$^{-1}$ and s]
     \item Skin thicknesses - the thickness of all layers of skin the cutaneous epidermis and dermis and thickness of the hypodermis [mm]
     \item Skin surface area - Biological skin has a large surface area and can also be regionalised to map skin function and sensitivity [m$^2$]
-    \item Isotropy/Anisotropy - The directionality of skin properties, also known as skin tension lines, give a topological map of the maximal stretch (i.e. minimal bulk modulus) direction of regions of skin.
+    \item Isotropy/Anisotropy - The directionality of skin properties, also known as skin tension lines, give a topological map of the maximal stretch (i.e. minimal elastic modulus) direction of regions of skin.
 \end{enumerate}
 Some of the functional properties in terms of pressure mapping include:
 \begin{enumerate}
-    \item Spatial resolution and touch acuity - The spatial resolution of biological skin, which is mainly dependent on the innervation, mechanoreceptors density, and thickness of the cutaneous layers of skin \cite{Landry2021,Kalra2016,Graham2019,Annaidh2012}
+    \item Spatial resolution and touch acuity - The spatial resolution of biological skin, which is mainly dependent on the innervation, mechanoreceptors density, and thickness of the cutaneous layers of skin \cite{Landry2021,Klein2016, Krotoski1993}
     \item Static force resolution - This is the detection resolution of static or slow-acting forces acting upon the skin \cite{Krotoski1993}
-    \item Temporal resolution - This is the detection resolution of fast-acting forces acting upon the skin often required for texture recognition \cite{Yokota2020,Klein2016,Krotoski1993}
+    \item Temporal resolution - This is the detection resolution of fast-acting forces acting upon the skin often required for texture recognition \cite{Landry2021,Krotoski1993}
 \end{enumerate}
 
 A numerical characterisation of mechanical and pressure sensing functional skin properties include:
 \begin{enumerate}
-    \item Young's modulus -  varies largely depending on test method, test skin type, and subject. Values include 83.3 ± 34.9 MPa \cite{Annaidh2012}, 0.1 - 2.4 MPa \cite{Khaothong2010}, 10.4 - 89.4 kPa \cite{Zheng1999}.
-    \item Storage and loss modulus - 141.9 ± 34.8 Pa and 473.9 ± 42.5 Pa at 0.8 Hz \cite{Holt2008}. 473.9 ± 42.5 Pa and 32.3 ± 10.0 Pa at 205 Hz \cite{Parvini2022}.
+    \item Elastic modulus -  varies largely depending on test method, test skin type, and subject. Values found in literature include 83.3 ± 34.9 MPa \cite{Annaidh2012}, 0.1 - 2.4 MPa \cite{Khaothong2010}, and 10.4 - 89.4 kPa \cite{Zheng1999}.
+    \item Storage and loss modulus - varies largely depending on test method, test skin type, and subject. Values found in literature range include 141.9 ± 34.8 Pa and 473.9 ± 42.5 Pa at 0.8 Hz \cite{Holt2008}, 473.9 ± 42.5 Pa and 32.3 ± 10.0 Pa at 205 Hz \cite{Parvini2022}.
     \item Shear modulus - Shear modulus has been reported to be 100 times that of elastic modulus for upper most layers of skin (epidermis and stratum corneum) \cite{Geerligs2010}
     \item Ultimate tensile stress - 21.6 ± 8.4 MPa \cite{Annaidh2012}. 28.0 ± 5.7 MPa \cite{Ottenio2015}
-    \item Life cycle - N/A. Complex to quantify for skin as it constantly regenerates over time
+    \item Life cycle - Skin cells are constantly growing, dying, and shedding. Skin is always actively remodelling based on external stimuli.
     \item Strain creep - The strain creep was found to be 2.7 kPa.s for a 10 Pa step input on a dermis skin sample \cite{Holt2008}.
     \item Stress relaxation - 
     \item Skin thicknesses - The thickness of human cutaneous skin ranges from 0.6 to 2.6 mm with an average skin thickness of 2 mm \cite{Landry2021}.
     \item Skin surface area - The average surface area of skin in adult humans is 1.7 $\pm$ 0.1 m$^2$ \cite{Landry2021}.
-    \item Isotropy/Anisotropy - The tension lines in skin are determined by collagen fibre orientation and dynamic stretch events \cite{Newell2007,Paul2018}. The elastic modulus of human skin was reported to be 160.8 ± 53.2 MPa parallel to the skin tension lines and 70.6 ± 59.5 MPa perpendicular to the tension lines \cite{Ottenio2015}. The UTS of human skin was reported to be 28.0 ± 5.7 MPa parallel to the tension lines and 15.6 ± 5.2 MPa perpendicular to the tension lines \cite{Ottenio2015}.
+    \item Isotropy/Anisotropy - The tension lines in skin are determined by collagen fibre orientation and dynamic stretch events \cite{Newell2007,Paul2018}. The elastic modulus of human skin was reported to be 160.8 ± 53.2 MPa parallel to the skin tension lines and 70.6 ± 59.5 MPa perpendicular to the tension lines \cite{Ottenio2015}. The UTS of human skin was reported to be 28.0 ± 5.7 MPa parallel to the tension lines and 15.6 ± 5.2 MPa perpendicular to the tension lines \cite{Ottenio2015}.    
+\end{enumerate}
 
-it has been shown that the receptive field area of SA1 and RA1 fibres increase linearly as the indentation depth increases with estimated minimum area of 5 mm2 for both and median areas of 11 mm2 for SA1 and 12.6 mm2 for RA1
+\begin{enumerate}
     \item Spatial resolution and touch acuity - The tactile field area increases with indentation depth for certain mechanoreceptors with a range of 5 - 12.6 mm$^2$ \cite{Deflorio2022}. Two point discrimination is another metric for determining spatial resolution an has been determined as 3.7 ± 0.7 mm \cite{Yokota2020}. The receptive field varies depending on the mechanoreceptors used so has been reported to be between 1 and 60 mm$^2$ as another methods of inferring spatial resolution \cite{Roudaut2012}.
-    \item Force resolution - Minimum force detection on various regions of human skin was found to be between 67 - 1007 mg \cite{Ackerley2014}
+    \item Force resolution - Minimum force detection on various regions of human skin was found to be between 67 - 1007 mg \cite{Ackerley2014}, and various mechanoreceptors 0.73 - 122.6 mN \cite{Strzalkowski2015}.
     \item Temporal resolution - Depending on the mechanoreceptor sensing the force input, a frequencies ranges of 0 to 800 Hz can be perceived by human skin \cite{Deflorio2022}
 \end{enumerate}
 
@@ -93,25 +101,16 @@ it has been shown that the receptive field area of SA1 and RA1 fibres increase l
 Developing robust mechanical models for human skin is non-trivial for three main reasons:
 \begin{enumerate}
     \item high degree of viscoelasticity
-    \item constantly regenerates
+    \item regenerates and heals
     \item made from various types of cells in a laminate structure 
 \end{enumerate}
-To solve the complexity of modelling such a material a review by Landry et al.\cite{Landry2021} shows that many researchers have applied various non-linear mechanical models including Ogden, Mooney–Rivlin, Neo-Hookean, Yeoh, Humphrey, and Veronda–Westmann. When recreating an artificial muscle it is desirable to minimise the mechanical material model complexity so that the material can be more easily integrated into a control system with known behaviour. Similar modelling techniques can be used to model conductive particle elastomer composites due to the similar hyper-elastic behaviours observed.
+To solve the complexity of modelling such a material a review by Landry et al.\cite{Landry2021} shows that many researchers have applied various non-linear mechanical models including Ogden, Mooney–Rivlin, Neo-Hookean, Yeoh, Humphrey, and Veronda–Westmann. When recreating an artificial muscle it is desirable to minimise the mechanical material model complexity so that the material can be more easily integrated into a control system with known behaviour. Similar modelling techniques can be used to model conductive particle elastomer composites due to the similar hyper-elastic and visco-elastic behaviours observed.
 
-
-
-\section{Pressure Mapping Artificial Skin Devices}
-% Artificial skin review
-    % Give the range of technologies available expand upon review given in Pt II EIT sensor paper.
-A range of devices that can emulate the pressure sensitive function of biological skin have been created for a range of purposes. This section will be outlining some of the main technologies which are flexible and/or soft and can map force events throughout a two dimensional surface. A particular focus on electro-active polymer (EAP) based sensing is present due to the potential of miniaturising the technology and the range of miniaturised electronics already available. Electroactive polymers are essentially polymer materials can be used as tranducers which change electrical properties based on a mechanical input, vice versa.
-
-\subsection{Pressure mapping devices}
-Pressure mapping devices can be categorised into their various sensing technology, such as resistive, capacitive, inductive, magnetic, optical, and acoustic. Examples have been gathered by \cite{,,,} showing the limits and trade-offs between each sensing technology.
-% TODO: place big table comparing a bunch of different technologies!
 
 
 % \subsection{Electrical Impedance Tomography}
 % % How does EIT work
+
 
 % \subsection{EIT-based Skins}
 % % Give a review on the state of art EIT-based skin technology
@@ -120,25 +119,20 @@ Pressure mapping devices can be categorised into their various sensing technolog
 
 \section{Biological Muscle form and function}
 % lit review on 'An engineering perspective on the function of human muscle'
-\textit{Note: This section was taken from an initial literature reviews from 3 years ago. Please re-review and update citations for latest 2021 - 2024 papers.}
+\textit{Note: This section was taken from literature reviews from 3 years ago, when I was going to research DEAs. Needs a re-review ASAP.}
 
-Biological muscles are a product of millions of years of evolution and the motion and other mechanical characteristics of biological structures is yet to be outperformed by human-made bio-mimetic equivalent attempts. However, it must be noted that using bio-mimetic principles is not always the best method to design an actuator. Nature attempts to optimise structures through an iterative process called natural selection, but this optimisation is often only 'just good enough' for given environment\citep{Full2004a}. Further optimisation of biological structures is often possible.
-
-The concept of artificial muscles has brought much interest to the bio-medical industry, because of the potential applications with prosthesis, orthotics, and other medical assistive devices and instrumentation\citep{Shi2019,Mirvakili2018}. Applications of artificial muscles are not limited to the medical industry, but also many other fields, often where a compact, micron-scale actuator is required\citep{Zhang2019} or a device that mimics a biological actuator is desired.
+Biological muscles are a product of millions of years of evolution and the motion and other mechanical characteristics of biological structures is yet to be outperformed by artificial muscle technology. To determine how to quantify the performance of a biological muscle this section gives foundational knowledge about muscle function, structure, and how it can be characterised from an engineering perspective. 
 
 Biological muscle is a naturally occurring tissue comprised of muscle fibres bundled together to apply a contractile force on connecting tissue or, in the case of smooth muscle, applying a force on itself. The base actuator units of muscle are proteins myosin and actin filaments, which effectively slide against each other to produce a contractile motion. The root cause of a muscle contraction is an electrochemical signal sent form the central nervous system to a motor neuron/s which travel to the muscle where electrochemical reactions take place for the contraction to take place.
-
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=8cm]{Figures/300px-Sarcomere.png}
-  \caption{Diagram showing the components of a biological muscle contractile unit \citep{Richfield2014}}
+  \includegraphics[width=6cm]{Figures/300px-Sarcomere.png}
+  \caption{Components of a biological muscle contractile unit \citep{Richfield2014}}
   \label{fig:muscle_unit}
 \end{figure}
-
 The sliding motion of the myosin and actin filaments is due myosin heads attaching to the actin and pulling the actin towards a middle line (M-line) in multiple stroke actions. These filament actuators are stacked in three dimensions within a muscle fibre to amplify contractile stress and strain as shown in Figure \ref{fig:muscle_unit}.
 
-The anatomy of a human skeletal muscle can be seen in Figure \ref{fig:muscle_parts}. The muscle is made up of bundles of fasicles connected together with a tissue called perimysium. Within the fasicles are many muscle fibres (i.e. muscle cells) which are surrounded by a connective tissue called endomysium. Endomysium is responsible for filling gaps in between muscle fibres as well as containing nerve axons and blood capillaries. Within the muscle fibres there are many sacromeres stacked within a cyclindrical-like structure called a myofibril. Each sacromere contains a contractile unit of myofilaments. There are tranverse tubules (t-tubules) travelling diametrically across the muscle fibre to maximise the reach of the muscle excitation signal from the nerve axon to as many myofibrils as possible.
-
+The anatomy of a human skeletal muscle can be seen in Figure \ref{fig:muscle_parts}. The muscle is made up of bundles of fasicles connected together with a tissue called perimysium. Within the fasicles are many muscle fibres (i.e. muscle cells) which are surrounded by a connective tissue called endomysium. Within the muscle fibres there are many sacromeres stacked within a cyclindrical-like structure called a myofibril. Each sacromere contains a contractile unit of myofilaments. 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=8cm]{Figures/muscle structure.jpg}
@@ -148,11 +142,11 @@ The anatomy of a human skeletal muscle can be seen in Figure \ref{fig:muscle_par
 
 
 \subsection{Characterising a muscle}
-To be able to mimic a biological muscle there must be certain metrics characterising muscles such that both artificial and biological that can be compared. An artificial muscle can be characterised using typical mechanical material parameters such as:
+To be able to quantify the performance of a biological muscle there must be certain metrics characterising muscles such that both artificial and biological that can be compared. An artificial muscle can be characterised using typical mechanical material parameters such as:
 \begin{enumerate}
-    % \item Stress - Force that is applied to the normal of the cross section of the muscle through various states of muscle excitation. [$N.m^{-2} or Pa$]
-    % \item Strain - The muscle change of length due to the stress applied through various states of muscle excitation.
-    \item Young's modulus - The elasticity determining the relationship between stress and strain for the linear region of the stress strain characteristic curve. [$Pa$]
+    \item Stress - Force that is applied to the normal of the cross section of the muscle through various states of muscle excitation. [$N.m^{-2} or Pa$]
+    \item Strain - The muscle change of length due to the stress applied through various states of muscle excitation.
+    \item Elastic modulus - The elasticity determining the relationship between stress and strain for the linear region of the stress strain characteristic curve. [$Pa$]
     \item Shear stress - Force applied parallel with a cross sectional area plane due to a state of muscle excitation. [$N.m^{-2} or Pa$]
     \item Shear strain - The change in deformation perpendicular to the direction of loading to the due to a state of muscle excitation.
     \item Shear modulus - The relationship between the shear stress and shear strain in the linear region of the stress strain characteristic curve. [$Pa$]
@@ -171,8 +165,6 @@ To be able to mimic a biological muscle there must be certain metrics characteri
 \newline
     \item Maximum isometric contraction force - the maximum force a muscle can apply without changing strain. This is also related to the ratchet-like mechanism and muscle locking where a muscle can apply a much larger force in a static state, as seen in the myosin binding\citep{Cross2006}.
     \item Muscle force direction and architecture - Biological muscles can have varying contraction force directions determined by pennation angle of the muscle and the muscle fibre configuration.
-    \item Fatigue - In a mechanical sense this is defined as the weakening of a material due to cyclic loading. In biological terms muscle fatigue defines a state where muscles are not performing in an optimal manner often due to cyclic contractions. The cause of biological muscle fatigue is caused by a lack of substances required during the muscle contraction process, or an imbalance of the substances required during the muscle contraction process\citep{Davis2000,Wan2017}.
-    \item Maximum contraction velocity/muscle bandwidth - Contraction velocity is the maximum velocity at which a muscle can contract due to an excitation. Which is important for artificial muscles where the and bandwidth of the muscle represents the range of contraction frequencies the muscle can operate.
 \end{enumerate}
 Other qualities of muscle should be quantified on a case by case basis depending on the artificial muscle technology being investigated. For example, a major issue with dielectric elastomer actuators is the excitation voltage required for actuation is too large for many applications. Hence this could be another parameter considered for some artificial muscles.
 
@@ -199,54 +191,42 @@ Where $\varepsilon$ \& $\sigma$ are strain and stress respectively. A solution f
 \end{equation}
 Where $\mu$ is a free parameter determined empirically. The stress-strain of a passive muscle can be likened to tension being applied yarn. As more strands of the yarn are pulled into tension the stress increases, then as the last strands are brought into tension a maximum stress is reached, until the yield stress is reached. Linear approximations can still be made over regions of elongation depending on accuracy required for application. The stress-strain of an active muscle (i.e. when it is tetanised) is approximated to a piece-wise quadratic function or bell curve. It is important to note that the stress for both active and passive muscle is zero when the strain is less than 0.4, demonstrating the yarn-like nature of the muscle stress-strain.
 
-\begin{figure}[h!]
+\begin{figure}[H]
   \centering
   \includegraphics[width=8cm]{Figures/Muscle-fiber-active-and-passive-behavior.png}
   \caption{Plot showing the stress and strain of active and passive muscles \citep{Teran2003}}
   \label{fig:Muscle}
 \end{figure}
 
-Hill's muscle models commonly refer to the equation for Tetanic muscle contraction and a mechanical 3 element model published in the works of physiologist Archibald Hill \citep{Hill1938}. The equation for Tetanic muscle for skeletal muscle is: \begin{equation}
-    (v+b)(F+a)=(a.v_0/F_0).(F_0+a)
-\end{equation}
-Where 
-\begin{itemize}
-    \item F : tension in the muscle
-    \item F\textsubscript{0} : maximum isometric tension generated in the muscle
-    \item v : contraction velocity
-    \item v\textsubscript{0}  : maximum velocity (when F = 0)
-    \item a : coefficient of shortening heat
-\end{itemize}
-F and v have a hyperbolic relationship, meaning that higher muscle loading will cause lower contraction velocity. The higher the contraction velocity the lower the tension in the muscle. This is thought to be caused by two factors. The first is the loss in tension as the contractile unit cross-bridges between the actin and myosin then reforms in a shortened condition. The second, but lesser cause of a decrease in tension during increased contraction velocity is the contractile element and connective tissue acting as a fluid damper due to their fluid viscosity\citep{Fung1993}.
-
-The three element muscle model involve three main components. One parallel non-linear spring spring, one series non-linear spring element, and a contractile unit, displayed as mechanical free body diagram in figure 11. Where  F\textsuperscript{T} is the tendon force; F\textsuperscript{M} is the muscle force; the l\textsuperscript{T}, l\textsuperscript{M}, l\textsuperscript{MT} are muscle length, tendon length and their combined lengths respectively; $\alpha$ is the pennation angle (i.e. zero if parallel muscle); The left and right non-linear spring elements represent a tendon and muscle spring characteristic respectively; The `CE' box represents the contractile element, which generates contractile force. 
-\begin{figure}[h!]
+Hill's muscle models commonly refer to a mechanical three element model \citep{Hill1938} composed from, one parallel non-linear spring element, one series non-linear spring element, and a contractile unit, displayed as a free-body diagram in Figure \ref{fig:hill-model-Muscle} with the corresponding Equation \ref{eqn:hills-model}.
+\begin{figure}[H]
   \centering
   \includegraphics[width=8cm]{Figures/hill_type_muscle_model.png}
-  \caption{Diagram of a Hill muscle model\citep{Arnold2010}}
-  \label{fig:Muscle}
+  \caption{Hill muscle model\citep{Arnold2010}}
+  \label{fig:hill-model-Muscle}
 \end{figure}
-There are many other variations of this model involving damping within the CE and/or damping parallel with the length of the muscle\citep{Arslan2019}. However to keep it simple we will just consider the model basic model shown. From this model we can obtain an equation of force elements;
+Where $F^{KT}$ and $F^{KM}$ are the spring forces of the tendon and muscle respectively, which are a function of extension length. $F^CE$ is the contractile force and $F^T$ is the total contractile force as observed at the end of each tendon either end of the muscle. Where  $F^T$ is the tendon force; $F^M$ is the muscle force; the $l^T$, $l^M$, $l^{MT}$ are muscle length, tendon length and their combined lengths respectively; $\alpha$ is the pennation angle (i.e. zero if parallel muscle); The left and right non-linear spring elements represent a tendon and muscle spring characteristic respectively; The CE box represents the contractile element that generates contractile force. 
 \begin{equation}
     F^T = F^{KT} + (F^{CE} + F^{KM})cos(\alpha)
+    \label{eqn:hills-model}
 \end{equation}
-Where $F^{KT}$ and $F^{KM}$ are the spring forces of the tendon and muscle respectively, which are a function of extension length. $F^CE$ is the contractile force and $F^T$ is the total contractile force as observed at the end of each tendon either end of the muscle.
 
-    % define the characteristics of muscle that are desirable to replaicate in an artificial muscle
 
 \subsection{Electrical Muscle Models}
-There are two major instruments for the actuating the muscle artificially and sensing muscle activity. These are FES (Functional Electrical Stimulation) and EMG (Electromyography). FES involves providing an artificial electrical signal to a muscle, essentially attempting to simulate the signal a motor neuron would give to a muscle. Due to the biochemical nature of the motor neuron signal transport and the purely electrical stimulation provided by the FES device, the process isn't as efficient as the naturally occurring muscle activation, often resulting in increased muscle fatigue when compared to equivalent voluntary muscle contractions \citep{Ibitoye2016}. FES applies a voltage across between two electrodes on the user's skin above a specific muscle. The voltage simulates the signal form and frequency of action potentials (between 4 - 12Hz\citep{Popovic2004}).
+
+Similar to EAP-based artificial skin and artificial muscles, biological muscles also require electrical stimulation to function. The main method for providing an artificial electrical stimulation to a muscle, to simulate the signal a motor neuron would give to a muscle, is functional electrical stimulation (FES). Due to the biochemical nature of the motor neuron signal transport and the purely electrical stimulation provided by the FES device, the process isn't as efficient as the naturally occurring electro-chemical muscle activation, often resulting in increased muscle fatigue when compared to equivalent voluntary muscle contractions \citep{Ibitoye2016}. FES applies a voltage across between two electrodes on the user's skin above a specific muscle. The voltage simulates the signal form and frequency of action potentials between 4 - 12Hz\citep{Popovic2004}. The threshold for a muscle action potential to cause a muscle contraction is approximately 70 mV \cite{Schmidt-Nielsen2002}.
 \begin{figure}[h!]
   \centering
   \includegraphics[width=8cm]{Figures/FES_electric_field.PNG}
-  \caption{Diagram an electric field generated by two electrodes on the surface of the skin above a specific muscle and hence it's activating nerve bundle\citep{Bajd2010}}
+  \caption{Electric field generated by two electrodes on the surface of the skin above a specific muscle and hence it's activating nerve bundle\citep{Bajd2010}}
   \label{fig:Muscle}
 \end{figure}
-EMG also commonly uses two electrodes on the surface of the skin above a desired muscle. EMG senses the nerve impulses sent to the muscle and propagated through action potential. The electrical models within the muscle actuation process can be broken down into small sub groups such as neuron action potential modelling, saltatory conduction modelling, muscle cell impedance modelling. These models become very complex due to the non idealistic nature of all of the biological components involved, so it's a lot simpler and more practical to use the electro-chemical models of the system.
+EMG also commonly uses two electrodes on the surface of the skin above a desired muscle. EMG senses the nerve impulses sent to the muscle and propagated through action potential. 
+
 
 
 \subsection{Artificial Muscle Technology}
-There are many types of electrically actuated artificial muscles technology. Artificial muscle actuator technology that has gained particular interest in recent years include, the ionic polymer-metal composite (IPMC) actuator, the hydraulically amplified self‐healing electrostatic (HASEL) actuator, magnetorheolgical elastomer (MRE) actuators, and dielectric elastomer actuators (DEAs). Each of these having qualities very similar to that of biological muscle usually with a trade-off in actuation response time, actuation force, and actuation strain for their various possible topologies. This section gives a brief overview of four state-of-the-art soft electromagnetically driven actuator technologies.
+There are many types of electrically actuated artificial muscles technology. Artificial muscle actuator technology that has gained particular interest in recent years include, the ionic polymer-metal composite (IPMC) actuator, the hydraulically amplified self‐healing electrostatic (HASEL) actuator, magnetorheolgical elastomer (MRE) actuators, and dielectric elastomer actuators (DEAs). Each of these having qualities very similar to that of biological muscle usually with a trade-off in actuation response time, actuation force, and actuation strain for their various possible topologies. This section gives a brief overview of four state-of-art soft electromagnetically driven actuator technologies.
 
 \subsubsection{Ionic polymer–metal composite actuator}
 Ionic polymer-metal composite actuators (IPMCs) are soft actuators that can be actuated at a much lower excitation voltage than DEAs, commonly being less 10V. IPMCs are also desirable as artificial muscles as they can display large bending deformations, simple to fabricate, light weight and thin in design, and can have a fast actuation response time (>15Hz) at small displacements\citep{Ma2020}. IPMCs also have a high work density and maintain a constant volume during actuation like biological muscles.
@@ -340,11 +320,69 @@ Currently dielectric elastomer actuators all require voltages within the kilo-vo
 % Give a review on state of art DEA technology
 
 
-\section{Piezoresistive Composites}
-\label{sec:Piezoresistive Composites}
-% PiezoR composites are great. Possible to create desirable electrical and mechanical characteristics. 
-A core part of this work is understanding the behaviour of conductive particle elastomer composites as they are EAPs which can be used for a range of sensing and actuating purposes. The characteristics that make conductive particle elastomer composites (CPECs) ideal for soft sensor and actuator devices include:
-\begin{enumerate}
+
+\section{Pressure Mapping Artificial Skin Devices}
+% Artificial skin review
+    % Give the range of technologies available expand upon review given in Pt II EIT sensor paper.
+ This section will be outlining some of the main technologies which are flexible and/or soft and can map force events throughout a two dimensional surface. A particular focus on electro-active polymer (EAP) based sensing is present due to the potential of miniaturising the technology and the range of miniaturised electronics currently available. Electroactive polymers are essentially polymer materials which can be used as transducers which change electrical properties based on a mechanical input, vice versa.
+
+
+\subsection{Soft Pressure mapping technology}
+% Why does this section matter? AND How does it link to my research? A large part of my research was looking into making an 'artificial skin sensor'. It has been requested by several reviewers of my journal article to look at state of the art devices similar to mine (from 2020 onwards especially). 
+Pressure mapping devices can be categorised into their various sensing technology, such as resistive, capacitive, inductive, magnetic, optical, and acoustic. Examples have been gathered by \cite{,,,} showing the limits and trade-offs between each sensing technology. 
+
+\subsubsection{Resistive}
+Soft resistive pressure mapping has been commonly achieved in the past by using arrays of piezoresistive sensor elements \cite{,,,,}. The resistive elements can be made using several different flexible piezoresistive materials.
+\begin{itemize}
+    \item Conductive particle polymer composites \cite{Sun2020,Lu2014,Spahr2017}
+    \item Intrinsically conductive polymers \cite{Lu2014,Hazelton2023}
+    \item Microfluidic metals \cite{Park2010,Jung2015,Kim2019}
+    \item Hydrogel structures \cite{Yuk2016,Park2022,Chen2023}
+    \item Flexible piezoresistive semiconductors \cite{Xu2023,Sim2019}
+\end{itemize}
+
+\begin{table}[H]
+    \begin{changemargin}{-2cm}{-2cm}
+        \begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{.8cm}|p{2cm}|p{2cm}|}
+        \hline
+             & Conductivity & Piezo-resistivity & Change stiffness & Fabrication & Cost & Environmental Stability & Toxicity \\ \hline
+            Intrinsically conducting polymers & - Dependent on polymer used. (S/cm \cite{Hazelton2023}) & - Dependent on polymer used - Exponential relationship with strain\cite{Mukherjee2023} &  &  &  & & \\ \hline
+            Electrolytic hydrogels &  &  &  &  &  &  &  \\ \hline
+            Conductive particle polymers &  &  &  &  & \$ &  &  \\ \hline
+            Conductive particle paste &  &  &  &  & \$ &  &  \\ \hline
+            Conductive textiles &  &  &  & Complex &  &  & \\ \hline
+        \end{tabular}
+    \end{changemargin} 
+\end{table}
+
+A commonly used piezoresistive material is conductive particle polymer composites. 
+
+\subsubsection{Capacitive}
+Similar to resistive pressure mapping, capacitive pressure mapping has more commonly been done using arrays of capacitive elements. Many capacitive touch sensors use the human body to shunt the electric field between the capacitor electrode(s) to a common ground. However the operating principle of capacitive-based strain sensors relies on the deformation of the capacitor dielectric and/or the capacitor electrodes. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{Figures/cap_deformed_states_x2_crop.png}
+    \caption{Two grey electrodes across a blue dielectric medium. Left: Uncompressed state. Right: Compressed state exhibiting larger electrode areas and a thinner dielectric thickness.}
+    \label{fig:cap_deformed_cube}
+\end{figure}
+
+\subsubsection{Magnetic}
+
+\subsubsection{Optical}
+
+\subsubsection{Acoustic}
+
+\subsubsection{Pressure mapping technology comparison}
+% TODO: place big table comparing a bunch of different technologies!?
+
+\section{Soft Conductive Particle Piezoresistive Composites}
+\label{sec:Soft Piezoresistive Composites}
+% Why are soft piezo resistive composites used in S&As?
+Soft sensors and actuators require low-stiffness materials for their active sensing/actuation domains. The requirement of softness is governed by the mechanical modulus values depend on the application requirements. The use of conductive particle elastomer composites is explored in this work due to the customisability of the electromechanical characteristics.
+
+% Why CPECs
+A core part of this work is understanding the behaviour of conductive particle elastomer composites beause of their use as EAPs which can be used for a range of sensing and actuating purposes. The characteristics that make conductive particle elastomer composites (CPECs) ideal for soft sensor and actuator devices often include:
+\begin{itemize}
     \item Low stiffness
     \item Changeable conductivity
     \item Piezoresistivity
@@ -355,44 +393,67 @@ A core part of this work is understanding the behaviour of conductive particle e
     \item Inexpensive
     \item Easy to obtain
     \item Simple fabrication process
-\end{enumerate}
+    \item Sustainable
+\end{itemize}
 
-\section{Fabricating Conductive Particle Elastomer Composites}
+\subsection{Fabricating Conductive Particle Elastomer Composites}
+\label{sec:Fabricating Conductive Particle Elastomer Composites}
 Before exploring the known conduction and piezoresistive mechanisms and models for CPECs, it is important to understand how the fabrication process of a CPEC may affect its physical structure. 
 
 CPECs are made by dispersing conductive particles through a curable liquid elastomer matrix. To change the electromechanical properties of the material, the dispersion of the conductive particles throughout the matrix can be optimised through various methods. To minimise the agglomerations of primary conductive particles often a sonication step is completed. This involves a mixture of the conductive particles and a liquid, usually in the form of a solvent, to be placed in a sonication bath. The sonication bath performs a frequency sweep whereby the resonant modes of the agglomerates are met causing separation of the agglomerates into their primary particles \cite{}. The degree of dispersion is governed by the time in the sonication bath, the sonication frequencies, and sonication amplitudes \cite{,,}. This sonication usually occurs before the the particles are added to the elastomeric matrix due to the large viscous damping effects of liquid elastomers. The next step involves mixing the dispersed conductive particles throughout the liquid elastomer, this can be done using a variety of mixing methods, including a planetary mixer, magnetic mixer, screw mixer, static mixers, amongst others \cite{,,,}. During the mixing process often the liquid solvent used in the dispersion stage is evaporated, leaving only the curable elastomer and the conductive particles. When sufficient mixing of the liquid elastomer and conductive particles have been completed the material is formed into a desired final shape using advanced additive manufacturing methods \cite{,,} or traditional moulding \cite{,,} or film making techniques \cite{,,}.  During the moulding process the material undergoes a form of curing, such as UV curing, catalysed curing, or moisture curing\cite{,,}. If the composite material has not already been integrated into a device containing electrodes and other mechanical support structures these are integrated at the end of the process \cite{,,}.
 
 
-\subsection{Conduction mechanism}
-The brief introduction of the typical fabrication process for CPECs shows that the dispersion of conductive particles will always vary. Some of the physical features of these conductive percolation networks can be quantified and directly relate to the macro-level electromechanical properties of the material. Such characteristics of a conductive percolation network include:
+\subsection{Modelling Conduction mechanism}
+The typical fabrication process stated in Section \ref{sec:Fabricating Conductive Particle Elastomer Composites} for CPECs shows that the dispersion of conductive particles will always vary. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{Figures/res_deformed_states_x2_crop.jpg}
+    \caption{Two grey electrodes across a CPEC cuboid showing enlarged black conductive particles within a blue polymer matrix. Left: An uncompressed CPEC. Right: A compressed CPEC.}
+    \label{fig:res_deformed_cube}
+\end{figure}
+
+Some of the physical features of these conductive percolation networks can be quantified and directly relate to the macro-level electromechanical properties of the material. Such characteristics of a conductive percolation network include:
 \begin{enumerate}
-    \item Conductive particle
+    \item Conductive particle(s) used
     \begin{enumerate}
-        \item Aspect ratio \cite{}
-        \item Inherent conductivity \cite{}
+        \item Aspect ratio \cite{Wu2019,Flandin1999}
+        \item Inherent particle conductivity
     \end{enumerate}
-    \item Conductive particle dispersion \cite{}
+    \item Conductive particle dispersion \cite{Kim2012}
     \begin{enumerate}
-        \item Inter-particle distance distribution \cite{}
-        \item Particle agglomeration distribution \cite{}
-        \item Isotropy/anisotropy \cite{}
-        \item Sedimentation \cite{}
+        \item Inter-particle distance distribution
+        \item Particle agglomeration distribution \cite{Pegel2008}
+        \item Isotropy/anisotropy \cite{Song2022}
+        \item Sedimentation \cite{Eklund2019}
     \end{enumerate}
-    \item Elastomer matrix \cite{}
+    \item Elastomeric matrix
     \begin{enumerate}
         \item Viscosity
         \item Elastic modulus
         \item Dielectric permittivity
     \end{enumerate}
-    \item Impurities \cite{}
-    \item Voids \cite{}
+    \item Impurities
+    \item Voids
 \end{enumerate}
-% input these bullet points into chatgpt?
 
-% transient phenomena, modelling strain
-Microscale models for CPECs and the relationship between particle and electric charge motion are often computationally heavy, overly idealised, and non-invertible \cite{,,}. However, in future microscale modelling of CPECs may give insight into understanding complex physical phenomena that may relate to the macroscale models made for CPECs. An alternate method for modelling CPECs is the formation of macroscale models, which usually make many assumptions to simplify the problem \cite{,,}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=8cm]{Figures/simple_random_percolation.jpg}
+    \caption{Example of a randomised cube percolation with a volume percentage of 8\% of particles}
+    \label{fig:simp_rand_perc}
+\end{figure}
 
-Electrical conduction through a CPEC occurs using two main mechanisms, Coulomb conduction and quantum tunneling \cite{Bloor2006,Duan2014,Zhang2007,Madrid2017}. Coulomb conduction uses the conduction band electrons are shared by adjacent atoms allow conduction throughout chains of cascading conductive particles. The second mechanism of conduction is through quantum tunneling which is stochastic in nature and allows for conduction through insulative boundaries between the percolative network of conductive particles \cite{Hu2008,Grimaldi2006}.
+% How you can model CBSR type material and the conduction mechanisms
+Microscale models for CPECs and the relationship between particle and electric charge motion are often computationally heavy, overly idealised, and non-invertible \cite{Wang2022}. A microscale model example can be seen in Figure \ref{fig:simp_rand_perc}. However, microscale modelling of CPECs may give insight into understanding complex physical phenomena that may relate to the macroscale models made for CPECs. An alternate method for modelling CPECs is the formation of macroscale models\cite{Neffati2019}.
+
+Electrical DC conduction through a CPEC occurs using two main mechanisms, Coulomb conduction and quantum tunneling \cite{Bloor2006,Duan2014,Zhang2007,Madrid2017}. Coulomb conduction uses the conduction band electrons are shared by adjacent atoms allow conduction throughout chains of cascading conductive particles. The second mechanism of conduction is through quantum tunneling which is stochastic in nature and allows for conduction through insulative boundaries between the percolative network of conductive particles \cite{Hu2008,Grimaldi2006}. 
+
+Electrical AC conduction can occur through a CPEC through capacitive means depending of particle spacing\cite{??}.
+
+% What have I contributed to the modelling of CBSR composites?
+The use of soft piezoresistive composites
+
 
 
 
