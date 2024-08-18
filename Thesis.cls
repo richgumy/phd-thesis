@@ -140,6 +140,8 @@
 \newcommand*{\chapvii}[1]{\def\chapviiname{#1}}
 \newcommand*{\chapviii}[1]{\def\chapviiiname{#1}}
 \newcommand*{\chapix}[1]{\def\chapixname{#1}}
+\newcommand*{\chapx}[1]{\def\chapxname{#1}}
+
 
 \chapi     {Introduction}
 
@@ -147,18 +149,20 @@
 
 \chapiii    {A Simple Conductive Elastomer Composite Material with Complex Behaviour}
 
-\chapiv     {A Novel Mixing Method for 3D Printing Conductive Particle Elastomer Composites}
+\chapiv     {?? A Novel Mixing Method for 3D Printing Conductive Particle Elastomer Composites}
 
 \chapv      {An Improved an Electrical
 Impedance Tomography Based Artificial Soft Skin Pressure Sensor}
 
 \chapvi     {Giving Artificial Muscles the Sense of Touch}
 
-\chapvii    {Hardware for a DEA-EIT Sensor Actuator Hybrid Device:}
+\chapvii    {An Unintended Dielectric Elastomer Generator}
 
-\chapviii   {Modelling of DEA-EIT Capacitively driven Hybird Sensing and Actuation Device}
+\chapviii    {?? Hardware for a DEA-EIT Sensor Actuator Hybrid Device}
 
-\chapix     {The Biomimmetic Re-Evolution}
+\chapix   {?? Modelling of DEA-EIT Capacitively driven Hybird Sensing and Actuation Device}
+
+\chapx     {The Biomimmetic Re-Evolution}
 
 % front matter defs
 \newcommand*{\supervisor}[1]{\def\supname{#1}}

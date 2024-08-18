@@ -17,6 +17,7 @@ Locations of both proprioceptors and cutaneous mechanoreceptors are shown diagra
 \end{figure}
 
 The function of both kinds of receptor have been mimicked by certain device technologies. For example proprioceptors have been mimicked in wearables and human assistive devices where joint motion has been estimated by sensors such as rotary/linear encoders, IMUs, and stretch sensors fixed adjacent to joints to calculate pose estimates of limbs\cite{OBrien2014,Eguchi2020,Chatfield2021,Kim2022}. Examples of such devices are displayed in Figure \ref{fig:proprio-tech}
+%% Todo: Get copyright permission from image owners %%
 \begin{figure}[H]
     \centering
     \includegraphics[width=6cm]{Figures/imu-pose-tracker-kim2022.jpg}
@@ -37,6 +38,7 @@ Cutaneous mechanoreceptors have been mimicked by the development of pressure map
     \caption{Various pressure mapping devices. From top-left clockwise: Xsensor wheelchair pressure mapping sheet\cite{Xsensor}, Pressure Profile Systems pressure sensors on a robotic hand\cite{PressureProfile2023}, Soft pressure mapping gripper\cite{PowerOn}, Tekscan thin pressure mapping platform\cite{Tekscan}, Tactilus seat pressure mapping system\cite{SensorProducts}}
     \label{fig:mechano-tech}
 \end{figure}
+%% Todo: Get copyright permission from image owners %%
 Many of these pressure mapping technologies don't accurately mimic desirable qualities of regular biological skin and are specialised for their specific use cases. The following sections quantify characteristics of pressure sensitive skin.
 
 \subsection{Skin Construction and Types}
@@ -53,6 +55,7 @@ Cutaneous mechanoreceptors and their functions are given in Table \ref{tab:mecha
     \label{tab:mechanoreceptors-table}
     \includegraphics[width=9cm]{Figures/mechanoreceptors-table-cropped.jpg}
 \end{table}
+%% Todo: Get copyright permission from image owners
 
 
 \subsection{Characterising skin}
@@ -323,57 +326,60 @@ Currently dielectric elastomer actuators all require voltages within the kilo-vo
 
 \section{Pressure Mapping Artificial Skin Devices}
 % Artificial skin review
-    % Give the range of technologies available expand upon review given in Pt II EIT sensor paper.
- This section will be outlining some of the main technologies which are flexible and/or soft and can map force events throughout a two dimensional surface. A particular focus on electro-active polymer (EAP) based sensing is present due to the potential of miniaturising the technology and the range of miniaturised electronics currently available. Electroactive polymers are essentially polymer materials which can be used as transducers which change electrical properties based on a mechanical input, vice versa.
+% Give the range of technologies available expand upon review given in Pt II EIT sensor paper.
+This section will be outlining some of the main technologies which are flexible and/or soft and can map force events throughout a two dimensional surface. A particular focus on electro-active polymer (EAP) based sensing is present due to the potential of miniaturising the technology and the range of miniaturised electronics currently available. Electroactive polymers are essentially polymer materials which can be used as transducers which change electrical properties based on a mechanical input, vice versa.
 
 
 \subsection{Soft Pressure mapping technology}
-% Why does this section matter? AND How does it link to my research? A large part of my research was looking into making an 'artificial skin sensor'. It has been requested by several reviewers of my journal article to look at state of the art devices similar to mine (from 2020 onwards especially). 
+% Why does this section matter? How does it link to my research goals? What is it adding to the greater research pool? A large part of my research was looking into making an 'artificial skin sensor'. It has been requested by several reviewers of my journal article to look at state of the art devices similar to mine, from 2020 onwards and for variant of EIT sensing especially. 
 Pressure mapping devices can be categorised into their various sensing technology, such as resistive, capacitive, inductive, magnetic, optical, and acoustic. Examples have been gathered by \cite{,,,} showing the limits and trade-offs between each sensing technology. 
 
 \subsubsection{Resistive}
 Soft resistive pressure mapping has been commonly achieved in the past by using arrays of piezoresistive sensor elements \cite{,,,,}. The resistive elements can be made using several different flexible piezoresistive materials.
 \begin{itemize}
-    \item Conductive particle polymer composites \cite{Sun2020,Lu2014,Spahr2017}
-    \item Intrinsically conductive polymers \cite{Lu2014,Hazelton2023}
-    \item Microfluidic metals \cite{Park2010,Jung2015,Kim2019}
-    \item Hydrogel structures \cite{Yuk2016,Park2022,Chen2023}
-    \item Flexible piezoresistive semiconductors \cite{Xu2023,Sim2019}
+	\item Conductive particle polymer composites \cite{Sun2020,Lu2014,Spahr2017}
+	\item Intrinsically conductive polymers \cite{Lu2014,Hazelton2023}
+	\item Microfluidic metals \cite{Park2010,Jung2015,Kim2019}
+	\item Hydrogel structures \cite{Yuk2016,Park2022,Chen2023}
+	\item Flexible piezoresistive semiconductors \cite{Xu2023,Sim2019}
 \end{itemize}
 
 \begin{table}[H]
-    \begin{changemargin}{-2cm}{-2cm}
-        \begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{.8cm}|p{2cm}|p{2cm}|}
-        \hline
-             & Conductivity & Piezo-resistivity & Change stiffness & Fabrication & Cost & Environmental Stability & Toxicity \\ \hline
-            Intrinsically conducting polymers & - Dependent on polymer used. (S/cm \cite{Hazelton2023}) & - Dependent on polymer used - Exponential relationship with strain\cite{Mukherjee2023} &  &  &  & & \\ \hline
-            Electrolytic hydrogels &  &  &  &  &  &  &  \\ \hline
-            Conductive particle polymers &  &  &  &  & \$ &  &  \\ \hline
-            Conductive particle paste &  &  &  &  & \$ &  &  \\ \hline
-            Conductive textiles &  &  &  & Complex &  &  & \\ \hline
-        \end{tabular}
-    \end{changemargin} 
+	\begin{changemargin}{-2cm}{-2cm}
+		\begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{.8cm}|p{2cm}|p{2cm}|}
+			\hline
+			& Conductivity & Piezo-resistivity & Change stiffness & Fabrication & Cost & Environmental Stability & Toxicity \\ \hline
+			Intrinsically conducting polymers & - Dependent on polymer used. (S/cm \cite{Hazelton2023}) & - Dependent on polymer used - Exponential relationship with strain\cite{Mukherjee2023} &  &  &  & & \\ \hline
+			Electrolytic hydrogels &  &  &  &  &  &  &  \\ \hline
+			Conductive particle polymers &  &  &  &  & \$ &  &  \\ \hline
+			Conductive particle paste &  &  &  &  & \$ &  &  \\ \hline
+			Conductive textiles &  &  &  & Complex &  &  & \\ \hline
+		\end{tabular}
+	\end{changemargin} 
 \end{table}
 
 A commonly used piezoresistive material is conductive particle polymer composites. 
 
 \subsubsection{Capacitive}
-Similar to resistive pressure mapping, capacitive pressure mapping has more commonly been done using arrays of capacitive elements. Many capacitive touch sensors use the human body to shunt the electric field between the capacitor electrode(s) to a common ground. However the operating principle of capacitive-based strain sensors relies on the deformation of the capacitor dielectric and/or the capacitor electrodes. 
+Similar to resistive pressure mapping, capacitive pressure mapping has more commonly been done using arrays of capacitive elements. Many capacitive touch sensors use the human body to shunt the electric field between the capacitor electrode(s) to a common ground. However the operating principle of capacitive-based strain sensors rely on the deformation of the capacitor dielectric and/or the capacitor electrodes. 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=9cm]{Figures/cap_deformed_states_x2_crop.png}
-    \caption{Two grey electrodes across a blue dielectric medium. Left: Uncompressed state. Right: Compressed state exhibiting larger electrode areas and a thinner dielectric thickness.}
-    \label{fig:cap_deformed_cube}
+	\centering
+	\includegraphics[width=9cm]{Figures/cap_deformed_states_x2_crop.png}
+	\caption{Two grey electrodes across a blue dielectric medium. Left: Uncompressed state. Right: Compressed state exhibiting larger electrode areas and a thinner dielectric thickness.}
+	\label{fig:cap_deformed_cube}
 \end{figure}
 
 \subsubsection{Magnetic}
+Magnetic strain mapping devices can be achieved using several methods. One method is to have a three layer stack with hall effect sensors \cite{Yan2021}. The stack is made up of a the bottom layer full of rigidly connected three dimensional hall effect sensors, the second layer is made from an elastomer, and the top layer has a magnetic particle unit placed at a set distance above each of the hall effect sensors. The movement of the magnets alters the magnitude and direction of magnetic field sensed and data can be interpolated to create a map of strain deformation. The main advantages of this method is that each hall sensor can detect in three dimensions, hence normal and shear forces can be detected, and using magnetismfor sensing means less electrical noise in the system. The main disadvantages of this method of sensing is the added complexity in scaling the system and the electronics required and the rigid surface required.  
 
 \subsubsection{Optical}
+There are various methods for making a optically driven artificial skins. A recent review has been curated by Lee et al. \cite{Lee2023} all of the different methods of using optics for creating tactile sensors. The main advantages of optical sensors include the high speed sensor response, immunity to electrical noise, and their non-invasive nature. The main disadvantages include, the bulky hardware required for driving the optics and signal processing, the potential interference of external light sources, and the materials that can carry optical signals. 
 
 \subsubsection{Acoustic}
+Acoustic soft tactile sensing has not been explored much compared to the other forms of sensing given. Park et al., Hughes and Correll \cite{Park2022,Hughes2015} have created a system which uses passive acoustic tomogrpahy (PAT) to localise and and classify different types of touch. This form of tactile sensing is the most similar to the biological system of mechanoreceptors which are specialised to detect certain frequencies of vibration.
 
 \subsubsection{Pressure mapping technology comparison}
-% TODO: place big table comparing a bunch of different technologies!?
+% TODO: place big table comparing a bunch of different technologies - Use table from supplementary information in SNA paper.
 
 \section{Soft Conductive Particle Piezoresistive Composites}
 \label{sec:Soft Piezoresistive Composites}
