@@ -6,18 +6,18 @@
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/01]
 \ProvidesClass{Thesis}
-              [2007/22/02 v1.0
-   LaTeX document class]
+[2007/22/02 v1.0
+LaTeX document class]
 \def\baseclass{book}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{\baseclass}}
 \def\@checkoptions#1#2{
-  \edef\@curroptions{\@ptionlist{\@currname.\@currext}}
-  \@tempswafalse
-  \@tfor\@this:=#2\do{
-    \@expandtwoargs\in@{,\@this,}{,\@curroptions,}
-    \ifin@ \@tempswatrue \@break@tfor \fi}
-  \let\@this\@empty
-  \if@tempswa \else \PassOptionsToClass{#1}{\baseclass}\fi
+	\edef\@curroptions{\@ptionlist{\@currname.\@currext}}
+	\@tempswafalse
+	\@tfor\@this:=#2\do{
+		\@expandtwoargs\in@{,\@this,}{,\@curroptions,}
+		\ifin@ \@tempswatrue \@break@tfor \fi}
+	\let\@this\@empty
+	\if@tempswa \else \PassOptionsToClass{#1}{\baseclass}\fi
 }
 \@checkoptions{11pt}{{10pt}{11pt}{12pt}}
 \PassOptionsToClass{a4paper}{\baseclass}
@@ -26,36 +26,36 @@
 \newcommand\bhrule{\typeout{------------------------------------------------------------------------------}}
 
 \newcommand\Declaration[1]{
-\btypeout{Declaration of Authorship}
-\addtotoc{Declaration of Authorship}
-\thispagestyle{plain}
-\null\vfil
-%\vskip 60\p@
-\begin{center}{\huge\bf Declaration of Authorship\par}\end{center}
-%\vskip 60\p@
-{\normalsize #1}
-\vfil\vfil\null
-%\cleardoublepage
+	\btypeout{Declaration of Authorship}
+	\addtotoc{Declaration of Authorship}
+	\thispagestyle{plain}
+	\null\vfil
+	%\vskip 60\p@
+	\begin{center}{\huge\bf Declaration of Authorship\par}\end{center}
+	%\vskip 60\p@
+	{\normalsize #1}
+	\vfil\vfil\null
+	%\cleardoublepage
 }
 
 \newcommand\btypeout[1]{\bhrule\typeout{\space #1}\bhrule}
 \def\today{\ifcase\month\or
-  January\or February\or March\or April\or May\or June\or
-  July\or August\or September\or October\or November\or December\fi
-  \space \number\year}
+	January\or February\or March\or April\or May\or June\or
+	July\or August\or September\or October\or November\or December\fi
+	\space \number\year}
 \usepackage{setspace}
 \onehalfspacing
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
 \usepackage{vmargin}
 \setmarginsrb           { 1.5in}  % left margin
-                        { 0.6in}  % top margin
-                        { 1.0in}  % right margin
-                        { 0.8in}  % bottom margin
-                        {  20pt}  % head height
-                        {0.25in}  % head sep
-                        {   9pt}  % foot height
-                        { 0.3in}  % foot sep
+{ 0.6in}  % top margin
+{ 1.0in}  % right margin
+{ 0.8in}  % bottom margin
+{  20pt}  % head height
+{0.25in}  % head sep
+{   9pt}  % foot height
+{ 0.3in}  % foot sep
 \raggedbottom
 \setlength{\topskip}{1\topskip \@plus 5\p@}
 \doublehyphendemerits=10000       % No consecutive line hyphens.
@@ -72,10 +72,10 @@
 \renewcommand{\sectionmark}[1]{}
 \renewcommand{\subsectionmark}[1]{}
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
-\hbox{}
-\thispagestyle{empty}
-\newpage
-\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+	\hbox{}
+	\thispagestyle{empty}
+	\newpage
+	\if@twocolumn\hbox{}\newpage\fi\fi\fi}
 \usepackage{amsmath,amsfonts,amssymb,amscd,amsthm,xspace}
 \theoremstyle{plain}
 \newtheorem{example}{Example}[chapter]
@@ -114,21 +114,21 @@
 \usepackage{listings}
 \usepackage{lstpatch}
 \lstset{captionpos=b,
-        frame=tb,
-        basicstyle=\scriptsize\ttfamily,
-        showstringspaces=false,
-        keepspaces=true}
+	frame=tb,
+	basicstyle=\scriptsize\ttfamily,
+	showstringspaces=false,
+	keepspaces=true}
 \lstdefinestyle{matlab} {
-        language=Matlab,
-        keywordstyle=\color{blue},
-        commentstyle=\color[rgb]{0.13,0.55,0.13}\em,
-        stringstyle=\color[rgb]{0.7,0,0} }
+	language=Matlab,
+	keywordstyle=\color{blue},
+	commentstyle=\color[rgb]{0.13,0.55,0.13}\em,
+	stringstyle=\color[rgb]{0.7,0,0} }
 \usepackage[pdfpagemode={UseOutlines},bookmarks=true,bookmarksopen=true,
-   bookmarksopenlevel=0,bookmarksnumbered=true,hypertexnames=false,
-   colorlinks,linkcolor={blue},citecolor={blue},urlcolor={red},
-   pdfstartview={FitV},unicode,breaklinks=true]{hyperref}
+bookmarksopenlevel=0,bookmarksnumbered=true,hypertexnames=false,
+colorlinks,linkcolor={blue},citecolor={blue},urlcolor={red},
+pdfstartview={FitV},unicode,breaklinks=true]{hyperref}
 \pdfstringdefDisableCommands{
-   \let\\\space
+	\let\\\space
 }
 % chapter name defs
 \newcommand*{\chapi}[1]{\def\chapiname{#1}}
@@ -143,7 +143,7 @@
 \newcommand*{\chapx}[1]{\def\chapxname{#1}}
 
 
-\chapi     {Introduction}
+\chapi     {Introduction and Motivation}
 
 \chapii     {Literature Review}
 
@@ -151,12 +151,11 @@
 
 \chapiv     {?? A Novel Mixing Method for 3D Printing Conductive Particle Elastomer Composites}
 
-\chapv      {An Improved an Electrical
-Impedance Tomography Based Artificial Soft Skin Pressure Sensor}
+\chapv      {An Improved an Electrical Impedance Tomography Based Artificial Soft Skin Pressure Sensor}
 
 \chapvi     {Giving Artificial Muscles the Sense of Touch}
 
-\chapvii    {An Unintended Dielectric Elastomer Generator}
+\chapvii    {Unintentional Power Generation in a DEA-EIT Sensor-Actuator Device}
 
 \chapviii    {?? Hardware for a DEA-EIT Sensor Actuator Hybrid Device}
 
@@ -185,234 +184,234 @@ Impedance Tomography Based Artificial Soft Skin Pressure Sensor}
 \degree      {}
 \authors     {}
 \university  {\texorpdfstring{\href{https://www.canterbury.ac.nz/}
-                {University of Canterbury}}
-                {University of Canterbury}}
+		{University of Canterbury}}
+	{University of Canterbury}}
 \UNIVERSITY  {\texorpdfstring{\href{https://www.canterbury.ac.nz/}
-                {UNIVERSITY OF CANTERBURY}}
-                {UNIVERSITY OF CANTERBURY}}
+		{UNIVERSITY OF CANTERBURY}}
+	{UNIVERSITY OF CANTERBURY}}
 \department  {\texorpdfstring{\href{https://www.canterbury.ac.nz/study/academic-study/subjects/mechanical-engineering-pg}
-                {Mechanical Engineering}}
-                {Mechanical Engineering}}
+		{Mechanical Engineering}}
+	{Mechanical Engineering}}
 \DEPARTMENT  {\texorpdfstring{\href{https://www.canterbury.ac.nz/study/academic-study/subjects/mechanical-engineering-pg}
-                {MECHANICAL ENGINEERING}}
-                {MECHANICAL ENGINEERING}}
+		{MECHANICAL ENGINEERING}}
+	{MECHANICAL ENGINEERING}}
 \group       {\texorpdfstring{\href{Research Group Web Site URL Here (include http://)}
-                {Soft Robotics}}
-                {Soft Robotics}}
+		{Soft Robotics}}
+	{Soft Robotics}}
 \GROUP       {\texorpdfstring{\href{Research Group Web Site URL Here (include http://)}
-                {SOFT ROBOTICS}}
-                {SOFT ROBOTICS}}
+		{SOFT ROBOTICS}}
+	{SOFT ROBOTICS}}
 \faculty     {\texorpdfstring{\href{https://www.canterbury.ac.nz/study/academic-study/engineering}
-                {College of Engineering}}
-                {College of Engineering}}
+		{College of Engineering}}
+	{College of Engineering}}
 \FACULTY     {\texorpdfstring{\href{https://www.canterbury.ac.nz/study/academic-study/engineering}
-                {COLLEGE OF ENGINEERING}}
-                {COLLEGE OF ENGINEERING}}
+		{COLLEGE OF ENGINEERING}}
+	{COLLEGE OF ENGINEERING}}
 \addresses   {}
 \subject     {}
 \keywords    {}
 \renewcommand\maketitle{
-  \btypeout{Title Page}
-  \hypersetup{pdftitle={\@title}}
-  \hypersetup{pdfsubject=\subjectname}
-  \hypersetup{pdfauthor=\authornames}
-  \hypersetup{pdfkeywords=\keywordnames}
-  \thispagestyle{empty}
-  \begin{titlepage}
-    \let\footnotesize\small
-    \let\footnoterule\relax
-    \let \footnote \thanks
-    \setcounter{footnote}{0}
-    \null\vfil
-    \vskip 60\p@
-    \begin{center}
-      \setlength{\parskip}{0pt}
-      \vfill
-      {\LARGE \bf \@title \par}
-      \vfill
-      {\Large by \par}
-      \smallskip
-      {\Large \authornames \par}
-      \vfill
-      {\large A thesis submitted for the degree of \par}
-      {\large Doctor of Philosophy \par}
-      \bigskip
-      {\large in \par}
-      \bigskip
-      {\large \deptname \par}
-      \bigskip
-      {\large at the \par}
-      \bigskip
-      {\large\textbf{\UNIVNAME}\par}
-      \bigskip
-      \bigskip
-      \bigskip
-      {\Large \@date \par}
-      \bigskip
-    \end{center}
-    \par
-    \@thanks
-    \vfil\null
-  \end{titlepage}
-  \setcounter{footnote}{0}%
-  \global\let\thanks\relax
-  \global\let\maketitle\relax
-  \global\let\@thanks\@empty
-  \global\let\@author\@empty
-  \global\let\@date\@empty
-  \global\let\@title\@empty
-  \global\let\title\relax
-  \global\let\author\relax
-  \global\let\date\relax
-  \global\let\and\relax
-  \cleardoublepage
+	\btypeout{Title Page}
+	\hypersetup{pdftitle={\@title}}
+	\hypersetup{pdfsubject=\subjectname}
+	\hypersetup{pdfauthor=\authornames}
+	\hypersetup{pdfkeywords=\keywordnames}
+	\thispagestyle{empty}
+	\begin{titlepage}
+		\let\footnotesize\small
+		\let\footnoterule\relax
+		\let \footnote \thanks
+		\setcounter{footnote}{0}
+		\null\vfil
+		\vskip 60\p@
+		\begin{center}
+			\setlength{\parskip}{0pt}
+			\vfill
+			{\LARGE \bf \@title \par}
+			\vfill
+			{\Large by \par}
+			\smallskip
+			{\Large \authornames \par}
+			\vfill
+			{\large A thesis submitted for the degree of \par}
+			{\large Doctor of Philosophy \par}
+			\bigskip
+			{\large in \par}
+			\bigskip
+			{\large \deptname \par}
+			\bigskip
+			{\large at the \par}
+			\bigskip
+			{\large\textbf{\UNIVNAME}\par}
+			\bigskip
+			\bigskip
+			\bigskip
+			{\Large \@date \par}
+			\bigskip
+		\end{center}
+		\par
+		\@thanks
+		\vfil\null
+	\end{titlepage}
+	\setcounter{footnote}{0}%
+	\global\let\thanks\relax
+	\global\let\maketitle\relax
+	\global\let\@thanks\@empty
+	\global\let\@author\@empty
+	\global\let\@date\@empty
+	\global\let\@title\@empty
+	\global\let\title\relax
+	\global\let\author\relax
+	\global\let\date\relax
+	\global\let\and\relax
+	\cleardoublepage
 }
 
 \newenvironment{abstract}
 {
-  \btypeout{Abstract Page}
-  \thispagestyle{empty}
-  \null\vfil
-  \begin{center}
-    \setlength{\parskip}{0pt}
-    {\normalsize \UNIVNAME \par}
-    \bigskip
-    {\huge{\textit{Abstract}} \par}
-    \bigskip
-    {\normalsize \facname \par}
-    {\normalsize \deptname \par}
-    \bigskip
-    {\normalsize Doctor of Philosophy\par}
-    \bigskip
-    {\normalsize\bf \@title \par}
-    \medskip
-    {\normalsize by \authornames \par}
-    \bigskip
-  \end{center}
+	\btypeout{Abstract Page}
+	\thispagestyle{empty}
+	\null\vfil
+	\begin{center}
+		\setlength{\parskip}{0pt}
+		{\normalsize \UNIVNAME \par}
+		\bigskip
+		{\huge{\textit{Abstract}} \par}
+		\bigskip
+		{\normalsize \facname \par}
+		{\normalsize \deptname \par}
+		\bigskip
+		{\normalsize Doctor of Philosophy\par}
+		\bigskip
+		{\normalsize\bf \@title \par}
+		\medskip
+		{\normalsize by \authornames \par}
+		\bigskip
+	\end{center}
 }
 {
-  \vfil\vfil\vfil\null
-  \cleardoublepage
+	\vfil\vfil\vfil\null
+	\cleardoublepage
 }
 \addtocounter{secnumdepth}{1}
 \setcounter{tocdepth}{6}
 \newcounter{dummy}
 \newcommand\addtotoc[1]{
-\refstepcounter{dummy}
-\addcontentsline{toc}{chapter}{#1}}
+	\refstepcounter{dummy}
+	\addcontentsline{toc}{chapter}{#1}}
 \renewcommand\tableofcontents{
-\btypeout{Table of Contents}
-\begin{spacing}{1}{
-    \setlength{\parskip}{1pt}
-    \if@twocolumn
-      \@restonecoltrue\onecolumn
-    \else
-      \@restonecolfalse
-    \fi
-    \chapter*{\contentsname
-        \@mkboth{
-           \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}
-    \@starttoc{toc}
-    \if@restonecol\twocolumn\fi
-   \cleardoublepage
-}\end{spacing}
+	\btypeout{Table of Contents}
+	\begin{spacing}{1}{
+			\setlength{\parskip}{1pt}
+			\if@twocolumn
+			\@restonecoltrue\onecolumn
+			\else
+			\@restonecolfalse
+			\fi
+			\chapter*{\contentsname
+				\@mkboth{
+					\MakeUppercase\contentsname}{\MakeUppercase\contentsname}}
+			\@starttoc{toc}
+			\if@restonecol\twocolumn\fi
+			\cleardoublepage
+	}\end{spacing}
 }
 \renewcommand\listoffigures{
-\btypeout{List of Figures}
-\addtotoc{List of Figures}
-\begin{spacing}{1}{
-    \setlength{\parskip}{1pt}
-    \if@twocolumn
-      \@restonecoltrue\onecolumn
-    \else
-      \@restonecolfalse
-    \fi
-    \chapter*{\listfigurename
-      \@mkboth{\MakeUppercase\listfigurename}
-              {\MakeUppercase\listfigurename}}
-    \@starttoc{lof}
-    \if@restonecol\twocolumn\fi
-    \cleardoublepage
-}\end{spacing}
+	\btypeout{List of Figures}
+	\addtotoc{List of Figures}
+	\begin{spacing}{1}{
+			\setlength{\parskip}{1pt}
+			\if@twocolumn
+			\@restonecoltrue\onecolumn
+			\else
+			\@restonecolfalse
+			\fi
+			\chapter*{\listfigurename
+				\@mkboth{\MakeUppercase\listfigurename}
+				{\MakeUppercase\listfigurename}}
+			\@starttoc{lof}
+			\if@restonecol\twocolumn\fi
+			\cleardoublepage
+	}\end{spacing}
 }
 \renewcommand\listoftables{
-\btypeout{List of Tables}
-\addtotoc{List of Tables}
-\begin{spacing}{1}{
-    \setlength{\parskip}{1pt}
-    \if@twocolumn
-      \@restonecoltrue\onecolumn
-    \else
-      \@restonecolfalse
-    \fi
-    \chapter*{\listtablename
-      \@mkboth{
-          \MakeUppercase\listtablename}{\MakeUppercase\listtablename}}
-    \@starttoc{lot}
-    \if@restonecol\twocolumn\fi
-    \cleardoublepage
-}\end{spacing}
+	\btypeout{List of Tables}
+	\addtotoc{List of Tables}
+	\begin{spacing}{1}{
+			\setlength{\parskip}{1pt}
+			\if@twocolumn
+			\@restonecoltrue\onecolumn
+			\else
+			\@restonecolfalse
+			\fi
+			\chapter*{\listtablename
+				\@mkboth{
+					\MakeUppercase\listtablename}{\MakeUppercase\listtablename}}
+			\@starttoc{lot}
+			\if@restonecol\twocolumn\fi
+			\cleardoublepage
+	}\end{spacing}
 }
 \newcommand\listsymbolname{Abbreviations}
 \usepackage{longtable}
 \newcommand\listofsymbols[2]{
-\btypeout{\listsymbolname}
-\addtotoc{\listsymbolname}
-    \chapter*{\listsymbolname
-      \@mkboth{
-          \MakeUppercase\listsymbolname}{\MakeUppercase\listsymbolname}}
-\begin{longtable}[c]{#1}#2\end{longtable}\par
-    \cleardoublepage
+	\btypeout{\listsymbolname}
+	\addtotoc{\listsymbolname}
+	\chapter*{\listsymbolname
+		\@mkboth{
+			\MakeUppercase\listsymbolname}{\MakeUppercase\listsymbolname}}
+	\begin{longtable}[c]{#1}#2\end{longtable}\par
+	\cleardoublepage
 }
 \newcommand\listconstants{Physical Constants}
 \usepackage{longtable}
 \newcommand\listofconstants[2]{
-\btypeout{\listconstants}
-\addtotoc{\listconstants}
-    \chapter*{\listconstants
-      \@mkboth{
-          \MakeUppercase\listconstants}{\MakeUppercase\listconstants}}
-\begin{longtable}[c]{#1}#2\end{longtable}\par
-    \cleardoublepage
+	\btypeout{\listconstants}
+	\addtotoc{\listconstants}
+	\chapter*{\listconstants
+		\@mkboth{
+			\MakeUppercase\listconstants}{\MakeUppercase\listconstants}}
+	\begin{longtable}[c]{#1}#2\end{longtable}\par
+	\cleardoublepage
 }
 \newcommand\listnomenclature{Symbols}
 \usepackage{longtable}
 \newcommand\listofnomenclature[2]{
-\btypeout{\listnomenclature}
-\addtotoc{\listnomenclature}
-    \chapter*{\listnomenclature
-      \@mkboth{
-          \MakeUppercase\listnomenclature}{\MakeUppercase\listnomenclature}}
-\begin{longtable}[c]{#1}#2\end{longtable}\par
-    \cleardoublepage
+	\btypeout{\listnomenclature}
+	\addtotoc{\listnomenclature}
+	\chapter*{\listnomenclature
+		\@mkboth{
+			\MakeUppercase\listnomenclature}{\MakeUppercase\listnomenclature}}
+	\begin{longtable}[c]{#1}#2\end{longtable}\par
+	\cleardoublepage
 }
 \newcommand\acknowledgements[1]{
-\btypeout{Acknowledgements}
-\addtotoc{Acknowledgements}
-\thispagestyle{plain}
-\begin{center}{\huge{\textit{Acknowledgements}} \par}\end{center}
-{\normalsize #1}
-\vfil\vfil\null
-
+	\btypeout{Acknowledgements}
+	\addtotoc{Acknowledgements}
+	\thispagestyle{plain}
+	\begin{center}{\huge{\textit{Acknowledgements}} \par}\end{center}
+	{\normalsize #1}
+	\vfil\vfil\null
+	
 }
 \newcommand\dedicatory[1]{
-\btypeout{Dedicatory}
-\thispagestyle{plain}
-\null\vfil
-\vskip 60\p@
-\begin{center}{\Large \sl #1}\end{center}
-\vfil\null
-\cleardoublepage
+	\btypeout{Dedicatory}
+	\thispagestyle{plain}
+	\null\vfil
+	\vskip 60\p@
+	\begin{center}{\Large \sl #1}\end{center}
+	\vfil\null
+	\cleardoublepage
 }
 \renewcommand\backmatter{
-  \if@openright
-    \cleardoublepage
-  \else
-    \clearpage
-  \fi
-  \addtotoc{\bibname}
-  \btypeout{\bibname}
-  \@mainmatterfalse}
+	\if@openright
+	\cleardoublepage
+	\else
+	\clearpage
+	\fi
+	\addtotoc{\bibname}
+	\btypeout{\bibname}
+	\@mainmatterfalse}
 \endinput
 
 %%
