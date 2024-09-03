@@ -157,7 +157,7 @@ pdfstartview={FitV},unicode,breaklinks=true]{hyperref}
 
 \chapvii    {Unintentional Power Generation in a DEA-EIT Sensor-Actuator Device}
 
-\chapviii    {?? Hardware for a DEA-EIT Sensor Actuator Hybrid Device}
+\chapviii    {A Portable Electrical Impedance Tomography Based Pressure Mapping Sensor and Validation System}
 
 \chapix   {?? Modelling of DEA-EIT Capacitively driven Hybird Sensing and Actuation Device}
 
