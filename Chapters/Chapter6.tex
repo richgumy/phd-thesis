@@ -2,11 +2,10 @@
 \label{chapter6}
 \textit{The content from this chapter is contains content from the manuscript published in the proceedings of Electroactive Polymers Actuators and Devices XXVI.}
 
-\begin{center}
-	\begin{abstract}
-	Dielectric elastomer actuators (DEAs) commonly use flexible conductive electrodes to apply an electric potential to actuate the device. Depending on the material used, these electrodes often possess predictable piezo-resistive properties. Combining electrical impedance tomography (EIT) with a dielectric elastomer actuator (DEA) is investigated in this work to map compressive forces occurring throughout the electrode surfaces. This technology could allow for enhanced closed-loop control of electro-active actuators, broadening their already extensive set of applications. This deformation mapping system also has potential to be used with other piezoresistive materials opening up applications requiring a range of hardnesses and pressure sensitivity. With the material used in this work, the DEA-EIT device has an inherent trade-off between actuation and pressure mapping accuracy driven by the compliant electrode thickness of the DEA. It has been shown experimentally that the simultaneous actuation and EIT mapping can be achieved on the designed hybrid DEA-EIT device. The DEA-EIT device exhibited actuation strains of 2.5 \% with a mean center-of-mass detection error of 7.9 $\pm$ 0.7 mm for 2 mm thick DEA electrodes. Future designs will ensure that applications requiring human-like manipulation can be designed, ranging from biomedical implant devices to agricultural processing equipment. 
-	\end{abstract}
-\end{center}
+\section*{ABSTRACT}
+	Dielectric elastomer actuators (DEAs) commonly use flexible conductive electrodes to apply an electric potential to actuate. Depending on the material used, these electrodes often possess predictable piezo-resistive properties. Combining electrical impedance tomography (EIT) with a dielectric elastomer actuator (DEA) is investigated in this work to map compressive forces occurring throughout the electrode surfaces. This technology could allow for enhanced closed-loop control of electro-active actuators, broadening their already extensive set of applications. This deformation mapping system also has potential to be used with other piezoresistive materials opening up applications requiring a range of hardnesses and pressure sensitivity. With the material used in this work, the DEA-EIT device has an inherent trade-off between actuation and pressure mapping accuracy driven by the compliant electrode thickness of the DEA. It has been shown experimentally that the simultaneous actuation and EIT mapping can be achieved on the designed hybrid DEA-EIT device. The DEA-EIT device exhibited actuation strains of 2.5 \% with a mean center-of-mass detection error of 1.66 $\pm$ 0.17 mm for 2 mm thick DEA electrodes. Future designs will ensure that applications requiring human-like manipulation can be designed, ranging between biomedical implant devices, agricultural processing equipment, soft optics, and bio-mimicked robotic aquatic life. 
+
+
 
 \section{INTRODUCTION} % 1.5 pages
 \label{sec:introduction}
@@ -15,7 +14,7 @@ Fine motor manipulation, pressure sensitivity, and pressure mapping are some cor
 
 DEAs have been used to mimic biological muscles in many applications, because of the technology's likeness to biological muscle in terms of elasticity, energy density, and various potential shapes/topologies \cite{Rosset2016, Hajiesmaili2021, Guo2021} . In previous research, it was determined that pressure mapping similar to that of human mechanoreceptors could be emulated using EIT with a piezoresistive nanoparticle elastomer composite (PNEC) in a planar sheet format\cite{Ellingham2022} . The key qualities of the EIT-based sensing platform were that; pressure estimates could be obtained, and the pressure could be mapped and the spatial performance quantified\cite{Ellingham2024} . Like DEAs, this sensing technology has a likeness to human tissue in terms of mechanical characteristics such as elasticity, and the potential of various topologies.
 
-Alongside the visual and other sensory feedback, animals receive when actuating muscle tissue, pressure-sensitive mechanoreceptors are present within the muscle tissue and soft skin tissue to aid control the extent of a muscle contraction. This forms a multi-sensor closed-loop control system with a complex biological control regime. This work is looking towards creating a closed-loop control system which utilises a DEA-based artificial muscle and an EIT-based artificial skin. Applications such as the ones conceptualised in Figure \ref{fig:dea-eit-applications} can be designed with the use of DEA-EIT integrated technology.
+Alongside the visual and other sensory feedback, animals receive when actuating muscle tissue, pressure-sensitive mechanoreceptors are present within the muscle tissue and soft skin tissue to aid control the extent of a muscle contraction. This forms a multi-sensor closed-loop control system with a complex biological control regime. This work is looking towards creating a closed-loop control system which utilises a DEA-based artificial muscle and an EIT-based artificial skin all contained within monolithic bodies. Applications such as the ones conceptualised in Figure \ref{fig:dea-eit-applications} can be designed with the use of DEA-EIT integrated technology.
 
 \begin{figure}[H]
 	\centering
@@ -229,7 +228,7 @@ After gathering all of the experimental data from applied loads, the data was us
 
 
 \subsection{Simultaneous Actuation and Pressure Mapping}
-The DEA-EIT device was tested for simultaneous actuation and pressure mapping to highlight the issues that arise with such a device. Simultaneous actuation and pressure mapping involves an excitation voltage is applied to the DEA whilst completing EIT to the grounded DEA electrode.
+The DEA-EIT device was tested for simultaneous actuation and pressure mapping to highlight the functional limitations that arise with such a device. Simultaneous actuation and pressure mapping involves an excitation voltage is applied to the DEA whilst completing EIT to the grounded DEA electrode.
 
 To ensure that the EIT electronics are able to operate during transients or dielectric breakdown events, an intermediary 20 V Zener diode array and a current limiting resistor, $R_{lim}$, were added to the system as shown in Figure \ref{fig:DEA-EIT_protective_ckt}.
 \begin{figure}[H]
@@ -239,7 +238,7 @@ To ensure that the EIT electronics are able to operate during transients or diel
 	\caption{System architecture for simultaneous DEA actuation and EIT mapping.}
 	\label{fig:DEA-EIT_protective_ckt}
 \end{figure}
-When the DEA is switched on, the compliant electrodes charge. During this charging period a voltage will be developed on the HV and low-voltage EIT electrode characterised by the charging capacitance, $C_{DEA}$, the HV source resistance, $R_{lim}$, and the multiplexer on resistance, $R_{on}$. The resistance of the DEA can be lumped in with $R_{lim}$ for the equations below if $R_{lim}$ and DEA resistivity comparable. The charging of the DEA capacitance is governed by Equation \ref{eqn:DEA_charging}.
+When the DEA is switched on, the compliant electrodes charge. During this charging period a voltage will be developed on the HV and low-voltage EIT electrode characterised by the charging capacitance, $C_{DEA}$, the HV source resistance, $R_{lim}$, and the multiplexer on resistance, $R_{on}$. The resistance of the DEA is lumped in with $R_{lim}$ for the Equations \ref{eqn:DEA_charging} and \ref{eqn:mux_voltage} below. The charging of the DEA capacitance is governed by Equation \ref{eqn:DEA_charging}.
 
 \begin{equation}
 	V_{\mathit{DEA_{\mathit{HV}}}}(t) = V_{\mathit{HV}} (1 - e^{-t / (R_{on}+R_{\mathit{lim}})C_{\mathit{DEA}}})
@@ -259,10 +258,12 @@ To investigate the effects the DEA voltage switching transient has on EIT data c
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.39\linewidth]{Figures/DEA-EIT_SS_loads_example.png}
+	\includegraphics[width=0.39\linewidth]{Figures/DEA-EIT_SS_loads_example_relabelled.png}
 	\hspace{1cm}
-	\includegraphics[width=0.4\linewidth]{Figures/DEA-EIT_transient_VDEA_example.png}
+	\includegraphics[width=0.4\linewidth]{Figures/DEA-EIT_transient_VDEA_example_relabelled.png}
 	\vspace{0.3cm}
+	% made using www.desmos.com/calculator (graphing calculator)
+	% To do: re-make these plots with better font size.
 	\caption{Illustrative experiment timing diagrams. Left: Steady state $V_{DEA}$ where the purple dotted lines represent the time a load event begins. Right: Transient EIT measurements where the red dotted line represents the time an EIT frame capture begins.}
 	\label{fig:dea-eit_timing}
 \end{figure}
@@ -271,7 +272,7 @@ To investigate the effects the DEA voltage switching transient has on EIT data c
 
 \section{RESULTS} % 2 pages
 \label{sec:results}
-First the measurements taken during fabrication are explored, followed by the results from the independent DEA actuation validation and EIT pressure mapping validation. Finally Results are presented on the phenomena of concern when integrating HV DEAs with EIT-based pressure mapping.
+First the measurements taken during fabrication are explored, followed by the results from the independent DEA actuation validation and EIT pressure mapping validation. Finally, results are presented on the phenomena of concern when integrating HV DEAs with EIT-based pressure mapping.
 
 
 \subsection{Fabrication}
@@ -283,7 +284,7 @@ Prior to constructing the DEA, the compliant CBSR inter-electrode resistances, $
 
 \subsection{DEA Validation}
 \label{subsec:dea_validation2}
-Before testing the piezoresistive compliant electrodes for both actuation and pressure mapping capability, the reference DEA was tested for its voltage actuation strain relationship. The theoretical actuation strain versus voltage was compared to the measured strain for the reference DEA shown in Figure \ref{subfig:ref_DEA}. The actuation strain data gathered is shown in \ref{fig:ref_DEA_results}. The range given was derived from substituting the range of $K$ and $\varepsilon_r$ parameters found in previous similar works\cite{Liu2018, Helal2018, Huang2023} into Equations \ref{eqn:DEA_stress} - \ref{eqn:DEA_strain_z_r}.
+Before testing the piezoresistive compliant electrodes for both actuation and pressure mapping capability, the reference DEA was tested for its voltage actuation strain relationship. The theoretical actuation strain versus voltage was compared to the measured strain for the reference DEA shown in Figure \ref{subfig:ref_DEA}. The actuation strain data gathered is shown in Figure \ref{fig:ref_DEA_results}. The range given was derived from substituting the range of $K$ and $\varepsilon_r$ parameter values found in previous similar works\cite{Liu2018, Helal2018, Huang2023} into Equations \ref{eqn:DEA_stress} - \ref{eqn:DEA_strain_z_r}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width = 0.8\textwidth]{Figures/CB_vs_theory_range_vs_fitv2.png} % TODO: determine a range of K and perm_r values that put our experiment within the range given.
@@ -327,11 +328,7 @@ To further enhance the actuation strain, $S_{z_{de}}$ of the DEA-EIT device, the
 
 \subsection{EIT Validation}
 \label{subsec:eit_validation}
-Validation of the EIT sensing method on the compliant electrodes was carried out for the three different electrode thickness, $z_{ce}$, values
-
-TODO:NEED TO RE-RUN EXPERIMENTAL RESULTS FOR $E_COM$ AND SF. These  may not be correct here?
-
-to see the differences the thickness may have on the pressure mapping characteristics' spatial performance. Figure \ref{fig:EIT_thickness_compare} exemplifies the difference in the conductance reconstructions for a load.
+Validation of the EIT sensing method on the compliant electrodes was carried out for the three different electrode thickness, $z_{ce}$, values to see the differences the thickness may have on the pressure mapping characteristics' spatial performance. Figure \ref{fig:EIT_thickness_compare} exemplifies the difference in the conductance reconstructions for a load.
 \begin{figure}[H]
 	\centering
 	\subfloat[$z_{ce}$ = 0.5 mm]{\includegraphics[width=5cm]{Figures/DEA.5_CBSR_8p_1_9push_15strain_120s_1mA_2_frame149.jpg}\label{subfig:DEA.5_strain15_L1}}
@@ -345,7 +342,7 @@ to see the differences the thickness may have on the pressure mapping characteri
 	\caption{A 15\% strain compression at point $L_1$ applied to 100mm diameter compliant DEA electrodes of 3 compliant electrode thicknesses.}
 	\label{fig:EIT_thickness_compare}
 \end{figure}
-A significant factor for determining the minimum pressure able to be detected is governed by the noise floor experienced when the domain is in a steady relaxed state. A metric used to quantify the noise floor is the noise figure, $N\!F$, which is commonly used in other applications of EIT\cite{Adler2009, Ellingham2024} . To quantify the domain homogeneity the inter-electrode resistance (of adjacent electrodes) data was gathered alongside the NF, as shown in Table \ref{tab:NF_vals}.
+A significant factor for determining the minimum pressure able to be detected is governed by the noise floor experienced when the domain is in a steady relaxed state. A metric used to quantify the noise floor is the noise figure, $N\!F$, which is commonly used in other applications of EIT\cite{Adler2009, Ellingham2024} . To quantify the domain homogeneity the inter-electrode resistance (i.e. between adjacent electrodes) and respective standard deviation data for each sample was gathered alongside the NF, as shown in Table \ref{tab:NF_vals}.
 \begin{table}[H]
 	\centering
 	\caption{Noise factor and mean inter-electrode resistance, $\Bar{R}_{int}$, for each thickness of compliant DEA electrode used for EIT}
@@ -387,7 +384,7 @@ To quantify the localisation performance of the loads applied to the DEA complia
 	\caption{Vectorised $E_{CoM}$ for the nine load experiment using the same indentation depth as Figure \ref{fig:polar_ecoms_ce} for each $z_{ce}$ value tested on the DEA-EIT integrated samples.}
 	\label{fig:polar_ecoms_dea}
 \end{figure}
-Mean values for the spatial performance metrics, $E_{CoM}$ and $S\!F$, were gathered for each strain, each thickness, and at each load point. Spatial performance metric means from one nine load experiment are given in Table \ref{tab:spatial_metrics}. The $S\!F$ values are found using Equation \ref{eqn:sf}.
+Mean values for the spatial performance metrics, $E_{CoM}$ and $S\!F$, were gathered for each strain, each thickness, and at each load point. Spatial performance metric means from two nine load experiment are given in Tables \ref{tab:spatial_metrics_ce} and \ref{tab:spatial_metrics_dea}. The $S\!F$ values are found using Equation \ref{eqn:sf}.
 
 \begin{table}[H]
 	\centering
@@ -445,11 +442,11 @@ Simultaneous actuation and pressure mapping has been performed when at a range o
 % Todo?: Re-do experiments and measure the actuation strain at the same time as the DEA excitation?
 \begin{figure}[H]
 	\centering
-	\subfloat[$V_{\mathrm{DEA}} = 1 kV$]{\includegraphics[width=0.30\linewidth]{Figures/DEA_EIT_1mm_manual_3load_1kV_1_frame14_crop.png}\label{subfig:DEA-EIT_steady_state_loads_1kV}}
+	\subfloat[$V_{\mathrm{DEA}} = 1 kV$]{\includegraphics[width=5cm]{Figures/DEA_EIT_1mm_manual_3load_1kV_1_frame14_crop.png}\label{subfig:DEA-EIT_steady_state_loads_1kV}}
 	\hspace{0.1cm}
-	\subfloat[$V_{\mathrm{DEA}} = 4 kV$]{\includegraphics[width=0.30\linewidth]{Figures/DEA_EIT_1mm_manual_3load_4kV_1_frame18_crop.png}\label{subfig:DEA-EIT_steady_state_loads_1kV}}
+	\subfloat[$V_{\mathrm{DEA}} = 4 kV$]{\includegraphics[width=5cm]{Figures/DEA_EIT_1mm_manual_3load_4kV_1_frame18_crop.png}\label{subfig:DEA-EIT_steady_state_loads_1kV}}
 	\hspace{0.1cm}
-	\subfloat[$V_{\mathrm{DEA}} = 7 kV$]{\includegraphics[width=0.34\linewidth]{Figures/DEA_EIT_1mm_manual_3load_7kV_1_frame17.png}\label{subfig:DEA-EIT_steady_state_loads_1kV}}
+	\subfloat[$V_{\mathrm{DEA}} = 7 kV$]{\includegraphics[width=6cm]{Figures/DEA_EIT_1mm_manual_3load_7kV_1_frame17.png}\label{subfig:DEA-EIT_steady_state_loads_1kV}}
 	\hspace{0.1cm}
 	
 	% \includegraphics[width=0.3\linewidth]{Figures/DEA_EIT_1mm_manual_3load_1kV_1_frame14_crop.png}
@@ -472,7 +469,7 @@ The next set of experiments observed the transient effects of a high voltage ste
 	\caption{An unloaded DEA with a captured during various voltage, $V_{DEA}$, step input artifacts.}
 	\label{fig:DEA-EIT_transients}
 \end{figure}
-Note that the scale on Figure \ref{fig:DEA-EIT_transients} is an order of magnitude smaller than that seen in Figure \ref{fig:DEA-EIT_steady_state_loads} to investigate the transient artifact pattern observed.
+Note that the scale on Figure \ref{fig:DEA-EIT_transients} contains two scales and one is an order of magnitude smaller than that seen in Figure \ref{fig:DEA-EIT_steady_state_loads} to investigate the transient artifact pattern observed.
 % Todo: get the switching times of the (1) DEA and (2) EIT MUX.
 
 \section{DISCUSSION}
@@ -525,7 +522,7 @@ The DEA-EIT device constructed in this work has been shown to complete simultane
 
 There was no significant noise generated due to an active DEA electrode at a steady state voltage, however this may vary with rapid large loads which change the DEA capacitance and cause a large transient on the grounded EIT compliant electrode. The pressure mapping for 1 - 7 kV scenarios is shown in Figure \ref{fig:DEA-EIT_steady_state_loads}. 
 
-The transients induced by the large sudden voltage changes are shown in Figure \ref{fig:DEA-EIT_transients}. The crescent pattern seen in the image is due to an increase in the grounded DEA electrode voltage at a certain point during the data collection sequence of the EIT voltages. The 7 kV voltage step input artifact was not recorded likely due to aliasing. 
+The transients induced by the large sudden voltage changes are shown in Figure \ref{fig:DEA-EIT_transients}. The crescent pattern seen in the image is due to an increase in the grounded DEA electrode voltage at a certain point during the data collection sequence of the EIT voltages. Not all transient events were captured, which was due to aliasing. A lower EIT sample frequency and higher resolution `DEA transient'-`EIT data capture' synchronisation would aid in capturing these events more accurately.
 % Todo: check if the transient pattern is due the ground electrode of the DEA or the EIT pattern electrodes... Check the raw data to see a difference between voltage data between frames.
 
 This technology show promise and can be further optimised for improved actuation and pressure mapping capability. A system architecture integrating both DEA and EIT-based pressure mapping functionality into a single device is done using the components in Figure \ref{fig:DEA-EIT_protective_ckt}. 
@@ -551,125 +548,13 @@ During a compressive load event to an actuated DEA-EIT device, the DE thickness 
 
 Feedback from the EIT pressure sensor could be used to decrease the actuation voltage if the device receives a strain that is likely to cause a dielectric breakdown.
 
-An un-explored research avenue is the structural health monitoring of DEAs using EIT. It may also be possible to alter the system given in this work to map the location and size of any dielectric breakdown using EIT concurrently on each compliant electrode. This would allow for more technology to be developed around the self-healing of DEAs. 
+An un-explored research avenue is the structural health monitoring of DEAs using EIT. It may also be possible to alter the system given in this work to map the location and size of any dielectric breakdown using EIT concurrently on each compliant electrode. This would allow for more technology to be developed around the self-healing of DEAs.
 
 
 
-\section{Conclusion}
-
+\section{CONCLUSION}
 This work demonstrates the effective integration of Electrical Impedance Tomography (EIT) with Dielectric Elastomer Actuators (DEAs) for simultaneous pressure mapping and actuation. The findings indicate that the use of piezoresistive nanoparticle elastomer composites (PNEC) allows for the emulation of pressure sensing akin to human mechanoreceptors, enhancing the sensitivity and responsiveness of DEAs in various applications. Effective bulk moduli values were found to quantify the mechanical actuation impedance of each compliant electrode thickness used, ranging from 334 to 966 kPa. Force mapping was successful with decreasing degrees of mapping error with increasing compliant DEA electrode thickness. The best mean centre-of-mass error of 1.66 $\pm$ 0.17 mm was found for the thickest, 2 mm, compliant DEA electrode used.
 
 The work highlights the importance of electrode thickness on the performance of pressure mapping, revealing that thicker electrodes may improve the detection of pressure changes due to their lower noise factors. The results suggest that the EIT method can provide valuable feedback for controlling actuation, potentially preventing issues such as dielectric breakdown by adjusting voltage levels in response to detected strain.
 
 Moreover, the research opens avenues for structural health monitoring of DEAs, enabling the mapping of dielectric breakdown locations and sizes, which could lead to advancements in self-healing technologies. Overall, the integration of EIT with DEAs not only enhances their functionality but also broadens their applicability in fields such as robotics, soft actuators, and wearable technology, paving the way for future innovations in smart materials and systems. 
-
-
-
-Re-do conference conclusion: This work set out to complete force mapping on the compliant electrode of a DEA using EIT and determine any limitations in the process. Three thicknesses of DEA with attached electrodes successfully showed actuation behaviour. 
-%    \subsection{Unintended Dielectric Elastomer Power Generation}
-%    \label{sec:Unintended Dielectric Elastomer Power Generation}
-%     A dielectric elastomer generator may be incidentally created during simultaneous DEA-EIT operation. This effect will take place when the DEA undergoes sufficiently large strains and switching at specific times. The process is shown in Figure \ref{fig:dea_eit_deg}.
-%    \begin{figure}[H]
-	% 	\centering
-	% 	\includegraphics[width = 0.5\textwidth]{Figures/DEA-EIT_DEG_ckt_simple.png}
-	%        \vspace{0.2cm}
-	% 	\caption{Dielectric elastomer generator scenario with the DEA-EIT system}
-	% 	\label{fig:dea_eit_deg}
-	% \end{figure}
-
-%    \textbf{State A}: the DEA has capacitance of $C_i$ and is deformation free.
-
-%    \textbf{State B}: the DEA is compressed deformed with a localised change(s) in thickness, $\Delta z$, of the DEA, changing the total DEA capacitance to $C_{ii}$
-
-%    \textbf{State C}: the DEA electrodes are charged with an applied voltage source, $V_i$. The total charge on each electrode is $Q$.
-
-%    \textbf{State D}: The DEA is unloaded and returns to its original state with capacitance, $C_i$, while maintaining the same charge $Q$ causing the voltage to increase to $V_{ii}$.
-
-%    \textbf{State A*}: The DEA is discharged into the energy harvesting circuit returning the charge and voltage values across the DEA to zero, returning to State A state. 
-
-%    >> Double check the physics is correct for the above and below >>
-
-%    \begin{equation}
-	%        Q = C \times V
-	%    \end{equation}
-
-%    The energy transfer between states is as follows, 
-
-%    $\mathbf{U_{A\longrightarrow B}}$: Work is done by the load applicator when a compressive load deforms the DEA. Elastic potential energy is stored in the DEA. Concurrently the reduction in DE thickness increases the capacitance.
-
-%    $\mathbf{U_{B\longrightarrow C}}$: Work is done by the electric field created by a voltage source across the DEA charging the DEA electrodes?
-
-%    $\mathbf{U_{C\longrightarrow D}}$: Work is done by the DEA when the compressive load is released. The capacitance of the DEA decreases, but the charge value remains constant?
-
-%    $\mathbf{U_{D\longrightarrow A}}$: Work is done by the DEA electric field when the DEA is connected to an energy harvesting circuit and the electrodes discharge?
-
-%    The unintended power generation discussed in the above section may cause issues with the pressure measurement system if switching significantly high DEA voltage source is done during a significant DEA-EIT surface loading event. A significant loading event is one which changes the capacitance of the DEA such that a voltage is generated by the unintended DEG which is high enough to cause potential harm to the EIT driving circuitry. 
-
-%    An example scenario the extra voltage generated is given. Given that the values from Figure \ref{fig:dea_eit_deg} are, $C_i = 10 nF$, $C_{ii} = 15 nF$, and $Q = 10 \mu C$. We get voltage at stage C, $V_C = \frac{Q}{C_{ii}} = 666.67 V$, and then at stage D, $V_D = \frac{Q}{C_{i}} = 1000 V$. This gives a voltage change, $\Delta V = +333.33 V$. Although $\Delta V$ is not directly connected to the EIT drive circuitry, anytime there is a transient event from the switching of the DEA a transient voltage is seen on the multiplexer pins of the EIT system. The multiplexer pins used in this case are limited to between the power rails, i.e. $\pm$22 V \cite{VishayPG2018}. A specified multiplexer further testing would need to be completed on such multiplexer inputs to determine the device's tolerance against transient voltage spikes, as CMOS latch-up may occur \cite{Redmond2001}.
-
-%    Such a voltage generation case may be avoided in an automated system by detecting that a pressure event has occurred and preventing the excitation of the DEA or limiting the charge accumulation on each plate of the capacitor.
-
-%    % % Run a sensitivity analysis on a DEA-EIT model iterating through a range of values for strain, strain area, voltage, DE thickness.
-
-%    \subsection{DEA-EIT Power Generation Analysis}
-%    To determine what compressive loads may give significant capacitance changes that could lead to significant power generation / voltage amplification across the excited DEA electrodes, FEA modelling of a DEA undergoing compressive pressure loading events have been completed. 
-
-%    Two compressive loading cases have been explored with different areas and a range of forces. These cases have been completed to analyse some possible scenarios in terms of capacitance change as shown in Figure \ref{fig:FEM_DEA-EIT_loading}. These capacitance values give an indication of the worst case voltage spikes the EIT system would encounter as described in Section \ref{sec:Unintended Dielectric Elastomer Power Generation}. 
-
-%    In literature, the term DEG typically implies a focus on the generation of electrical energy. Prior research has predominantly addressed DEGs by examining global strain variations across the DEG domain, wherein the entire dielectric elastomer thickness is uniformly reduced \cite{Carpi2015, Savage2012, Koh2009}. In contrast, this work investigates a scenario where the dielectric elastomer thickness is locally reduced in specific areas. This localised reduction can be detected through the integrated functionality of EIT in the DEA electrode as discussed in Section \ref{subsubsec:eit-based_pressure_mapping}.
-
-%    % insert picture of different compression cases here from PrePoMax or just the Solidworks FEM equivalent. Small, large, and multitouch.
-%    \begin{figure}[H]
-	%        \centering
-	%        \includegraphics[width=0.45\linewidth]{Figures/d13mm_load_case_comsol2d.png}
-	%        \includegraphics[width=0.45\linewidth]{Figures/d50mm_load_case_comsol2d.png}
-	%        % \includegraphics[width=0.3\linewidth]{multi area touch.png}
-	%        \caption{Loading cases for analysis of capacitance change. Left: 13 mm diameter load. Right: 50 mm diameter load.}
-	%        \label{fig:DEA-EIT_loading}
-	%    \end{figure}
-
-%    \begin{figure}[H]
-	%        \centering
-	%        \includegraphics[width=0.8\linewidth]{Figures/d13mm_20N_load_ESTRN_max_FEM.png}
-	%        \caption{Strain mesh of 13 mm diameter 20 N load case FEM model}
-	%        \label{fig:FEM_DEA-EIT_loading}
-	%    \end{figure}
-%    \begin{figure}[H]
-	%        \centering
-	%        \includegraphics[width=0.8\linewidth]{Figures/d50mm_load_240N.png}
-	%        \caption{Electric field simulation of 50 mm diameter 240 N load case}
-	%        \label{fig:FEM_DEA-EIT_cap}
-	%    \end{figure}
-
-%    \begin{table}[H]
-	%    \centering
-	%    \label{tab:1}
-	%    \caption{blah}
-	%    \vspace{0.3cm}
-	%        \begin{tabular}{lllll}
-		%        \textbf{Load {[}N{]}} & \textbf{ESTRN} & \textbf{C {[}pF{]}} & \textbf{dC {[}pF{]}} & \textbf{$\Delta V_DE$ {[}V{]}} \\ \hline
-		%        0                     & 0              & 588.86              & 0                    & 0                       \\
-		%        2.5                   & 7.55E-02       & 589.69              & 0.83                 & 7.037596                \\
-		%        5                     & 1.51E-01       & 590.73              & 1.87                 & 15.82787                \\
-		%        10                    & 3.02E-01       & 593.4               & 4.54                 & 38.25413                \\
-		%        20                    & 6.04E-01       & 605.53              & 16.67                & 137.648                 \\
-		%        30                    & 9.06E-01       & 688.18              & 99.32                & 721.6135               
-		%        \end{tabular}
-	%    \end{table}
-%    \begin{table}[H]
-	%    \centering
-	%    \label{tab:1}
-	%    \caption{blah blah}
-	%    \vspace{0.3cm}
-	%        \begin{tabular}{lllll}
-		%        \textbf{Load {[}N{]}} & \textbf{ESTRN} & \textbf{C {[}pF{]}}      & \textbf{dC {[}pF{]}} & \textbf{$\Delta V_DE$ {[}V{]}} \\ \hline
-		%        0                     & 0              & 588.86                   & 0                    & 0                       \\
-		%        5                     & 9.94E-03       & mesh   error - too fine & \#VALUE!             & \#VALUE!                \\
-		%        10                    & 1.99E-02       & 591.9                    & 3.04                 & 25.68001                \\
-		%        20                    & 3.98E-02       & 595                      & 6.14                 & 51.59664                \\
-		%        30                    & 5.97E-02       & 598.33                   & 9.47                 & 79.13693                \\
-		%        60                    & 1.19E-01       & 609.24                   & 20.38                & 167.2576                \\
-		%        120                   & 2.39E-01       & 635.86                   & 47                   & 369.5782                \\
-		%        240                   & 4.77E-01       & 727.1                    & 138.24               & 950.6258               
-		%        \end{tabular}
-	%    \end{table}

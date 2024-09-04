@@ -1,14 +1,11 @@
 \chapter{\chapviiname}
 \label{chapter7}
+\section*{ABSTRACT}
+	This study investigates the phenomenon of unintentional power generation in Dielectric Elastomer Actuator (DEA) devices integrated with Electrical Impedance Tomography (EIT) for pressure mapping applications. While DEAs are primarily designed for actuation, they can inadvertently function as Dielectric Elastomer Generators (DEGs) due to localized mechanical strain during operation. The research explores the mechanisms behind this unintended energy generation, focusing on the changes in capacitance that occur when the DEA is subjected to varying loads. Through experimental simulations, the study quantifies the energy produced, revealing that energy generation can range from 0.2 $\mu$J to 4 mJ depending on the load conditions. The findings highlight the dual functionality of DEAs, emphasizing the need for careful management of energy generation to prevent potential damage to connected circuitry. This work contributes to the understanding of DEA-EIT devices and their applications in soft robotics and energy harvesting, suggesting that while unintentional, the energy generated could be harnessed for practical use in various scenarios, including vehicular and foot traffic loads.
 
 
 
-\begin{abstract}
-	This study investigates the phenomenon of unintentional power generation in Dielectric Elastomer Actuator (DEA) devices integrated with Electrical Impedance Tomography (EIT) for pressure mapping applications. While DEAs are primarily designed for actuation, they can inadvertently function as Dielectric Elastomer Generators (DEGs) due to localized mechanical strain during operation. The research explores the mechanisms behind this unintended energy generation, focusing on the changes in capacitance that occur when the DEA is subjected to varying loads. Through experimental simulations, the study quantifies the energy produced, revealing that energy generation can range from 0.2 μJ to 4 mJ depending on the load conditions. The findings highlight the dual functionality of DEAs, emphasizing the need for careful management of energy generation to prevent potential damage to connected circuitry. This work contributes to the understanding of DEA-EIT devices and their applications in soft robotics and energy harvesting, suggesting that while unintentional, the energy generated could be harnessed for practical use in various scenarios, including vehicular and foot traffic loads.
-\end{abstract}
-
-
-	\section{INTRODUCTION} % 1.5 pages
+\section{INTRODUCTION} % 1.5 pages
 \label{sec:introduction}
 % Breifly discuss: the state of the art of DEGs, previous device created, and the intention of this chapter: To elucidate the operation of the DEA-EIT device specifically looking into it's potential function as a DEG.
 Dielectric Elastomer Actuators (DEAs) and Dielectric Elastomer Generators (DEGs) share a similar form whereby they both have compliant conductive electrodes either side of a dielectric elastomer (DE) membrane. However, DEGs represent a class of electromechanical devices that harness mechanical strain to generate electrical energy. DEAs and DEGs can often utilise the same soft electroactive area for actuation and power generation, but differ in the connected electronics. These devices exploit the properties of dielectric elastomers, which are soft, flexible materials capable of undergoing significant deformation. This deformation can be utilised to generate electrical power, making DEGs a promising technology for energy harvesting applications. However, DEGs can also arise as an unintended consequence of loading a DEA device.
@@ -27,6 +24,7 @@ This localised approach introduces a new dimension to DEG functionality, where s
 Before describing how a dielectric generator arises in DEA-EIT device, it is important to understand the function of a DEA-EIT device first as  described in detail in the previous chapter. A DEA-EIT device can use the same compliant electrodes and dielectric elastomer to function both as an electro-active actuator and pressure mapping sensor. The DEA function consists of applying a high voltage to a bottom electrode leaving the top electrode as the low voltage electrode which performs as the pressure mapping surface. The pressure mapping surface is piezoresistive and uses electrical impedance tomography to map any changes in resistance and hence any loads throughout the electrode surface. 
 \begin{figure}[H]
 	\centering
+	\hspace{1cm}
 	\includegraphics[width=0.9\linewidth]{Figures/DEA-EIT_architecture_v2.png}
 	\vspace{0.3cm}
 	\caption{Architecture of a DEA-EIT pressure mapping and actuator device with an exploded view of the DEA stack.}
@@ -37,7 +35,7 @@ A DEG may be incidentally be created during simultaneous DEA-EIT operation. This
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width = \textwidth]{Figures/DEA-EIT-DEG_sequence.png}
+	\includegraphics[width = \textwidth]{Figures/DEA-EIT-DEG_sequence_v2.png}
 	\vspace{0.2cm}
 	\caption{Dielectric elastomer generator scenario sequence with a localised compressive load.}
 	\label{fig:dea_eit_deg}
@@ -131,9 +129,12 @@ To determine how various localised loads deform the DEA-EIT device structure FEM
 %% Todo: Re-run in COMSOL? or re-run with three layers?
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\linewidth]{Figures/d13mm_20N_load_ESTRN_max_FEM.png}
-	\includegraphics[width=0.35\linewidth]{Figures/d13mm_20N_load_ESTRN_max_FEM_3d.png}
-	\caption{Strain mesh of 13 mm diameter 20 N load case FEM model. Left: Cross-section. Right: 3D view.}
+	% \includegraphics[width=0.6\linewidth]{Figures/d13mm_20N_load_ESTRN_max_FEM.png}
+	% \includegraphics[width=0.35\linewidth]{Figures/d13mm_20N_load_ESTRN_max_FEM_3d.png}
+	% \caption{Strain mesh of 13 mm diameter 20 N load case FEM model. Left: Cross-section. Right: 3D view.}
+	\includegraphics[width=0.7\linewidth]{Figures/d13mm_load_3d_disp.png}
+	\includegraphics[width=0.7\linewidth]{Figures/d13mm_load_zoom.png}
+	\caption{Deformed mesh plot of 13 mm diameter 20 N load case FEM model (x10 scale displacement). Top: 3D view. Bottom: Cross-section zoomed view.}
 	\label{fig:FEM_DEA-EIT_loading}
 \end{figure}
 
@@ -144,9 +145,8 @@ The deformed DEA-EIT structure causes the overall capacitance across the device 
 %% Todo: re-run with a higher voltage or having a logarithmic scale for electric field lines
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\linewidth]{Figures/d50mm_load_240N.png}
-	\includegraphics[width=0.35\linewidth]{Figures/d50mm_load_240N_3d.png}
-	\caption{Electric field simulation of 50 mm diameter 240 N load case. Left: Cross-section. Right: 3D view.}
+	\includegraphics[width=\linewidth]{Figures/d50mm_load_labelled_shoulder_zoom.png}
+	\caption{Electric field simulation of 50 mm diameter 240 N load case. With a zoomed section to show the electric field around the shoulder of the load cross-section. Volumetric arrows proportional to electric field.}
 	\label{fig:FEM_DEA-EIT_cap}
 \end{figure}
 
@@ -160,8 +160,8 @@ To show the scale at which energy is generated an example scenario for the extra
 %% Todo: Add energy generated column for each case
 \begin{table}[H]
 	\centering
-	\label{tab:volt-energy-gen-d13mm}
 	\caption{Voltage and energy generation results calculated from FEM values for the 13 mm diameter load cases.}
+	\label{tab:volt-energy-gen-d13mm}
 	\vspace{0.3cm}
 	\begin{tabular}{llllll}
 		\textbf{Load {[}N{]}} & \textbf{ESTRN} & \textbf{C {[}pF{]}} & \textbf{dC {[}pF{]}} & \textbf{dV\_DE {[}V{]}} & \textbf{dU {[}uJ{]}} \\ \hline
@@ -178,13 +178,13 @@ To show the scale at which energy is generated an example scenario for the extra
 %% Todo: Add energy generated column for each case
 \begin{table}[H]
 	\centering
-	\label{tab:volt-energy-gen-50m}
 	\caption{Voltage and energy generation results calculated from FEM values for the 50 mm diameter load cases.}
+	\label{tab:volt-energy-gen-50mm}
 	\vspace{0.3cm}
 	\begin{tabular}{llllll}
 		\textbf{Load {[}N{]}} & \textbf{ESTRN} & \textbf{C {[}pF{]}} & \textbf{dC {[}pF{]}} & \textbf{dV\_DE {[}V{]}} & \textbf{dU {[}uJ{]}} \\ \hline
 		0.00 & 0.00 & 588.86 & 0.00 & 0.00 & 0.00 \\
-		5.00 & 0.01 & mesh   error - too fine & \#VALUE! & \#VALUE! & \#VALUE! \\
+		% 5.00 & 0.01 & mesh   error - too fine & \#VALUE! & \#VALUE! & \#VALUE! \\
 		10.00 & 0.02 & 591.90 & 3.04 & 25.68 & 0.20 \\
 		20.00 & 0.04 & 595.00 & 6.14 & 51.60 & 0.79 \\
 		30.00 & 0.06 & 598.33 & 9.47 & 79.14 & 1.87 \\
@@ -204,7 +204,7 @@ Such energy generation case may be avoided in a system by detecting that a press
 
 An example scenario of voltage and energy generation was given in Section \ref{subsec:Voltage and Energy Generation}. This voltage change transient is connected to the EIT multiplexer through the capacitance of the DEA, as shown by Equation \ref{eqn:eqn:mux_voltage}. The multiplexer pins used in this case are limited to between the power rails, i.e. $\pm$22 V \cite{VishayPG2018}. In the case described above the minute change in capacitance of the DEA is calculated to generate 93.75 $\mu$J of energy.
 
-To determine the device's tolerance against transient voltage spikes, the EIT multiplexer limits would need to be characterised. Otherwise, in the case of an input pin overvoltage CMOS latch-up may occur \cite{Redmond2001} . Typical ESD standards \cite{IEC2008} state that electronic devices must be tolerant to 200 pF capacitance charged to $\pm$15 kV, giving an energy dissipation of 22.5 mJ. This is several orders of magnitude larger than the energy generated in the simulation results shown in Tables \ref{tab:volt-energy-gen-d13mm} and \ref{tab:volt-energy-gen-50m}. However, for different configurations of DEA device this energy generation may become significant.
+To determine the device's tolerance against transient voltage spikes, the EIT multiplexer limits would need to be characterised. Otherwise, in the case of an input pin overvoltage CMOS latch-up may occur \cite{Redmond2001} . Typical ESD standards \cite{IEC2008} state that electronic devices must be tolerant to 200 pF capacitance charged to $\pm$15 kV, giving an energy dissipation of 22.5 mJ. This is several orders of magnitude larger than the energy generated in the simulation results shown in Tables \ref{tab:volt-energy-gen-d13mm} and \ref{tab:volt-energy-gen-50mm}. However, for different configurations of DEA device this energy generation may become significant.
 %% justify above statement with references. I.e. how much energy is in a standardised maximum ESD discharge. Typical ESD devices have a 100-200 pF capacitance charged up to 8 - 15 kV voltage. 
 
 The Poisson's ratio of the DE and the compliant CBSR electrodes differs due to viscoelasticity and micro-porosity seen in this material as shown by the SEM images in Figure \ref{}, Chapter \ref{}. To determine the Poisson's ratio more accurately for the composite material, empirical data should be gathered as there is limited data for similar composite material with microporosity.  % To do: Add more references showing the decrease in Poisson's ratio due to filler and microporosity here??
