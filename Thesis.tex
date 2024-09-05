@@ -24,14 +24,16 @@
 \def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
 \let\endchangemargin=\endlist
 
+\def \thesistitle{Sensing and Actuation in Monolithic Electroactive Elastomeric Bodies}
+% Other thesis title ideas:
+% Soft Electroactive Elastomeric Bodies that Can Sense and Contract
+% Conductive Particle Elastomers as Artificial Skins and Actuators
+
 %% ----------------------------------------------------------------
 \begin{document}
 	\frontmatter      % Begin Roman style (i, ii, iii, iv...) page numbering
 	% Set up the Title Page
-	% Thesis title ideas:
-	% \title{Sensing and Actuation in  Monolithic Electroactive  Elastomeric Bodies}
-	% Conductive Particle Elastomers as Artificial Skins and Actuators
-	\title  {Soft Electroactive Elastomeric Bodies that Can Sense and Contract}
+	\title  {\thesistitle}
 	\authors  {\texorpdfstring
 		{\href{ellingham.richie@gmail.com}{Richard James Morrin Ellingham}}
 		{Richard James Morrin Ellingham}
@@ -52,7 +54,7 @@
 	% Declaration Page required for the Thesis, your institution may give you a different text to place here
 	\Declaration{
 		\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
-		I, AUTHOR NAME, declare that this thesis titled, `THESIS TITLE' and the work presented in it are my own. I confirm that:
+		I, AUTHOR NAME, declare that this thesis titled, `\thesistitle' and the work presented in it are my own. I confirm that:
 		\begin{itemize}
 			\item[\tiny{$\blacksquare$}] This work was done wholly or mainly while in candidature for a research degree at this University.
 			\item[\tiny{$\blacksquare$}] Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
@@ -83,22 +85,37 @@
 	\end{flushright}
 	\vfill\vfill\vfill\vfill\vfill\vfill\null
 	\clearpage  % Funny Quote page ended, start a new page
+	\setstretch{1.0}
 	%% ----------------------------------------------------------------
 	% The Abstract Page
 	\addtotoc{Abstract}  % Add the "Abstract" page entry to the Contents
-	\abstract{
-		\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
-		The Thesis Abstract is written here (and usually kept to just this page). The page is kept centered vertically so can expand into the blank space above the title too\ldots
+	\abstract{\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+		% 
+		Some of the world's most advanced technology is rigid due to various factors such as; manufacturability, miniaturisability, physical linearity, and more ideal physics in general. In parallel industries is also looking to use automation to improve and replace laborious tasks whether they be domestic, commercial, or industrially related tasks. Their is a growing need for new innovations in technology to utilise the soft robotic solutions that mimic biological solutions seen in nature. This thesis is part of many to improve an understanding of the electroactive polymer subset of soft robotics and the limitations of specific implementations of artificial skin and artificial muscle technologies.
+		
+		This thesis explores the integration of Electrical Impedance Tomography (EIT) with advanced soft sensing technologies, focusing on carbon black silicone rubber (CBSR) elastomer composites and Dielectric Elastomer Actuators (DEAs) to enhance pressure mapping, strain sensing, and actuation.
+		
+		CBSR elastomer composites, noted for their high stretchability and biocompatibility, were investigated to understand their resistance relaxation behavior. This research contributes to optimizing the design of flexible dynamic strain sensors by modeling the response of resistance to transient strain inputs.
+		
+		The study also developed an EIT-based pressure mapping system using a silicone CB nanoparticle sensing domain that mimics human skin. This system was evaluated for its spatial and temporal resolution, showing potential for creating artificial pressure-sensitive skin with practical applications.
+		
+		Furthermore, the integration of EIT with DEAs was examined to improve the mapping of compressive forces across electrode surfaces. Despite some trade-offs in accuracy due to electrode compliance, this approach offers promising advancements for applications requiring precise actuation and pressure mapping.
+		
+		Additionally, the research uncovered unintentional power generation in DEAs, which could function as Dielectric Elastomer Generators (DEGs) due to mechanical strain. This finding highlights the dual functionality of DEAs and suggests opportunities for energy harvesting applications.
+		
+		Finally, a portable, low-cost EIT-based hardware system for pressure mapping was introduced. This system enables comprehensive characterization of various sensing domains and supports advancements in EIT-based soft sensor technology, with implications for biomedical devices, robotics, and energy harvesting.
+		
+		Overall, this research advances the field of soft sensors by integrating EIT with innovative materials and technologies, providing new insights and applications in dynamic sensing and actuation.
 	}
 	\clearpage  % Abstract ended, start a new page
 	%% ----------------------------------------------------------------
-	\setstretch{1.5}  % Reset the line-spacing to 1.3 for body text (if it has changed)
+	\setstretch{1.3}  % Reset the line-spacing to 1.3 for body text (if it has changed)
 	% The Acknowledgements page, for thanking everyone
 	\acknowledgements{
 		\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 		People to thank:
 		\begin{itemize}
-			\item UC Bioengineering office - Lung lads, Lung Ladies, IPC, Hamish for infinite beers.
+			\item UC Bioengineering office - Lung lads, Lung Ladies, IPC, Hamish for infinite beers, Nic's abstract art.
 			\item Geoff Chase - for a constant stream of stories and advice always within earshot.
 			\item Other office - for ping pong madness, bikkies and fruit.
 			\item Supervisor Tim - for time, money, lack of time, and support on a project that slightly diverged from his research till the end.
@@ -129,53 +146,67 @@
 	\setstretch{1.5}  % Set the line spacing to 1.5, this makes the following tables easier to read
 	\clearpage  % Start a new page
 	\lhead{\emph{Abbreviations}}  % Set the left side page header to "Abbreviations"
+	\vspace{-0.5cm}
 	\listofsymbols{ll}  % Include a list of Abbreviations (a table of two columns)
 	{
 		% \textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
-		\textbf{EIT} & \textbf{E}lectrical \textbf{I}mpedance \textbf{T}omography \\
-		\textbf{DEA} & \textbf{D}ielectric \textbf{E}lastomer \textbf{A}ctuator \\
-		\textbf{FEM} & \textbf{F}inite \textbf{E}lement \textbf{M}odelling \\
-		\textbf{FEA} & \textbf{F}inite \textbf{E}lement \textbf{A}nalysis \\
-		\textbf{PNEC} & \textbf{P}iezoresistive \textbf{N}anoparticle \textbf{E}lastomer \textbf{C}omposite\\
+		\textbf{ADC} & \textbf{A}nalog-\textbf{t}o-\textbf{D}igital \textbf{C}onverter \\
+		\textbf{CAD} & \textbf{C}omputer \textbf{A}ided \textbf{D}esign \\
 		\textbf{CB} & \textbf{C}arbon \textbf{B}lack \\
-		\textbf{SR} & \textbf{S}ilicone \textbf{R}ubber \\
-		\textbf{PDMS} & \textbf{P}oly\textbf{d}i\textbf{m}ethyl\textbf{s}iloxane (AKA silicone)\\
-		\textbf{DE} & \textbf{D}ielectric \textbf{E}lastomer \\
+		\textbf{CFA} & \textbf{C}artesian \textbf{F}orce \textbf{A}pplicator \\
 		\textbf{CE} & \textbf{C}ompliant \textbf{E}electrode \\
 		\textbf{CoM} & \textbf{C}enter of \textbf{M}ass \\
+		\textbf{DE} & \textbf{D}ielectric \textbf{E}lastomer \\
+		\textbf{DEA} & \textbf{D}ielectric \textbf{E}lastomer \textbf{A}ctuator \\
+		\textbf{DEG} & \textbf{D}ielectric \textbf{E}lastomer \textbf{G}enerator \\
+		\textbf{DUT} & \textbf{D}omain \textbf{U}nder \textbf{T}est \\
+		\textbf{EIT} & \textbf{E}lectrical \textbf{I}mpedance \textbf{T}omography \\
+		\textbf{ERT} & \textbf{E}lectrical \textbf{R}esistance \textbf{T}omography \\
+		\textbf{FEA} & \textbf{F}inite \textbf{E}lement \textbf{A}nalysis \\
+		\textbf{FEM} & \textbf{F}inite \textbf{E}lement \textbf{M}odelling \\
+		\textbf{FPC} & \textbf{F}lexible \textbf{P}rinted \textbf{C}ircuit \\
+		\textbf{IDF} & \textbf{I}oT \textbf{D}evelopment \textbf{F}ramework \\
+		\textbf{MUX} & \textbf{M}ultiplexer \\
 		\textbf{PCB} & \textbf{P}rinted \textbf{C}ircuit \textbf{B}oard \\
 		\textbf{PCBA} & \textbf{P}rinted \textbf{C}ircuit \textbf{B}oard \textbf{A}ssembly\\
-		\textbf{MUX} & \textbf{M}ultiplexer \\
-		\textbf{CFA} & \textbf{C}artesian \textbf{F}orce \textbf{A}pplicator \\
-		\textbf{ERT} & \textbf{E}lectrical \textbf{R}esistance \textbf{T}omography \\
-		\textbf{CAD} & \textbf{C}omputer \textbf{A}ided \textbf{D}esign \\
+		\textbf{PDMS} & \textbf{P}oly\textbf{d}i\textbf{m}ethyl\textbf{s}iloxane (AKA silicone)\\
+		\textbf{PNEC} & \textbf{P}iezoresistive \textbf{N}anoparticle \textbf{E}lastomer \textbf{C}omposite\\
+		\textbf{SMU} & \textbf{S}ource \textbf{M}easure \textbf{U}nit \\
 		\textbf{SMD} & \textbf{S}urface-\textbf{M}ount \textbf{D}evice \\
+		\textbf{SR} & \textbf{S}ilicone \textbf{R}ubber \\
 		\textbf{THT} & \textbf{T}hrough-\textbf{H}ole \textbf{T}echnology \\
+
 	}
 	%% ----------------------------------------------------------------
-	\clearpage  % Start a new page
-	\lhead{\emph{Physical Constants}}  % Set the left side page header to "Physical Constants"
-	\listofconstants{lrcl}  % Include a list of Physical Constants (a four column table)
-	{
-		% Constant Name & Symbol & = & Constant Value (with units) \\
-		Speed of Light & $c$ & $=$ & $2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$ (exact)\\
-	}
-	%% ----------------------------------------------------------------
+	
 	\clearpage  %Start a new page
 	\lhead{\emph{Nomenclature}}  % Set the left side page header to "Symbols"
-	\listofnomenclature{ll}  % Include a list of Symbols (a three column table)
+	\listofnomenclature{lll}  % Include a list of Symbols (a three column table)
 	{
 		% symbol & name & unit \\
-		Sensels & A single sensor element of an array of sensor \\
-		$F$ & force  \\
-		$add$ & here... \\
+		$A$ & Area & [m$^2$] \\
+		$C$ & Capacitance & [F] \\
+		$\epsilon$ & Permittivity & [Dimensionless] \\
+		$K$ & Bulk Modulus & [Pa] \\
+		$\nu$ & Poisson’s Ratio & [Dimensionless] \\
+		$Q$ & Electrical Charge & [C] \\
+		$U_E$ & Electrical Potential Energy (C) & [J] \\
+		$U_{\epsilon}$ & Elastic Potential Energy & [J] \\
+		$R$ & Resistance & [$\Omega$] \\
+		$\sigma$ & Stress & [Pa] \\
+		$S$ & Strain & [Dimensionless] \\
+		$V$ & Voltage & [V] \\
+		$Y$ & Young's Modulus & [Pa] \\
+		$z$ & Thickness & [m] \\
+
+		
 	}
 	%% ----------------------------------------------------------------
 	% End of the pre-able, contents and lists of things
 	% Begin the Dedication page
 	\setstretch{1.0}  % Return the line spacing back
 	\pagestyle{empty}  % Page style needs to be empty for this page
-	\dedicatory{Dedicated to baked beans in all their glory\ldots}
+	\dedicatory{Dedicated to tinned baked beans in all their glory\ldots}
 	\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
 	%% ----------------------------------------------------------------
 	\mainmatter	  % Begin normal, numeric (1,2,3...) page numbering
@@ -184,29 +215,29 @@
 	% Just uncomment the lines as you write the chapters
 	\lhead{\emph{\chapiname}}
 	\import{Chapters/}{Chapter1.tex} % Introduction
-	\lhead{\emph{\chapiiname}}
-	\import{Chapters/}{Chapter2.tex} % Literature Review
-	\lhead{\emph{\chapiiiname}}
-	\import{Chapters/}{Chapter3.tex} % CBSR behaviour
-	\lhead{\emph{\chapivname}}
-	\import{Chapters/}{Chapter4.tex} % Novel mixing for CBSR?
-	\lhead{\emph{\chapvname}}
-	\import{Chapters/}{Chapter5.tex} % Improved EIT-based sensor
-	\lhead{\emph{\chapviname}}
-	\import{Chapters/}{Chapter6.tex} % DEA-EIT
-	\lhead{\emph{\chapviiname}}
-	\import{Chapters/}{Chapter7.tex} % DEA-EIT an unintended DEG
-	\lhead{\emph{\chapviiiname}}
-	\import{Chapters/}{Chapter8.tex} % DEA-EIT hardware
+%	\lhead{\emph{\chapiiname}}
+%	\import{Chapters/}{Chapter2.tex} % Literature Review
+%	\lhead{\emph{\chapiiiname}}
+%	\import{Chapters/}{Chapter3.tex} % CBSR behaviour
+%	\lhead{\emph{\chapivname}}
+%	\import{Chapters/}{Chapter4.tex} % Novel mixing for CBSR?
+%	\lhead{\emph{\chapvname}}
+%	\import{Chapters/}{Chapter5.tex} % Improved EIT-based sensor
+%	\lhead{\emph{\chapviname}}
+%	\import{Chapters/}{Chapter6.tex} % DEA-EIT
+%	\lhead{\emph{\chapviiname}}
+%	\import{Chapters/}{Chapter7.tex} % DEA-EIT an unintended DEG
+%	\lhead{\emph{\chapviiiname}}
+%	\import{Chapters/}{Chapter8.tex} % DEA-EIT hardware
 	\lhead{\emph{\chapixname}}
 	\import{Chapters/}{Chapter9.tex} % DEA-EIT capacitive modelling??
-	\lhead{\emph{\chapxname}}
-	\import{Chapters/}{Chapter10.tex} % The Biomimmetic re-Evolution
+%	\lhead{\emph{\chapxname}}
+%	\import{Chapters/}{Chapter10.tex} % The Biomimmetic re-Evolution
 	%% ----------------------------------------------------------------
 	% Now begin the Appendices, including them as separate files
 	\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 	\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
-	\input{Appendices/AppendixA}	% Appendix Title
+%	\input{Appendices/AppendixA}	% Appendix Title
 	%\input{Appendices/AppendixB} % Appendix Title
 	%\input{Appendices/AppendixC} % Appendix Title
 	\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
