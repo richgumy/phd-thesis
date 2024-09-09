@@ -1,891 +1,562 @@
-\chapter{\chapvname}
-\label{chapter5}
-
-\textit{The content from this chapter is predominantly from the manuscript published in the journal Sensors and Actuators A Physical - E-Skin special issue.}
-
+\chapter{\chapviname}
+\label{chapter6}
+\textit{The content from this chapter is contains content from the manuscript published in the proceedings of Electroactive Polymers Actuators and Devices XXVI.}
 
 \section*{ABSTRACT}
-Using electrical impedance tomography (EIT) to drive a pressure mapping device shows great potential, due to the customisability of the sensing domain and the non-invasive nature of the boundary electrodes. A pressure mapping system has been developed in this work that uses a silicone carbon black nanoparticle sensing domain, giving the domain with a comparable softness to human skin tissue. To take this technology into a commercial application the performance of such an EIT-based sensor must be quantifiable and repeatable. In this work a series of experiments were repeated for various load locations, strains, and carbon black percentages. Capturing this data gave insight into the how the sensing domain performs over time and captured the transient events limiting the sensor. Metrics were determined to quantify the sensor's spatial resolution. A quasi-static conductance-force model of the material was developed with an accuracy of $\pm$0.78 N. One important metric is temporal resolution, as it is the least quantified performance metric in literature, however can be the most important for some applications. For the sensor domains tested, average settling times of between 19.0 - 44.5 s and 22.5 - 36.0 s were determined for 8 and 9 wt\% CBSR samples. A series of randomised test loads gave similar spatial performance results to the structured experiments. This sensor platform shows promise for future applications, with further materials development and processing of data the rise of an artificial biomimmetic pressure sensitive skin is imminent.
-
-
-\section{INTRODUCTION} \label{sec:introduction}
-% A poetic start
-% Pressure-sensitive biological tissue is critical for humans and animals and has evolved for billions of years to ensure their survival. One of the earliest known animals, the choanoflagellate, required mechanosensation for digestion, locomotion and hence for survival \citep{Maldonado2004}. 
-
-Approximately 1 billion years after the first animals developed mechanosensation \citep{Parfrey2011}, evolution has allowed humans to detect pressure through the use of many mechanoreceptors lying within the skin and other organs. Two mechanoreceptors which are desirable to emulate human touch are Merkel's disks and Meissner's corpuscles \citep{Kamkim2008}. Both of which are ubiquitous in human hands and lips for high spatial resolution, low pressure and low frequency touch/pressure events \citep{Molnar2015}. These mechanoreceptors in a human hand enable object identification and closed loop fine motor control. 
-
-With the creation of pressure mapping technology which has the similar soft mechanical properties and sensing qualities to that of human skin many commercial applications requiring human-like touch could be directly fulfilled. This work presents characterisation of a soft mapping pressure sensor which utilises electrical impedance tomography to map resistance changes and subsequently stress changes throughout a soft material surface. 
-% Data capture was completed using a Cartesian force applicator to generate the data required for the sensor performance quantification of spatial, temporal, and force sensor resolution.
-\\
-
-% High level subject matter
-The number of applications that require 2D pressure sensing using a soft surface is extensive. Such applications include: robotic gripper object detection, medical mattresses and cushions, limb prostheses and wearable robotics, sport equipment, smart furniture, and rehabilitation devices. The following characteristics are desirable for each of these applications: force sensitivity, low toxicity, cost-effectiveness, repeatability, and high elasticity. In this work, a system showcasing each of these desirable characteristics has been developed. 
-
-% insert table here comparing the different sensing technologies
-
-The sensor platform utilises a piezoresistive nanoparticle elastomer composite (PNEC) in a thin sheet topology to create an artificial sensitive skin. This artificial skin is composed of a highly elastic piezo-resistive material, and its deformation can be identified through electrical impedance tomography (EIT) for the reconstruction of the material resistivity image. Using 16 boundary electrodes, EIT facilitates the mapping of applied forces on this monolithic homogeneous material. Subsequently, an inverse model is applied to estimate compressive force loads on the material.
-\\
-
-% Problem to solve
-Understanding the electro-mechanical properties of the PNEC material is essential for creating an accurate dynamic sensor. When elastomeric composites with conductive particles, such as the PNEC, exhibit viscoelasticity, the degree of hysteresis varies based on the constituents of the composite material \citep{Ellingham2021}. This viscoelasticity is a major limiting factor when using PNECs for EIT-based pressure sensing due to the frequency response lag introduced by the large transient effects seen in the material. In this work these transient phenomena are captured and characterised in the 1D and 2D compressive stress cases.
-
-% This viscoelastic behavior results in the PNEC material storing elastic energy while also dissipating viscous energy, introducing non-linearity in the stress-strain loading and unloading relationship. Failure to compensate for this resistance-strain non-linearity limits the frequency response of a sensor using PNEC material, constrained by the resistive relaxation time of the material. To address this, the present study focuses on measuring and characterising the transient response of PNEC material in two dimensions, employing EIT reconstruction for two variants of PNEC. To complete such a task in 2 dimensions requires an appropriate sensing technology, and 2D data processing. 
-
-% Leading into the solution + EIT uses and definition
-Various methods and topologies of 2D pressure mapping sensors can be employed for a 2D resistivity measurement. However, many of these methods involve intrusive and intricate electrode placement within the material domain \citep{Goncalves2017,Loew2019,Silvera-Tawil2015,Lee2019,Gilanizadehdizaj2022,Zhu2021}. Since the materials utilised in this study are soft, the utilisation of relatively rigid metal electrodes distributed throughout the material would significantly alter the material's electromechanical deformation response. This necessitates use of the non-invasive method imaging method EIT. 
-% \\
-
-% The selected imaging method for the sensor is Electrical Impedance Tomography (EIT), chosen for its utilisation of boundary electrodes, affordability, simplicity in hardware, and excellent time resolution. EIT has demonstrated superior time resolution compared to other non-invasive medical tomographic imaging techniques \citep{Schullcke2016,Adler2021}. The use of boundary electrodes facilitates pressure mapping of a monolithic material mass while preserving the desirable homogeneous and soft mechanical characteristics of the sensing domain. Although traditionally applied in the biomedical field for non-invasive cross-sectional imaging of physiological tissues and structures within the body \citep{Bayford2018,Hannan2020,Hu2020,Lee2020,Teschner2015}, the EIT method works well with any domain that has an sufficiently low impedance given the limitations of low-cost hardware used in this study.
-% TODO?: Mention capacitive sensor equivalents
-% cite{Goncalves2017,Loew2019,Silvera-Tawil2015,Lee2019,Gilanizadehdizaj2022,Zhu2021}. 
-
-
-\subsection{EIT Background} \label{sec:Background}
-% % Defining the material and piezoresistivity
-% Correctly characterising PNEC materials through a known and replicable piezoresistive model enables their application in pressure sensing. The featured PNECs incorporate carbon black (CB) dispersed and suspended in a silicone rubber (SR) matrix, exhibiting varied CB percentages. Given silicone's widespread use as a biocompatible material in the biomedical industry, a method is introduced to modify the material's piezoresistivity, thereby adding a force-sensing capability. This modification expands the potential for numerous existing devices to possess a degree of mechanosensation.
-
-% To ensure conduction through a perfectly homogeneous PNEC material the percolation threshold in terms of particle volume fraction must be reached or exceeded. To ensure a sensor domain is adequately sensitive throughout the PNEC volume, a volume fraction must be found that ensure a near optimal piezoresistivity. This volume fraction needs to be low enough to ensure the silicone matrix is well cross-linked avoiding viscous material effects and high enough such that the hardware driving the sensor drive signals through the material with a sufficiently low SNR \citep{Wu2019}. 
-
-% To ensure piezoresistivity occurs with a high probability throughout the CBSR composite volume, the conduction percolation threshold of the system must be determined and a concentration of conductive particles higher than the percolation threshold must be mixed into the material. As well as reaching the conduction threshold which is found on a continuous domain, there is particle dispersion concentration at which the highest piezoresistivity is present, which is desirable for this application. Conduction within the PNECs is poised to occur through both traditional Coulomb conduction and quantum tunneling mechanisms \citep{Zare2017,Buketov2020,Spahr2017,Dong2017,Forestiere2012,Lux1993,Flandin1999}.
-% \\
-
-% Piezoresistivity within the PNEC material is caused by the adjacency of conductive particles within the material and how this adjacency changes in time \citep{Lux1993}. The relationship between the PNEC material's viscoelasticity and its piezoresistivity is not well defined, limiting the material's deployment as a pressure sensor. Researchers have shown that the magnitude of influence of the viscoelasticity on the piezoresistivity of these PNEC composite materials can be amplified by the following factors: temperature, material fatigue, humidity, radiation ageing, and high stress/strain conditions \citep{Klimm2022,AbuAbdeen2010}. However, how these viscoelastic effects directly affect the piezoresistivity in terms of particle movement is still unknown. 
-
-% Defining EIT more
-To estimate the 2D resistivity of the PNEC a technique called electrical impedance tomography (EIT) was used. EIT allows the generation of a map of impedance values of a thin cross section of a domain under test (DUT). EIT uses a set of boundary electrodes to pass known electrical currents and measure voltages along the boundary of the DUT. From these known current injections and voltage measurements, an ill-posed inverse problem can be defined. To obtain an EIT image reconstruction three key steps are required: data acquisition, forward modelling, and inverse problem solving. A constant current can be employed to capture solely the resistance values of the DUT or as an AC signal to sweep through a range of frequencies to capture impedance data. 
-
-% Various electrode excitation patterns can be utilised for EIT, each with distinct reconstruction performance characteristics \citep{Russo2017,Sherry2006,Brown1987}. The most prevalent excitation pattern is the Adjacent Electrode pattern, where a current source is placed across adjacent electrodes, and the voltages at all other adjacent electrodes are measured \citep{Adler2021}. This process repeats for each pair of adjacent electrodes in a 16-electrode system.
-
-% Explaining EIT pt2
-The forward problem in EIT is a well-posed mathematical problem, so linear algebra can be employed for obtaining electric field data for a DUT of known conductivity and a known current injection. Utilising a mesh-based coordinate system and FEM, proves to be an efficient solution for the forward model, accommodating diverse shapes. Solving the forward problem entails applying Maxwell's electromagnetic formulae to determine how an electric field would propagate through the DUT, considering the DUT conductivity. An initial estimate of the DUT resistivity is necessary for the first step of an EIT algorithm. Once the EIT forward model is solved, EIT inverse problem can be solved iteratively using the forward problem's solution. This inherently unstable problem requires optimisation algorithms and regularisation to create and linearise a solution \citep{Bayford2018,Lionheart2003,Martins2019,Adler2021}.
-% TODO?: Insert images and equations explaining EIT??
-
-% Explaining the required post processing
-Once the EIT reconstruction algorithm has been tuned for an application as desired, often post-processing is completed on the reconstructed EIT image for filtering and to capture data specific for the application. A consortium of experts in the field of medicine and biomedical imaging  have constructed metrics for quantifying the quality of an EIT reconstruction as shown by Adler et al. \citep{Adler2009} and their GREIT (Graz consensus Reconstruction algorithm for EIT) performance metrics. Researchers who have used EIT pressure sensing purposes have also developed performance metrics, most of which agree with the GREIT metrics \citep{Wang2020,Silvera-Tawil2015,Visentin2016,Tallman2020,Sun2020,Hassan2009,Kato2007}
-
-\subsection{Related Work} \label{sec:Related Work}
-Artificial skins are not a novel subject there are many different methods for localising loads in two-dimensions on a soft domain. The limiting factors found with non-EIT based methods of pressure mapping were the size discretely sensed regions, also known as sensels, is limited by various factors in the fabrication process and the bulk of electrode wires required. This bulk is exemplified high electrode-to-sensel ratio. Example load mapping technology include, optical \citep{Ramuz2012,Shimadera2022,Rossiter2005}, piezoresistive \citep{Gilanizadehdizaj2022,Fu2020,Yang2022}, capacitive \citep{Liang2015}, and magnetic \citep{Yan2021}. Each of which have been compared in Table \ref{table:non_eit_sensor_compare}. 
-
-
-% related works and holes in their research
-Other attempts at creating artificial sensitive skins using EIT have been shown in a review by Silvera-Tawil et al. \cite{Silvera-Tawil2015}. This review provides adequate evidence to display interest in the field; however, there is still no commercial EIT-based pressure sensor that is comparable in terms of spatial and temporal resolution, to commercially available non-EIT-based 2D pressure sensors.
-One of the earliest applications of EIT to an elastic piezo-resistive domain was achieved by Knight and Lipczynski \cite{Knight1990} in 1990. Since this application, several other similar systems have been created using EIT and similar pressure sensitive fabrics or elastomeric materials\cite{Nagakubo2007,Russo2017,Sun2020,Silvera-Tawil2015,Yoon2017,Kato2007,Biasi2022}. A comparison of similar devices is given in Table \ref{table:eit_sensor_compare}. None of these researched devices focus on using a material with similar softness, and quantify the stress data captured in real-time like this work. All of the referenced `EIT' soft sensors employ electrical resistivity tomography (ERT), however, the term ERT is most commonly associated with geological subsurface imaging applications, henceforth, EIT is be used in place of ERT in this work.
+	Dielectric elastomer actuators (DEAs) commonly use flexible conductive electrodes to apply an electric potential to actuate. Depending on the material used, these electrodes often possess predictable piezo-resistive properties. Combining electrical impedance tomography (EIT) with a dielectric elastomer actuator (DEA) is investigated in this work to map compressive forces occurring throughout the electrode surfaces. This technology could allow for enhanced closed-loop control of electro-active actuators, broadening their already extensive set of applications. This deformation mapping system also has potential to be used with other piezoresistive materials opening up applications requiring a range of hardnesses and pressure sensitivity. With the material used in this work, the DEA-EIT device has an inherent trade-off between actuation and pressure mapping accuracy driven by the compliant electrode thickness of the DEA. It has been shown experimentally that the simultaneous actuation and EIT mapping can be achieved on the designed hybrid DEA-EIT device. The DEA-EIT device exhibited actuation strains of 2.5 \% with a mean center-of-mass detection error of 1.66 $\pm$ 0.17 mm for 2 mm thick DEA electrodes. Future designs will ensure that applications requiring human-like manipulation can be designed, ranging between biomedical implant devices, agricultural processing equipment, soft optics, and bio-mimicked robotic aquatic life. 
 
 
 
-\section{METHODOLOGY} \label{sec:Methodology}
-% high level methodology
-To substantiate the applicability of Electrical Impedance Tomography (EIT) with a monolithic PNEC sample, we fabricated the material for testing. The material needed to adhere to specific requirements: highly elastic,  high yield strength, low resistivity, high piezoresistivity, non-toxic, and be a low Shore hardness of 5A - 25A akin to human soft tissue \citep{Silvera-Tawil2015,Chatzistergos2022,McDermott2017,Landry2021}. Additionally, a system of devices was devised to facilitate EIT measurements which concurrently captured force, strain, and timestamps for each measurement. Lastly, to evaluate the sensor's suitability for diverse applications, spatial, temporal, and localised force sensing performance metrics were quantified.
+\section{INTRODUCTION} % 1.5 pages
+\label{sec:introduction}
+% \subsection{Motivation}
+Fine motor manipulation, pressure sensitivity, and pressure mapping are some core attributes of skin and muscle tissues when innervated to the brain. These functions can be emulated and combined with two core technologies; Dielectric Elastomer Actuators (DEAs), and Electrical Impedance Tomography (EIT) based pressure mapping.
 
+DEAs have been used to mimic biological muscles in many applications, because of the technology's likeness to biological muscle in terms of elasticity, energy density, and various potential shapes/topologies \cite{Rosset2016, Hajiesmaili2021, Guo2021} . In previous research, it was determined that pressure mapping similar to that of human mechanoreceptors could be emulated using EIT with a piezoresistive nanoparticle elastomer composite (PNEC) in a planar sheet format\cite{Ellingham2022} . The key qualities of the EIT-based sensing platform were that; pressure estimates could be obtained, and the pressure could be mapped and the spatial performance quantified\cite{Ellingham2024} . Like DEAs, this sensing technology has a likeness to human tissue in terms of mechanical characteristics such as elasticity, and the potential of various topologies.
 
-\subsection{Fabrication} \label{sec:Fabrication}
-The fabrication of the piezoresistive composite materials, as described and justified in our previous work \citep{Ellingham2021}, involved dispersing 8 and 9 wt\% of carbon black (CB) nanoparticles in a silicone rubber (SR) matrix. Because of the difference in fabrication processes seen in literature \cite{D'Asaro2017, Shang2016} and degree of dispersion generating variability in the percolation, an iterative trial and error approach using the starting point found in literature was used to get 8 wt \% and 9 wt \% values for CB in SR. Within this range the material was sufficiently conductive while maintaining mechanical strength through sufficient elastomeric cross-linking. Previous research indicates that there is a weight percentage at which the gauge-factor/piezoresistivity is at a maximum within a similar range used in this work \cite{Dong2017, Yang2020}. The composite, designated as the domain under test (DUT), was created using 50 nm average diameter XC 72R CB nanoparticles (Cabot, Alpharetta, USA) in a Dragon Skin 10 NV silicone rubber matrix (SmoothOn, Macungie, USA). Homogeneous dispersion was ensured using an ARV-310 vacuum planetary mixer (Thinky, Tokyo, Japan).
-\begin{table}[H]
-\caption{DUT mechanical characteristics and electrical characteristics}
-\label{table:DUT_char}
-\begin{center}
-\begin{tabular}{llll}
-\hline
-\textbf{Sample}            & \textbf{CB wt} {[}\%{]}    & $\mathbf{R_{int}}$ $[k\Omega]$ & \textbf{E} {[}kPa{]}\\ \hline% & \textbf{Shore Hardness} (ASTM D2240)            \\ \hline
-SR        & 0        &         $>1\times10^9$        &       186.16\\
-CBSR        & 8        &         $18.1\pm9.8$          &       132.5\\
-CBSR        & 9        &         $4.5\pm1.4$           &       98.1\\
-\hline
-\end{tabular}
-\end{center}
-\end{table}
-A CBSR sample showing the circular sensitive region with the pin electrodes developed is shown in Figure \ref{fig:CBSR sample and holder}.
+Alongside the visual and other sensory feedback, animals receive when actuating muscle tissue, pressure-sensitive mechanoreceptors are present within the muscle tissue and soft skin tissue to aid control the extent of a muscle contraction. This forms a multi-sensor closed-loop control system with a complex biological control regime. This work is looking towards creating a closed-loop control system which utilises a DEA-based artificial muscle and an EIT-based artificial skin all contained within monolithic bodies. Applications such as the ones conceptualised in Figure \ref{fig:dea-eit-applications} can be designed with the use of DEA-EIT integrated technology.
+
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=3.5cm]{Figures/CBSR_DUT_w_electrodes_sample.jpg}
-    \includegraphics[width=3.5cm]{Figures/CBSR_DUT_sample.jpg}
-    \caption{Left: Example of a CBSR sensing domain with gold pin electrodes penetrating material surface around the boundary on top of the rigid sensor holder (orange/black). Right: CBSR sensing domain.}
-    \label{fig:CBSR sample and holder}
+	\centering
+	\includegraphics[width=0.41\linewidth]{Figures/DEA-EIT_lens_application_lit.png}
+	\hspace{1cm}
+	\includegraphics[width=0.44\linewidth]{Figures/DEA-EIT_jellyfish_application.png}
+	\vspace{0.3cm}
+	\caption{Potential future application of the DEA-EIT device topology. Left: EIT sensor input DEA controlled optical lens. Right: Pressure mapping sensitive skin for a DEA propelled jellyfish soft robot.}
+	\label{fig:dea-eit-applications}
 \end{figure}
 
-\subsubsection{Localised Stress Testing} \label{sec:Localised Stress Testing}
-Quantitative results are required for spatial quantification of the EIT image reconstructions. A cylindrical force applicator head with a diameter of 13 mm and area of 133 mm$^2$ was used to apply the nine compressive loads shown in Figure \ref{fig:force_app_map}.
+
+\subsection{Background} 
+\label{subsec:background}
+% Add any other original background about DEAs and EIT, and potential failure modes
+The fundamental principles and a brief explanation of the state-of-the-art of each DEA and EIT-based sensor technologies are given in this section. A review of pressure mapping devices with actuation capabilities was then completed. At the time of completing this work, no literature had been found regarding the combination of these two technologies using PNEC electrodes on a DEA for simultaneous execution of sensing and actuation events.  
+
+\subsubsection{Dielectric Elastomer Actuators}
+\label{subsubsec:deas}
+DEAs are often referred to as artificial muscles because they share similar characteristics to biological muscle. Although commonly used as an actuator, this technology offers versatile applications as an energy generator\cite{McKnight2002, Carpi2008, Koh2009} or sensor and provides attractive features such as high energy density, large displacements, and fast response times. DEAs have been proven to produce strains larger than 1600 \%\cite{Keplinger2012} which is significantly larger than that of regular biological muscle. However, large DEA strains can often be at the cost of actuator instability and a low effective force. DEAs have a high work and power density comparable to that of biological muscle and have been found experimentally to have energy densities of around 3.4 J.g$^{-1}$ and theoretically an order of magnitude more\cite{Liu2009, Koh2009} . A dielectric elastomer actuator (DEA) is a form of soft robotic actuator that induces deformation with an applied electric field. A simple common configuration of DEA is a circular parallel plate capacitor, which consists of a thin elastomer sheet between two compliant conductive electrodes, as shown in Figure \ref{fig:DEA_diagram}. 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=6cm]{Figures/EIT_force_app_points_v3.11.jpg}
-    \caption{Load application areas used for compressive stress testing shown numerically in order of application.}
-    \label{fig:force_app_map}
+	\centering
+	\includegraphics[width=5cm]{Figures/circ_DEA_v2.jpg} % TODO: add cylindrical coords and 'V' for voltage source
+	\vspace{0.2cm}
+	\caption{A circular DEA exemplifying its actuation principle.}
+	\label{fig:DEA_diagram}
 \end{figure}
-
-\subsubsection{EIT Measurement}\label{sec:EIT Measurement}
-At its core EIT usually requires a current or voltage source, one or multiple voltmeters, and a switching device. When integrating a mechanical pressure validation system a  force applicator (CFA) and is also required to capture data simultaneously. The system architecture and DUT electrical connections are shown in Figure \ref{fig:wiring_ERT_sensor}. 
-\begin{figure}[H]
-    \centering
-    % TODO?: insert a image of the system (tidied up)
-    \includegraphics[width=6cm]{Figures/ERT_MUX_CFA_architecture.jpg}
-    % \includegraphics[width=8.5cm]{Figures/cfa_setup_labelled.jpg}
-    \caption{Architecture of the Cartesian force applicator setup with red arrows being analogue power lines and black arrows being digital data lines}
-    % \caption{Top: Architecture of the Cartesian force applicator setup with red arrows being analogue power lines and black arrows being digital data lines. Bottom: Labelled photo of the EIT sensor and Cartesian force applicator validation system}
-    \label{fig:eit_sensor_architecture}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=3.5cm]{Figures/wiring_diagram_ERT_sensor.jpg}
-    \caption{Wiring diagram for sensor connection to 4:16 multiplexer and SMU}
-    \label{fig:wiring_ERT_sensor}
-\end{figure} 
-
-% \subsubsection{EIT Solver}\label{sec:EIT Inverse Solver}
-% Key parameters for implementing EIT reconstruction included mesh parameters, solver regularisation, and algorithms for reconstructing DUT resistivity. Mesh refinement increased resistivity accuracy near electrode boundaries. The chosen algorithm was the Newton One Step Reconstruction (NOSER) method through EIDORS \citep{Adler1996}, known for speed and accuracy in EIT research. An initial hyper-parameter, $\lambda$, of 0.03 was selected based on positive correlations observed between reconstructions and pressure event contact points.
-% TODO?: further reconstruction optimisation can be done for the hyperparameter a set of data. Maybe for each material or each sample?
-% TODO?: Insert EIT parameter justification list!
-
-
-\subsection{1D Material Characterisation} \label{sec:1D Material Characterisation}
-Prior to utilising CBSR materials as a 2D pressure sensor, the piezoresistive properties were analysed in one dimension to establish resistance-stress/strain relationships for each CBSR sample. This 1D material testing was conducted using the Cartesian force applicator in conjunction with the SMU. The stress-strain relationship of the material was determined in previous work and shown in Table \ref{table:DUT_char}. The 1D analysis gave quantitative insight into the material resistivity response to strain in different known areas of the Device Under Test (DUT). 
-
-\subsubsection{Quasi-static Piezoresistivity}\label{sec:Quasi-static Piezoresistivity}
- To determine the piezoresistivity or gauge factor of the material, pin electrodes were pierced through the CBSR samples so that the pin electrodes were parallel and at a distance of 35 mm from each other. The pins were 2.5 mm from each end of the sample. A 2634b source measure unit (Keithley, Solon, USA) was used to apply a constant current of 1 mA between the two pin electrodes while ten compressive loading cycles were applied. The ten loading cycles were applied at strains of 5, 10, 15, 20, 25, and 30\%, with a duty cycle of 50\% and period of 120 s. Loads were applied using the Cartesian force applicator with a 20 mm x 20 mm square flat force applicator head. The strain rate was kept at a constant 16.67\%.s$^{-1}$ to dampen the amplitude of transient effects as proven in previous work \citep{Ellingham2021}.
-
-When using this material to estimate stress based on resistance, any transient effects that are not correlated between resistance and stress must be accounted for. To obtain a stress reading from this PNEC CBSR material using the quasi-static model given in Equations \ref{eqn:quasi_rstress} and \ref{eqn:quasi_rstrain}, transient events were ignored, so only the steady-state conductance of the material was utilised. 
+When a voltage is applied to the compliant electrodes, an electrostatic force arises between the electrodes causing the dielectric elastomer (DE) membrane to contract by a decrease in thickness and an increase in area. The resulting actuation is controlled by changing the applied voltage. The region encompassing the two compliant electrodes and the DE portion sandwiched between them is called the `active region', i.e. where the electric field is largest. For a simple DEA such as the one shown in Figure \ref{fig:DEA_diagram}, a simplified formula for the electrostatic force on the compliant capacitor electrodes is given in Equation \ref{eqn:DEA_stress}.
 \begin{equation}
-    \frac{\Delta \rho}{\rho_0} = \alpha_\sigma \sigma + \beta_\sigma
-    \label{eqn:quasi_rstress}
+	\sigma_{es} = \varepsilon_0 \varepsilon_r \frac{V^2}{z_{de}^2}
+	\label{eqn:DEA_stress}
 \end{equation}
+Where $\sigma_{es}$ is the electrostatic stress, $V$ is the applied voltage, $z_{de}$ is the DE thickness, $\varepsilon_0$ is the permittivity of free space, and $\varepsilon_r$ is the relative permittivity constant of the DE, which is a function of strain\cite{Kofod2003, Choi2005, Wissler2007} and applied voltage\cite{Rosset2013} . This can be expanded to estimate the DE strain, $S_{z_{de}}$, using the bulk modulus, $K$, of the DE as shown in Equation \ref{eqn:DEA_strain_z}.
 \begin{equation}
-    \frac{\Delta \rho}{\rho_0} = \alpha_\varepsilon \varepsilon + \beta_\varepsilon
-    \label{eqn:quasi_rstrain}
+	S_{z_{de}} = \frac{\sigma_{es}}{K}
+	\label{eqn:DEA_strain_z}
 \end{equation}
-Where $\alpha$ and $\beta$ are the linear fit parameters, $\sigma$ is the compressive stress, $\varepsilon$ is the strain, $\Delta \rho$ is the change in conductance, and $\rho_0$ is the original material conductance.
+Designing a DEA for practical applications is often highly constrained by three key modes of failure as well as the parameters of the constituent components. A common mode of failure is the electromechanical instability of the elastomer. With increasing voltage, the DE compresses until the voltage exceeds the critical point at which dielectric breakdown occurs. At the point of failure, the DE membrane experiences a surge of electrical current, permanently changing the DE insulative properties. The second mode is a loss of tension in the elastomer when an applied voltage is large and the axial force provides an excessively large compression. The stress in the DE may cause the plane to lose tension such that the elastomer no longer actuates as expected, if at all. Often resulting in visible wrinkles in the DE. The third mode is a physical rupture of the elastomer due to stretching beyond the DE's yield strength \cite{Mao2018} . A key benefit of DEA technology is its potential to be fabricated into various topologies depending of the desired application including, parallel plate\cite{Keplinger2012}, roll\cite{Zhao2018}, tube\cite{Thummala2012}, helical\cite{Kim2018}, and conical geometries\cite{Cao2018} .
 
-\subsubsection{Transient Piezoresistivity}\label{sec:Transient Piezoresistivity}
-There are two main piezoresistive events that occur during these compressive stress pulse response experiments. They are the compressive loading and unloading transients. Both of which result in stress relaxation and resistance relaxation behaviour until a steady-state resistance is reached. The stress relaxation can be approximated by a generalised Maxwell linear viscoelastic model \citep{Ju2022}. A two component model was found to fit all curves without overfitting, the relaxation model from a step input is given in Equation \ref{eqn:maxwell_general_n2}.
-\begin{equation}
-    G_2(t) = a_o + a_1 e^{-t/\tau_1} + a_2 e^{-t/\tau_2}
-    \label{eqn:maxwell_general_n2}
-\end{equation}
-Where $G_2(t)$ is the stress relaxation function, $a_0$ is the relaxation offset, $a_1$ \& $a_2$ are the magnitude weightings for each time constant $\tau_1$ \& $\tau_2$. Equation \ref{eqn:maxwell_general_n2} was used analogously for the resistance relaxation. % TODO?: justify?
-To ensure repeatability of the experiment the ten loading and unloading events were fitted using equation \ref{eqn:maxwell_general_n2} to the each relaxation, then the $R^2$ goodness of fit was compared for all of the relaxations.
-% TODO?: explain why there are outliers. Due to noise error and the nature of the fitting algorithn LM-LS??
+\subsubsection{Soft EIT-based Pressure Mapping}
+\label{subsubsec:eit-based_pressure_mapping}
+% Discuss: state of the art, our previous work
+A soft EIT-based pressure mapping sensor has the ability to estimate the magnitude and location of deformation events in a planar PNEC material. The hardware required usually consists of a piezoresistive sensor domain with attached boundary electrodes, EIT driver electronics, and a reconstruction processor. Boundary electrodes allow a non-invasive method of pressure mapping without compromising a monolithic piezoresistive material. Several researchers have created an EIT-based pressure mapping sensor using a range of piezoresistive domains and custom or lab-based hardware \cite{Russo2017, Nagakubo2007, Silvera-Tawil2015, Yoon2017, Sun2020, Ellingham2024} .
 
-An important temporal characteristic of this system is the settling time, $t_s$, given a strain step input. In this system the resistance step response settling time was the time taken to reach and stay within a specified tolerance about final steady-state resistance, given a strain step input. The tolerance chosen is about the steady state was $\pm$ 15\%. % When using this settling time to gather sensor data, if the tolerance is increased the response time decreases and the sensor force accuracy decreases, vice versa for a decreased tolerance. 
-% Below is not valid for our system >>
-% For a first order system after 3 time constants a tolerance of $\pm$15\% about the steady-state will always be achieved. Using dominant pole approximation the settling time was calculated. The requirement for the dominant pole approximation were: $\tau_2 / \tau_1 \geq 5$, given $\tau_1 < \tau_2$. This was compared to actual settling time, $\tau_{act}$ for the fitting solutions to reach $\pm 5\%$ of steady-state.
-% https://courses.engr.illinois.edu/ece486/fa2021/documentation/lectures/slides/Lecture10A_DominantPoleApproximation.pdf
-
-\subsection{Sensor Performance Metrics}\label{sec:Sensor Performance Metrics}
-To ensure that the resistance/conductance image reconstructions which will form stress maps are valid solutions, the quality of the reconstructions needs to be quantified computationally. The purpose of this section is to describe various metrics used for sensor validation. These metrics measure the spatial performance, temporal performance, and localised force sensing performance. Many of the spatial and temporal performance metrics have been taken and adapted from Adler et al. \citep{Adler2009} and their GREIT (Graz consensus Reconstruction algorithm for EIT) performance metrics.
-
-\subsubsection{Pre-processing}\label{Pre-processing}
-To ascertain the occurrence of a piezoresistive event in the material, it is necessary to identify a change in resistivity that surpasses the noise floor level. This precaution is taken to differentiate between a stress compression event and potential noise artefacts. A threshold was established to eliminate the noise floor, thereby isolating the loading signal and any noise or artefacts generated by the loading signal(s).
-
-A second threshold filter was implemented to compensate for the regularisation of the reconstruction using a percentage of the largest peak observed in the sensor image domain. The percentage threshold value used in previous work has been 25, 50, 60, 70, 75\% of the maximum domain amplitude \citep{Adler2009,Visentin2016,Silvera-Tawil2015}. In this work percentage threshold masking have been applied for comparison. To validate the best percentage threshold, these thresholds were completed for a CBSR 8 and 9 wt\% PNEC under nine successive loading events comparing the mean of the three main performance metrics given in Section \ref{sec:Spatial Performance}. After these threshold masks have been applied to the 2D EIT images, blob(s) are observed as the sensed regions-of-interest. In this work the term 'blob' refers to an amorphous 2D shape made of several aggregated finite mesh elements. These blobs are usually observed after percentage threshold masking of an EIT image reconstruction. 
-
-\subsubsection{Spatial Performance}\label{sec:Spatial Performance}
-The three main metrics of spatial performance are the centroid or centre of `mass' error, $E_{CoM}$, the detected area overlap $A_{OL}$ value, and the fit of the detected blob relative to the force input, the shape distortion, $S\!D$.
-
-The $E_{CoM}$ was found using:
-\begin{equation}
-    E_{CoM} = \sum_i^{N_{b}} e_{{CoM}_i} \times \frac{e_i}{e_{total}}
-    \label{eqn:err_CoM}
-\end{equation}
-Where $N_{b}$ is the number of elements in the threshold masked blob, $e_{{CoM}_i}$ is each individual element centroid, $e_i$ is the $i^{th}$ blob element resistance value and $e_{total}$ is the sum of all of the blob element resistance values. This equation can be easily be inverted for images containing conductance elements in place of resistance elements. The nearer the $E_{CoM}$ value is to zero, the better the reconstruction in regards to localising the sensed region.
-
-The $A_{OL}$ was found using:
-\begin{equation}
-    A_{OL} = 100\times\left[\frac{\left(\sum_i^{N_{b}} A_{e_i}\right)}{A_{FA}} + \frac{\left(\sum_i^{N_{b}} A_{e_i}\right)}{A_{b}}\right]\bigg/2 : e_{{CoM}_i} \in \Omega_{FA}
-    \label{eqn:area_overlap}
-\end{equation}
-Where $A_{e_i}$ is the area of an element and $\Omega_{FA}$ is the domain of the force applicator area. $A_{FA}$ and $A_{b}$ are the areas of the force applicator and sensed region respectively. The closer the $A_{OL}$ is to 100\%, the better the overlap of the estimated and actual load application.
-
-The $S\!D$ was found using:
-\begin{equation}
-    S\!D = \left[\sum_j^{N_p} \left(\|F_{CoM} - P_j\|_2 - r_{FA}\right)^2\right] \bigg/ N_p : P_j \in L_{b}
-    \label{eqn:shape_deform}
-\end{equation}
-Where $N_p$ is the number of mesh nodes on the perimeter of the blob, $F_{CoM}$ is the force applicator CoM coordinates, $P_j$ is a node in the set of blob perimetral nodes, $L_{b}$, and $r_{FA}$ is the radius of the force applicator head. The $S\!D$ is essentially the mean square error of the force applicator perimeter and sensed region perimeter taken radially from the force applicator centroid.
-
-
-\subsubsection{Temporal Performance}\label{sec:Temporal Performance}
-A core problem with using soft PNECs is the temporal resolution they can provide can be limited by the viscoelasticity in the material and how it interacts with the conductive network in the material. This section provides insight into how to determine the frequency response of the material, by observing the relaxation settling time of the material. The maximum time taken to reach a steady-state resistance after a stress event dictates the frequency at which the material can sense stress events. To determine the time taken to reach a steady-state, a variety of compressive stresses and strains at the loading locations, $L_0$-$L_8$, of each DUT are observed. 
-
-
-To determine whether the resistance relaxation observed in the 1D case matches the relaxation of the reconstruction in 2D, the 1D and 2D relaxation settling times were compared to validate whether similar frequency responses were being observed. The EIT measurement equipment was designed such that the reconstruction frequency of 0.4 Hz can capture these transient events observed triggered in the CBSR samples, which are typically in the order of tens of seconds. 
-
-
-From the blob localisation described in section \ref{sec:Spatial Performance} the resistance relaxation data was extracted by plotting the sum of the blob resistance. Similar to the 1D case, the relaxations for stress loading, resistance loading, and resistance unloading scenarios are captured and compared for each CBSR with CB weight percentages of 8 and 9 wt\%. The blob resistance relaxation was compared to relaxation deduced from the total image domain resistance to ensure that the only the transient event from the area being loaded was being observed.
-
-\subsubsection{Localised Force Sensing Performance}\label{sec:Localised Force Sensing Performance}
-As discussed in Section \ref{sec:Quasi-static Piezoresistivity}, a quasi-static function, Equation \ref{eqn:quasi_rstress}, has been generated that gives a stress based on 1D steady-state conductance measurements. This quasi-static function was applied to the DUT 2D reconstruction to obtain a stress map of the material. To determine the minimum detectable stress of the sensor the conductance noise floor values were input into the linear quasi-static Equation \ref{eqn:quasi_rstress}.
-
-To obtain the stress estimate, $\hat\sigma_j$ and hence force estimate given a known input stress and force, the following steps were completed for each CBSR sample:
+Electrical impedance tomography or EIT is most commonly used in medical pulmonary research to give a cross-section of a human thorax in real-time at a frame rate of 50 Hz, as shown in the two commercially available medical EIT machines the Pulmovista500 (Draeger, Lübeck, Germany) and the LuMon System (Sentec, Lincoln, USA). However, using EIT to map and quantify pressure events has the potential to give a faster frame rate due to the use of DC instead of AC. However, the viscoelastic and resistive nature of the sensor can lower the frequency response of the sensor depending on the piezoresistive sensing domain used. The stages required to generate a pressure image using EIT can be simplified into three core stages,
 \begin{enumerate}
-    \item Determine the most likely sensed region:
-    \begin{enumerate}
-        \item An EIT reconstruction image of a loaded DUT of a particular strain, $\varepsilon_j$, at a steady-state conductance was found. Each element having a change in conductance value, $\Delta\rho$, in units $mS$.
-        \item Complete threshold percentage mask on image to localise the sensed region blob(s).
-        \item The centre of mass error, $E_{CoM}$, between each blob and the actual force application CoM was calculated. The blob domain with the smallest $E_{CoM}$, $\Omega_s$, is chosen for the following steps.
-    \end{enumerate}
-    % \item A new mask the shape, size and location of the force applicator + 30\% to compensate for the EIT regularisation is applied to the reconconstruction in step 1 to get a new sensed region, $\Omega_f$. % TODO: Justify this + 30% mathematically.
-    \item Equation \ref{eqn:quasi_rstress} was rearranged to get an original conductance estimate for each element:
-    \begin{equation}
-        \rho_0 = \frac{\Delta \rho}{\alpha \sigma+\beta}
-        \label{eqn:C0_est_stress}
-    \end{equation}
-    \item The mean $\rho_0$ and standard deviation of all of the elements in $\Omega_s$ were found.
-    \item Steps 1 to 3 were repeated for each strain, $\varepsilon_j$, applied and the mean, $\rho_0(\varepsilon_j)$ and standard deviation  were calculated.
-    \item The mean of all $\rho_0(\varepsilon_j)$ across all strain values (i.e. $\varepsilon_j = 5, 10, 15, 20, 35, 30\%)$ was calculated as $\bar\rho_0$.
-    \item $\bar\rho_0$ was then substituted into Equation \ref{eqn:quasi_rstress} as $\rho_0$, which was rearranged for stress to obtain the stress estimate as a function of mean change in conductance, $\hat\sigma_j(\Delta \bar\rho_j)$, of the sensed blob domain, $\Omega_s$.
-\end{enumerate}
-% TODO: Determine a mathematical justification of the fudge factor which rho_0 is multiplied by.
-% TODO: describe how stress limits were found (e.g. noise figure, ringing, more?)
+	\item Data acquisition
+	\item Image reconstruction
+	\item Inverse force model
+\end{enumerate} 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=8cm]{Figures/EIT_diagram_labelled.jpg}
+	\vspace{0.3cm}
+	\caption{A 16 electrode circular EIT domain setup exemplifying its electrical function. Where the dashed lines are representative of an applied electric field\cite{Ellingham2022} .}
+	\label{fig:EIT_diagram}
+\end{figure}
+Data acquisition involves an excitation drive pattern to be applied to the piezoresistive sensing domain, which consists of the injection of a known current or voltage through two boundary electrodes connected to the material domain as shown in Figure \ref{fig:EIT_diagram}. Typically an adjacent electrode drive pattern is used in literature and is also used in this work\cite{Russo2017} . Concurrently all voltages at the other boundary electrodes of the material domain are read. Then a known current (or voltage) source is applied to the next set of adjacent electrodes, and all of the other adjacent electrode voltages are read once more. This process is repeated until it has been deemed there have been sufficient readings to solve the inverse problem and generate a conductance, $\rho$, distribution estimate of the material domain. Finally, an inverse model converting the conductance estimate of the material domain can be converted into a pressure map using an inverse model.
 
 
-\section{RESULTS}\label{sec: Results}
-In the following Sections \ref{sec:Quasi-static Piezoresistivity2}-\ref{sec:Localised Force Sensing Performance2} the EIT image pre-processing, spatial, temporal, and localised force sensing performance metrics are displayed and quantified. First the steady state electrical noise, $\sigma_n$, and noise figure, NF, were determined, as given in Table \ref{table:DUT_noise}. The NF value being a common metric showing noise amplification as a consequence of the EIT algorithm as used by Adler et al \citep{Adler2009}.
+\subsection{Simultaneous Pressure Mapping and Actuation}
+\label{subsec:sensing_and_actuation}
+Various researchers have demonstrated and proposed the use of self-sensing DEAs for closed-loop control looking at the one-dimensional deformation of a DEA using their change in capacitance\cite{Gisby2013, Liu2016, Huang2023, Koshiya2023} . Multi-degree-of-freedom (multi-DOF) DEA topologies have been created by several researchers \cite{Nguyen2017, Zhang2024, Zou2023, Pei2004} , allowing for a broader range of applications. The complex actuation mechanisms discussed in these papers give rise to the question of having more resolute sensor data for such topologies to aid with the control of such multi-DOF devices.
+
+To sense deformation in multiple dimensions, the current methods used for DEA self-sensing must be altered. To ensure the DEA maintains minimal change to the parallel plate topology, the compliant piezoresistive electrodes can be used and/or altered to be able to determine the deformation of the DEA in more than one dimension. Options for sensing in two dimensions include determining the stretch across the compliant electrode material by measuring the change in resistance of the electrodes diametrically opposed at various angles around the DEA, or adding an extra pressure mapping sensor layer to the DEA stack, or using EIT to map change in resistance of the compliant electrodes. Using diametrically opposed resistance measurements across the compliant electrodes will have limited resolution and is limited in compliant electrode shapes that can be used effectively. Adding another sensing layer to the DEA requires a sensing technology that has a very low elastic modulus, to not hinder the actuation force of the DEA. The limitations given above are why EIT was chosen to sense 2D deformation of a DEA, as it has a relatively high spatial resolution that can be quantified and requires no extra hardware on the DEA body apart from non-invasive electrodes on the boundary of the DEA's compliant electrode(s).
+
+% Add any references here that are very similar/related to our work HERE!
+% e.g. \cite{Deshpande2005}
+
+% Explain some example applications:
+% Gripper object identification - e.g. pick up an object using a DEA gripper identify what it may be and place it in a certain box.
+% A conical DEA that can throw a ball and then sense where it lands so it can then shoot the ball back into the air again. No optics required.
+
+% To localise where a dielectric breakdown has occurred to help for the active healing of the device through another separate technology.
+
+% Create a DEA that uses a kind of beamforming (not super feasible ~18GHz req for creating 10mm wavelengths... fun theory to do though) to create an inhomogeneous strain with the DEA that can react/mimic to a strain compression input in the DEA.
+
+
+
+\section{METHODOLOGY} % 3 pages
+\label{sec:method}
+The DEA-EIT actuator-sensor-hybrid system required the two technologies to be verified and fabricated individually before being integrated to observe the effects of combining the two technologies relative to their independent forms. The following sections discuss the fabrication process for the DEA and EIT systems and then the integration of them both into a DEA-EIT device.
+
+To optimise the actuation and sensing capabilities of the DEA-EIT system different parameters of the design were altered, such as the compliant electrode composite used, DE material used, circumferential electrodes, and magnitude of DE pre-stretch and sizing. The methodology explores the reasoning to certain design choices for the fabrication of the DEA design seen in Figure \ref{fig:DEA_components}.
+
+
+\subsection{Dielectric Elastomer Preparation}
+\label{subsec:de_fab}
+The fabrication of the DEA used a rigid acrylic frame to attach the pre-stretched elastomer. For simplicity, a circular frame was chosen with the DE at a radial pre-stretch of +10\%, i.e. $\lambda_r$ = 1.1, as this is well within the DE's more predictable linear elastic region. The circular acrylic frame of 178 mm inner diameter was fabricated from laser cut acrylic of 4 mm thickness to ensure rigidity.
+
+To achieve uniform stretch of the elastomer sheet, a toroidal shower hose mechanism was placed on the relaxed sheet of 4910 VHB tape (3M, Saint Paul, USA), which would act as a pre-stretcher annulus. The toroidal mechanism has an axis of rotation along its circumference as shown in, giving the ability to roll and stretch the elastomer equiaxially to the desired pre-stretch. 
+\begin{figure}[H]
+	\centering
+	\subfloat[Elastomer prestretch method]{\includegraphics[width=5cm]{Figures/DEA_fab_mech.jpg}\label{subfig:DEA_prestretch}}
+	\hspace{0.5cm}
+	\subfloat[Circular DEA construction]{\includegraphics[width=3.5cm]{Figures/DEA_stack.jpg}\label{subfig:DEA_stack}}
+	\hspace{1cm}
+	\subfloat[Single circumferential electrode]{\includegraphics[width=3cm]{Figures/DEA-EIT_single.jpg}\label{subfig:DEA_EIT_single}}
+	\hspace{1cm}
+	\subfloat[Multiple circumferential electrodes]{\includegraphics[width=4cm]{Figures/DEA-EIT_multi_elec.jpg}\label{subfig:DEA_EIT_multi}}
+	\vspace{0.2cm}
+	\caption{Mechanical fabrication of the circular DEA-EIT platforms}
+	\label{fig:DEA_components}
+\end{figure}
+
+
+\subsection{Compliant Electrode Fabrication}
+\label{subsec:dea_elec_fab}
+% TODO: Either remove "75 mm" or complete more EIT testing on the 75 mm electrodes
+Compliant electrodes (or active area) were fabricated using acrylic moulds of varying dimensions. Three thicknesses, $z_{ce}$, of the compliant electrode were fabricated, 0.5 mm, 1 mm and 2 mm, with two circular compliant electrodes of 100 mm diameter. Different thicknesses were explored as this would vary the actuation and sensing performance of the electrodes.
+
+Two compliant electrode mediums were used in this work, carbon black (CB) powder and a carbon black silicone rubber (CBSR) composite. Compliant electrodes solely made of CB powder have been used for DEAs in previous literature\cite{Carpi2015, Huang2022, Shigemune2018} , hence this work uses the same compliant electrode type to generate reference data. The CB powder was used to make a single circumferential electrode configuration DEA as a reference to compare to the following DEA-EIT experiments. The CBSR composite was used to make both single (Figure \ref{subfig:DEA_stack}) and multiple (Figure \ref{subfig:DEA_EIT_multi}) circumferential electrode configurations of DEAs. The CB powder used in all of the compliant electrode samples was Vulcan XC-72 powder (Fuel Cell Store, Bryan, USA). The CBSR composite had 8\% CB by weight mixed with DragonSkin 10NV silicone rubber (Smooth-On, Macungie, USA). This composite is a piezoresistive medium that has proven useful for EIT pressure mapping and sensing in previous work\cite{Ellingham2024} , and DEA actuation\cite{Carpi2015, Huang2022} .
+
+Using the liquid silicone rubber, the CBSR composite mixture was formed by combining part A of the silicone solution and 8 wt\% CB and mixing by hand for 10 s. The mixture was then placed in the ARV-310PCE planetary vacuum mixer (Thinky Inc., Tokyo, Japan) to complete a mixing cycle with 500 RPM for 45 s followed by a cycle with 800 RPM for 45 s. In the same mixing container, part B of the silicone solution was added to the mixture and stirred by hand for 10 s and immediately the same mixing cycle in the planetary mixer was completed again. After the cycle was completed, the composite was poured into the mould with attached circumferential copper tape electrodes. The CBSR mixture was then placed in an oven at 80 $\degree$C for 4.5 h to ensure the composite was sufficiently cross-linked.
+
+Two types of compliant electrode configuration have been fabricated in this work, single circumferential electrode and multiple circumferential electrodes. The single circumferential electrode configuration was purely for testing DEA actuation. The multiple circumferential electrode configuration consisted of 16 evenly spaced circumferential electrodes. The multiple circumferential electrode configuration was for testing both EIT-based pressure mapping and actuation functionality of the DEA. Prior to curing the compliant electrode in a circular mold, the conductive copper tape circumferential electrodes were placed into the mold. The width of the circumferential electrodes were 8 mm. The circumferential electrodes were placed with a 3 x 8 mm area embedded in the compliant electrode circumference edge with the rest of the circumferential electrode protruding for easy access to external electrical connections.
+% \begin{figure}[H]
+	%     \centering
+	%     \includegraphics[width = 0.6\textwidth]{Figures/1st_batch_cropped.jpg}
+	%     \caption{2mm thick silicone-based carbon black composite}
+	%     \label{fig:label}
+	% \end{figure}
+
+
+\subsection{DEA Hardware}
+\label{subsec:dea_hw}
+The excitation voltage for the DEA was provided by a Trek 610E high voltage supply (Advanced Energy Industries, Fort Collins, USA) providing a maximum voltage output of 10 kV DC. The DEA was placed in a clear insulated box with the high voltage supply leads attached to the rigid copper electrodes of the DEA. An iPhone 11 camera (Apple Inc., Cupertino, USA) was used to obtain images of the radial compliant electrode strain as shown in Figure \ref{fig:HV_DEA_setup}. The current limit of the high voltage supply was set to its maximum of 2 mA to ensure the DEA actuation response was not limited by the charging of the compliant electrodes.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=6cm]{Figures/HV_DEA_setup_labelled.jpg}
+	\vspace{0.2cm}
+	\caption{DEA excitation and measurement setup}
+	\label{fig:HV_DEA_setup}
+\end{figure}
+
+
+\subsection{EIT Hardware}
+\label{subsec:eit_hw}
+The EIT hardware allows for data collection to reconstruct a conductance map of the of piezoresistive composite used as compliant electrodes in the DEA samples. The hardware required for this function, shown diagrammatically in Figure \ref{fig:ERT_MUX_CFA}, includes a 2634b source measure unit (SMU) (Keithley, Solon, USA), a custom 4:16 multiplexer (MUX) PCB, an ESP32 development board, a Cartesian force applicator, and a reconstruction and control computer. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=6cm]{Figures/ERT_MUX_CFA_architecture.jpg}
+	\vspace{0.2cm}
+	\caption{Architecture of the force applicator and EIT measurement system \cite{Ellingham2024}}
+	\label{fig:ERT_MUX_CFA}
+\end{figure}
+The SMU provides a constant current value of 1 mA and reads a series of voltages through the MUX PCB required for the EIT drive pattern. An adjacent electrode EIT drive pattern was used for EIT through the circumferential electrodes of the compliant electrode. The MUX PCB and SMU and controlled by the control computer. Once the data for each image reconstruction has been gathered the control computer was also used for the reconstruction of the conductivity maps of the compliant electrodes. The Cartesian force applicator is made up of a MK3s 3D printer (Prusa, Prague, Czechia) integrated with a loadcell and fabricated applicator tip to apply loads and hence generate data for pressure magnitude and localisation quantification.
+
+
+\subsection{Experimental Method}
+\label{subsec:experimental_method}
+Before attempting to have simultaneous DEA actuation and EIT sensing occur in the same device, each system had to be tested independently. First DEA strain voltage relationships were explored followed by EIT-based pressure mapping of the DEA electrodes. Finally the same samples used for EIT testing were subsequently integrated into a DEA device for simultaneous functional testing.
+
+\subsubsection{DEA Validation} % TODO?: move DEA bits below EIT stuff to show the intended sequence of operations/experiments 
+\label{subsubsec:dea_validation1}
+DEA actuation strain measurements were taken from voltages 5 kV to 10 kV in 1 kV increments. The SNR of strain measurements of the DEA excited with voltages $<$ 5 kV were deemed to be too low to generate meaningful data. The excitation voltage was toggled between on and off states waiting for the strain deflection to reach a steady state for the strain measurements. Five radial strain images were captured and measured. The measurements were then averaged to minimise error and determine the radial strain uniformity. The radial strain was found by measuring the radial change of the circular compliant electrodes between relaxed and electrically contracted states. From the radial compliant electrode strain the planar and thickness deformation of the DE was estimated. The DE is assumed to be incompressible and have a Poisson's ratio, $\nu$, of 0.5. The adhesion between the compliant electrode and the DE is assumed to be perfect to simplify the model used here. The thickness strain, $S_{z_{de}}$, is calculated using Equation \ref{eqn:DEA_strain_z_r}\cite{Carpi2015} and \ref{eqn:DEA_stress}.
+% The experimental data was collected using a series of photographs of the DEA capturing the radial strain of the compliant electrodes. The radial strain of each steady state image of an excitation state was averaged over 5 measurements, to minimise measurement error and observe any non-uniform radial deformation.
+\begin{equation}
+	S_{z_{de}} = \frac{1}{(S_{r_{ce}} + 1)^2} - 1
+	\label{eqn:DEA_strain_z_r}
+\end{equation}
+Where $S_r$ is the radial strain measured from the equi-biaxial actuation. 
+The elastic modulus of a hyperelastic material such as VHB is often defined as a non-linear function of strain and strain rate\cite{Liu2018} . In this work a linear bulk modulus value, $K$, of 142 kPA was used. The bulk modulus was determined by doing a meta-analysis and averaging of the elastic modulii determined at steady state 10\% strain for VHB 4905 material in previous literature\cite{Liu2018, Helal2018, Huang2023} .
+% VHB mechanical modulus in lit :::
+% Liu2018 Y @ 10% strain: Y(static) = 178 kPa, Y(dyn) = 225 kPa, tensile?? Y = 290 kPa
+% Helal2018 Y split into a kelvin-voight model? : Ys = 130 kPa(elastic modulus), Yp = 242 kPa(elastic component of loss), Dp = 1.958 MPa (loss modulus)
+% Huang2023 Y @ 10% strain : Y = 119 kPa
+The relative permittivity, $\varepsilon_r$, used in Equation \ref{eqn:DEA_stress} was approximated to be 4.5$\pm$0.2 due to pre-strain effects seen in literature\cite{Kofod2003, Choi2005, Wissler2007, Pan2015} .
+% VHB rel permittivity in lit :::
+% Askounis2020 : e_r = 4.2 (no strain mentioned)
+% McKay2009 : e_r = 4.5 (zero strain), 4.6 - 6 (for a range of electric field strengths applied??) -- only abstract available..
+% Kofod2003 : 4.7 in unstretched state. 4.45 in stretched state.
+% TODO: mention how these assumptions will add to the error seen in the data and how other works have made models not requiring such assumptions! Here or in discussion??
+% TODO: Mention how the compliant electrode K_eff will be a non-linear function of thickness, d. This function is very important for determining half of the objective function to optimise for actuation AND sensing. 
+\begin{figure}[H]
+	\centering
+ val	\subfloat[The reference DEA made with CB powder compliant electrodes]{\includegraphics[width = 5cm]{Figures/CB_DEA_crop.jpg}\label{subfig:ref_DEA}}
+	\hspace{1cm}
+	\subfloat[A DEA with 0.5 mm thick compliant electrodes at steady state contraction and excited at 10 kV]{\includegraphics[width = 4.6cm]{Figures/10kV_0.5mm_75mm_CBSR_RMBG.jpg}\label{subfig:CBSR_DEA_10kV}}
+	\vspace{0.2cm}
+	\caption{The two DEA compliant electrode material types used in this work.}
+	\label{fig:DEAs}
+\end{figure}
+
+\subsubsection{EIT-based Pressure Mapping on DEA}
+\label{subsubsec:eit_test}
+A load sequence was devised to ensure that forces in various locations of the compliant DEA electrode could be localised using EIT. A similar test procedure used in previous works\cite{Ellingham2024, Ellingham2024a} was applied to the three individual compliant electrodes thicknesses, $z_{ce}$, of 0.5, 1, and 2 mm. Nine load application points were determined on the material at three distinct radii as shown in Figure \ref{fig:force_app_map}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=7cm]{Figures/EIT_force_app_points_v3.11.jpg}
+	\vspace{0.2cm}
+	\caption{Load application areas used for compressive stress testing in order of application\cite{Ellingham2024} .}
+	\label{fig:force_app_map}
+\end{figure}
+A Cartesian force applicator applied the loads with varying strains in the nine locations. Once the compliant electrodes had undergone the first load application tests, they were applied to each side of a DEA and tested again using the same sequence of nine loads. Compressive strains from 0 to 30\% of the electrode thickness in 5\% increments were applied when to each of the load points using a flat circular 13 mm diameter force applicator. When applying the compressive strain to the compliant electrodes, a slow strain rate of of 16.67\%.s$^{-1}$ was used to minimise piezoresistive transient phenomena. After completing the load tests on individual compliant electrodes the compliant electrodes were attached to the DE surface. Next the load test was completed again to the DEA placed on a flat surface.
+\begin{figure}[H]
+	\centering
+	\subfloat[$E_{CoM}$]{\includegraphics[width = 7cm]{Figures/eg_ecom_DEA2_EIT_CBSR_8p_1_9push_10strain_120s_1mA_1_frame800_th75.jpg}\label{subfig:eg_ecom}}
+	\hspace{1cm}
+	\subfloat[$S\!F$]{\includegraphics[width = 7cm]{Figures/eg_sf_DEA2_EIT_CBSR_8p_1_9push_10strain_120s_1mA_1_frame800_th75.jpg}\label{subfig:eg_sf}}
+	\vspace{0.2cm}
+	\caption{The two spatial performance metrics used for determining accuracy of blob as a load area estimate, where the transparent white circle is the actual load area and the dark purple elements are the load estimate area.}
+	\label{fig:eg_spatial_metrics}
+\end{figure}
+\begin{equation}
+	S\!F = \left( \sum^i_n \Delta r_i^2 \right) / n
+	\label{eqn:sf}
+\end{equation}
+After gathering all of the experimental data from applied loads, the data was used to generate EIT conductance images. To form blobs as estimates of the applied loads, post-processing was completed by applying an 85 \% threshold mask to the EIT image. These blob images were subsequently analysed using two spatial performance metrics, the center-of-mass error, $E_{CoM}$, and the shape fit, $S\!F$, as exemplified in Figure \ref{fig:eg_spatial_metrics}. The $E_{CoM}$ values were determined by calculating the difference between the CoM of the actual load and the blob representing the load estimate. The $S\!F$ was determined by calculating the radial mean square error between all of the, $n$, perimetral nodes of the blob load estimate and the actual load circumference, as taken from the CoM of the actual load area.
+% TODO?: add noise factor derivation
+
+
+\subsection{Simultaneous Actuation and Pressure Mapping}
+The DEA-EIT device was tested for simultaneous actuation and pressure mapping to highlight the functional limitations that arise with such a device. Simultaneous actuation and pressure mapping involves an excitation voltage is applied to the DEA whilst completing EIT to the grounded DEA electrode.
+
+To ensure that the EIT electronics are able to operate during transients or dielectric breakdown events, an intermediary 20 V Zener diode array and a current limiting resistor, $R_{lim}$, were added to the system as shown in Figure \ref{fig:DEA-EIT_protective_ckt}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{Figures/DEA-EIT_protected_ckt.png}
+	\vspace{0.2cm}
+	\caption{System architecture for simultaneous DEA actuation and EIT mapping.}
+	\label{fig:DEA-EIT_protective_ckt}
+\end{figure}
+When the DEA is switched on, the compliant electrodes charge. During this charging period a voltage will be developed on the HV and low-voltage EIT electrode characterised by the charging capacitance, $C_{DEA}$, the HV source resistance, $R_{lim}$, and the multiplexer on resistance, $R_{on}$. The resistance of the DEA is lumped in with $R_{lim}$ for the Equations \ref{eqn:DEA_charging} and \ref{eqn:mux_voltage} below. The charging of the DEA capacitance is governed by Equation \ref{eqn:DEA_charging}.
+
+\begin{equation}
+	V_{\mathit{DEA_{\mathit{HV}}}}(t) = V_{\mathit{HV}} (1 - e^{-t / (R_{on}+R_{\mathit{lim}})C_{\mathit{DEA}}})
+	\label{eqn:DEA_charging}
+\end{equation}
+
+In the configuration shown in Figure \ref{fig:DEA-EIT_protective_ckt}, a voltage divider is created between the $R_{lim}$ resistor and the multiplexer, $R_{on}$, on-resistance to ensure the voltage seen at the multiplexer input pin is sufficiently low. The voltage seen on the multiplexer pin is given by Equation \ref{eqn:mux_voltage}.
+
+\begin{equation}
+	V_{\mathrm{MUX}}(t) = V_{\mathit{HV}} \frac{R_{on}}{R_{on}+R_{lim}} e^{-t / (R_{on}+R_{lim})C_{\mathit{DEA}}}
+	\label{eqn:mux_voltage}
+\end{equation}
+
+To mitigate the effects of the DEA switching transients during loading experiments, the loads were applied when the DEA voltages were at steady state, as exemplified in Figure \ref{fig:dea-eit_timing}, to observe the effects of the high voltage electrode on the EIT electrode mapping.
+
+To investigate the effects the DEA voltage switching transient has on EIT data capture, EIT frames were captured during switching events as shown in Figure \ref{fig:dea-eit_timing}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.39\linewidth]{Figures/DEA-EIT_SS_loads_example_relabelled.png}
+	\hspace{1cm}
+	\includegraphics[width=0.4\linewidth]{Figures/DEA-EIT_transient_VDEA_example_relabelled.png}
+	\vspace{0.3cm}
+	% made using www.desmos.com/calculator (graphing calculator)
+	% To do: re-make these plots with better font size.
+	\caption{Illustrative experiment timing diagrams. Left: Steady state $V_{DEA}$ where the purple dotted lines represent the time a load event begins. Right: Transient EIT measurements where the red dotted line represents the time an EIT frame capture begins.}
+	\label{fig:dea-eit_timing}
+\end{figure}
+
+
+
+\section{RESULTS} % 2 pages
+\label{sec:results}
+First the measurements taken during fabrication are explored, followed by the results from the independent DEA actuation validation and EIT pressure mapping validation. Finally, results are presented on the phenomena of concern when integrating HV DEAs with EIT-based pressure mapping.
+
+
+\subsection{Fabrication}
+\label{subsec:fab_results}
+Prior to constructing the DEA, the compliant CBSR inter-electrode resistances, $R_{int}$, were measured  in a similar fashion to voltage shown in Figure \ref{fig:EIT_diagram} to ensure the sufficient conductivity and hence CB particle dispersion for DEA actuation and EIT-based sensing. $R_{int}$ between the adjacent circumferential electrodes for all samples was consistently $<$ 20 k$\Omega$, as shown in Table \ref{tab:NF_vals}. Therefore, the $R_{int}$ values indicated a sufficiently low resistance for the EIT circuitry and indicates sufficiently homogeneous CB particle dispersion.
+% TODO: insert table for different average inter-electrode resistances for 0.5, 1, and 2 mm electrodes given in the EIT section
+% TOOD: Could gather data for the DE capacitance across all DEA samples. Why? This capacitance may be related to the rate of actuation due RC time constants of each thickness of compliant electrode.
+
+
+\subsection{DEA Validation}
+\label{subsec:dea_validation2}
+Before testing the piezoresistive compliant electrodes for both actuation and pressure mapping capability, the reference DEA was tested for its voltage actuation strain relationship. The theoretical actuation strain versus voltage was compared to the measured strain for the reference DEA shown in Figure \ref{subfig:ref_DEA}. The actuation strain data gathered is shown in Figure \ref{fig:ref_DEA_results}. The range given was derived from substituting the range of $K$ and $\varepsilon_r$ parameter values found in previous similar works\cite{Liu2018, Helal2018, Huang2023} into Equations \ref{eqn:DEA_stress} - \ref{eqn:DEA_strain_z_r}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 0.8\textwidth]{Figures/CB_vs_theory_range_vs_fitv2.png} % TODO: determine a range of K and perm_r values that put our experiment within the range given.
+	\vspace{0.2cm}
+	\caption{Comparing the measured CB reference DEA strain, the theoretical strain average and range, and the data fitted to Equation \ref{eqn:DEA_strain_z_r} by fitting either parameter $K$ or $\varepsilon_r$.}
+	% \caption{Comparing the measured DEA strain, the theoretical strain given the assumed $K$ and $\varepsilon_r$ values, 142 kPa and 4.5 respectively, and the fitted curve using either assumed $K$ or $\varepsilon_r$ value and fitting the other. X* denotes the fitted parameter given our assumption of the other parameter is correct.}
+	\label{fig:ref_DEA_results}
+\end{figure}
+The curve fit shown in Figure \ref{fig:ref_DEA_results} was found to have a linear set of solutions for $K$ and $\varepsilon_r$ with values similar to those limits of the material given characterisation determined in previous literature \cite{Carpi2003} .
+
+The CBSR compliant electrode experiments showed significantly smaller strains relative to the DEA with the CB powder compliant electrode as displayed in Figure \ref{fig:DEA_CBSR_thickness_results}. The effective mechanical impedance for the DEA with the CBSR compliant electrodes was significantly increased due to the relative thickness of the CBSR electrode and similar bulk modulus relative to the DE VHB material. Hence an effective bulk modulus, $K_{e\!f\!f}$, was calculated from fitting to the measured data, as a sum of the existing DE bulk modulus, $K$, and the effect of the compliant electrode's bulk modulus. $K_{e\!f\!f}$ is the a key characteristic of using thick compliant electrodes on a DEA that limits the actuation performance. When calculating $K_{e\!f\!f}$, $\varepsilon_r$ is assumed constant, as the effects of this different compliant electrode thickness on $\varepsilon_r$ is assumed relatively negligible. % TODO?: Insert citation showing that the $\varepsilon_r$ is less variable than K_eff (ideally by an order of magnitude!)
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = 0.8\textwidth]{Figures/DEA_CBSR_thickness_strains_vs_fits_hyb.jpg}
+	\vspace{0.2cm}
+	\caption{Comparison of the voltage strain relationships between the 100 mm diameter compliant electrodes of various thicknesses, $z_{ce}$, used for the DEA.}
+	\label{fig:DEA_CBSR_thickness_results}
+\end{figure}
+The effective bulk modulus impeding the actuation of the DE was calculated for each CBSR compliant electrode thickness by fitting to Equation \ref{eqn:DEA_strain_z_r} with the results displayed in Table \ref{tab:cbsr_bulk_mods}.
+\begin{table}[h!]
+	\begin{center}
+		\caption{Effective bulk modulus, $K_{e\!f\!f}$,  and coefficient of determination, $R^2$, for each fit of voltage-strain data for the CBSR compliant electrodes.}
+		\vspace{0.5cm}
+		\label{tab:cbsr_bulk_mods}
+		\begin{tabular}{c|c|c} % TODO: R^2 OR determine stdev??
+			$z_{ce}$ [mm] & $K_{e\!f\!f}$ [kPa] & $R^2$ \\
+			\hline
+			2 & 966 & 0.86\\
+			1 & 860 & 0.99\\
+			0.5 & 450 & 0.98 \\
+			0.5 (hybrid) & 334 & 0.91\\
+			% TODO?: add more hybridised results
+		\end{tabular}
+	\end{center}
+\end{table}
+To further enhance the actuation strain, $S_{z_{de}}$ of the DEA-EIT device, the compliant electrodes were hybridised such that one of the compliant electrodes was made from CB powder and the other from the CBSR composite. The hybridised results for the $K_{e\!f\!f}$ value are also given in Table \ref{tab:cbsr_bulk_mods}.
+
+% TODO?: decide whether to include this analysis of the spider electrode styles... -->
+% After obtaining the results for the DEA actuation of various compliant electrodes thickness, it was hypothesised that altering the circumferential electrodes embedded in the boundary of the compliant electrodes would decrease $K_{e\!f\!f}$ and further enhance the actuation performance of the DEA. Hence a different configuration of the DEA was trialled which had different intermediary electrode material as an electrical connection between the compliant and the circumferential electrodes. The intermediary electrode materials tested were CB powder and a CB carbon grease mix.
+
+
+\subsection{EIT Validation}
+\label{subsec:eit_validation}
+Validation of the EIT sensing method on the compliant electrodes was carried out for the three different electrode thickness, $z_{ce}$, values to see the differences the thickness may have on the pressure mapping characteristics' spatial performance. Figure \ref{fig:EIT_thickness_compare} exemplifies the difference in the conductance reconstructions for a load.
+\begin{figure}[H]
+	\centering
+	\subfloat[$z_{ce}$ = 0.5 mm]{\includegraphics[width=0.3\linewidth]{Figures/DEA.5_CBSR_8p_1_9push_15strain_120s_1mA_2_frame149.jpg}\label{subfig:DEA.5_strain15_L1}}
+%	\hspace{0.05cm}
+	\subfloat[$z_{ce}$ = 1 mm]{\includegraphics[width=0.3\linewidth]{Figures/DEA1_CBSR_8p_1_9push_15strain_120s_1mA_2_frame134.jpg}\label{subfig:DEA1_strain15_L1}}
+%	\hspace{0.05cm}
+	\subfloat[ $z_{ce}$ = 2 mm]{\includegraphics[width=0.3\linewidth]{Figures/DEA2_CBSR_8p_1_9push_15strain_120s_1mA_2_frame162.jpg}\label{subfig:DEA2_strain15_L1}}
+%	\hspace{0.05cm}
+	\subfloat[Scale]{\includegraphics[width=0.07\linewidth]{Figures/DEAX_CBSR_8p_1_9push_15strain_120s_1mA_2_cb.jpg}\label{subfig:DEAX_strain15_cbar}}
+	\vspace{0.1cm}
+	\caption{A 15\% strain compression at point $L_1$ applied to 100mm diameter compliant DEA electrodes of 3 compliant electrode thicknesses.}
+	\label{fig:EIT_thickness_compare}
+\end{figure}
+A significant factor for determining the minimum pressure able to be detected is governed by the noise floor experienced when the domain is in a steady relaxed state. A metric used to quantify the noise floor is the noise figure, $N\!F$, which is commonly used in other applications of EIT\cite{Adler2009, Ellingham2024} . To quantify the domain homogeneity the inter-electrode resistance (i.e. between adjacent electrodes) and respective standard deviation data for each sample was gathered alongside the NF, as shown in Table \ref{tab:NF_vals}.
 \begin{table}[H]
-\caption{DUT noise figure, NF, and noise, $\sigma_n$, at steady-state}
-\label{table:DUT_noise}
-\begin{center}
-\begin{tabular}{p{2cm}p{2cm}p{2cm}}
-\hline
-\textbf{CB wt\%} & \textbf{NF} & $\sigma_n$ [mS]\\ \hline
-8           & 1.20 $\pm$ 0.17 & 0.69         \\
-9           & 1.15 $\pm$ 0.11 & 0.48            \\ 
-\hline
-\end{tabular}
-\end{center}
+	\centering
+	\caption{Noise factor and mean inter-electrode resistance, $\Bar{R}_{int}$, for each thickness of compliant DEA electrode used for EIT}
+	\label{tab:NF_vals}
+	\begin{tabular}{c|c|c}
+		$z_{ce}$ [mm] & $N\!F$ & $\Bar{R}_{int}$ [k$\Omega$]\\
+		\hline
+		2 & 0.99 & 4.40 $\pm$ 0.69 \\
+		1 & 0.98 & 7.72 $\pm$ 1.14\\
+		0.5 & 0.96 & 9.91 $\pm$ 2.16\\
+	\end{tabular}
+\end{table}
+To quantify the localisation performance of the loads applied to the DEA compliant electrode the center-of-mass error, $E_{CoM}$, and shape fit, $S\!F$, of the sensing system were calculated.	A polar histogram plot of the $E_{CoM}$ values from each frame from an experiment are displayed in Figures \ref{subfig:e_com_500um_ce} - \ref{subfig:e_com_1mm_ce}. From this same experiment a mean $E_{CoM}$ is given in Table \ref{tab:spatial_metrics_ce}.
+
+\begin{figure}[H]
+	\centering
+	\subfloat[$z_{ce}$ = 0.5 mm]{\includegraphics[width=0.35\linewidth]{Figures/polar_ecom_DEA.5_CBSR_8p_1_9push_20strain_120s_1mA_1.png}\label{subfig:e_com_500um_ce}}
+	\hspace{1cm}
+	\subfloat[$z_{ce}$ = 1 mm]{\includegraphics[width=0.35\linewidth]{Figures/polar_ecom_DEA1_CBSR_8p_1_9push_20strain_120s_1mA_1.png}\label{subfig:e_com_1mm_ce}}
+	\hspace{1cm}
+	\subfloat[$z_{ce}$ = 2 mm]{\includegraphics[width=0.35\linewidth]{Figures/polar_ecom_DEA2_CBSR_8p_1_9push_20strain_120s_1mA_1.png}\label{subfig:e_com_2mm_ce}}
+	\hspace{4cm}
+	\subfloat[Load locs]{\includegraphics[width=0.1\linewidth]{Figures/polar_ecom_DEA_EIT_Lx_legend.jpg}\label{subfig:lx_legend_ce}}
+	\vspace{0.1cm}
+	\caption{Vectorised $E_{CoM}$ for the nine load experiment at 20\% compressive strain for each $z_{ce}$ value tested on individual DEA-EIT compliant electrode samples.}
+	\label{fig:polar_ecoms_ce}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\subfloat[$z_{ce}$ = 0.5 mm]{\includegraphics[width=0.35\linewidth]{Figures/polar_ecom_DEA.5_EIT_CBSR_8p_1_9push_20strain_120s_1mA_1_simp.jpg}\label{subfig:e_com_500um_dea}}
+	\hspace{1cm}
+	\subfloat[$z_{ce}$ = 1 mm]{\includegraphics[width=0.35\linewidth]{Figures/polar_ecom_DEA1_EIT_CBSR_8p_1_9push_20strain_120s_1mA_1_simp.jpg}\label{subfig:e_com_1mm_dea}}
+	\hspace{1cm}
+	\subfloat[$z_{ce}$ = 2 mm]{\includegraphics[width=0.35\linewidth]{Figures/polar_ecom_DEA2_EIT_CBSR_8p_1_9push_20strain_120s_1mA_1_simp.jpg}\label{subfig:e_com_2mm_dea}}
+	\hspace{4cm}
+	\subfloat[Load locs]{\includegraphics[width=0.1\linewidth]{Figures/polar_ecom_DEA_EIT_Lx_legend.jpg}\label{subfig:lx_legend_dea}}
+	\vspace{0.1cm}
+	\caption{Vectorised $E_{CoM}$ for the nine load experiment using the same indentation depth as Figure \ref{fig:polar_ecoms_ce} for each $z_{ce}$ value tested on the DEA-EIT integrated samples.}
+	\label{fig:polar_ecoms_dea}
+\end{figure}
+Mean values for the spatial performance metrics, $E_{CoM}$ and $S\!F$, were gathered for each strain, each thickness, and at each load point. Spatial performance metric means from two nine load experiment are given in Tables \ref{tab:spatial_metrics_ce} and \ref{tab:spatial_metrics_dea}. The $S\!F$ values are found using Equation \ref{eqn:sf}.
+
+\begin{table}[H]
+	\centering
+	\caption{Mean $E_{CoM}$ and $S\!F$ values ($\pm$ std) obtained for each DEA compliant electrode thickness at 20\% strains loads}
+	\label{tab:spatial_metrics_ce}
+	\begin{tabular}{c|c|c}
+		$z_{ce}$ [mm] & $\Bar{E}_{CoM}$ [mm] & $\Bar{S\!F}$ [mm$^2$] \\
+		\hline
+		2 & 4.10 $\pm$ 1.93 & 46.03 $\pm$ 0.51\\ % TODO: redo SF values!
+		1 & 4.25 $\pm$ 2.42 & 36.93 $\pm$ 0.92\\
+		0.5 & 10.43 $\pm$ 6.06 & 81.92 $\pm$ 8.43\\
+	\end{tabular}
 \end{table}
 
-
-\subsection{1D Material Characterisation} \label{sec:1D Material Characterisation2}
-To generate a 2D pressure map from the EIT reconstructions a 1D material electromechanical characterisation was required. The 1D electromechanical relationship can then be extended to form an electromechanical relationship in 2D.
-
-% \subsubsection{Stress-strain}\label{sec:Stress-strain2}
-% Given known strain inputs and measured stress output data the elastic modulus of the CBSR 8 wt\% and 9 wt\% data was calculated as 132.5 kPa and 98.1 kPa respectively.
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=8cm]{Figures/CBSR 8wt 9wt stress-strain.jpg}
-%     \caption{Stress strain data and fitted curves for 8 wt\% and 9 wt\% CBSR composites.}
-%     \label{fig:stress-strain}
-% \end{figure}
-% TODO?: Append plot and put both plots into paper
-
-\subsubsection{Quasi-static Piezoresistivity}\label{sec:Quasi-static Piezoresistivity2}
-Given known strain input data, and measured stress and conductance change output data, a fit is shown in Figure \ref{fig:quasi_r_8p}. The gradient of the linear fit, i.e. the gauge factor, for the CBSR 8 wt\% and 9 wt\% was calculated as 0.6 and 0.2 respectively. Note that in the 9 wt\% relative conductance data the standard deviation of the 5\% strain data was similar to that of the mean, hence the linear range of 10 - 30\% strain was considered when fitting the curve.
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=8cm]{Figures/CBSR_8p_cond_stress_strain_sin_titulo.jpg}
-    \caption{Conductance change vs. stress (top) and strain (bottom) data and fitted curves for 8 wt\% CBSR.}
-    % TODO?: Change Linear fit to 10^{-1} from 10^{-3}
-    \label{fig:quasi_r_8p}
-\end{figure}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=7cm]{Figures/CBSR_9p_cond_stress_strain_sin_titulo.jpg}
-%     \caption{Conductance change vs stress (top) and strain (bottom) data and fitted curves for 9 wt\% CBSR. The 5\% strain values ignored as the $\mathrm{std}$ were larger than the conductance change values.}
-%     % TODO?: Change Linear fit to 10^{-1} from 10^{-3}
-%     \label{fig:quasi_r_9p}
-% \end{figure}
-% TODO: change plot title
-
-\subsubsection{Transient Piezoresistivity}\label{sec:Transient Piezoresistivity2}
-The transient piezoresistive effects observed within a PNEC limit the frequency response of the sensor. An example of the transient response of the material to a repeated compressive strain pulse input is displayed in Figure \ref{fig:stress_seq}, clearly showing the stress relaxation of the material due to its viscoelasticity. 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=8cm]{Figures/CBSR 8 wt 25p strain - 1D test stress seq.jpg}
-    \caption{Compressive loading applied to the CBSR 8 wt\% DUT for 10 loading events of 25\% strain.}
-    \label{fig:stress_seq}
-\end{figure}
-In Figure \ref{fig:load_relax_eg} a loading event is shown with the related stress and resistance relaxation curves. The unloading event similarly has a relaxation period for both stress and resistance in the loading case. Unlike the loading stress transient, the resistance transient has a spike during the unloading relaxation event seen in Figure \ref{fig:load_relax_eg}. This rising edge and peak of this spike are ignored and the resistance relaxation edge is characterised.  
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=8cm]{Figures/CBSR 8 wt 25p strain - 1D stress load unload.jpg}
-    \caption{Compressive loading and unloading transients for CBSR 8 wt\% material undergoing a 20\% strain pulse from the first pulse given in Figure \ref{fig:stress_seq}.}
-    \label{fig:load_relax_eg}
-\end{figure}
-For each stress relaxation Equation \ref{eqn:maxwell_general_n2} was fitted to the data. Analogously the same was done for the resistive relaxation events observed. 
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=8cm]{Figures/Push event 3 - CBSR 8 wt 5p strain - 1D compression test.jpg}
-    \caption{The fourth 1D load event, $L_{3}$ on the CBSR 8 wt\% sample using 5\% strain showing a stress, $\sigma$ and resistance, R, relaxation event and their corresponding fitted curves.}
-    \label{fig:push_event_relax_example}
-\end{figure}
-
-
-The fitted parameters were found for both 8 and 9 wt\% CBSR samples, giving an indication of t
-
-The settling times of the resistance relaxations give an indication of the frequency response of material. Thus, parameters were fitted to a series of relaxations using Equation \ref{eqn:maxwell_general_n2}, then a series of fit parameters could be used to determine a mean fit. The mean fit was then used to determine the mean settling time over each ten loading events and each of the six strain values. The mean relaxation settling times were compared for each CB weight percentage as shown in Appendices \ref{fig:strain_ts_8p_1D} and \ref{fig:strain_ts_9p_1D}.
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=8.5cm]{Figures/CBSR_8p_1_10push_XXstrain_60s_ts_vals_vs_strain_1D_sin_titulo.jpg}
-%     \caption{1D mean settling times for 5 - 30\% compressive strain applied to CBSR 9 wt\% with the error bars showing the standard deviation.}
-%     \label{fig:strain_ts_8p_1D}
-% \end{figure}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=8.5cm]{Figures/CBSR_9p_1_3push_XXstrain_240s_ts_vals_vs_strain_1D_sin_titulo.jpg}
-%     \caption{Mean settling times for 5 - 30\% compressive strain applied to CBSR 9 wt\% with the error bars showing the standard deviation.}
-%     \label{fig:strain_ts_9p_1D}
-% \end{figure}
-% TODO? - What about a pure silicone case?
-
-% \subsection{Sensor Characterisation}\label{sec:Sensor Characterisation2}
-% % TODO?: Sensor validation systems and EIT reconstruction parameters are quantified in this section.
-
-% \subsubsection{Localised Stress Testing} \label{sec:Localised Stress Testing2}
-% % TODO:
-
-% \subsubsection{EIT Measurement}\label{sec:EIT Measurement2}
-% % TODO:
-
-% \subsubsection{Sensor System}\label{sec:Sensor System2}
-% % TODO:
-
-% \subsubsection{EIT Solver}\label{sec:EIT Inverse Solver2}
-% % TODO:
-
-
-\subsection{Sensor Performance Metrics}\label{sec:Sensor Performance Metrics2}
-To validate this 2D pressure sensing platform for specific applications the limits of the sensor must known. Metrics to analyse and quantify the limits, sensor noise and spatial, temporal, and stress performance metrics are given in this section.
-
-% \subsubsection{Noise Figure}\label{sec:Noise Figure2}
-% To determine whether the noise floor of the material in steady-state was sufficiently low the noise figure was calculated for the unloaded state of the material and given in Table \ref{table:DUT_nf_char}. 
-% % TODO?: Make a table of the average noise figure vs strain vs wt%
-% % TODO?: Compare average noise figure and location of load (i.e. are there areas with higher NF values! i.e. where the stress resolution may be lower?)
-% % TODO?: Determine why the NF is so high? It's showing that the input noise is damped by EIT??
-% \begin{table}[H]
-% \caption{DUT noise figure at steady-state}
-% \label{table:DUT_nf_char}
-% \begin{center}
-% \begin{tabular}{lll}
-% \hline
-% \textbf{CB wt\%} & $\mathrm{\mu}$\textbf{(NF)} & $\mathrm{std}$\textbf{(NF)}     \\ \hline
-% 8           & 1.200    &    0.171               \\
-% 9           & 1.146    &    0.112               \\ 
-% \hline
-% \end{tabular}
-% \end{center}
-% \end{table}
-% It was also observed that the mean NF generally increased as the strain signal increased as shown in \ref{fig:NF_strain_time}.
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=8.5cm]{Figures/CBSR_8p_1_9push_XXstrain_60s_NF_vs_strain_all.jpg}
-%     \caption{Noise figure over time for each different strain experiment for CBSR 8 wt\%.}
-%     \label{fig:NF_strain_time}
-% \end{figure}
-% TODO?: Quantify background noise during and between push events from 'ringing' as seen in -> \citep{Russo2017}. Could limit the stress sensor in terms of simultaneous and concurrent pushes.
-
-\subsubsection{Pre-processing}\label{Pre-processing2}
-The noise floor limits the detection of small forces. First the noise floor was found from the no load steady-state of material. The maximum noise from the first eight frames was found and this maximum was subtracted from all contiguous images in the time series experiment.
-% \begin{figure*}[h!]
-%     \centering
-%     \includegraphics[width=0.8\textwidth]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_pre_processing.jpg}
-%     \caption{Left: An example of an unprocessed image from an image reconstruction during a 20\% loading event in the middle of the 8wt\% CBSR domain, shown by the transparent white circle. Right: A force plot with a red dot showing the current force reading for the same image reconstruction frame .}
-%     \label{fig:pre_process}
-% \end{figure*}
-
-After a noise mask has eliminated the steady state noise floor, different percentage thresholds can be used to compensate for different regularisation and different material push area edge softness as shown in Figure \ref{fig:thresh_masks}.
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=9.3cm]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_all_masks.jpg}
-%     \caption{A series of threshold percentage masks 25, 50, 75, 85\% for the same reconstruction given in Figure \ref{fig:noise_floor_mask_8p}}
-%     \label{fig:thresh_masks}
-% \end{figure}
-\begin{figure}[H]
-\centering
-    \begin{minipage}[t]{.2\textwidth}
-        \vspace{0pt}
-        \subfloat[][]{\includegraphics[width=\textwidth]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_25p_mask_cropx2.jpg}\label{thresh25}}
-        \vfill
-        \subfloat[][]{\includegraphics[width=\textwidth]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_50p_mask_cropx2.jpg}\label{thresh50}}
-        \vspace{0pt}
-    \end{minipage}%
-    \begin{minipage}[t]{.2\textwidth}
-        \vspace{0pt}
-        \subfloat[][]{\includegraphics[width=\textwidth]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_75p_mask_cropx2.jpg}\label{thresh75}}
-        \vfill
-        \subfloat[][]{\includegraphics[width=\textwidth]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_85p_mask_cropx2.jpg}\label{thresh85}}
-        \hfill
-    \end{minipage} 
-    \begin{minipage}[t]{.08\textwidth}
-        \vspace{0pt}
-        \subfloat[][]{\includegraphics[width=\textwidth]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_scale_bar.jpg}\label{colour_bar}}
-        \hfill
-    \end{minipage}  
-\caption{A series of threshold percentage masks (a) 25\%, (b) 50\%, (c) 75, and (d) 85\% for the same reconstruction given in Figure \ref{fig:noise_floor_mask_8p}. (e) is the resistance change scale bar.}
-\label{fig:thresh_masks}
-\end{figure}
-The threshold masked image blobs and the force applicator shapes in Figures \ref{thresh25} - \ref{thresh85} are compared and quantified in the following section.
-
-\subsubsection{Spatial Performance}\label{sec:Spatial Performance2}
-%% TODO: Turn this section into a flowing story - Pre-processing highlights points of interest. Prove good data is being captured, i.e. E_CoM is super low, SD is low and A_OL is high!.
-To properly determine where the perimeter of a load is multiple threshold mask filters were applied. To validate the threshold mask percentages
- the three main performance characteristics were displayed as separate time series for each material, each applied strain, and each threshold percentage mask. These time series show how each metric changed over the course of a loading test sequence and how the metrics vary across the surface of the DUT. An example comparing this time series data for two instances where a 20\% strain pulse train was applied to a the nine loading locations with multiple threshold mask percentages is shown in Figures \ref{fig:recon_perform_8p} and Appendix \ref{fig:recon_perform_9p} for for 8 and 9 wt\% CBSR samples respectively.
-% TODO: Table of threshold percentages (25, 50, 75, 85\%) comparing the mean of the 3 performance metrics for 8 and/or 9 wt\%
-    
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=8.2cm]{Figures/CBSR_8p_9push_20strain_60s_4_metrics_thresh_masks_v2_numbd.jpg}
-    \caption{Spatial performance metrics comparing threshold percentages of 25, 50, 75, and 85\% for a 8 wt\% CBSR sample being loaded with 20\% compressive strain in nine areas, $L_{0-8}$, shown in Figure \ref{fig:force_app_map}. The force time series plot data is light orange.} % TODO?: Determine better way of displaying these metrics??
-    \label{fig:recon_perform_8p}
-\end{figure}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=8.3cm]{Figures/CBSR_9p_9push_20strain_60s_4_metrics_thresh_masks_v2_numbd.jpg}
-%     \caption{Spatial performance metrics comparing threshold percentages of 25, 50, 75, and 85\% for 9 wt\% CBSR sample being loaded with 20\% compressive strain in nine areas, $L_{0-8}$, shown in Fig \ref{fig:force_app_map}.} % TODO?: Determine better way of displaying these metrics??
-%     \label{fig:recon_perform_9p}
-% \end{figure}
-
-% TODO: Somehow show the how the blob_metrics change for % threshold and change for % strain.
-    % Could plot blob_metric_loadings vs %'s (i.e. 9 load curves overlapped) 
-
-The percentage threshold masks from 25 - 85\% were compared by finding the mean of all of the spatial performance metrics for each strain from 5 - 30\%. The mean and standard deviation for each of these metrics from the data shown in Figure \ref{fig:recon_perform_8p} is given in Tables \ref{table:spatial_metrics_stats_8p_strain20} and \ref{table:spatial_metrics_stats_8p_strain20_loads}.
-
 \begin{table}[H]
-    \caption{CBSR 8 wt\% mean and standard deviation for spatial performance metrics across of a nine loads, $L_0$-$L_8$ and strain value 20\%.}
-    \label{table:spatial_metrics_stats_8p_strain20}
-    \centering
-    \begin{tabular}{p{0.7cm}p{2cm}p{2.1cm}p{1.8cm}}
-    \hline
-        \% thresh & $E_{CoM}$ [mm] & $A_{OL}$ [\%] & $S\!D$ [mm$^2$]\\ \hline
-        0.25& 4.1 $\pm$ 6.3& 53.3 $\pm$ 15.3& 10.4 $\pm$ 9.3 \\
-        0.5& 3.3 $\pm$ 6.3& 57.5 $\pm$ 16.3& 3.6 $\pm$ 4.4 \\
-        0.75& 3.8 $\pm$ 6.3& 69.6 $\pm$ 19.8& 2.4 $\pm$ 5.8 \\
-        0.85& 4.1 $\pm$ 6.4& 72.5 $\pm$ 21.7& 2.4 $\pm$ 6.5 \\
-        \hline
-    \end{tabular}
-\end{table}
-
-\begin{table}[H]
-    \caption{CBSR 8 wt\% mean and standard deviation for spatial performance metrics of nine loads, $L_0$-$L_8$, a 85\% percentage threshold mask, and strain value 20\%.}
-    \label{table:spatial_metrics_stats_8p_strain20_loads}
-    \centering
-    \begin{tabular}{p{0.7cm}p{2cm}p{2.1cm}p{2.1cm}}
-        \hline       
-        Load & $E_{CoM}$ [mm] & $A_{OL}$ [\%] & $S\!D$ [mm$^2$]\\ \hline
-        $L_0$ & 2.05 $\pm$ 0.70& 80.39 $\pm$ 4.19& 0.28 $\pm$ 0.01\\
-        $L_1$& 1.53 $\pm$ 0.23& 72.32 $\pm$ 1.74& 0.12 $\pm$ 0.01\\
-        $L_2$& 0.67 $\pm$ 0.41& 83.00 $\pm$ 2.38& 0.48 $\pm$ 1.16\\
-        $L_3$& 3.29 $\pm$ 2.17& 87.93 $\pm$ 2.68& 5.25 $\pm$ 3.78\\
-        $L_4$& 1.44 $\pm$ 1.61& 84.81 $\pm$ 5.78& 2.76 $\pm$ 5.65\\
-        $L_5$& 4.43 $\pm$ 2.09& 61.08 $\pm$ 3.29& 7.39 $\pm$ 16.31\\
-        $L_6$& 2.03 $\pm$ 1.05& 82.19 $\pm$ 3.55& 3.14 $\pm$ 8.57\\
-        $L_7$& 1.49 $\pm$ 0.56& 77.68 $\pm$ 2.46& 0.66 $\pm$ 1.25\\
-        $L_8$& 6.95 $\pm$ 3.67& 73.69 $\pm$ 3.60& 3.78 $\pm$ 2.01\\
-        \hline
-    \end{tabular}
+	\centering
+	\caption{Mean $E_{CoM}$ and $S\!F$ values ($\pm$ std) obtained for each DEA stack at the same indent depth as 20\% strain in Table \ref{tab:spatial_metrics_ce} loads. *Where the compliant electrode is part of a DE compliant electrode DEA stack.}
+	\label{tab:spatial_metrics_dea}
+	\begin{tabular}{c|c|c}
+		$z_{ce}$* [mm] & $\Bar{E}_{CoM}$ [mm] & $\Bar{S\!F}$ [mm$^2$] \\
+		\hline
+		2 & 1.66 $\pm$ 0.17 & 46.03 $\pm$ 0.56\\ % TODO: redo SF values!
+		1 & 6.01 $\pm$ 0.44 & 37.03 $\pm$ 1.06\\ 
+		0.5 & 8.83 $\pm$ 1.49 & 81.64 $\pm$ 7.99\\ % done
+	\end{tabular}
 \end{table}
 
 % \begin{table}[H]
-%     \caption{CBSR 8 wt\% mean and standard deviation for spatial performance metrics over of a nine loads, $L_0$-$L_8$ and six strain values (5 - 30\%).}
-%     \label{table:spatial_metrics_stats_8p}
-%     \centering
-%     \begin{tabular}{p{0.7cm}p{2cm}p{1.8cm}p{1.8cm}}
-%     \hline
-%         \% thresh & $E_{CoM}$ [mm] & $A_{OL}$ [\%] & $S\!D$ [mm$^2$]\\ \hline
-%         25 & \textbf{25.68} $\pm$ 29.91 & 42.29 $\pm$ 12.88 & 44.10 $\pm$ 16.64 \\
-%         50 & 79.29 $\pm$ 207.25 & 39.27 $\pm$ 12.80 & 41.26 $\pm$ 16.60 \\
-%         75 & 141.12 $\pm$ 519.81 & 37.42 $\pm$ 13.67 & 37.89 $\pm$ 16.28 \\
-%         85 & 52.10 $\pm$ 68.97 & 36.26 $\pm$ 13.72 & \textbf{37.62} $\pm$ 16.60 \\
-%         \hline
-%     \end{tabular}
-% \end{table}
-% \begin{table}[H]
-%     \caption{CBSR 9 wt\% mean and standard deviation for spatial performance metrics over of a nine loads, $L_0$-$L_8$ and six strain values (5 - 30\%).}
-%     \label{table:spatial_metrics_stats_9p}
-%     \centering
-%     \begin{tabular}{p{0.7cm}p{2cm}p{1.8cm}p{1.8cm}}
-%     \hline
-%         \% thresh & $E_{CoM}$ [mm] & $A_{OL}$ [\%] & $S\!D$ [mm$^2$]\\ \hline
-%         25 & 102.11 $\pm$ 233.19 & 45.90 $\pm$ 12.95 & 59.58 $\pm$ 10.72 \\
-%         50 & 194.97 $\pm$ 550.06 & 40.92 $\pm$ 13.50 & 54.07 $\pm$ 9.92 \\
-%         75 & 60.43 $\pm$ 74.23 & 33.55 $\pm$ 14.11 & 49.71 $\pm$ 10.88 \\
-%         85 & \textbf{53.78} $\pm$ 54.16 & 30.08 $\pm$ 13.87 & \textbf{49.18} $\pm$ 11.44 \\ \hline
-%         \hline
-%     \end{tabular}
-% \end{table}
-%%%% ALT table format %%%%
-% \begin{table}[H]
-%     \caption{CBSR 8 wt\% mean and standard deviation for spatial performance metrics over of a nine loads, $L_0$-$L_8$ and six strain values (5 - 30\%).}
-%     \label{table:spatial_metrics_stats_8p}
-%     \centering
-%     \begin{tabular}{p{.65cm}p{.85cm}p{.85cm}p{.75cm}p{.75cm}p{.75cm}p{.75cm}}
-%     \hline
-%         \% thresh & $\mu_{CoM}$ [mm] & $\mathrm{std}_{CoM}$ [mm]& $\mu_{A_{OL}}$ [\%] & $\mathrm{std}_{A_{OL}}$ [\%] & $\mu_{S\!D}$ [mm$^2$]& $\mathrm{std}_{SD}$ [mm$^2$]\\ \hline
-%         25 & \textbf{25.68} & 29.91 & 42.29 & 12.88 & 44.10 & 16.64 \\
-%         50 & 79.29 & 207.25 & 39.27 & 12.80 & 41.26 & 16.60 \\
-%         75 & 141.12 & 519.81 & 37.42 & 13.67 & 37.89 & 16.28 \\
-%         85 & 52.10 & 68.97 & 36.26 & 13.72 & \textbf{37.62} & 16.60 \\
-%         \hline
-%     \end{tabular}
-% \end{table}
-% \begin{table}[H]
-%     \caption{CBSR 9 wt\% mean, $\mu$, and standard deviation, $std$, of spatial performance metrics}
-%     \label{table:spatial_metrics_stats_9p}
-%     \centering
-%     \begin{tabular}{p{.65cm}p{.85cm}p{.85cm}p{.75cm}p{.75cm}p{.75cm}p{.75cm}}
-%     \hline
-%         \% thresh & $\mu_{CoM}$ [mm] & $\mathrm{std}_{CoM}$ [mm]& $\mu_{A_{OL}}$ [\%] & $\mathrm{std}_{A_{OL}}$ [\%] & $\mu_{S\!D}$ [mm$^2$]& $\mathrm{std}_{SD}$ [mm$^2$]\\ \hline
-%         25 & 102.11 & 233.19 & 45.90 & 12.95 & 59.58 & 10.72 \\
-%         50 & 194.97 & 550.06 & 40.92 & 13.50 & 54.07 & 9.92 \\
-%         75 & 60.43 & 74.23 & 33.55 & 14.11 & 49.71 & 10.88 \\
-%         85 & \textbf{53.78} & 54.16 & 30.08 & 13.87 & \textbf{49.18} & 11.44 \\ \hline
-%     \end{tabular}
-% \end{table}
-%%%% ALT table format %%%%
+	% 	    \centering
+	% 	    \caption{Mean shape fit, $S\!F$ ($\pm$ Std), values obtained for each DEA compliant electrode thickness at 20\% strains loads}
+	% 	    \label{tab:spatial_metrics}
+	% 	    \begin{tabular}{c|c|c|c}
+		% 		        \multirow{ 2}{*}{$L_x$} & \multicolumn{3}{c}{$\Bar{S\!F}$  [mm$^2$] for $z_{ce}$:} \\
+		% 		        & 0.5 mm & 1 mm & 2 mm \\
+		% 		        \hline
+		% 		        0 & 131.29 $\pm$ 6.18 & 18.40 $\pm$ 1.24 & 22.44 $\pm$ 1.15 \\
+		% 		        1 & 45.18 $\pm$ 1.73 & 57.36 $\pm$ 1.42 & 54.22 $\pm$ 0.35 \\
+		% 		        2 & 48.40 $\pm$ 1.91 & 29.11 $\pm$ 2.00 & 57.42 $\pm$ 0.39 \\
+		% 		        3 & 74.22 $\pm$ 24.04 & 59.42 $\pm$ 0.48 & 62.26 $\pm$ 0.75 \\
+		% 		        4 & 111.13 $\pm$ 15.09 & 46.81 $\pm$ 0.90 & 71.52 $\pm$ 0.42 \\
+		% 		        5 & 132.32 $\pm$ 0.10 & 12.97 $\pm$ 0.28 & 11.81 $\pm$ 0.31 \\
+		% 		        6 & 93.45 $\pm$ 24.76 & 3.01 $\pm$ 0.52 & 11.74 $\pm$ 0.32 \\
+		% 		        7 & 101.13 $\pm$ 2.04 & 104.26 $\pm$ 1.39 & 122.76 $\pm$ 0.88 \\
+		% 		        8 & 0.20 $\pm$ 0.03 & 0.99 $\pm$ 0.08 & 0.08 $\pm$ 0.01\\
+		% 		    \end{tabular}
+	% 	\end{table}
+% \subsection{Attached OR Detached Compliant DEA Electrodes EIT Validation}
+% TODO: determine whether attaching the CBSR to the DE had any significant effect on the sensing capability of the DEA.\\
+% TODO: determine whether the spider-like DEA topology seen in Figure \ref{subfig:DEA_EIT_multi} had any significant effect on the sensing capability of the DEA.
 
-% TODO: Redo these results using threshold masking and blob separation to see if better results can be obtained. CoM error of 25.68 and 53.78 is a bit shit!
+\subsection{Simultaneous Actuation and Pressure Mapping}
+Simultaneous actuation and pressure mapping has been performed when at a range of actuation strains using excitation voltages ranging from 1 kV to 10 kV. Each DEA voltage excitation yielded similar noise in their reconstruction results as shown in Figure \ref{fig:DEA-EIT_steady_state_loads}.
 
-% TODO?: Create an absolute threshold mask using known expected limits of material in 1D. (i.e. expected dR/R_0=4% for a strain=5% for CBSR 8%)
-% TODO?: Compare threshold masking 50-85% with absolute threshold masking?
-% TODO?: Place performance metric plots in the appendices?
-
-\subsection{Randomised Location and Strain Testing}
-In a real world application the sensor platform in this work will likely experience a large range of unknown loads in various locations. To ensure that the device operates in a similar fashion to that seen in the structured experimental data, a randomised experiment was completed. The randomised experiment loads were at ten randomised radii, $r_{rand}$, angles, $\theta_{rand}$, and strain values, within the ranges, 0 - 40\% of the domain radius, 0 - 360$\degree$, and  5 - 30\% respectively.
-
+% Todo: Determine the noise factor for each voltage excitation.
+% Todo?: Re-do experiments and measure the actuation strain at the same time as the DEA excitation?
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=8.5cm]{Figures/rand1_strain_aplc_points.jpg}
-    \caption{The ten random load point locations, $L_{rand}$ and random strain values proportional to rec circle size as shown on a polar plot.}
-    \label{fig:rand1_load_locs}
+	\centering
+	\subfloat[$V_{\mathrm{DEA}} = 1 kV$]{\includegraphics[width=0.3\linewidth]{Figures/DEA_EIT_1mm_manual_3load_1kV_1_frame14_crop.png}\label{subfig:DEA-EIT_steady_state_loads_1kV}}
+	\hspace{0.1cm}
+	\subfloat[$V_{\mathrm{DEA}} = 4 kV$]{\includegraphics[width=0.3\linewidth]{Figures/DEA_EIT_1mm_manual_3load_4kV_1_frame18_crop.png}\label{subfig:DEA-EIT_steady_state_loads_1kV}}
+	\hspace{0.1cm}
+	\subfloat[$V_{\mathrm{DEA}} = 7 kV$]{\includegraphics[width=0.35\linewidth]{Figures/DEA_EIT_1mm_manual_3load_7kV_1_frame17.png}\label{subfig:DEA-EIT_steady_state_loads_1kV}}
+	\hspace{0.1cm}
+	
+	% \includegraphics[width=0.3\linewidth]{Figures/DEA_EIT_1mm_manual_3load_1kV_1_frame14_crop.png}
+	% \includegraphics[width=0.3\linewidth]{Figures/DEA_EIT_1mm_manual_3load_4kV_1_frame18_crop.png}
+	% \includegraphics[width=0.36\linewidth]{Figures/DEA_EIT_1mm_manual_3load_7kV_1_frame17.png}
+	\vspace{0.3cm}
+	\caption{Loads applied to the compliant ground electrode of a DEA during different steady state voltage excitations, $V_{DEA}$.}
+	\label{fig:DEA-EIT_steady_state_loads}
 \end{figure}
-
-Spatial performance metrics for these tests are given in Tables \ref{table:spatial_ecom_metrics_stats_8p_rand_loads} and \ref{table:spatial_sd_metrics_stats_8p_rand_loads} with the load points and their magnitudes shown diagrammatically in Figure \ref{fig:rand1_load_locs}. A pseudo-random number generator with a uniform distribution was used for all randomly generated data.
-
-% Random loc/strain values used >>
-% r = [5.42743849862509, 29.846456136299985, 4.181660082237304, 34.04603730123931, 35.80371089244604, 9.55811959727824, 2.769985486438258, 11.156805670844921, 24.567831277259092, 16.589765149647803]
-% theta = [9.538757518092709, 336.97294194577626, 317.4390882463128, 69.96700648150347, 137.07095150991276, 54.52712421011869, 259.78313980093276, 113.93715998989623, 240.50066010959594, 252.79291781930928]
-% strain = [17.94306607, 23.95295652, 16.99213858, 10.88333719,  8.1215735, 13.80547079,  7.00766015,  9.95756214, 28.47087393, 23.59077957]
-% (x,y) push_points = [[[-5.392221801367152, -0.6172784632712794], [-20.306653778948643, -21.8735172342719],
-                % [-4.141772916377541, -0.576192808475054], [22.419426953903425, 25.622294022510296], 
-                % [14.326545277267826, -32.812433833659064], [-4.163882510295342, -8.60347212910758], 
-                % [-1.568040444519299, 2.283433546094633], [7.448211278155931, 8.306531257567638], 
-                % [-4.127919477779628, 24.218559297630353], [1.743523889492196, 16.497891749167188]]] 
-
-% ::: Random sequence #1 gathered for 8/9 wt% :::
-% CBSR_8p_OG_10push_RAND1_strain_120s_1mA_3:
-% ----------------MEANS------------------
-% E_com L_0 mean = 3.09 +/- 0.68 mm (+\- 22.00%)
-% E_com L_1 mean = 1.89 +/- 0.39 mm (+\- 20.84%)
-% E_com L_2 mean = 7.85 +/- 2.26 mm (+\- 28.83%)
-% E_com L_3 mean = 6.03 +/- 3.54 mm (+\- 58.77%)
-% E_com L_4 mean = 13.87 +/- 0.58 mm (+\- 4.20%)
-% E_com L_5 mean = 6.03 +/- 1.01 mm (+\- 16.72%)
-% E_com L_6 mean = 12.01 +/- 8.12 mm (+\- 67.64%)
-% E_com L_7 mean = 5.07 +/- 1.19 mm (+\- 23.52%)
-% E_com L_8 mean = 2.33 +/- 0.15 mm (+\- 6.27%)
-% E_com L_9 mean = 3.09 +/- 0.43 mm (+\- 13.98%)
-% ---------------------------------------
-% E_com total mean = 6.13 +/- 1.84 mm (+\- 26.28%)
-% ---------------------------------------
-% CBSR_9p_2_10push_RAND1_strain_120s_1mA_2:
-% ----------------MEANS------------------
-% E_com L_0 mean = 3.06 +/- 0.54 mm (+\- 17.73%)
-% E_com L_1 mean = 5.00 +/- 0.60 mm (+\- 12.09%)
-% E_com L_2 mean = 9.01 +/- 0.95 mm (+\- 10.52%)
-% E_com L_3 mean = 2.86 +/- 0.45 mm (+\- 15.79%)
-% E_com L_4 mean = 7.69 +/- 4.58 mm (+\- 59.51%)
-% E_com L_5 mean = 10.29 +/- 4.44 mm (+\- 43.17%)
-% E_com L_6 mean = 28.73 +/- 10.89 mm (+\- 37.93%)
-% E_com L_7 mean = 12.04 +/- 1.90 mm (+\- 15.78%)
-% E_com L_8 mean = 2.43 +/- 0.17 mm (+\- 6.86%)
-% E_com L_9 mean = 7.07 +/- 0.45 mm (+\- 6.35%)
-% ---------------------------------------
-% E_com total mean = 8.82 +/- 2.50 mm (+\- 22.57%)
-% ---------------------------------------
-\begin{table}[H]
-    \caption{CBSR 8 and 9 wt\% mean and standard deviation for $E_{CoM}$ spatial performance metrics of ten random locations, $L_{rand}$ and random strains $\varepsilon$}. % TODO: complete these tests with best blob algorithm??
-    \label{table:spatial_ecom_metrics_stats_8p_rand_loads}
-    \centering
-    \begin{tabular}{p{1.8cm}p{1.0cm}p{2.0cm}p{2.0cm}}
-        \hline       
-        $L_{rand}$ (r, $\theta$) [mm, $\degree$] & $\varepsilon$ [\%] & 8wt\% $E_{CoM}$ [mm] & 9wt\% $E_{CoM}$ [mm] \\ \hline
-        (5.4, 10) & 17.9 & 3.1 $\pm$ 0.7 & 3.1 $\pm$ 0.5 \\
-        (29.8, 337) & 24.0 & 1.9 $\pm$ 0.4 & 5.0 $\pm$ 0.6 \\
-        (4.2, 317) & 17.0 & 7.9 $\pm$ 2.2 & 9.0 $\pm$ 1.0 \\
-        (34.0, 70) & 10.9 & 6.0 $\pm$ 3.5 & 2.9 $\pm$ 0.5 \\
-        (35.8, 137) & 8.1 & 13.9 $\pm$ 0.6 & 7.7 $\pm$ 4.6 \\
-        (9.6, 55) & 13.8 & 6.0 $\pm$ 1.0 & 10.3 $\pm$ 4.4 \\
-        (2.8, 260) & 7.0 & 12.0 $\pm$ 8.1 & 28.7 $\pm$ 10.9 \\
-        (11.2, 114) & 10.0 & 5.1 $\pm$ 1.2 & 12.0 $\pm$ 1.9 \\
-        (24.6, 241) & 28.5 & 2.3 $\pm$ 0.2 & 2.4 $\pm$ 0.2 \\
-        (16.6, 253) & 23.6 & 3.1 $\pm$ 0.4 & 7.1 $\pm$ 0.5 \\
-        \hline
-    \end{tabular}
-\end{table}
-
-% >>> shape deformation rand1 data >>>>
-% CBSR_8p_OG_10push_RAND1_strain_120s_1mA_3:
-% SD mean = 28.37019888870724 +/- 36.375087100802475 mm^2
-% SD L_0 mean = 10.060360313590907 +/- 0.759300498717798 mm^2
-% SD L_1 mean = 62.24669908647688 +/- 1.256008556309175 mm^2
-% SD L_2 mean = 18.678952508510964 +/- 5.90188359500409 mm^2
-% SD L_3 mean = 20.167032393462872 +/- 4.703254741118465 mm^2
-% SD L_4 mean = 124.79406198440728 +/- 2.7668381472395027 mm^2
-% SD L_5 mean = 24.778125232068426 +/- 1.8924413328912213 mm^2
-% SD L_6 mean = 15.581052535551132 +/- 4.4977276184355635 mm^2
-% SD L_7 mean = 4.494701245816866 +/- 0.8615435669853827 mm^2
-% SD L_8 mean = 2.6039946424205165 +/- 0.0603816721645818 mm^2
-% SD L_9 mean = 0.2970089447665243 +/- 0.05963041986632069 mm^2
-% CBSR_9p_2_10push_RAND1_strain_120s_1mA_2:
-% SD mean = 21.968395901369384 +/- 24.745674553451416 mm^2
-% SD L_0 mean = 9.75014241821507 +/- 0.6037324879071962 mm^2
-% SD L_1 mean = 52.83801393266161 +/- 1.2892792396287853 mm^2
-% SD L_2 mean = 21.67315757358719 +/- 2.229797920831935 mm^2
-% SD L_3 mean = 13.72061775900543 +/- 0.8268867152710873 mm^2
-% SD L_4 mean = 81.49754745447942 +/- 13.80657715514137 mm^2
-% SD L_5 mean = 19.214266559748953 +/- 1.7843762256318092 mm^2
-% SD L_6 mean = 12.720703647888275 +/- 1.0473139441454 mm^2
-% SD L_7 mean = 4.571612355574054 +/- 0.6300399075442432 mm^2
-% SD L_8 mean = 2.5877212275097996 +/- 0.07453517449567228 mm^2
-% SD L_9 mean = 1.1101760850240219 +/- 0.12545983187747647 mm^2
-
-\subsubsection{Temporal Performance}\label{sec:Temporal Performance2}
-Temporal performance is crucial for time sensitive applications and the settling time of the sensing material domain must be known to apply a quasi-static force model. The fitted stress and resistance relaxation parameters were found for both 8 and 9 wt\% CBSR samples, giving an indication of the frequency response of material across all experiments. To ensure a good fit all fits with an $R^2$ value less than 0.85 were eliminated.
-
-% using the 85\% percentage threshold masked images. 
-
-% TODO: Generate a blob thresholded `Rblob' plot to show resistive relaxation for the blobs seen for :
-    % - CBSR 8p
-    % - CBSR 9p
-    
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=8cm]{Figures/2D Push event 6 - CBSR 9 wt 5p strain - 2D compression test.jpg}
-%     \caption{An example plot of the 2D load event number 6 on the CBSR 9 wt\% sample using 5\% strain showing a stress, $\sigma$ and resistance, R, relaxation event and their corresponding fitted curves.}
-%     \label{fig:blob_global_relaxation}
-% \end{figure}
-
+The next set of experiments observed the transient effects of a high voltage step input the DEA during an EIT cycle. Artifacts such as the ones given in Figure \ref{fig:DEA-EIT_transients} occur due the inrush/outrush currents across the DEA's capacitance. 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=8cm]{Figures/2D Push event 0 - CBSR 9 wt 30p strain - 2D compressionv2.jpg}
-    \caption{EIT load event $L_0$ on the CBSR 9 wt\% sample using 30\% strain showing a stress, $\sigma$ and conductance, $\rho$, relaxation event and their corresponding fitted curves.}
-    \label{fig:blob_global_relaxation}
+	\centering
+	\subfloat[$V_{DEA}$ = 1 kV]{\includegraphics[width=0.28\linewidth]{Figures/step_input_DEA_EIT_1mm_manual_0load_1kV_frame10.png}\label{subfig:step_inp_1kV}}
+	\subfloat[$V_{DEA}$ = 4 kV]
+	{\includegraphics[width=0.34\linewidth]{Figures/step_input_DEA_EIT_1mm_manual_0load_4kV_frame30.png}\label{subfig:step_inp_4kV}}
+	\hspace{0.2cm}
+	\subfloat[$V_{DEA}$ = 10 kV]
+	{\includegraphics[width=0.34\linewidth]{Figures/step_input_DEA_EIT_1mm_manual_0load_10kV_switch_every1s_frame36.png}\label{subfig:step_inp_10kV}}
+	\vspace{0.3cm}
+	\caption{An unloaded DEA with a captured during various voltage, $V_{DEA}$, step input artifacts.}
+	\label{fig:DEA-EIT_transients}
 \end{figure}
+Note that the scale on Figure \ref{fig:DEA-EIT_transients} contains two scales and one is an order of magnitude smaller than that seen in Figure \ref{fig:DEA-EIT_steady_state_loads} to highlight and investigate the transient artifact pattern observed.
+% Todo: get the switching times of the (1) DEA and (2) EIT MUX.
 
-The mean settling time for each strain was calculated across relaxations for all strains, all 9 locations, and all 3 trials. The settling times were compared for each CB weight percentage as shown in Appendices \ref{fig:strain_ts_8p} and \ref{fig:strain_ts_9p}.
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=8cm]{Figures/CBSR_8p_1_9push_XXstrain_60s_X_ts_vals_vs_strain_2D_sin_titulo.jpg}
-%     \caption{Mean settling time for various strains applied to CBSR 8 wt\% with the error bars showing the standard deviation of each settling time.}
-%     \label{fig:strain_ts_8p}
-% \end{figure}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=8cm]{Figures/CBSR_9p_2_9push_XXstrain_60s_1mA_X_ts_vals_vs_strain_2D_sin_titulo.jpg}
-%     \caption{Mean settling time for various strains applied to CBSR 9 wt\% with the error bars showing the standard deviation of each settling time.}
-%     \label{fig:strain_ts_9p}
-% \end{figure}
-% TODO: create table of settling time mean and stdev for each strain for:
-    % - CBSR 8p
-    % - CBSR 9p
-
-\subsubsection{Localise Force Sensing Performance}\label{sec:Localised Force Sensing Performance2}
-To determine the localised force sensing performance the linear quasi-static Equation \ref{eqn:quasi_rstress} was applied to the percentage threshold masked image blobs developed in section \ref{sec:Spatial Performance}.
-
-To determine the force sensing limits of the material, the force estimated erroneously due to the EIT reconstruction noise floor must be determined. The noise floor is the noise observed over a time series of EIT images when the DUT has zero load applied and there are no resistive transient effects present. The noise floor, $\Delta\rho_n$, of unloaded relaxed 8 and 9 wt\% CBSR DUT conductance images were calculated as $\pm$0.33 and $\pm$0.34 $\mu S$ respectively. An average DUT inter-electrode conductance, $\rho_{int}$, of 55.3 and 222.2 $\mu S$ was derived from Table \ref{table:DUT_char} for CBSR 8 and 9 wt\% respectively. A relative change of conductance value, $\frac{\Delta\rho_{n}}{\rho_{int}}$, was then calculated as 5.97$\times10^{-3}$ and 1.53$\times10^{-3}$ $\mu S$ for CBSR 8 and 9 wt\% respectively. From the quasi-static piezoresistivity Equation \ref{eqn:quasi_rstress} and the fitted quasi-static piezoresistivity parameters found in Section \ref{sec:Quasi-static Piezoresistivity2}, we calculated the mean force approximation error as 0.17 N for both CBSR 8 and 9 wt\%.
-% TODO: Input max noise floor R_nf into the QS equation to determine the minimum detectable stress 
-% TODO: Update above text if no thresholding is used
-% TODO: Apply the quasi-static model to the 2D recons (find a mathematically sound way to remove fudge factor?)
-
-The force estimation from the inverse quasi-static Equation \ref{eqn:quasi_rstress} was compared to the actual force loaded onto the DUT as measured by the force applicator loadcell. Figures \ref{fig:stress_est_8p_3} and \ref{fig:stress_est_9p_3} show data from load applications in the centre ($L_0$) of the respective 8 and 9wt\% CBSR DUTs with a force estimation standard deviation of $\pm$0.78 and $\pm$0.81 N respectively.
-
-%The $R^2$ value for CBSR 8 and 9 wt\%, from the data shown in Figures \ref{fig:stress_est_8p_3} and \ref{fig:stress_est_9p_3}, are XX and XX respectively.
-% 8wt%
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=8cm]{Figures/CBSR_8p_1_9push_XXstrain_60s_1_force_est_frame31.jpg}
-%     \caption{Force esimations for 5 - 30\% strain centre loading events for the EIT sensor system for CBSR wt 8\% trial 1.}
-%     \label{fig:stress_est_8p_1}
-% \end{figure}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=8cm]{Figures/CBSR_8p_1_9push_XXstrain_60s_2_force_est_frame31.jpg}
-%     \caption{Force esimations for 5 - 30\% strain centre loading events for the EIT sensor system for CBSR wt 8\% trial 2.}
-%     \label{fig:stress_est_8p_2}
-% \end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=8cm]{Figures/CBSR_8p_1_9push_XXstrain_60s_3_force_est_frame31.jpg}
-    \caption{Comparing force estimates, $F_{est}$, and actual force measurements, $F_{meas}$, for 5 - 30\% strain centre loading events at $L_0$ for the EIT sensor system for 8 wt\% CBSR}
-    \label{fig:stress_est_8p_3}
-\end{figure}
-% 9wt%
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=8cm]{Figures/CBSR_9p_2_9push_XXstrain_60s_1mA_1_force_est_frame31.jpg}
-%     \caption{Force estimations for 5 - 30\% strain centre loading events for the EIT sensor system for CBSR wt 9\% trial 1.}
-%     \label{fig:stress_est_9p_1}
-% \end{figure}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=8cm]{Figures/CBSR_9p_2_9push_XXstrain_60s_1mA_2_force_est_frame31.jpg}
-%     \caption{Force estimations for 5 - 30\% strain centre loading events for the EIT sensor system for CBSR wt 9\% trial 2.}
-%     \label{fig:stress_est_9p_2}
-% \end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=8cm]{Figures/CBSR_9p_2_9push_XXstrain_60s_1mA_3_force_est_frame31.jpg}
-    \caption{Comparing force estimates, $F_{est}$, and actual force measurements, $F_{meas}$, for 5 - 30\% strain centre loading events at $L_0$ for the EIT sensor system for 9 wt\% CBSR}
-    \label{fig:stress_est_9p_3}
-\end{figure}
-% TODO: Find minimum stress value by determining the stdev for each stress estimate.
+\section{DISCUSSION}
+\label{sec:concs_disc}
+A system was created that could both generate strain and map strain events using common DEA componentry with a circular DEA topology. The major limitations of integrating the two technologies were explored and quantified as a starting point for the further optimisation of such a device. 
+% TODO: Talk about the good things that occurred! What is the positive research/world impact of this research? Promising! blah blah!
+% TODO: Brief overview of each sub-section
 
 
-\section{DISCUSSION}\label{sec:Discussion}
-Potential applications that emulate human-like skin pressure sensing characteristics require a forms of quantification to compare the technology to the specific requirements. This work quantitatively characterises performance metrics to help facilitate that comparison and optimisation process. The sensor developed could be likened to slow acting mechanoreceptors within human skin, such as Meissner's corpuscles and Merkel's discs, which combined can detect static pressure, and high resolution touch. For other EIT-based pressure mapping applications to be realised, the metrics developed in this work are some of the core metrics required to determine which soft sensing domains are suitable and are their limits.
+\subsection{Fabrication}
+%% how else can the experiments be improved?
+% - unknown degree of curedness? how can we regulate this process better for different thickness/wt%
+% - air bubbles can be seen through a microscope what effect do these have? posittive or negative? Does this micro-structure it explain how  with increasing load the CBSR decreases in resistance then reaches a point where it starts increasing again?
+% - homogeneity of the CB particles is unknown...
+% - Improved DEA deformation data can be collated by capturing strain thickness changes using higher resolution standard optical methods \cite{Carpi2015} .
+Fabrication methods were successfully developed to create a range compliant electrode composites for successful DEA actuation and EIT-based pressure mapping. The fabrication process had limited quantification of the dispersion of CB particles within the CBSR composite material used for the DEA compliant electrodes. A basic check for homogeneity was done using the device hardware measuring the inter-electrode resistance between adjacent electrodes as shown in Table \ref{tab:NF_vals}. Further validation to check the homogeneity of the whole domain could be done using other invasive or non-invasive methods such as a nail-bed resistance test and/or spectroscopic imaging. Inhomogeneity quantification on a resolution similar to that of the thickness of the material sample is important to obtain a higher SNR and hence $N\!F$ value. Dispersion of the CB particles and minimisation of air voids was ensured by using a vacuum planetary mixer, however a change to a less viscous liquid silicone rubber in future could ensure improved mixing, less air voids, and increased homogeneity. 
 
-% \subsection{Fabrication}\label{Fabrication3}
-% % Fabrication
-% The elastic modulus of the 8 wt\% CB was higher than that of the 9 wt\% CB material likely due to a lower degree of curing in the 9 wt\% material. It has been observed in previous literature \citep{Ellingham2021} that larger percentages of CB cause a larger degree of viscoelasticity which is likely due to a lack of cross-linking in the liquid silicone rubber. % TODO?: Cite more sources
-% Inhomogeneity was determined when cycling through the inter-electrode resistance of adjacent electrodes, with adjacent inter-electrode resistance varying by up to four times in resistance across all 16 inter-electrode resistance values. This inter-electrode variance in resistance is likely due to inhomogeneity of carbon black particle dispersion. The piezoresistive sensitivity, i.e. the gauge factor, of the sensor CBSR material could be improved by increasing the homogeneity throughout the volume of the sensor material.
-% Inhomogeneity gives variable piezoresistivity and viscoelasticity in different regions of the material. 
-% Although this inhomogeneity could be determined using absolute EIT reconstruction, it is difficult to determine the ground truth inhomogeneity for the material. -> Could do this by completing a shore hardness test throughout the material and using a bed of nails to determine a resistivity map, then! see if the experiments can be correlated to the shore hardness and resistivity data? Or using TEM or using SAXS to image particle dispersion.
+A key limitation to decreasing the thickness of the compliant electrode occurs at a point where the tear strength of the material is significantly lower than the elastic modulus of the circumferential electrodes, hence increasing the likelihood of mechanical failure through tearing resulting in unstable conductivity or an open-circuit of the electrical connection.
 
-% \subsection{Sensor and Load Applicator Design}\label{Sensor and Load Applicator Design3}
-% % Sensor design - shape
-% The sensing DUT in this work is configured in a circular shape due to ease of meshing and calculation. This EIT-based sensor could be applied to a range of irregular 2D geometry as shown in several past works \citep{Yoon2017, Zhang2017a}, although this may alter the performance significantly for highly irregular domain geometry.
-% % Sensor design - EIT drive
-% To test materials with a higher resistivity, a current source with higher driving voltage is required, and thus high voltage multiplexing hardware or high voltage parallel ADC readings. If an increase in EIT data capture frame rate was desired, the use of multiple simultaneous low frequency AC currents could allow for the injection of signals to obtain faster EIT data capture.
-% % CFA design
-% To obtain a wider variety of compressive touch events types the force applicator head shape could be altered, and a multi-touch force applicator system could be developed such that pressure could be applied to two or more points at the same time with differing periodicity. This data would provide more insight into how well different shapes can be detected.
+Moulds were used successfully to generate a series of samples, in future work other techniques for film fabrication could be used to improve sample quality such as, screen printing, spin coating, and conductive coating deposition and spray methods \cite{Carpi2015, Weiss2016, Mavukkandy2020} .
 
-% \subsection{EIT Solver}\label{EIT Solver3}
-% % EIT solver
-% A fixed EIT algorithm has been used with fixed parameters in this work. Adaptive optimisation of EIT reconstruction could be completed on a case by case basis further optimising for a range of materials to improve reconstruction time and accuracy. If a real time sensor is required with minimal human perceivable lag, a sample frequency of $\sim$50 Hz is desired similar to that of the consciously perceivable visual frame rate of humans and the upper limit of the frequency response of the rapid acting human mechanoreceptor, the Meissner's corpuscle \citep{Molnar2015}. Currently the device frame rate is limited by the time taken to gather the data for each frame (2.1 s), and more-so by the time taken to complete the EIT image reconstruction of the data (2.5 s). The data measurement time could be improved with sampling hardware. The reconstruction time could be improved with the implementation of EIT algorithm parallelisation and optimisation, and improved computer hardware.
-
-\subsection{Quasi-static Piezoresistivity}\label{Quasi-static Piezoresistivity3}
-%  1D stress-strain
-%N/A
-% 1D quasi-static piezoR
-To make a low-frequency response load sensor, a quasi-static piezoresistive linear model was created as shown in Section \ref{sec:1D Material Characterisation2}. However, this model is only valid for sufficiently slow pressure applications or after a sufficiently long time period. This time period is determined by the largest expected steady-state relaxation time for the material shown in \ref{sec:Quasi-static Piezoresistivity2}
-% 1D transient piezoresistivity 
-% N/A
-
-% \subsection{Noise}\label{Noise3}
-% % Noise figure
-% % The SNR was calculated using the mean vs the stdev for the voltage EIT data and the EIT reconstruction data. Ideally a ground truth model would be used instead of the mean and an offset may be added. But the method used is mathematically legitimate.
-% A phenomena called ringing or overshoot has been observed throughout literature \citep{Russo2017, Adler2009} which is the appearance of an artefact around the sensed region blob usually of an opposite sign to the blob. These are generated due to three potential causes. The ringing is generated falsely through the regularisation process. Another reason for the ringing effect seen around the loaded area of the material could be due to the mechanical deformation occurring around the outer edges of the material where the material is in a high shear stress but low compressive stress state. Also the fact that there is a zero crossing shown in Appendix \ref{fig:quasi_r_9p} plot showing that at certain strain the change in conductance goes from negative to positive. Ringing mitigation could be achieved by ignoring any positive changes in resistance and assuming the material is only subject to perpendicular compressive loads and only has a negative change in resistance positively proportional to the compressive stress applied. The pre-processsing in the next section helps minimise these ringing effects, however still could be present and have an effect on the perceived performance metrics. 
-
-\subsection{Pre-processing}\label{Pre-processing3}
-% Pre-processing
-% The threshold value for the noise threshold mask was often higher than the 25\% threshold mask. Hence, often the 25\% mask would not look dissimilar after the 25\% was applied in noisy data. This behaviour was invariably present in strains $\leq$10\% in 9 wt\% CBSR samples, exhibiting the lower limits of this sensing domain.  
-The two steps of a noise threshold mask and a percentage threshold mask successfully filtered noise and EIT reconstruction related noise artefacts. The favoured percentage threshold mask chosen for further metrics testing was 85\% as this gave the lowest average $E_{CoM}$ and $S\!D$ values from the across all strains applied across all nine loading points.
-
-In the experiments often a blob detection from a previous load will be present in a subsequent load, as expected due to the resistive relaxation. Feature detection could be added in future to ensure that only transients similar to those seen in the initial formation of a blob would signify that the blob is to be analysed. Concurrently, each blob could be tracked individually to determine whether it is a noise artefact or an actual sensed region depending on it's behaviour. 
-% TODO: Actually ensure the temporal results use threshold % mask.
+Stress-strain characterisation of DEs in literature clearly shows a hyperelastic softening effect between 50 to 400 \% strain for VHB film material whereby the elastic modulus decreases to 40 - 70 kPa\cite{Liu2018} . This is significantly less than the assumed $\sim$ 142 kPa elastic modulus resulting from a 10 \% pre-stretch in this work. This hyperelastic region should be determined using both the DE and compliant electrode materials' hyperelastic regions to ensure the $K_{e\!f\!f}$ is minimised for maximal actuation strain, $S_{z_{de}}$. 
 
 
-\subsection{Performance Metrics}\label{Performance Metrics3}
-% TODO: Resolution and limitations of the sensor space, time, force.
-% Why the performance metrics are good!! :
-% TODO: A bit tired now. Check in the morning >>>
-To develop sensing domains for future applications, the sensing domains may need take into account certain prior information about the limits of the system.
+\subsection{DEA Validation}
+\label{subsec:dea_validation3}
+Through actuation testing of different compliant electrodes applied to a DEA, models were fitted to the voltage-strain data gathered with $R^2$ values between 0.86 and 0.99. The model fitting resulted in the formation of effective bulk modulus, $K_{e\!f\!f}$, values of the DEA active region ranging from 334 to 966 kPa for increasing $z_ce$ values. The use of an effective bulk modulus constant only holds for a small linear range of strains. The CBSR compliant electrodes should be modelled to produce expected behaviours for a much larger range of strains to optimise for a better DEA-EIT system over a large range of potential pre-stretches and actuation strains.
 
-For example, human hands and feet have some of the highest density of mechanoreceptors in the body. Lower density regions of mechanoreceptors in humans include the back and chest \citep{Kamkim2008}. Higher spatial resolution is require for emulating the pressure mapping of a human hands and feet, compared to the human back and chest. However, the pressure sensing range required by the human hands may be lower than that required by the human feet.
+Mullins effect was expected to be observed in our experiments with CBSR compliant due to the nature of testing conductive particle filled elastomer composites\cite{Diani2009}. Mullins effect is the change in the stress-strain relationship when stress testing a sample at a stress value at a stress value higher than the sample has experienced in previous testing. Therefore, often before characterising conductive particle elastomer composites, the composite sample should be subjected to a stress larger than that of the intended future experimentation stresses. 
 
-Using this prior information, we can validate the appropriate sensing domain characteristics that give a suitable performance for each different application.
-% <<< TODO: A bit tired now. Check in the morning
-
-Depending on the application of the sensor the importance of each temporal, spatial, and force sensing performance metrics could all vary.
-% <<< TODO: A bit tired now. Check in the morning
-
-\subsubsection{Spatial Performance}\label{Spaital Performance3}
-% Averaging a range of load points in a material with a degree of inhomogeneity meant that a large variance was observed in the spatial metric data across all loads. This variance can be seen in the spatial performance metrics given in \ref{table:spatial_metrics_stats_8p} and \ref{table:spatial_metrics_stats_9p}. These results were calculated from all nine different load points across three trials at each load point. 
-
-All spatial performance metrics, $E_{CoM}$, $A_{OL}$, and $S\!D$ are key indicators of whether a loading event has been localised correctly.
+It is well known in literature and is intuitive that mechanical characteristics of a DEA's compliant electrodes have a significant effect on the actuation performance \cite{Carpi2003, Zhang2020} . However, there has been a lack of empirical evidence and subsequent modelling on quantifying how much the thickness of a piezoresistive composite electrode effects actuation performance. This work provides empirical data to begin creating and validating models for thick electrode DEAs, as a step towards creating an objective function to optimise for a DEA for both actuation and sensing performance. 
 
 
-% Spatial performance
-    % CoM
-% Offsets in the $E_{CoM}$ values in certain areas were observed consistently in the same direction over a range of strain values, an artefact generated by a combination of the EIT algorithm and DUT inhomogeneity. Future development could include a vectorised $E_{CoM}$ so sensed regions could be compensated for in different areas of the material. 
+% TODO: Carpi et al \cite{Carpi2003, Carpi2015} have shown that conductive powder performs significantly worse than carbon grease. This could be due to the how each particle is experiencing a force and penetrating the DE, rather than a gel/paste like structure which may more evenly apply force to the DE. 
+% TODO: 
+% TODO: Talk about the lack of resolution in the information for the elastic modulus of the material at a strain of 10% b/c most research is about the HIGH STRAIN non-linear blah-blah phenomena that occur in VHB and VHB-like elastomers. Could mention that a plot digitiser was required to find these values from plots given in other works??
 
-    % A_OL
-The $A_{OL}$ gives a value out of 100 for a certain detected blob. This value is penalised for false positive and true negative elements that overlap (or not) with the force applicator area.
+\subsection{EIT Validation}
+A metric used to determine the minimum resistance change measured and hence pressure sensed is the noise factor, $N\!F$. $N\!F$ is analogous to SNR, but instead using EIT reconstruction noise vs EIT voltage data noise. It was found that for increasing values of $z_{ce}$ the $N\!F$ values also increased. This noise correlation is exemplified in Figure \ref{fig:EIT_thickness_compare}.
 
-It is important to note, when a force is applied in an small area of a domain, however a blob has been detected over the majority area of the domain, a $A_{OL}$ value of $\leq$ 50\% will be given although the blob detection could be completely false. Although the detected blob and force applicator are 100\% overlapping the amount of false positive (i.e. blob elements not overlapping with force applicator area) could cover the rest of the DUT, potentially giving a value nearer to 50\% than 0\%. From this it must be recognised that this metric does not represent a linear relationship between $A_{OL}$ and the quality of the reconstruction. So the scale of the $A_{OL}$ value to quality relationship was determined empirically as:
-\vspace{-0.4cm}
-\begin{center}
-    \item 0 $\leq$ $A_{OL}$ $\leq$ 50\% = Likely Poor
-    \item 50 $\leq$ $A_{OL}$ $\leq$ 70\% = Ok
-    \item 70 $\leq$ $A_{OL}$ $\leq$ 100\% = Good
-\end{center}
+EIT was used to map nine compressive loads applied throughout the material successfully. To compare the performance of each thickness of the compliant electrode the spatial resolution was quantified using two main performance metrics, $E_{CoM}$ and $S\!F$. For increasing thickness of compliant electrode the $E_{CoM}$ and its standard deviation decreased by almost an order of magnitude. However, the $S\!F$ values were all within the same order of magnitude and had decreasing standard deviations for increasing $z_{ce}$.
 
-    % SD
-The $S\!D$ is the mean square error between the force applicator perimeter and sensed region perimeter taken radially from the force applicator centroid, so will likely be lower with a low $E_{CoM}$ and a higher $A_{OL}$. The closer the $S\!D$ value is to zero the more accurately the shape of the load area applied has been sensed. The $S\!D$ metric is also affected significantly by the quantisation error depending on the mesh coarseness.
+The vectorised format of the $E_{CoM}$ gave a good indication of consistent biases that were present in the sample domains when compared across several repetitions of the same experiment. The vectorised $E_{CoM}$ values do not appear random and may instead be due to inhomogeneity. This data could be used in future in a calibration stage to determine how pressure sensed in particular regions may be spatially biased and preemptively corrected.
 
-Comparing the different percentage threshold masks for the experiment shown in Figure \ref{fig:recon_perform_8p}, it was determined that each percentage mask of 50\%, 75\%, and 85\% gave showed the spatial performance for the $E_{CoM}$, $S\!D$, and $A_{OL}$. However, the standard deviation of these values is comparable to the mean itself therefore looking at the mean performance metric value in each location was shown in Table \ref{table:spatial_metrics_stats_8p_strain20_loads}. The lowest $E_{CoM}$ was found to be 0.67 $\pm$ 0.41 mm, at $L_2$. The highest $A_{OL}$ value was found to be 87.93 $\pm$ 2.68\%. The lowest $S\!D$ value was found to be 0.12 $\pm$ 0.01 mm$^2$ at $L_1$.
-
-The CBSR 8 wt\% samples gave better performance metric results than the 9 wt\% samples due to the residual transient effects of previous load events as exemplified in Figure \ref{fig:recon_perform_9p}. This will be mitigated in future by using a blob separation algorithm whereby each sensed-region/blob is given a weighting based on its appearance time, size, decay characteristic, and performance metric values.
-
-The spatial performance metrics are useful for quantifying future testing with irregular load application area shapes and multiple loading events in future testing to validate a variety of irregular and multi-load test cases. Performance metric inconsistencies in the different load locations show that the electro-mechanical characteristics of the material is varies throughout the material. These metrics would all contribute toward a calibration step to compensate for material inhomogeneity, allowing for a range of materials to be used for the sensing domain.
-
-% could debate that the MSE metric is the best, but this statement breaks for an irregular load applicator head shape.
-% TODO: What do the plots mean: e.g. 1) if the CoM error is near or larger than the smallest load applicator spacing then the blob hasn't been detected! or effects for multiple blobs have incurred. 2) if the A_OL is greater than 70% then a it's likely that the blob has been detected as a true positive. If between 50 - 70% there could be a large region of false positive. 3) The SD metric is better the closer it is to zero, however only works well when the force applicator area is a circle and CoM error and A_OL are 'good enough'. 
-% TODO: Talk about limitations of the spatial performance metrics - A_OL vs SD for thresh mask = 25% vs 85%.
-
-\subsubsection{Temporal Performance}\label{sec:Temporal Performance3}
-% Temporal Performance
-Many applications require a minimum frequency response hence a temporal study was completed to characterise the transient effects limiting the speed of the sensor. The study focused on the settling time of transient piezoresistive events in the material for varying strain step inputs. With known PNEC material settling times, a filter could be applied to the output of this sensor to get an estimate of the load applied to the material. 
-
-To aid future inverse modelling and use of PNECs as pressure sensor it is important to understand each transient states of a load, including the loading phase, steady state, or unloading phase. It was found that on average that unloading events had a higher settling time than loading transients for both CBSR 8 and 9 wt\% composites across all strains tested from 5 to 30\%. No clear correlation was found between the settling time of the transient strain events and the strain percentage applied to the material. Mean settling times ranging 29 - 36 s and 29 - 41 s have been observed for the CBSR 8 and 9 wt\% composites respectively. 
-
-% Future work that will increase the reliability of the 2D sensor's temporal results include improvements of EIT image sample rate, the EIT algorithm, and improved post-processing algorithms. To gain more insight into transient characterisation a higher frame for EIT would be beneficial, however for the PNEC material used in this paper the resolution was sufficient for the transient phenomena observed. The EIT algorithm may be acting as a low-pass filter which may be enlarging the settling time relative to the 1D data. 
-
-A different sensing region material could provide a higher frequency response, such as a carbon nanotube silicone composite which has shown a lower settling time in previous works \citep{Zhao2013,Vidhate2010}. Due to the viscoelasticity and elastic rebound in the material the resistance relaxation from predecessing load applications was often be present in subsequent load events, altering the observed resistance relaxation response. Future algorithms developed would aim to eliminate these predecessing residual relaxations. 
-
-Often soft materials are inherently viscoelastic like much soft tissue within the human body \citep{Landry2021}, so if soft sensor domains are required with a high frequency response this viscoelasticity will need to be compensated for using this work's performance metrics as a foundation.  
-
-It is important to note that if the homogeneity in the material is highly irregular, regions of the material will have different degrees of piezoresistivity the frequency response of the material is likely to vary considerably. Further research is required into how the different CB wt \% values effect the temporal response of the material.
-
-% TODO: HYPOTHESIS TO PROVE: the relaxation events seen in the 2D EIT reconstructions are correlated to the 1D relaxations events fitted. 
-% TODO: Answer - Are the relaxation time constants similar for differences in wt% and strain?
-% TODO: Use a different type of material that displays a much smaller degree of the time-dependent transient behaviour
-
-\subsubsection{Localised Force Sensing Performance}\label{sec:Localised Force Sensing Performance3}
-The sensor platform gave stress estimates that correlated well with the real stress applied to the material, as seen in Figures \ref{fig:stress_est_8p_3} and \ref{fig:stress_est_9p_3}. These stress estimates were gathered from the steady-state data gathered from the EIT measurements at approximately 1.5x the settling times found in Section \ref{sec:Temporal Performance2} using the algorithm given in Section \ref{sec:Localised Force Sensing Performance2} to ensure the data was at steady state.
-
-Stress relaxation of the composite CBSR material as a whole gives a good indication of macro-mechanical behaviour of the CBSR. It was postulated that the resistance relaxation gives an enhanced insight into the micro(and nano)-structural behaviour of the CBSR composite, because of the different observed behaviours of the CBSR stress and resistive relaxation and also how these relate to different CB weight percentages and their dispersion.
+To ensure the EIT domain reconstruction was geometrically accurate the circumferential electrodes were modelled in the meshing software to the same width as the real circumferential electrodes. However, the embedded depth of the circumferential electrode was not modelled. Due to the manual nature of the fabrication, significant error of up to 3 mm in the circumferential spacing of the rigid EIT electrodes was present, a factor which would be improved in future iterations especially if automated fabrication were to be implemented.
 
 
-\subsection{Real World Applications, Manufacturability, and Scalability}
-Using EIT-based pressure mapping on a larger scale is feasibly as shown by the use of ERT in geophysics \citep{Griffiths1993}. Potential larger-scale applications include adding a pressure mapping layer under a tennis court to map force exerted by athletes onto a court or a method of measuring foot traffic in buildings and urban areas. The use of the performance metrics discussed in this work would be applicable for both scenarios. 
+\subsection{Simultaneous Actuation and Mapping}
+The DEA-EIT device constructed in this work has been shown to complete simultaneous actuation and pressure mapping using the method shown in Figure \ref{fig:dea-eit_timing}.
 
-For the tennis court application, the importance of player location and speed may be more important than detecting the footprint shape and exact force applied to the court surface. This means that the $E_{CoM}$ and decay time values would be more heavily weighted than the $S\!D$ and force values, and hence could be tuned for these characteristics. For the urban floor mat application, the importance of footprint shape and force estimation may give useful insight into the physical demographic of people or animals walking across the mat \cite{Yuan2023}. This may mean that the $S\!D$ and force resolution values are more highly weighted in the design and process.
+There was no significant noise generated due to an active DEA electrode at a steady state voltage, however this may vary with rapid large loads which change the DEA capacitance and cause a large transient on the grounded EIT compliant electrode. The pressure mapping for 1 - 7 kV scenarios is shown in Figure \ref{fig:DEA-EIT_steady_state_loads}. 
 
-Larger-scale applications of an EIT-based sensor come with challenges such as, scaling the electronics driving the EIT measurement, fabricating such a large homogeneously piezoresistive domain, and ensuring the reliability in a range of outdoor environmental conditions. Smaller-scale applications are limited by the conductive particle size in the PNEC. A sensing domain thickness sufficiently larger than the average agglomerate size would be required for reliable EIT mapping and force estimates.
+The transients induced by the large sudden voltage changes are shown as crescent shaped artifact in Figure \ref{fig:DEA-EIT_transients}. The artifact seen in the image is due to an increase in the grounded DEA electrode voltage at a certain point during the data collection sequence of the EIT voltages. 
 
-Various forms of tribological wear on the device sensing region would alter the piezoresisitive characteristic of the device. Encapsulation of the device could be implemented to minimise wear and increase hermeticity.
+Not all transient events were captured, which was due to aliasing. A lower EIT sample frequency and higher resolution `DEA transient'-`EIT data capture' synchronisation would aid in capturing these events more accurately.
+% Todo: check if the transient pattern is due the ground electrode of the DEA or the EIT pattern electrodes... Check the raw data to see a difference between voltage data between frames.
 
-The most obvious limitation of this sensor is the frequency response of the material as shown in Figures \ref{fig:strain_ts_8p_1D} - \ref{fig:strain_ts_9p}, which could be algorithmically filtered or inverse-modeled to be corrected. Else, other more responsive, less viscoelastic materials could be used, and/or a capacitive EIT-based pressure mapping device used to improve the frequency response of this device. Otherwise the use of a time series dependent neural network, such as an LTSM, RNN, could be used to inversely model such events.
+This technology show promise and can be further optimised for improved actuation and pressure mapping capability. A system architecture integrating both DEA and EIT-based pressure mapping functionality into a single device is done using the components in Figure \ref{fig:DEA-EIT_protective_ckt}. 
+%    \begin{figure}[H]
+	% 	\centering
+	% 	\includegraphics[width = 1.0\textwidth]{Figures/DEA-EIT_SystemArchitechture.jpg}
+	%        \vspace{0.2cm}
+	% 	\caption{Simultaneous DEA-EIT experimental architecture}
+	% 	\label{fig:dea_eit_architecture}
+	% \end{figure}
 
-Mass production of an EIT-based sensor would use the performance metrics given in this work to calibrate and quality-check the sensing domain and boundary electrode connections. This work also found that using pin boundary electrodes adds to the durability and stability of electrical connection in this device.
+% A good application of this technology would be to recreate a sensed deformation by integrating beamforming methods into into a similar form to the DEA topology given in this work. 
+% This localised deformation could use similar principles shown by: https://www.mdpi.com/2673-4117/4/1/51#:~:text=3.,are%20more%20significant%20%5B28%5D., https://www.radartutorial.eu/06.antennas/an75.en.html, https://ieeexplore.ieee.org/document/1138114?arnumber=1138114, https://web.mit.edu/22.09/ClassHandouts/Charged%20Particle%20Accel/CHAP12.PDF, 
 
-% TODO: Next steps:
-% TODO: Could observe how time-dependent viscoelastic phenomena arise with increased strain rate.
-% TODO: Try different materials to see limits of other materials and link these limits with material applications.
-% TODO: To incorporate the dynamic resistive relaxation effects seen in the material several methods could be used: 
-    % 1. A capacitive touch channel on the material domain to distinguish the start and end of a touch event. However this limits the material in terms of what it can distinguish 
-    % 2. Differentiating the resistance signal and applying,and applying a different inverse model for material relaxation states, i.e. push and hold state or released state. \citep{Lacasse2010}
-    % 3. Train a model that takes into account the resistive relaxation effects using an LTSM or RNNs or one similar to Laaraibi et al \citep{...} 
-    % 4. Use a better material lol.
-% TODO: Minimum stress of material may not actually be the noise floor seen in the reference frame. As this noise floor may be dynamic and display ringing.
 
-% \subsubsection{Environmental Factors}\label{Environmental Factors3}
-% % Sensor environment limitations
-% The effects of temperature for this sensor has not been tested and could have a dramatic effect \citep{Lundberg1986}. The effects of water absorbance would need to be tested before being applied in an environment with water exposure and high humidity.
+\subsection{Altered Actuation Performance}
+During a compressive load event to an actuated DEA-EIT device, the DE thickness is decreased which increases the electrostatic stress, Equation \ref{eqn:DEA_strain_z}, induced by the same voltage. Therefore during a compressive loading event the stress applied to the material is a combination of the external compressive load and the increased electrostatic load. 
 
-\section{CONCLUSIONS}\label{sec:Summary and Conclusions}
+Often a DEA is pre-stretched to take advantage of the hyper-elastic region of DE material so for a smaller change in electrostatic stress, $\Delta\sigma_{es}$, a larger strain, $\Delta S_{z_{de}}$, can be achieved. An externally applied load may mean that the stress-strain region the material may be in is changed (i.e. from a linear to a hyper/hypo-elastic region) and the same $\Delta\sigma_{es}$ would have a different $\Delta S_{z_{de}}$.
 
-% TODO: Mention each subsection and its significance.
-% TODO: Include key numbers for spatial, temporal and stress resolution (e.g. XX$\pm$XX)
-% TODO: What questions have we asked in the introduction and have they been answered?
-%   i.e. How does the carbon black percentage affect the 2D transient phenomena. Relaxation time, blob spread, other reconstruction metrics
-% TODO: Has a pressure sensor been developed using methods that have not been combined before?
-% TODO: Have we observed time series phenomena in 2D that hasn´t been observed before?
-% TODO: How can this be applied to different soft PNECs and what are the key differences for each material?
-% TODO: Sentence emphasizing novelty of work to date
-% Strains smaller than XX\% cannot be sensed in terms of force reliably by the CBSR 9 wt\% material as shown in Figure \ref{fig:quasi_r_9p}.
+\subsection{Dielectric Breakdown}
+During a compressive load event to an actuated DEA-EIT device, the DE thickness is decreased which increases the concentration of charge in the strain area. Both factors increasing the likelihood of dielectric breakdown within the material.
 
-An EIT-based piezoresistive sensor using a custom made carbon black silicone rubber composite material has been developed for sensing compressive pressure events and applying performance metrics to obtain the validity of the output EIT images. To be able to apply this EIT-based PNEC pressure sensor to a variety of scenarios, replacing human-like touch, performance metrics has been formed to quantify the sensor's suitability for each application. Sensing domains of 8 and 9 wt\% carbon black silicone rubber have been tested using: 6 strain values, 9 load locations, and 3 trials. From this raw data we have calculated data for: spatial resolution, transient settling time, and force sensor resolution. 
+Feedback from the EIT pressure sensor could be used to decrease the actuation voltage if the device receives a strain that is likely to cause a dielectric breakdown.
 
-It was shown that the CBSR 8 wt\% sample out performed the CBSR 8wt\% sample in terms of spatial and temporal metrics across a range of experiments. The best performance metrics observed in the CBSR 8 wt\% sample for $E_{CoM}$, $A_{OL}$, and $S\!D$, were 0.67 $\pm$ 0.41 mm, 87.93 $\pm$ 2.68\%, and 0.12 $\pm$ 0.01 mm$^2$ respectively for three different load locations. For the sensor domains tested, average settling times of between 19.0 - 44.5 s and 22.5 - 36.0 s were determined for 8 and 9 wt\% CBSR samples. A quasi-static conductance-force model of the material was developed with an accuracy of  $\pm$ 0.78 and  $\pm$ 0.81 N for a range of strains from a centre load test for 8 and 9 wt\% CBSR respectively.
+An un-explored research avenue is the structural health monitoring of DEAs using EIT. It may also be possible to alter the system given in this work to map the location and size of any dielectric breakdown using EIT concurrently on each compliant electrode. This would allow for more technology to be developed around the self-healing of DEAs.
 
-Using these performance metric data in future work a piezoresistively inhomogeneous sensor domain could be, calibrated to homogenise the apparent domain piezoresistivity, compensated for transient phenomena, and sense loads with a known degree of accuracy. All of these factors contribute to optimising the EIT-based 2D pressure mapping sensor for different applications. Future work also includes the development of a low-cost, small circuit to capture the the data discretely to open up a larger range of applications. The work shows promise for future use of an EIT-based sensor in a variety of applications requiring a soft sensing domain and non-invasive rigid electrodes. 
+
+
+\section{CONCLUSION}
+This work demonstrates the effective integration of Electrical Impedance Tomography (EIT) with Dielectric Elastomer Actuators (DEAs) for simultaneous pressure mapping and actuation. The findings indicate that the use of piezoresistive nanoparticle elastomer composites (PNEC) allows for the emulation of pressure sensing akin to human mechanoreceptors, enhancing the sensitivity and responsiveness of DEAs in various applications. Effective bulk moduli values were found to quantify the mechanical actuation impedance of each compliant electrode thickness used, ranging from 334 to 966 kPa. Force mapping was successful with decreasing degrees of mapping error with increasing compliant DEA electrode thickness. The best mean centre-of-mass error of 1.66 $\pm$ 0.17 mm was found for the thickest, 2 mm, compliant DEA electrode used.
+
+The work highlights the importance of electrode thickness on the performance of pressure mapping, revealing that thicker electrodes may improve the detection of pressure changes due to their lower noise factors. The results suggest that the EIT method can provide valuable feedback for controlling actuation, potentially preventing issues such as dielectric breakdown by adjusting voltage levels in response to detected strain.
+
+Moreover, the research opens avenues for structural health monitoring of DEAs, enabling the mapping of dielectric breakdown locations and sizes, which could lead to advancements in self-healing technologies. Overall, the integration of EIT with DEAs not only enhances their functionality but also broadens their applicability in fields such as robotics, soft actuators, and wearable technology, paving the way for future innovations in smart materials and systems. 
