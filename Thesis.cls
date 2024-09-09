@@ -149,19 +149,17 @@ pdfstartview={FitV},unicode,breaklinks=true]{hyperref}
 
 \chapiii    {A Simple Conductive Elastomer Composite Material with Complex Behaviour}
 
-\chapiv     {?? A Novel Mixing Method for 3D Printing Conductive Particle Elastomer Composites}
+\chapiv      {An Improved an Electrical Impedance Tomography Based Artificial Soft Skin Pressure Sensor}
 
-\chapv      {An Improved an Electrical Impedance Tomography Based Artificial Soft Skin Pressure Sensor}
+\chapv     {Giving Artificial Muscles the Sense of Touch}
 
-\chapvi     {Giving Artificial Muscles the Sense of Touch}
+\chapvi    {Unintentional Power Generation in a DEA-EIT Sensor-Actuator Device}
 
-\chapvii    {Unintentional Power Generation in a DEA-EIT Sensor-Actuator Device}
+\chapvii    {A Portable Electrical Impedance Tomography Based Pressure Mapping Sensor and Validation System}
 
-\chapviii    {A Portable Electrical Impedance Tomography Based Pressure Mapping Sensor and Validation System}
+\chapviii   {?? Modelling of DEA-EIT Capacitively driven Hybird Sensing and Actuation Device}
 
-\chapix   {?? Modelling of DEA-EIT Capacitively driven Hybird Sensing and Actuation Device}
-
-\chapx     {The Biomimmetic Re-Evolution}
+\chapix     {The Biomimmetic Re-Evolution}
 
 % front matter defs
 \newcommand*{\supervisor}[1]{\def\supname{#1}}

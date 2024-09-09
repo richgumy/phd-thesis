@@ -49,11 +49,25 @@ The skin can be categorised as glabrous/hairless or non-glabrous/hairy. Glabrous
 Depending on the region of skin different force resolution and spatial resolution will incur. The tensile properties of skin is governed by skin tension lines, also called Lager's lines, which show the direction in which the maximal stretch can occur. 
 
 Cutaneous mechanoreceptors and their functions are given in Table \ref{tab:mechanoreceptors-table}.
+%\begin{table}[H]
+%    \centering
+%    \caption{Comparison of typical mammalian mechanoreceptors characteristics \cite{Roudaut2012}.}
+%    \label{tab:mechanoreceptors-table}
+%    \includegraphics[width=9cm]{Figures/mechanoreceptors-table-cropped.jpg}
+%\end{table}
 \begin{table}[H]
     \centering
-    \caption{Comparison of typical mammalian mechanoreceptors characteristics \cite{Roudaut2012}.}
-    \label{tab:mechanoreceptors-table}
-    \includegraphics[width=9cm]{Figures/mechanoreceptors-table-cropped.jpg}
+	\caption{Comparison of typical mammalian mechanoreceptors characteristics \cite{Roudaut2012}.}
+	\label{tab:mechanoreceptors-table}
+	\begin{tabular}{|p{0.2\linewidth}|p{0.23\linewidth}|p{0.23\linewidth}|p{0.23\linewidth}|} \hline
+		\textbf{Receptor} & Meissner corpuscle A1 & Ruffini Corpuscle A2 & Pancian Corpuscle B1 \\ \hline
+		\textbf{Perceptual   sensory functions} & Skin movement, handling objects & Skin stretch, movement direction,   hand shape, and finger position & Fine tactile discrimination, form   and texture perception \\ \hline
+		\textbf{Skin stimulus} & Dynamic deformation & Skin stretch & Indentation depth \\ \hline
+		\textbf{Localisation} & Dermal papillae & Dermis & Basal layer of epidermis / around   guard hair \\ \hline
+		\textbf{Conduction velocity} & 35 - 70 m/s & 35 - 70 m/s & 35 - 70 m/s  \\ \hline
+		\textbf{Receptive field} & 22 mm$^2$ & 60 mm$^2$ & 9 mm$^2$ \\ \hline
+		\textbf{Receptor density} & 150 / cm$^2$ & 10 / cm$^2$ & 100 / cm$^2$ \\ \hline
+	\end{tabular}
 \end{table}
 %% Todo: Get copyright permission from image owners
 
@@ -63,7 +77,6 @@ The sensing qualities of skin is crucial for the sensory feedback in complex man
 \begin{enumerate}
     \item Elastic modulus -  The static elastic properties determined by a linear region of stress and strain of the material [Pa]
     \item Storage and loss modulus - The dynamic elastic and viscoelastic properties determining the relationship between stress and strain [Pa]
-    \item Shear modulus - The relationship between the shear stress and shear strain in the linear region of the stress-strain characteristic curve [Pa]
     \item Ultimate tensile stress (UTS) - The maximum tensile stress that a material can tolerate before breaking [Pa]
     \item Life cycle - The time or number of actuation cycles in which it takes for the actuator to degrade such that it cannot perform its intended purpose to specified standards
     \item Viscoelastic creep and relaxation - All viscoelastic materials will experience strain creep and stress relaxation to varying degrees depending on the viscoelastic properties of the material [mm.s$^{-1}$ and s]
@@ -78,15 +91,13 @@ Some of the functional properties in terms of pressure mapping include:
     \item Temporal resolution - This is the detection resolution of fast-acting forces acting upon the skin often required for texture recognition \cite{Landry2021,Krotoski1993}
 \end{enumerate}
 
-A numerical characterisation of mechanical and pressure sensing functional skin properties include:
+A quantitative characterisation of mechanical and pressure sensing functional skin properties include:
 \begin{enumerate}
     \item Elastic modulus -  varies largely depending on test method, test skin type, and subject. Values found in literature include 83.3 ± 34.9 MPa \cite{Annaidh2012}, 0.1 - 2.4 MPa \cite{Khaothong2010}, and 10.4 - 89.4 kPa \cite{Zheng1999}.
     \item Storage and loss modulus - varies largely depending on test method, test skin type, and subject. Values found in literature range include 141.9 ± 34.8 Pa and 473.9 ± 42.5 Pa at 0.8 Hz \cite{Holt2008}, 473.9 ± 42.5 Pa and 32.3 ± 10.0 Pa at 205 Hz \cite{Parvini2022}.
-    \item Shear modulus - Shear modulus has been reported to be 100 times that of elastic modulus for upper most layers of skin (epidermis and stratum corneum) \cite{Geerligs2010}
     \item Ultimate tensile stress - 21.6 ± 8.4 MPa \cite{Annaidh2012}. 28.0 ± 5.7 MPa \cite{Ottenio2015}
     \item Life cycle - Skin cells are constantly growing, dying, and shedding. Skin is always actively remodelling based on external stimuli.
     \item Strain creep - The strain creep was found to be 2.7 kPa.s for a 10 Pa step input on a dermis skin sample \cite{Holt2008}.
-    \item Stress relaxation - 
     \item Skin thicknesses - The thickness of human cutaneous skin ranges from 0.6 to 2.6 mm with an average skin thickness of 2 mm \cite{Landry2021}.
     \item Skin surface area - The average surface area of skin in adult humans is 1.7 $\pm$ 0.1 m$^2$ \cite{Landry2021}.
     \item Isotropy/Anisotropy - The tension lines in skin are determined by collagen fibre orientation and dynamic stretch events \cite{Newell2007,Paul2018}. The elastic modulus of human skin was reported to be 160.8 ± 53.2 MPa parallel to the skin tension lines and 70.6 ± 59.5 MPa perpendicular to the tension lines \cite{Ottenio2015}. The UTS of human skin was reported to be 28.0 ± 5.7 MPa parallel to the tension lines and 15.6 ± 5.2 MPa perpendicular to the tension lines \cite{Ottenio2015}.    
@@ -109,7 +120,62 @@ Developing robust mechanical models for human skin is non-trivial for three main
 \end{enumerate}
 To solve the complexity of modelling such a material a review by Landry et al.\cite{Landry2021} shows that many researchers have applied various non-linear mechanical models including Ogden, Mooney–Rivlin, Neo-Hookean, Yeoh, Humphrey, and Veronda–Westmann. When recreating an artificial muscle it is desirable to minimise the mechanical material model complexity so that the material can be more easily integrated into a control system with known behaviour. Similar modelling techniques can be used to model conductive particle elastomer composites due to the similar hyper-elastic and visco-elastic behaviours observed.
 
+\section{Pressure Mapping Artificial Skin Devices}
+% Artificial skin review
+% Give the range of technologies available expand upon review given in Pt II EIT sensor paper.
+This section will be outlining some of the main technologies which are flexible and/or soft and can map force events throughout a two dimensional surface. A particular focus on electro-active polymer (EAP) based sensing is present due to the potential of miniaturising the technology and the range of miniaturised electronics currently available. Electroactive polymers are essentially polymer materials which can be used as transducers which change electrical properties based on a mechanical input, vice versa.
 
+
+\subsection{Soft Pressure mapping technology}
+% Why does this section matter? How does it link to my research goals? What is it adding to the greater research pool? A large part of my research was looking into making an 'artificial skin sensor'. It has been requested by several reviewers of my journal article to look at state of the art devices similar to mine, from 2020 onwards and for variant of EIT sensing especially. 
+Pressure mapping devices can be categorised into their various sensing technology, such as resistive, capacitive, inductive, magnetic, optical, and acoustic. Examples have been gathered by \cite{,,,} showing the limits and trade-offs between each sensing technology. 
+
+\subsubsection{Resistive}
+Soft resistive pressure mapping has been commonly achieved in the past by using arrays of piezoresistive sensor elements \cite{,,,,}. The resistive elements can be made using several different flexible piezoresistive materials.
+\begin{itemize}
+	\item Conductive particle polymer composites \cite{Sun2020,Lu2014,Spahr2017}
+	\item Intrinsically conductive polymers \cite{Lu2014,Hazelton2023}
+	\item Microfluidic metals \cite{Park2010,Jung2015,Kim2019}
+	\item Hydrogel structures \cite{Yuk2016,Park2022,Chen2023}
+	\item Flexible piezoresistive semiconductors \cite{Xu2023,Sim2019}
+\end{itemize}
+
+\begin{table}[H]
+	\begin{changemargin}{-2cm}{-2cm}
+		\begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{.8cm}|p{2cm}|p{2cm}|}
+			\hline
+			& Conductivity & Piezo-resistivity & Change stiffness & Fabrication & Cost & Environmental Stability & Toxicity \\ \hline
+			Intrinsically conducting polymers & - Dependent on polymer used. (S/cm \cite{Hazelton2023}) & - Dependent on polymer used - Exponential relationship with strain\cite{Mukherjee2023} &  &  &  & & \\ \hline
+			Electrolytic hydrogels &  &  &  &  &  &  &  \\ \hline
+			Conductive particle polymers &  &  &  &  & \$ &  &  \\ \hline
+			Conductive particle paste &  &  &  &  & \$ &  &  \\ \hline
+			Conductive textiles &  &  &  & Complex &  &  & \\ \hline
+		\end{tabular}
+	\end{changemargin} 
+\end{table}
+
+A commonly used piezoresistive material is conductive particle polymer composites. 
+
+\subsubsection{Capacitive}
+Similar to resistive pressure mapping, capacitive pressure mapping has more commonly been done using arrays of capacitive elements. Many capacitive touch sensors use the human body to shunt the electric field between the capacitor electrode(s) to a common ground. However the operating principle of capacitive-based strain sensors rely on the deformation of the capacitor dielectric and/or the capacitor electrodes. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=9cm]{Figures/cap_deformed_states_x2_crop.png}
+	\caption{Two grey electrodes across a blue dielectric medium. Left: Uncompressed state. Right: Compressed state exhibiting larger electrode areas and a thinner dielectric thickness.}
+	\label{fig:cap_deformed_cube}
+\end{figure}
+
+\subsubsection{Magnetic}
+Magnetic strain mapping devices can be achieved using several methods. One method is to have a three layer stack with hall effect sensors \cite{Yan2021}. The stack is made up of a the bottom layer full of rigidly connected three dimensional hall effect sensors, the second layer is made from an elastomer, and the top layer has a magnetic particle unit placed at a set distance above each of the hall effect sensors. The movement of the magnets alters the magnitude and direction of magnetic field sensed and data can be interpolated to create a map of strain deformation. The main advantages of this method is that each hall sensor can detect in three dimensions, hence normal and shear forces can be detected, and using magnetismfor sensing means less electrical noise in the system. The main disadvantages of this method of sensing is the added complexity in scaling the system and the electronics required and the rigid surface required.  
+
+\subsubsection{Optical}
+There are various methods for making a optically driven artificial skins. A recent review has been curated by Lee et al. \cite{Lee2023} all of the different methods of using optics for creating tactile sensors. The main advantages of optical sensors include the high speed sensor response, immunity to electrical noise, and their non-invasive nature. The main disadvantages include, the bulky hardware required for driving the optics and signal processing, the potential interference of external light sources, and the materials that can carry optical signals. 
+
+\subsubsection{Acoustic}
+Acoustic soft tactile sensing has not been explored much compared to the other forms of sensing given. Park et al., Hughes and Correll \cite{Park2022,Hughes2015} have created a system which uses passive acoustic tomogrpahy (PAT) to localise and and classify different types of touch. This form of tactile sensing is the most similar to the biological system of mechanoreceptors which are specialised to detect certain frequencies of vibration.
+
+\subsubsection{Pressure mapping technology comparison}
+% TODO: place big table comparing a bunch of different technologies - Use table from supplementary information in SNA paper.
 
  \subsection{Electrical Impedance Tomography}
 % % How does EIT work
@@ -119,7 +185,6 @@ To solve the complexity of modelling such a material a review by Landry et al.\c
 
  \subsection{EIT-based Skins}
 % % Give a review on the state of art EIT-based skin technology
-
 
 
 \section{Biological Muscle form and function}
@@ -230,7 +295,7 @@ EMG also commonly uses two electrodes on the surface of the skin above a desired
 
 
 
-\subsection{Artificial Muscle Technology}
+\section{Artificial Muscle Technology}
 There are many types of electrically actuated artificial muscles technology. Artificial muscle actuator technology that has gained particular interest in recent years include, the ionic polymer-metal composite (IPMC) actuator, the hydraulically amplified self‐healing electrostatic (HASEL) actuator, magnetorheolgical elastomer (MRE) actuators, and dielectric elastomer actuators (DEAs). Each of these having qualities very similar to that of biological muscle usually with a trade-off in actuation response time, actuation force, and actuation strain for their various possible topologies. This section gives a brief overview of four state-of-art soft electromagnetically driven actuator technologies.
 
 \subsubsection{Ionic polymer–metal composite actuator}
@@ -326,63 +391,6 @@ Currently dielectric elastomer actuators all require voltages within the kilo-vo
 
 
 
-\section{Pressure Mapping Artificial Skin Devices}
-% Artificial skin review
-% Give the range of technologies available expand upon review given in Pt II EIT sensor paper.
-This section will be outlining some of the main technologies which are flexible and/or soft and can map force events throughout a two dimensional surface. A particular focus on electro-active polymer (EAP) based sensing is present due to the potential of miniaturising the technology and the range of miniaturised electronics currently available. Electroactive polymers are essentially polymer materials which can be used as transducers which change electrical properties based on a mechanical input, vice versa.
-
-
-\subsection{Soft Pressure mapping technology}
-% Why does this section matter? How does it link to my research goals? What is it adding to the greater research pool? A large part of my research was looking into making an 'artificial skin sensor'. It has been requested by several reviewers of my journal article to look at state of the art devices similar to mine, from 2020 onwards and for variant of EIT sensing especially. 
-Pressure mapping devices can be categorised into their various sensing technology, such as resistive, capacitive, inductive, magnetic, optical, and acoustic. Examples have been gathered by \cite{,,,} showing the limits and trade-offs between each sensing technology. 
-
-\subsubsection{Resistive}
-Soft resistive pressure mapping has been commonly achieved in the past by using arrays of piezoresistive sensor elements \cite{,,,,}. The resistive elements can be made using several different flexible piezoresistive materials.
-\begin{itemize}
-	\item Conductive particle polymer composites \cite{Sun2020,Lu2014,Spahr2017}
-	\item Intrinsically conductive polymers \cite{Lu2014,Hazelton2023}
-	\item Microfluidic metals \cite{Park2010,Jung2015,Kim2019}
-	\item Hydrogel structures \cite{Yuk2016,Park2022,Chen2023}
-	\item Flexible piezoresistive semiconductors \cite{Xu2023,Sim2019}
-\end{itemize}
-
-\begin{table}[H]
-	\begin{changemargin}{-2cm}{-2cm}
-		\begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{.8cm}|p{2cm}|p{2cm}|}
-			\hline
-			& Conductivity & Piezo-resistivity & Change stiffness & Fabrication & Cost & Environmental Stability & Toxicity \\ \hline
-			Intrinsically conducting polymers & - Dependent on polymer used. (S/cm \cite{Hazelton2023}) & - Dependent on polymer used - Exponential relationship with strain\cite{Mukherjee2023} &  &  &  & & \\ \hline
-			Electrolytic hydrogels &  &  &  &  &  &  &  \\ \hline
-			Conductive particle polymers &  &  &  &  & \$ &  &  \\ \hline
-			Conductive particle paste &  &  &  &  & \$ &  &  \\ \hline
-			Conductive textiles &  &  &  & Complex &  &  & \\ \hline
-		\end{tabular}
-	\end{changemargin} 
-\end{table}
-
-A commonly used piezoresistive material is conductive particle polymer composites. 
-
-\subsubsection{Capacitive}
-Similar to resistive pressure mapping, capacitive pressure mapping has more commonly been done using arrays of capacitive elements. Many capacitive touch sensors use the human body to shunt the electric field between the capacitor electrode(s) to a common ground. However the operating principle of capacitive-based strain sensors rely on the deformation of the capacitor dielectric and/or the capacitor electrodes. 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=9cm]{Figures/cap_deformed_states_x2_crop.png}
-	\caption{Two grey electrodes across a blue dielectric medium. Left: Uncompressed state. Right: Compressed state exhibiting larger electrode areas and a thinner dielectric thickness.}
-	\label{fig:cap_deformed_cube}
-\end{figure}
-
-\subsubsection{Magnetic}
-Magnetic strain mapping devices can be achieved using several methods. One method is to have a three layer stack with hall effect sensors \cite{Yan2021}. The stack is made up of a the bottom layer full of rigidly connected three dimensional hall effect sensors, the second layer is made from an elastomer, and the top layer has a magnetic particle unit placed at a set distance above each of the hall effect sensors. The movement of the magnets alters the magnitude and direction of magnetic field sensed and data can be interpolated to create a map of strain deformation. The main advantages of this method is that each hall sensor can detect in three dimensions, hence normal and shear forces can be detected, and using magnetismfor sensing means less electrical noise in the system. The main disadvantages of this method of sensing is the added complexity in scaling the system and the electronics required and the rigid surface required.  
-
-\subsubsection{Optical}
-There are various methods for making a optically driven artificial skins. A recent review has been curated by Lee et al. \cite{Lee2023} all of the different methods of using optics for creating tactile sensors. The main advantages of optical sensors include the high speed sensor response, immunity to electrical noise, and their non-invasive nature. The main disadvantages include, the bulky hardware required for driving the optics and signal processing, the potential interference of external light sources, and the materials that can carry optical signals. 
-
-\subsubsection{Acoustic}
-Acoustic soft tactile sensing has not been explored much compared to the other forms of sensing given. Park et al., Hughes and Correll \cite{Park2022,Hughes2015} have created a system which uses passive acoustic tomogrpahy (PAT) to localise and and classify different types of touch. This form of tactile sensing is the most similar to the biological system of mechanoreceptors which are specialised to detect certain frequencies of vibration.
-
-\subsubsection{Pressure mapping technology comparison}
-% TODO: place big table comparing a bunch of different technologies - Use table from supplementary information in SNA paper.
-
 \section{Soft Conductive Particle Piezoresistive Composites}
 \label{sec:Soft Piezoresistive Composites}
 % Why are soft piezo resistive composites used in S&As?
@@ -462,7 +470,7 @@ Electrical AC conduction can occur through a CPEC through capacitive means depen
 % What have I contributed to the modelling of CBSR composites?
 
 
-\section{It Has Been Done Before}
+\section{Natural World Equivalents}
 \label{sec:It Has Been Done Before}
 % Find cases where DEAs, EIT, and EFT are seen in nature! Or a VERY close analogue to really push the importance of this work.
 
