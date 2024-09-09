@@ -1,7 +1,7 @@
 \chapter{\chapviiname}
 \label{chapter7}
 \section*{ABSTRACT}
-	This study investigates the phenomenon of unintentional power generation in Dielectric Elastomer Actuator (DEA) devices integrated with Electrical Impedance Tomography (EIT) for pressure mapping applications. While DEAs are primarily designed for actuation, they can inadvertently function as Dielectric Elastomer Generators (DEGs) due to localized mechanical strain during operation. The research explores the mechanisms behind this unintended energy generation, focusing on the changes in capacitance that occur when the DEA is subjected to varying loads. Through experimental simulations, the study quantifies the energy produced, revealing that energy generation can range from 0.2 $\mu$J to 4 mJ depending on the load conditions. The findings highlight the dual functionality of DEAs, emphasizing the need for careful management of energy generation to prevent potential damage to connected circuitry. This work contributes to the understanding of DEA-EIT devices and their applications in soft robotics and energy harvesting, suggesting that while unintentional, the energy generated could be harnessed for practical use in various scenarios, including vehicular and foot traffic loads.
+	This study investigates the phenomenon of unintentional power generation in Dielectric Elastomer Actuator (DEA) devices integrated with Electrical Impedance Tomography (EIT) for pressure mapping applications. While DEAs are primarily designed for actuation, they can inadvertently function as Dielectric Elastomer Generators (DEGs) due to localized mechanical strain during operation. The research explores the mechanisms behind this unintended energy generation, focusing on the changes in capacitance that occur when the DEA is subjected to varying loads. Through experimental simulations, the study quantifies the energy produced, revealing that energy generation can range from 0.2 $\mu$J to 4 mJ depending on the load conditions. The findings highlight the dual functionality of DEAs, emphasizing the need for careful management of energy generation to prevent potential damage to connected circuitry. This work contributes to the understanding of DEA-EIT devices and their applications in soft robotics and energy harvesting, suggesting that while unintentional, the energy generated could be harnessed for practical use in various scenarios, including vehicular and foot traffic loads. With further research and development the DEG energy from this work could be used to power the EIT sensing circuit extending the range of possible applications.
 
 
 
@@ -84,7 +84,7 @@ The unintended power generation discussed may cause issues with the pressure mea
 \section{METHODOLOGY} % 3 pages
 \label{sec:method}
 % How was the FEM set up? and why?
-To confirm the existence of this DEG phenomena in the DEA-EIT device design has undergone a sequence of FEM studies. To determine which compressive loads may give significant capacitance changes that could lead to significant voltage amplification and potentially significant energy generation across DEA electrodes, FEA of a DEA undergoing compressive pressure loading events have been completed. Experimental cases using two different loading areas, as shown in Figure \ref{fig:FEM_DEA-EIT_loading}, with a range of forces were completed. 
+To confirm the existence of this DEG phenomena in the DEA-EIT device design has undergone a sequence of FEM studies. To determine which compressive loads may give significant capacitance changes that could lead to significant voltage amplification and potentially significant energy generation across DEA electrodes, FEA of a DEA undergoing compressive pressure loading events have been completed. Experimental cases using two different loading areas, as shown in Figure \ref{fig:FEM_DEA-EIT_loading}, with a range of forces were completed. All FEA studies were three dimensional to account for any potential non-symmetric results and variations in fringe effects.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.45\linewidth]{Figures/d13mm_load_case_comsol2d_red.png} % Todo: change the diagram to elimate the z axis
@@ -114,13 +114,17 @@ The deformed meshes from the previous load study were used to generate new meshe
 
 
 \subsection{Voltage and Energy Generation}
-The voltage increase and energy generated for each DEA load case was calculated from the capacitance values determined in the electrostatics studies using Equations \ref{eqn:charge-cap-volt1} - \ref{eqn:elec-energy2}. Analysis of which types of loads can be handled by the DEA-EIT device when undergoing high voltage switching is a critical step for determining the limitations of future applications of the DEA-EIT device.
-
+The voltage increase and energy generated for each DEA load case was calculated from the capacitance values determined in the electrostatics studies using Equations \ref{eqn:charge-cap-volt1} - \ref{eqn:elec-energy2}. Analysis of which types of loads can be handled by the DEA-EIT device when undergoing high voltage switching is a critical step for determining the limitations of future applications of the DEA-EIT device. The capacitance results generated from the FEA studies are then validated using Equation \ref{eqn:capacitance}.
+\begin{equation}
+	C = \varepsilon_0 \varepsilon_r \frac{A}{z}
+	\label{eqn:capacitance}
+\end{equation}
+Where $\varepsilon_0$ is vacuum permittivity, $\varepsilon_r$ is the relative permittivity of the dielectric, $A$ is the area of the `infinitely' large parallel plate electrode, and $z$ is the dielectric thickness.
 
 
 \section{RESULTS}
 \label{sec:results}
-The a series of models were generated from a sequence of FEM studies to obtain the voltage and energy generated from a DEA acting as a DEG.
+The a series of models were generated from a sequence of FEM studies to obtain the voltage and energy generated from a DEA acting as a DEG. First results from a static mechanical load analysis are shown followed by an electrostatic analysis and finally capacitance and energy results were derived from the electrostatic FEA results.
 
 
 \subsection{DEA Load Study}
@@ -174,7 +178,6 @@ To show the scale at which energy is generated an example scenario for the extra
 	\end{tabular}
 \end{table}
 
-
 %% Todo: Add energy generated column for each case
 \begin{table}[H]
 	\centering
@@ -194,12 +197,25 @@ To show the scale at which energy is generated an example scenario for the extra
 	\end{tabular}
 \end{table}
 
+To validate the capacitance results form Tables \ref{tab:volt-energy-gen-d13mm} and \ref{tab:volt-energy-gen-50mm} the the capacitance was solved analytically using the parallel-plate capacitance approximation given in Equation \ref{eqn:capacitance}. Matching the parameters of the FEA simulation the capacitance of the 100 mm DEA device with no load applied, the capacitance was approximated to be 584.13 pF.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{Figures/plot_DEG_stress_vs_VgenUgen.png}
+	\caption{Observing the trends from the energy and voltage generation results for the range of loads applied.}
+	\label{fig:volt-energy-gen-13_and_50mm}
+\end{figure}
+
 
 \section{DISCUSSION}
 \label{sec:concs_disc}
+% Small impact statement!
+The results from this work show promise towards understanding the energy generated from an EIT-DEA device when used in a particular fashion. The FEA simulations completed were validated analytically with a small discrepancy of 4.73 pF, i.e. 0.8\% error, due to the electric field fringe effects the parallel plate capacitor assumption does not account for. The plot shown in Figure \ref{fig:volt-energy-gen-13_and_50mm} shows the trends for a 13 mm and 50 mm load applicator, from this the prominence of the decreasing dielectric thickness can be seen to give a large increase in voltage and energy generated. At these high strains the likelihood of dielectric break through is significantly increased, especially so in a real world scenario when the load surface may contain sharp features.
+
 % useful applications
 % how to harness it
 The energy generated by the sequence shown in Figure \ref{fig:dea_eit_deg}, can be harnessed if there is a sensing mechanism put in place to determine when the capacitance of the DEA will change and apply the voltage appropriately. Conversely, this energy generation can be undesirable for certain applications as it may cause damage to the attached circuitry.
+
 Such energy generation case may be avoided in a system by detecting that a pressure event has occurred and preventing the excitation of the DEA or limiting the charge accumulation on each plate of the capacitor.
 
 An example scenario of voltage and energy generation was given in Section \ref{subsec:Voltage and Energy Generation}. This voltage change transient is connected to the EIT multiplexer through the capacitance of the DEA, as shown by Equation \ref{eqn:eqn:mux_voltage}. The multiplexer pins used in this case are limited to between the power rails, i.e. $\pm$22 V \cite{VishayPG2018}. In the case described above the minute change in capacitance of the DEA is calculated to generate 93.75 $\mu$J of energy.
@@ -209,9 +225,10 @@ To determine the device's tolerance against transient voltage spikes, the EIT mu
 
 The Poisson's ratio of the DE and the compliant CBSR electrodes differs due to viscoelasticity and micro-porosity seen in this material as shown by the SEM images in Figure \ref{}, Chapter \ref{}. To determine the Poisson's ratio more accurately for the composite material, empirical data should be gathered as there is limited data for similar composite material with microporosity.  % To do: Add more references showing the decrease in Poisson's ratio due to filler and microporosity here??
 
-% Address idealness of FEM study completed and how physical experimentation could help create a relationship between the simulated and real data in future.
+% To do: Address idealness of FEM study completed and how physical experimentation could help create a relationship between the simulated and real data in future.
+% To do: Run some experiments to see roughly if the same trend from the simulated data is seen in real-life.
 
 \section{CONCLUSION}
 % Overall conclusion ... Can be prevented, only significant if delta C is large, requires more testing, could create a DEG-EIT device to capture data from cars, foot traffic?
 
-This work has investigated the prominence of energy generation of a 100 mm diameter DEA device with a 500 $\mu$m dielectric elastomer. The sequence by which this energy generation occurs has been explained, and several scenarios have been tested for energy generation from localised 13 mm and 50 mm diameter loads. Depending on the load force 0.2 $\mu$J to 4 mJ of energy generation has been estimated. Although these are small values, often DEAs require large voltages to actuate so any amplification of these voltages needs to be handled on a case by case basis for each application and DEA device. Using methods to estimate the occurrence of a change in DEA capacitance is recommended in all applications to either avoid or harness this energy generation. Potential future applications of a device that utilises this energy generation ranges from vehicular traffic loads to foot traffic loads. Application examples where energy generation is undesirable are given Chapter \ref{}.   
+This work has investigated the prominence of energy generation of a 100 mm diameter DEA device with a 500 $\mu$m dielectric elastomer. The sequence by which this energy generation occurs has been explained, and several scenarios have been tested for energy generation from localised 13 mm and 50 mm diameter loads. Depending on the load force 0.2 $\mu$J to 4 mJ of energy generation has been estimated. Although these are small values, often DEAs require large voltages to actuate so any amplification of these voltages needs to be handled on a case by case basis for each application and DEA device. Using methods to estimate the occurrence of a change in DEA capacitance is recommended in all applications to either avoid or harness this energy generation. Potential future applications of a device that utilises this energy generation ranges from vehicular traffic loads to foot traffic loads. Application examples where energy generation is undesirable are given Chapter \ref{}. In future work we strive to make a system whereby the energy generated from the DEG can be harvested and used to power the EIT-based pressure sensing circuit. 
