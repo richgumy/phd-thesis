@@ -11,7 +11,7 @@ Skin is the largest organ in the human body with many functions, however this th
 Locations of both proprioceptors and cutaneous mechanoreceptors are shown diagrammatically in Figure \ref{fig:proprioceptors-mechanoreceptors}. Proprioceptors aid in determining pose estimates of body parts in space, acting as sensors providing feedback closed-loop control for the neurological motion control of body parts. Whereas cutaneous mechanoreceptors have various roles including object recognition, manipulation control, as well as motion control.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=10cm]{Figures/propriocetors_n_cutaneous_mechanoreceptors_labelled.png}
+    \includegraphics[width=0.6\linewidth]{Figures/propriocetors_n_cutaneous_mechanoreceptors_labelled.png}
     \caption{Examples of the locations of proprioceptors and cutaneous mechanoreceptors in the human body.}
     \label{fig:proprioceptors-mechanoreceptors}
 \end{figure}
@@ -20,22 +20,22 @@ The function of both kinds of receptor have been mimicked by certain device tech
 %% Todo: Get copyright permission from image owners %%
 \begin{figure}[H]
     \centering
-    \includegraphics[width=6cm]{Figures/imu-pose-tracker-kim2022.jpg}
-    \includegraphics[width=6cm]{Figures/knee-stretch-sense-eguchi2020.jpg}
-    \includegraphics[width=6cm]{Figures/logan-assitive-arm-device.jpg}
-    \includegraphics[width=6cm]{Figures/stretch-sense-OBrien2014.jpg}
-    \caption{Clockwise from top left: IMU pose estimation\cite{Kim2022}, stretch sensor knee joint pose estimation\cite{Eguchi2020}, stretch sensor hand joint pose estimations\cite{OBrien2014}, encoder elbow pose joint estimation\cite{Chatfield2021}.}
+    \includegraphics[width=0.4\linewidth]{Figures/imu-pose-tracker-kim2022.jpg} % no copyright permission required
+    \includegraphics[width=0.4\linewidth]{Figures/knee-stretch-sense-eguchi2020.jpg} % 
+    \includegraphics[width=0.4\linewidth]{Figures/logan-assitive-arm-device.jpg}
+    \includegraphics[width=0.4\linewidth]{Figures/stretch-sense-OBrien2014.jpg}
+    \caption{Clockwise from top left: IMU pose estimation\cite{Kim2022} ($\copyright$ 2022 MDPI), stretch sensor knee joint pose estimation\cite{Eguchi2020} ($\copyright$ 2020 IEEE), encoder elbow pose joint estimation\cite{Chatfield2021}, stretch sensor hand joint pose estimations\cite{OBrien2014}.}
     \label{fig:proprio-tech}
 \end{figure}
 Cutaneous mechanoreceptors have been mimicked by the development of pressure mapping of flexible surfaces. Examples of such technologies include, foot pressure based gait analysis, wheelchair seat pressure mapping. Examples of these sensors are shown in Figure \ref{fig:mechano-tech}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=6cm]{Figures/xsensor.png}
-    \includegraphics[width=6cm]{Figures/Robotic+arm+with+PPS+sensors.png}
-    \includegraphics[width=6cm]{Figures/powerOn_gripper_apple.jpg}
-    \includegraphics[width=6cm]{Figures/tekscan-pressure-sensor.jpg}
-    \includegraphics[width=6cm]{Figures/tactilus-pressuremap-sensor-laptop.jpg}
-    \caption{Various pressure mapping devices. From top-left clockwise: Xsensor wheelchair pressure mapping sheet\cite{Xsensor}, Pressure Profile Systems pressure sensors on a robotic hand\cite{PressureProfile2023}, Soft pressure mapping gripper\cite{PowerOn}, Tekscan thin pressure mapping platform\cite{Tekscan}, Tactilus seat pressure mapping system\cite{SensorProducts}}
+    \includegraphics[width=0.4\linewidth]{Figures/xsensor.png} % permission granted by Bruce. Cheers Bruce.
+    \includegraphics[width=0.4\linewidth]{Figures/Robotic+arm+with+PPS+sensors.png}
+    \includegraphics[width=0.4\linewidth]{Figures/powerOn_gripper_apple.jpg}
+    \includegraphics[width=0.4\linewidth]{Figures/tekscan-pressure-sensor.jpg}
+    \includegraphics[width=0.4\linewidth]{Figures/tactilus-pressuremap-sensor-laptop.jpg}
+    \caption{Various pressure mapping devices. From top-left clockwise: Xsensor wheelchair pressure mapping sheet\cite{Xsensor} ($\copyright$ 2024 XSENSOR® Technology), Pressure Profile Systems pressure sensors on a robotic hand\cite{PressureProfile2023}, Soft pressure mapping gripper\cite{PowerOn}, Tekscan thin pressure mapping platform\cite{Tekscan}, Tactilus seat pressure mapping system\cite{SensorProducts}}
     \label{fig:mechano-tech}
 \end{figure}
 %% Todo: Get copyright permission from image owners %%
@@ -73,6 +73,7 @@ Cutaneous mechanoreceptors and their functions are given in Table \ref{tab:mecha
 
 
 \subsection{Characterising skin}
+\label{subsec:Characterising skin}
 The sensing qualities of skin is crucial for the sensory feedback in complex manipulation tasks. To aid the creations of technology that mimics qualities of biological pressure sensitive skin, the mechanical properties of must be characterised. Biological human skin is highly variable in terms of its mechanical and sensing properties depending on the region of skin, giving large variation in skin characteristics. Skin can be characterised in terms of the following mechanical characteristics:
 \begin{enumerate}
     \item Elastic modulus -  The static elastic properties determined by a linear region of stress and strain of the material [Pa]
@@ -160,7 +161,7 @@ A commonly used piezoresistive material is conductive particle polymer composite
 Similar to resistive pressure mapping, capacitive pressure mapping has more commonly been done using arrays of capacitive elements. Many capacitive touch sensors use the human body to shunt the electric field between the capacitor electrode(s) to a common ground. However the operating principle of capacitive-based strain sensors rely on the deformation of the capacitor dielectric and/or the capacitor electrodes. 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=9cm]{Figures/cap_deformed_states_x2_crop.png}
+	\includegraphics[width=0.6\linewidth]{Figures/cap_deformed_states_x2_crop.png}
 	\caption{Two grey electrodes across a blue dielectric medium. Left: Uncompressed state. Right: Compressed state exhibiting larger electrode areas and a thinner dielectric thickness.}
 	\label{fig:cap_deformed_cube}
 \end{figure}
@@ -174,41 +175,71 @@ There are various methods for making a optically driven artificial skins. A rece
 \subsubsection{Acoustic}
 Acoustic soft tactile sensing has not been explored much compared to the other forms of sensing given. Park et al., Hughes and Correll \cite{Park2022,Hughes2015} have created a system which uses passive acoustic tomogrpahy (PAT) to localise and and classify different types of touch. This form of tactile sensing is the most similar to the biological system of mechanoreceptors which are specialised to detect certain frequencies of vibration.
 
-\subsubsection{Pressure mapping technology comparison}
-% TODO: place big table comparing a bunch of different technologies - Use table from supplementary information in SNA paper.
+%%% COMPARISON OF NON-EIT SENSOR EQUIVS %%%
+%\newpage
+%\newgeometry{left=0.5cm,right=0.5cm,bottom=0.5cm,top=0.5cm}
+%\afterpage{%
+%	\clearpage% Flush earlier floats (otherwise order might not be correct)
+%	\thispagestyle{empty}% empty page style (?)
+%	\begin{landscape}% Landscape page
 
- \subsection{Electrical Impedance Tomography}
-% % How does EIT work
+\subsubsection{Soft Pressure mapping technology comparison}
+The softness of biological human skin has a large range as discussed in Section \ref{subsec:Characterising skin}. There have been a range of works investigating sensors with a range of softness' and performance. A comparison of these start-of-the-art soft sensor works is given in Table \ref{tab:non_eit_sensor_compare}.
+%%% COMPARISON OF NON-EIT SENSOR EQUIVS %%%
+%\newgeometry{left=2in,right=0in,bottom=0in,top=2in}
+\begin{landscape}
+		\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+		\thispagestyle{plain}
+		 \begin{table}[H]
+		 	\caption{Comparison of soft sensor technologies.}
+		 	\label{tab:non_eit_sensor_compare}
+			\begin{tabular}{|L{2.9cm}|L{2cm}|L{2.5cm}|L{3cm}|L{2.9cm}|L{2cm}|L{3cm}|L{2cm}|L{2cm}|} \hline 
+				\textbf{1st Author} & \textbf{Sensing principle} & \textbf{Sensing region material} & \textbf{Sensing region elastic modulus or shore hardness} & \textbf{Electrodes per sensing position} & \textbf{Repeatability} & \textbf{Time series data shown} & \textbf{Spatial resolution} & \textbf{Temporal resolution} \\ \hline
+				Gilanizadehdizaj \citep{Gilanizadehdizaj2022} & Piezo-resistive & Ecoflex30-00 rGO composite sponge & 40 kPa & 2 sensels / electrode & 10 cycles for each stress & \textit{-} & 10 x 10 mm & - \\ \hline
+				Fu\citep{Fu2020} & Piezo-resistive & Carbon black silicone composite & 1.5 Mpa & 0.625 sensels / electrode & 50000 cycles & Yes. & 12 x 12 mm & 60 ms \\ \hline
+				Yang\citep{Yang2022} & Piezo-resistive & Ecoflex graphene composite sponge & - & 2 sensels / electrode & 800 cycles & Yes. & 10 x 10 mm & 150 ms \\ \hline
+				Liang\citep{Liang2015} & Capacitive & PDMS, PET, Si, Sio2, Cu laminate & 4000 Mpa & 1 sensel / electrode & - & Real-time use of sensor shown. No explicit time-series data. & 4 x 4 mm & - \\ \hline
+				Yan\citep{Yan2021} & Magnetic & Ecoflex 00-50 & 83 kPa & 11 IC pins / sensel & 30,000 cycles & Yes. & 0.1 x 0.1 mm & 15 ms \\ \hline
+				Rossiter\citep{Rossiter2005} & Optical & Polymer foam & - & 2 sensels / electrode & - & - & 10 x 10 mm & - \\ \hline
+				Shimdera\citep{Shimadera2022} & Optical & Super clear silcone & 40 A & N/A. One fiber optic LASER and   one camera. & Error increase of 1.7\% over 30   days & Yes. & approx. 20 x 20 mm / 0 - 1100 um & Sample rate 1.6s. Training   required. \\ \hline
+				Ramuz\citep{Ramuz2012} & Optical & PDMS & - & N/A. Two arrays of OLEDs and   Organic Photo Detectors used. & 900 cycles & Yes. & Not localised. & 300 ms \\ \hline
+			\end{tabular}
+		\end{table}
+\end{landscape}
+%\captionof{table}{All `-' values are not present in the paper reviewed}% Add 'table' caption
+%\end{landscape}
+%\clearpage% Flush page
+%}
 
- \subsection{Electric Field Imaging}
- % Quick review on the theoyr of EFT and how it differs from EIT. Discuss it's importance and reference how this work looks towards using capacitive shunting AND EIT to create a faster EIT-based pressure mapping sensor.
 
- \subsection{EIT-based Skins}
-% % Give a review on the state of art EIT-based skin technology
+%% LEAVE THIS LIT REVIEW AS BACKGROUND IN THE RELEVANT CHAPTERS??
+% \subsection{Electrical Impedance Tomography}
+%% % How does EIT work
+%
+% \subsection{Electric Field Imaging}
+% % Quick review on the theoyr of EFT and how it differs from EIT. Discuss it's importance and reference how this work looks towards using capacitive shunting AND EIT to create a faster EIT-based pressure mapping sensor.
+%
+% \subsection{EIT-based Skins}
+%% % Give a review on the state of art EIT-based skin technology
 
 
 \section{Biological Muscle form and function}
 % lit review on 'An engineering perspective on the function of human muscle'
 \textit{Note: This section was taken from literature reviews from 3 years ago, when I was going to research DEAs. Needs a re-review ASAP.}
 
-Biological muscles are a product of millions of years of evolution and the motion and other mechanical characteristics of biological structures is yet to be outperformed by artificial muscle technology. To determine how to quantify the performance of a biological muscle this section gives foundational knowledge about muscle function, structure, and how it can be characterised from an engineering perspective. 
+Biological muscles are a product of millions of years of evolution and the motion and other mechanical characteristics of biological structures is yet to be outperformed by artificial muscle technology. To determine how to quantify the performance of a biological muscle this section gives foundational knowledge about muscle function, structure, and how it can be characterised from an engineering perspective rather than the typical biological perspective, so that similar actuator devices can then be investigated which have similar attributes.
 
-Biological muscle is a naturally occurring tissue comprised of muscle fibres bundled together to apply a contractile force on connecting tissue or, in the case of smooth muscle, applying a force on itself. The base actuator units of muscle are proteins myosin and actin filaments, which effectively slide against each other to produce a contractile motion. The root cause of a muscle contraction is an electrochemical signal sent form the central nervous system to a motor neuron/s which travel to the muscle where electrochemical reactions take place for the contraction to take place.
+Biological muscle is a naturally occurring tissue comprised of muscle fibres bundled together to apply a contractile force on connecting tissue or, in the case of smooth muscle, applying a force on itself. The base actuator units of muscle are proteins myosin and actin filaments, which effectively slide against each other to produce a contractile motion. The root cause of a muscle contraction is an electrochemical signal sent form the central nervous system to a motor neuron/s which travel to the muscle where electrochemical reactions take place for the contraction to occur.
 \begin{figure}[h!]
-  \centering
-  \includegraphics[width=6cm]{Figures/300px-Sarcomere.png}
-  \caption{Components of a biological muscle contractile unit \citep{Richfield2014}}
-  \label{fig:muscle_unit}
+	\centering
+	\includegraphics[width=0.6\linewidth]{Figures/motor-unit-myo-fibril-to-fibre.png}
+	\caption{Components of a biological muscle contractile unit and meta-structure.}
+	\label{fig:muscle_units}
 \end{figure}
 The sliding motion of the myosin and actin filaments is due myosin heads attaching to the actin and pulling the actin towards a middle line (M-line) in multiple stroke actions. These filament actuators are stacked in three dimensions within a muscle fibre to amplify contractile stress and strain as shown in Figure \ref{fig:muscle_unit}.
 
-The anatomy of a human skeletal muscle can be seen in Figure \ref{fig:muscle_parts}. The muscle is made up of bundles of fasicles connected together with a tissue called perimysium. Within the fasicles are many muscle fibres (i.e. muscle cells) which are surrounded by a connective tissue called endomysium. Within the muscle fibres there are many sacromeres stacked within a cyclindrical-like structure called a myofibril. Each sacromere contains a contractile unit of myofilaments. 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=8cm]{Figures/muscle structure.jpg}
-  \caption{Diagram of the internal structures of a skeletal muscle\citep{Spina2014}}
-  \label{fig:muscle_parts}
-\end{figure}
+From a high level, muscle is made up of bundles of fasicles connected together with a tissue called perimysium. Within the fasicles are many muscle fibres (i.e. muscle cells) which are surrounded by a connective tissue called endomysium. Within the muscle fibres there are many sacromeres stacked within a cyclindrical-like structure called a myofibril. Each sacromere contains a contractile unit of myofilaments. 
+
 
 
 \subsection{Characterising a muscle}
@@ -217,34 +248,29 @@ To be able to quantify the performance of a biological muscle there must be cert
     \item Stress - Force that is applied to the normal of the cross section of the muscle through various states of muscle excitation. [$N.m^{-2} or Pa$]
     \item Strain - The muscle change of length due to the stress applied through various states of muscle excitation.
     \item Elastic modulus - The elasticity determining the relationship between stress and strain for the linear region of the stress strain characteristic curve. [$Pa$]
-    \item Shear stress - Force applied parallel with a cross sectional area plane due to a state of muscle excitation. [$N.m^{-2} or Pa$]
-    \item Shear strain - The change in deformation perpendicular to the direction of loading to the due to a state of muscle excitation.
-    \item Shear modulus - The relationship between the shear stress and shear strain in the linear region of the stress strain characteristic curve. [$Pa$]
     \item Energy density - The work done by the muscle per unit volume or mass. [$J.kg^{-1}$]
-    \item Power density - The work done by the muscle per unit volume (or mass) per unit time. [$J.kg^{-1}s^{-1} or W.kg^{-1}$]
-    \item Yield stress - Stress at which the stress strain curve of the muscle begins to become non-linear and the material strain may not return to it's resting (original) length. [$Pa$] 
+    \item Power density - The work done by the muscle per unit volume or mass per unit time. [$W.kg^{-1}$]
     \item Ultimate tensile strength - The maximum tensile stress that a material can tolerate before breaking. [$Pa$]
     \item Efficiency - The work done by the muscle compared to the energy put into the system, known as metabolic cost in biological muscles. [\%]
     \item Actuation frequency - The frequency range of actuation cycles using the system's method of excitation. [$Hz$]
     \item Stroke - The maximum displacement an actuator can achieve [$m$]
-    \item Drift - Change in actuation displacement over time given the same excitation input value each actuation cycle. [$m$] \nocite{Hussain2019}
     \item Life cycle - The time or number of actuation cycles in which it takes for the actuator to degrade such that it cannot perform its intended purpose to specified standards.
 \newline
 \newline
-    As well as commonly used medical/biology muscle metrics such as:
+    As well as the commonly used medical/biological muscle metric:
 \newline
     \item Maximum isometric contraction force - the maximum force a muscle can apply without changing strain. This is also related to the ratchet-like mechanism and muscle locking where a muscle can apply a much larger force in a static state, as seen in the myosin binding\citep{Cross2006}.
-    \item Muscle force direction and architecture - Biological muscles can have varying contraction force directions determined by pennation angle of the muscle and the muscle fibre configuration.
+
 \end{enumerate}
 Other qualities of muscle should be quantified on a case by case basis depending on the artificial muscle technology being investigated. For example, a major issue with dielectric elastomer actuators is the excitation voltage required for actuation is too large for many applications. Hence this could be another parameter considered for some artificial muscles.
 
 Some of the biological muscle metrics have been quantified by previous research as seen below:
 \begin{itemize}
-    \item Energy density - Biological muscle can have energy densities ranging from 0.4 - 40 $J.kg^{-1}$\citep{Alexander1977}.
-    \item Power density - Biological muscle can have energy densities ranging from 9 - 284$W.kg^{-1}$\citep{Full2004}
-    \item Actuation frequency - The range of natural actuation frequencies for both vertebrate and invertebrate muscles ranges 1 - 180$Hz$\citep{Full2004}.
-    \item Strain - Biological muscle can have strains ranging from 5-30\%\citep{Duduta2019}.
-    \item Efficiency - Thermodynamic efficiency of human muscle is typically between 20-35\%\citep{Smith2005}. However other biological muscle has been seen to reach efficiencies of up to 77\%, such as in tortoises\citep{Smith2005}.
+    \item Energy density - energy densities ranging from 0.4 - 40 $J.kg^{-1}$\citep{Alexander1977}.
+    \item Power density - power densities ranging from 9 - 284$W.kg^{-1}$\citep{Full2004}
+    \item Actuation frequency - natural actuation frequencies ranges 1 to 180$Hz$\citep{Full2004}.
+    \item Strain - ranging from 5 - 30\%\citep{Duduta2019}.
+    \item Efficiency - Thermodynamic efficiency of human muscle is typically between 20-35\%\citep{Smith2005}. However other biological muscle has been seen to reach efficiencies of up to 77\%\citep{Smith2005}.
 \end{itemize}
     
 
@@ -260,37 +286,35 @@ Where $\varepsilon$ \& $\sigma$ are strain and stress respectively. A solution f
     \sigma = \mu e^{\alpha\varepsilon} - \beta
 \end{equation}
 Where $\mu$ is a free parameter determined empirically. The stress-strain of a passive muscle can be likened to tension being applied yarn. As more strands of the yarn are pulled into tension the stress increases, then as the last strands are brought into tension a maximum stress is reached, until the yield stress is reached. Linear approximations can still be made over regions of elongation depending on accuracy required for application. The stress-strain of an active muscle (i.e. when it is tetanised) is approximated to a piece-wise quadratic function or bell curve. It is important to note that the stress for both active and passive muscle is zero when the strain is less than 0.4, demonstrating the yarn-like nature of the muscle stress-strain.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=8cm]{Figures/Muscle-fiber-active-and-passive-behavior.png}
-  \caption{Plot showing the stress and strain of active and passive muscles \citep{Teran2003}}
-  \label{fig:Muscle}
-\end{figure}
-
-Hill's muscle models commonly refer to a mechanical three element model \citep{Hill1938} composed from, one parallel non-linear spring element, one series non-linear spring element, and a contractile unit, displayed as a free-body diagram in Figure \ref{fig:hill-model-Muscle} with the corresponding Equation \ref{eqn:hills-model}.
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=8cm]{Figures/hill_type_muscle_model.png}
-  \caption{Hill muscle model\citep{Arnold2010}}
-  \label{fig:hill-model-Muscle}
-\end{figure}
-Where $F^{KT}$ and $F^{KM}$ are the spring forces of the tendon and muscle respectively, which are a function of extension length. $F^CE$ is the contractile force and $F^T$ is the total contractile force as observed at the end of each tendon either end of the muscle. Where  $F^T$ is the tendon force; $F^M$ is the muscle force; the $l^T$, $l^M$, $l^{MT}$ are muscle length, tendon length and their combined lengths respectively; $\alpha$ is the pennation angle (i.e. zero if parallel muscle); The left and right non-linear spring elements represent a tendon and muscle spring characteristic respectively; The CE box represents the contractile element that generates contractile force. 
-\begin{equation}
-    F^T = F^{KT} + (F^{CE} + F^{KM})cos(\alpha)
-    \label{eqn:hills-model}
-\end{equation}
+%\begin{figure}[H]
+%  \centering
+%  \includegraphics[width=8cm]{Figures/Muscle-fiber-active-and-passive-behavior.png}
+%  \caption{Plot showing the stress and strain of active and passive muscles \citep{Teran2003}}
+%  \label{fig:Muscle}
+%\end{figure}
+Hill's muscle models commonly refer to a mechanical three element model \citep{Hill1938} composed from, one parallel non-linear spring element, one series non-linear spring element, and a contractile unit.
+%\begin{figure}[H]
+%  \centering
+%  \includegraphics[width=8cm]{Figures/hill_type_muscle_model.png}
+%  \caption{Hill muscle model\citep{Arnold2010}}
+%  \label{fig:hill-model-Muscle}
+%\end{figure}
+%Where $F^{KT}$ and $F^{KM}$ are the spring forces of the tendon and muscle respectively, which are a function of extension length. $F^CE$ is the contractile force and $F^T$ is the total contractile force as observed at the end of each tendon either end of the muscle. Where  $F^T$ is the tendon force; $F^M$ is the muscle force; the $l^T$, $l^M$, $l^{MT}$ are muscle length, tendon length and their combined lengths respectively; $\alpha$ is the pennation angle (i.e. zero if parallel muscle); The left and right non-linear spring elements represent a tendon and muscle spring characteristic respectively; The CE box represents the contractile element that generates contractile force. 
+%\begin{equation}
+%    F^T = F^{KT} + (F^{CE} + F^{KM})cos(\alpha)
+%    \label{eqn:hills-model}
+%\end{equation}
 
 
 \subsection{Electrical Muscle Models}
 
 Similar to EAP-based artificial skin and artificial muscles, biological muscles also require electrical stimulation to function. The main method for providing an artificial electrical stimulation to a muscle, to simulate the signal a motor neuron would give to a muscle, is functional electrical stimulation (FES). Due to the biochemical nature of the motor neuron signal transport and the purely electrical stimulation provided by the FES device, the process isn't as efficient as the naturally occurring electro-chemical muscle activation, often resulting in increased muscle fatigue when compared to equivalent voluntary muscle contractions \citep{Ibitoye2016}. FES applies a voltage across between two electrodes on the user's skin above a specific muscle. The voltage simulates the signal form and frequency of action potentials between 4 - 12Hz\citep{Popovic2004}. The threshold for a muscle action potential to cause a muscle contraction is approximately 70 mV \cite{Schmidt-Nielsen2002}.
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=8cm]{Figures/FES_electric_field.PNG}
-  \caption{Electric field generated by two electrodes on the surface of the skin above a specific muscle and hence it's activating nerve bundle\citep{Bajd2010}}
-  \label{fig:Muscle}
-\end{figure}
+%\begin{figure}[h!]
+%  \centering
+%  \includegraphics[width=8cm]{Figures/FES_electric_field.PNG}
+%  \caption{Electric field generated by two electrodes on the surface of the skin above a specific muscle and hence it's activating nerve bundle\citep{Bajd2010}}
+%  \label{fig:Muscle}
+%\end{figure}
 EMG also commonly uses two electrodes on the surface of the skin above a desired muscle. EMG senses the nerve impulses sent to the muscle and propagated through action potential. 
 
 
@@ -299,12 +323,12 @@ EMG also commonly uses two electrodes on the surface of the skin above a desired
 There are many types of electrically actuated artificial muscles technology. Artificial muscle actuator technology that has gained particular interest in recent years include, the ionic polymer-metal composite (IPMC) actuator, the hydraulically amplified self‐healing electrostatic (HASEL) actuator, magnetorheolgical elastomer (MRE) actuators, and dielectric elastomer actuators (DEAs). Each of these having qualities very similar to that of biological muscle usually with a trade-off in actuation response time, actuation force, and actuation strain for their various possible topologies. This section gives a brief overview of four state-of-art soft electromagnetically driven actuator technologies.
 
 \subsubsection{Ionic polymer–metal composite actuator}
-Ionic polymer-metal composite actuators (IPMCs) are soft actuators that can be actuated at a much lower excitation voltage than DEAs, commonly being less 10V. IPMCs are also desirable as artificial muscles as they can display large bending deformations, simple to fabricate, light weight and thin in design, and can have a fast actuation response time (>15Hz) at small displacements\citep{Ma2020}. IPMCs also have a high work density and maintain a constant volume during actuation like biological muscles.
+Ionic polymer-metal composite actuators (IPMCs) are soft actuators that can be actuated at a much lower excitation voltage than DEAs, commonly being less than 10V. IPMCs are also desirable as artificial muscles they have shown large bending deformations, simple to fabricate, light weight and thin in design, and can have a fast actuation response time ($>$15Hz) at small displacements\citep{Ma2020}. IPMCs also have a high work density and maintain a constant volume during actuation like biological muscles\cite{Neuhaus2020}.
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=8cm]{Figures/IPMC.png}
-  \caption{Diagram of the typical architecture of an IPMC actuator\citep{Yanjie2018}}
-  \label{fig:Artificial Muscle}
+  \includegraphics[width=0.5\linewidth]{Figures/IPMC.png}
+  \caption{Diagram of the typical architecture of an IPMC actuator\citep{Yanjie2018} ($\copyright$ 2018 Yanjie Wang and Takushi Sugino)}
+  \label{fig:Artificial Muscle_IPMC}
 \end{figure}
 An IPMC is made up of an ionic polymer interlayer, two electrode conductive layers, and a voltage source. The ionic polymer interlayer allows for ionic transport and is typically made of treated Nafion or Flemion. These materials are typically used as ion exchange membranes so have the characteristics desired for the transporting ions during the actuation of the IPMC actuator. The two electrodes are made of a suitably conductive and flexible material. The interlayer is treated such that it is filled with water molecules and cations, with the chemical backbone of the interlayer being slightly negatively charged. When a voltage is applied across the electrodes the cations are repelled from the cathode and travel towards the anode while the water molecules are displaced in the opposite direction towards the cathode. The ionic polymer then swells as the cations repel each other along the anode side of the interlayer, while the polymer elements on the cathode side effectively shrink\citep{Segalman1999}. This swelling adjacent to the cathode provides the device's bending actuation.
 
@@ -321,9 +345,9 @@ The applications of this actuator is limited to applications requiring a small a
 A hydraulically amplified self‐healing electrostatic (HASEL) actuator is a recent soft actuator technology developed in 2018\citep{Kellaris2018} which displays many qualities that are better than current artificial muscle technology. HASEL actuators are made up of three main components: electrodes, dielectric fluid, and an elastomeric shell. The electrodes need to be highly conductive, able to handle high electric potential, and can be solid or flexible. Hydrogel electrodes have been proven to be a good material for the electrodes because of their elasticity while still maintaining a high conductivity\citep{Acome2018}. In one application the hydrogel material is bonded to a polydimethylsiloxane (PDMS) substrate for mechanical strength and for ease of bonding to the actuator biaxially-oriented polypropylene (BOPP) shell\citep{Kellaris2018,Yuk2016}. HASEL actuators use high electric potential across two electrodes to create an electrostatic force. This force induces a 'zipping' effect which pulls the electrode together from one end to the other as the electric field strength increases. The zipping of the two electrodes pushes the dielectric fluid into the reservoir increasing the pressure which alters the shape of the reservoir bounds providing an actuation motion. When the electrodes have displaced all of the fluid between them the actuation displacement is at a maximum. The electrostatic zipping action allows a large force to be generated due to snap-through transition. Snap-through transition is an actuation instability which has been discussed in previous research as a means of amplifying DEA actuation strain\citep{Keplinger2012}. 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=10cm]{Figures/HASEL_actuator_crop.jpg}
+  \includegraphics[width=0.7\linewidth]{Figures/HASEL_actuator_crop.jpg}
   \caption{Diagram of the typical architecture and the contraction stages of a HASEL actuator\citep{Kellaris2018}}
-  \label{fig:Artificial Muscle}
+  \label{fig:Artificial Muscle_HASEL}
 \end{figure}
 Recorded efficiency values of HASEL actuators of 21\% are comparable to that of human muscles of 20 - 35\% \citep{Smith2005}. The actuators have had a frequency response of up to 20Hz. Large strains of 124\% have been recorded, but can only be achieved when actuating at a resonant frequency. Strains of up to 79\% have been recorded using a linear planar HASEL actuator configuration and DC voltage stepping.  Else, strains of only 10\% have been recorded for static steady strain\citep{Kellaris2018}.
 Because there is a relationship between the motion of the actuation and capacitance between the electrodes, this means self sensing can be achieved through the electrodes. Although due to the flexible and fluid nature of the device, modelling of the HASEL is difficult and limited in accuracy.
@@ -331,17 +355,16 @@ Because there is a relationship between the motion of the actuation and capacita
 The simple and commonly used manufacturing process for HASEL actuators is completed in six steps as shown by the diagram below:
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=8cm]{Figures/HASEL_manuf.jpg}
+  \includegraphics[width=0.6\linewidth]{Figures/HASEL_manuf.jpg}
   \caption{Diagram of the simplified stages of HASEL actuator production\citep{Kellaris2018}}
-  \label{fig:Artificial Muscle}
+  \label{fig:Artificial Muscle_HASEL_manf}
 \end{figure}
 
 Other attempts have been made to use polyjet inkjet based additive manufacturing to make the whole HASEL actuator and have been successful with proof of concept, but are yet to be developed from prototype stage\citep{Manionn.d.}. 
 
 The cyclic life of HASEL actuators are high, because of their 'self-healing' properties. When there is a dielectric breakdown through the liquid dielectric the damage caused is not permanent like when a DE breaks down. The liquid may form some small air bubbles, however these may not effect the operation of the actuator, instead this can increase the likelihood of a another dielectric breakdown. The cycle life of the HASEL actuator was seen to be larger than one million with a given torus shaped HASEL actuator\citep{Acome2018}.
 
-The number topologies possible with HASEL actuators is limitless. 
-Some topologies of HASEL actuators include torus, planar linear\citep{Acome2018}, scorpion metasoma\citep{Mitchell2019}.
+The number topologies possible with HASEL actuators is vast. Some topologies of HASELs include torus, planar linear\citep{Acome2018}, scorpion metasoma\citep{Mitchell2019}.
 
 
 \subsubsection{Magnetorheological Elastomer}
@@ -349,9 +372,9 @@ Magnetorheological elastomer (MRE) actuators are a relatively new form of actuat
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=8cm]{Figures/MRE_actuate.jpg}
+  \includegraphics[width=0.6\linewidth]{Figures/MRE_actuate.jpg}
   \caption{Diagram showing MRE contraction actuation when a magnetic field is applied\citep{Park2018a}}
-  \label{fig:Artificial Muscle}
+  \label{fig:Artificial Muscle_MRE}
 \end{figure}
 
 A key issue with using magnetorheological elastomers as soft actuators is that they require heavy gauge conductors for the high current they require for generating a magnetic field. The high current requirement means that actuators have only been created that have a solid electromagnet driving a soft MRE\citep{Bose2012}. 
@@ -370,9 +393,9 @@ The dielectric elastomer actuator (DEAs) are often called artificial muscles bec
 A DEA consists of a dielectric elastomer (DE) film sandwiched between two compliant electrodes. To excite the actuation, a high electric potential is applied to across the electrodes creating an electrostatic force between the two compliant electrodes. This force pulls the two electrodes together applying stress (known as Maxwell's stress) to the elastomer and hence strain parallel and perpendicular to direction of the electrostatic force. When the DEA is contracted the surface area of the electrodes increases and the thickness of the DE decreases causing a change in capacitance and Maxwell's stress.
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=8cm]{Figures/DEA_basic_diagram.png}
+  \includegraphics[width=0.6\linewidth]{Figures/DEA_basic_diagram.png}
   \caption{Diagram of a DEA with a with no voltage and a voltage applied across the electrodes. \citep{Pelrine2000}}
-  \label{fig:Artificial Muscle}
+  \label{fig:Artificial Muscle_DEA}
 \end{figure}
 A dielectric elastomer actuator can be modelled as a flexible parallel plate capacitor in its simplest form. Using this we can determine the electrostatic pressure to be:
 \begin{equation}
@@ -424,7 +447,7 @@ The typical fabrication process stated in Section \ref{sec:Fabricating Conductiv
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=9cm]{Figures/res_deformed_states_x2_crop.jpg}
+    \includegraphics[width=0.7\linewidth]{Figures/res_deformed_states_x2_crop.jpg}
     \caption{Two grey electrodes across a CPEC cuboid showing enlarged black conductive particles within a blue polymer matrix. Left: An uncompressed CPEC. Right: A compressed CPEC.}
     \label{fig:res_deformed_cube}
 \end{figure}
@@ -455,7 +478,7 @@ Some of the physical features of these conductive percolation networks can be qu
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=8cm]{Figures/simple_random_percolation.jpg}
+    \includegraphics[width=0.6\linewidth]{Figures/simple_random_percolation.jpg}
     \caption{Example of a randomised cube percolation with a volume percentage of 8\% of particles}
     \label{fig:simp_rand_perc}
 \end{figure}
@@ -465,13 +488,13 @@ Microscale models for CPECs and the relationship between particle and electric c
 
 Electrical DC conduction through a CPEC occurs using two main mechanisms, Coulomb conduction and quantum tunneling \cite{Bloor2006,Duan2014,Zhang2007,Madrid2017}. Coulomb conduction uses the conduction band electrons are shared by adjacent atoms allow conduction throughout chains of cascading conductive particles. The second mechanism of conduction is through quantum tunneling which is stochastic in nature and allows for conduction through insulative boundaries between the percolative network of conductive particles \cite{Hu2008,Grimaldi2006}. 
 
-Electrical AC conduction can occur through a CPEC through capacitive means depending of particle spacing\cite{??}.
+Electrical AC conduction can occur through a CPEC through capacitive means depending of particle spacing with a decrease in reactance becoming more prominent for composites near the percolation threshold\cite{HindermannBischoff2001}.
 
 % What have I contributed to the modelling of CBSR composites?
 
 
-\section{Natural World Equivalents}
-\label{sec:It Has Been Done Before}
+%\section{Natural World Equivalents}
+%\label{sec:Natural World Equivalents}
 % Find cases where DEAs, EIT, and EFT are seen in nature! Or a VERY close analogue to really push the importance of this work.
 
 % from ReynoldsSmith1999 -> Many species of fish use electric fields to perceive their environments. The capability has evolved independently more than once: species in two distantly related families of fish, Mormyriformes and Gymnotoidei, one from South America and one from Africa, have this capability. This split is reflected in Figure 1-1, a family tree" of the fish known to have electrosensory capabilities. The fact that electric eld sensing does not require an external light source and is unaffected by optical scatterers like mud or silt is presumably advantageous to fish in dark, murky water anywhere. Electric Field sensing is another example of convergent evolution, the best known example being the eye, which evolved independently in squid and mammals. 

@@ -6,6 +6,7 @@
 \graphicspath{Figures/}  % Location of the graphics files (set up for graphics to be in PDF format)
 % Include any extra LaTeX packages required
 \usepackage{changepage}
+\usepackage{fancyhdr}
 \usepackage{float}
 \usepackage{import}
 \usepackage{lipsum}
@@ -17,8 +18,11 @@
 \usepackage{subfig}
 \usepackage{graphicx}
 \usepackage{gensymb}
+\usepackage{afterpage, geometry, pdflscape, tabularx, ulem} % for landscape tables
 \usepackage{multirow}
 \usepackage{pdfpages}
+
+\newgeometry{left=2in,right=0in,bottom=0in,top=2in}
 
 % Use this to change the margin width for a snippet of text/table/figure etc.
 \def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
@@ -167,6 +171,7 @@
 		\textbf{SMD} & \textbf{S}urface-\textbf{M}ount \textbf{D}evice \\
 		\textbf{SR} & \textbf{S}ilicone \textbf{R}ubber \\
 		\textbf{THT} & \textbf{T}hrough-\textbf{H}ole \textbf{T}echnology \\
+		\textbf{EAP} & \textbf{E}lectro-\textbf{A}ctive \textbf{P}olymer\\
 
 	}
 	%% ----------------------------------------------------------------
@@ -209,20 +214,20 @@
 	\import{Chapters/}{Chapter1.tex} % Introduction
 	\lhead{\emph{\chapiiname}}
 	\import{Chapters/}{Chapter2.tex} % Literature Review
-	\lhead{\emph{\chapiiiname}}
-	\import{Chapters/}{Chapter3.tex} % CBSR behaviour
-	\lhead{\emph{\chapivname}}
-	\import{Chapters/}{Chapter4.tex} % Improved EIT-based sensor
-	\lhead{\emph{\chapvname}}
-	\import{Chapters/}{Chapter5.tex} % DEA-EIT 
-	\lhead{\emph{\chapviname}}
-	\import{Chapters/}{Chapter6.tex} % DEA-EIT an unintended DEG
-	\lhead{\emph{\chapviiname}}
-	\import{Chapters/}{Chapter7.tex} % DEA-EIT hardware
-	\lhead{\emph{\chapviiiname}}
-	\import{Chapters/}{Chapter8.tex} % DEA-EIT capacitive modelling??
-	\lhead{\emph{\chapixname}}
-	\import{Chapters/}{Chapter9.tex} % Discussion and Conclusion
+%	\lhead{\emph{\chapiiiname}}
+%	\import{Chapters/}{Chapter3.tex} % CBSR behaviour
+%	\lhead{\emph{\chapivname}}
+%	\import{Chapters/}{Chapter4.tex} % Improved EIT-based sensor
+%	\lhead{\emph{\chapvname}}
+%	\import{Chapters/}{Chapter5.tex} % DEA-EIT 
+%	\lhead{\emph{\chapviname}}
+%	\import{Chapters/}{Chapter6.tex} % DEA-EIT an unintended DEG
+%	\lhead{\emph{\chapviiname}}
+%	\import{Chapters/}{Chapter7.tex} % DEA-EIT hardware
+%	\lhead{\emph{\chapviiiname}}
+%	\import{Chapters/}{Chapter8.tex} % DEA-EIT capacitive modelling??
+%	\lhead{\emph{\chapixname}}
+%	\import{Chapters/}{Chapter9.tex} % Discussion and Conclusion
 
 	%% ----------------------------------------------------------------
 	% Now begin the Appendices, including them as separate files
