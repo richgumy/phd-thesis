@@ -37,7 +37,7 @@ Cutaneous mechanoreceptors have been mimicked by the development of pressure map
     \includegraphics[width=0.4\linewidth]{Figures/powerOn_gripper_apple.jpg}
     \includegraphics[width=0.4\linewidth]{Figures/tekscan-pressure-sensor.jpg} % only commercial image without permission granted.
     \includegraphics[width=0.4\linewidth]{Figures/tactilus-pressuremap-sensor-laptop.jpg}
-    \caption{Various pressure mapping devices. From top-left then clockwise: XSsensor wheelchair pressure mapping sheet ($\copyright$ 2024 XSENSOR\textsuperscript{\textregistered} Technology)\cite{Xsensor}, Pressure Profile Systems pressure sensors on a robotic hand ($\copyright$ 2023 PPS UK limited)\cite{PressureProfile2023}, Soft pressure mapping gripper\cite{PowerOn}, Tekscan thin pressure mapping platform\cite{Tekscan}($\copyright$ 2024 Tekscan Inc.), Tactilus seat pressure mapping system\cite{SensorProducts}($\copyright$ 2024 Sensor Products Inc.)}
+    \caption{Various pressure mapping devices. From top-left then clockwise: XSsensor wheelchair pressure mapping sheet ($\copyright$ 2024 XSENSOR\textsuperscript{\textregistered} Technology)\cite{Xsensor}, Pressure Profile Systems pressure sensors on a robotic hand ($\copyright$ 2023 PPS UK limited)\cite{PressureProfile2023}, Soft pressure mapping gripper($\copyright$ 2023 PowerON)\cite{PowerOn}, Tekscan thin pressure mapping platform\cite{Tekscan}($\copyright$ 2024 Tekscan Inc.), Tactilus seat pressure mapping system\cite{SensorProducts}($\copyright$ 2024 Sensor Products Inc.)}
 
     \label{fig:mechano-tech}
 \end{figure}
@@ -138,7 +138,7 @@ Soft resistive pressure mapping has been commonly achieved in the past by using 
 
 \begin{table}[H]
 		\centering
-		\caption{Comparison of different potential piezo-resistive sensor materials. Ranked 1 to 5, where 1 is desirable and 5 is undesirable. WIP - need to find a reference for each box!}
+		\caption{Comparison of different potential piezo-resistive sensor materials. Ranked 1 to 5, where 1 is desirable and 5 is undesirable. WIP - need to redo properly and find a reference for each box!}
 		\label{tab:comparing-piezo-r-materials}
 		\vspace{3cm}
 		\begin{tabular}{|p{2cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|}
@@ -419,14 +419,20 @@ Soft sensors and actuators require low-stiffness materials for their active sens
 A core part of this thesis is understanding the behaviour of conductive particle elastomer composites for their use as a range of EAP-based sensing and actuating devices. The characteristics that make conductive particle elastomer composites (CPECs) ideal for soft sensor and actuator devices often include, low stiffness, controllable conductivity, controllable piezoresistivity, mouldable, 3D printable, low toxicity, durable, inexpensive, easy to obtain, simple fabrication process, and sustainable\cite{Chung2020,Ge2020,HindermannBischoff2001,Kim2012}.
 
 \subsection{Fabricating Conductive Particle Elastomer Composites}
-\label{sec:Fabricating Conductive Particle Elastomer Composites}
+\label{subsec:Fabricating Conductive Particle Elastomer Composites}
 Before exploring the known conduction and piezoresistive mechanisms and models for CPECs, it is important to understand how the fabrication process of a CPEC may affect its physical structure. 
 
-CPECs are made by dispersing conductive particles through a curable liquid elastomer matrix. To change the electromechanical properties of the material, the dispersion of the conductive particles throughout the matrix can be optimised through various methods. To minimise the agglomerations of primary conductive particles often a sonication step is completed. This involves a mixture of the conductive particles and a liquid, usually in the form of a solvent, to be placed in a sonication bath. The sonication bath performs a frequency sweep whereby the resonant modes of the agglomerates are met causing separation of the agglomerates into their primary particles \cite{}. The degree of dispersion is governed by the time in the sonication bath, the sonication frequencies, and sonication amplitudes \cite{,,}. This sonication usually occurs before the the particles are added to the elastomeric matrix due to the large viscous damping effects of liquid elastomers. The next step involves mixing the dispersed conductive particles throughout the liquid elastomer, this can be done using a variety of mixing methods, including a planetary mixer, magnetic mixer, screw mixer, static mixers, amongst others \cite{,,,}. During the mixing process often the liquid solvent used in the dispersion stage is evaporated, leaving only the curable elastomer and the conductive particles. When sufficient mixing of the liquid elastomer and conductive particles have been completed the material is formed into a desired final shape using advanced additive manufacturing methods \cite{,,} or traditional moulding \cite{,,} or film making techniques \cite{,,}.  During the moulding process the material undergoes a form of curing, such as UV curing, catalysed curing, or moisture curing\cite{,,}. If the composite material has not already been integrated into a device containing electrodes and other mechanical support structures these are integrated at the end of the process \cite{,,}.
+CPECs are made by dispersing conductive particles through a curable liquid elastomer matrix. To change the electromechanical properties of the material, the dispersion of the conductive particles throughout the matrix can be optimised through various methods. To minimise the agglomerations of primary conductive particles often a sonication step is completed. This involves a mixture of the conductive particles and a liquid, usually in the form of a solvent, to be placed in a ultra-sonication bath. 
+
+The sonication bath performs a frequency sweep and it has been shown that sudden implosion cavitation near the agglomerates help cause the separation of the agglomerates into their primary particles\cite{Priyadarshi2021,Kudryashova2019}. The degree of deagglomeration and dispersion is affected by various factors including sonciation time, frequency of oscillations, oscillation intensity, particle wettability, and liquid matrix viscosity\cite{Kudryashova2019,Chen2020a}. 
+
+This sonication usually occurs before the the particles are added to the elastomeric matrix due to the large viscous damping effects of liquid elastomers. The next step involves mixing the dispersed conductive particles throughout the liquid elastomer, this can be done using a variety of mixing methods, including a planetary mixer, magnetic mixer, screw mixer, static mixers, amongst others \cite{Pegel2008,Rosset2016,Fekiri2020,Kim2012}. During the mixing process often the liquid solvent used in the dispersion stage is evaporated, leaving only the curable elastomer and the conductive particles. Although often impurities and voids are a by-product of the previous processes which can give undesirable qualities.
+
+When sufficient mixing of the liquid elastomer and conductive particles have been completed the material is formed into a desired final shape using advanced additive manufacturing methods \cite{Bastola2018,Sapra2023,Krueger2014,Li2020,McCoul2017,Yi2023,Kim2018a} or traditional moulding \cite{Kim2018} or film making techniques \cite{Fasolt2017}. During the moulding process the material undergoes a form of curing, such as UV, catalysed, or moisture curing. If the composite material has not already been integrated into a device containing electrodes and other mechanical support structures these are integrated at the end of the process.
 
 
-\subsection{Modelling Conduction mechanism}
-The typical fabrication process stated in Section \ref{sec:Fabricating Conductive Particle Elastomer Composites} for CPECs shows that the dispersion of conductive particles will always vary. 
+\subsection{Conductive Particle Elastomer Conduction Mechanisms}
+Depending on the fabrication process stages stated in Section \ref{subsec:Fabricating Conductive Particle Elastomer Composites} for fabricating CPECs, the dispersion of conductive particles will always vary. 
 
 \begin{figure}[H]
     \centering
@@ -435,29 +441,11 @@ The typical fabrication process stated in Section \ref{sec:Fabricating Conductiv
     \label{fig:res_deformed_cube}
 \end{figure}
 
-Some of the physical features of these conductive percolation networks can be quantified and directly relate to the macro-level electromechanical properties of the material. Such characteristics of a conductive percolation network include:
-\begin{enumerate}
-    \item Conductive particle(s) used
-    \begin{enumerate}
-        \item Aspect ratio \cite{Wu2019,Flandin1999}
-        \item Inherent particle conductivity
-    \end{enumerate}
-    \item Conductive particle dispersion \cite{Kim2012}
-    \begin{enumerate}
-        \item Inter-particle distance distribution
-        \item Particle agglomeration distribution \cite{Pegel2008}
-        \item Isotropy/anisotropy \cite{Song2022}
-        \item Sedimentation \cite{Eklund2019}
-    \end{enumerate}
-    \item Elastomeric matrix
-    \begin{enumerate}
-        \item Viscosity
-        \item Elastic modulus
-        \item Dielectric permittivity
-    \end{enumerate}
-    \item Impurities
-    \item Voids
-\end{enumerate}
+Some of the physical features of these conductive percolation networks can be quantified and directly relate to the macro-level electromechanical properties of the material. Such characteristics of a conductive percolation network include, the type of conductive particle(s) used, particle dispersion, the elastomeric matrix, and any impurities or voids. The aspect ratio of a conductive particle filler can drastically change the conductivity and piezoresistivity of a CPEC. For example the aspect ratio of carbon nanotube particles (CNTs) is very large compared to that of regular carbon black (CB) particles, this has been shown to give improved conductivity for smaller weight volume percentages\cite{Wu2019,Flandin1999}, among other electromechanical property changes. Also the inherent particle conductivity a core parameter to consider when choosing a conductive particle composite.
+
+Conductive particle dispersion is an important characterstic of CPECs when optimising the electrical properties of a CPEC. Particle dispersion includes the inter-particle distance distribution\cite{Kim2012}, particle agglomeration distribution\cite{Pegel2008}, particle isotropy/anisotropy \cite{Song2022}, and sedimentation\cite{Eklund2019}. The filler elastomer matrix also contributes to the piezoresistive effect, through it's viscoelasticity, elastic modulus, and dielectric permittivity within the CPEC.
+
+% To do: Mention voids and impurities
 
 \begin{figure}[H]
     \centering
@@ -474,10 +462,17 @@ Electrical DC conduction through a CPEC occurs via two main mechanisms, Coulomb 
 Electrical AC conduction can occur through a CPEC through capacitive means depending of particle spacing with a decrease in reactance becoming more prominent for composites near the percolation threshold\cite{HindermannBischoff2001}.
 
 % What have I contributed to the modelling of CBSR composites?
-
+\newpage
 \section{Literature Review Conclusions}
 % Summarise: biological skin, artificial skin, biological muscle, artificial muscle, electroactive polymers.
 % Clarify: the focus of the thesis.
+The original purpose of this thesis was to develop novel sensor and actuator technology that mimics the pressure mapping capabilities of human skin and combine this with the actuation properties of human muscle. Through this review of current literature, several key conclusions can be drawn that will lay the foundational knowledge for the rest of this work.
+
+The review of biological skin has revealed quantitative parameters that define its mechanical and sensory capabilities. This review highlighted mechanical characteristics such as the elastic modulus, viscoelastic creep, and surface area, as well as functional properties like spatial and temporal resolution. These factors provide a foundation for designing artificial skin that can replicate or even surpass the sensing functions of soft human skin. The review on pressure mapping technologies was then completed showing a range of different transduction methods for similarly soft sensing domains, showing that replicating human mechanoreceptor sensation is a multifaceted problem. Human skin uses various mechanoreceptors with different qualities and trade-offs and similarly different pressure mapping technologies use different pressure transduction methods each with different performance characteristics and limitations. The parallel review on biological and artificial muscles showed that DEAs and HASEL actuators are promising technologies for mimicking biological muscle quantitatively. Although characteristics common to both technologies such as high actuation voltage and limited device lifetime limit the applications of them.
+
+The thesis has converged on using CPECs to fabricate EAP sensor and actuator devices, hence a brief literature review highlighting CPEC fabrication techniques and electromechanical characterisation has been given. These composites exhibit beneficial properties like flexibility, tunable electromechanical behavior, and ease of fabrication, which make them suitable for integrating into soft robotic systems. However, challenges such as achieving uniform particle dispersion, minimising agglomeration, and optimising the conductive network for stable long-term operation are still active areas of investigation.
+
+This literature review has given a brief overview of some of the devices and theory related to the thesis, throughout the thesis there will be more background theory given on a need-to-know basis for each chapter.
 % Excite: the reader into wanting to read the rest of the thesis!
 
 
