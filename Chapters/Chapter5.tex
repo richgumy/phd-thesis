@@ -44,10 +44,10 @@ DEAs are often referred to as artificial muscles because they share similar char
 \end{figure}
 When a voltage is applied to the compliant electrodes, an electrostatic force arises between the electrodes causing the dielectric elastomer (DE) membrane to contract by a decrease in thickness and an increase in area. The resulting actuation is controlled by changing the applied voltage. The region encompassing the two compliant electrodes and the DE portion sandwiched between them is called the `active region', i.e. where the electric field is largest. For a simple DEA such as the one shown in Figure \ref{fig:DEA_diagram}, a simplified formula for the electrostatic force on the compliant capacitor electrodes is given in Equation \ref{eqn:DEA_stress}.
 \begin{equation}
-	\sigma_{es} = \varepsilon_0 \varepsilon_r \frac{V^2}{z_{de}^2}
+	\sigma_{es} = \epsilon_0 \epsilon_r \frac{V^2}{z_{de}^2}
 	\label{eqn:DEA_stress}
 \end{equation}
-Where $\sigma_{es}$ is the electrostatic stress, $V$ is the applied voltage, $z_{de}$ is the DE thickness, $\varepsilon_0$ is the permittivity of free space, and $\varepsilon_r$ is the relative permittivity constant of the DE, which is a function of strain\cite{Kofod2003, Choi2005, Wissler2007} and applied voltage\cite{Rosset2013} . This can be expanded to estimate the DE strain, $S_{z_{de}}$, using the bulk modulus, $K$, of the DE as shown in Equation \ref{eqn:DEA_strain_z}.
+Where $\sigma_{es}$ is the electrostatic stress, $V$ is the applied voltage, $z_{de}$ is the DE thickness, $\epsilon_0$ is the permittivity of free space, and $\epsilon_r$ is the relative permittivity constant of the DE, which is a function of strain\cite{Kofod2003, Choi2005, Wissler2007} and applied voltage\cite{Rosset2013} . This can be expanded to estimate the DE strain, $S_{z_{de}}$, using the bulk modulus, $K$, of the DE as shown in Equation \ref{eqn:DEA_strain_z}.
 \begin{equation}
 	S_{z_{de}} = \frac{\sigma_{es}}{K}
 	\label{eqn:DEA_strain_z}
@@ -182,7 +182,7 @@ The elastic modulus of a hyperelastic material such as VHB is often defined as a
 % Liu2018 Y @ 10% strain: Y(static) = 178 kPa, Y(dyn) = 225 kPa, tensile?? Y = 290 kPa
 % Helal2018 Y split into a kelvin-voight model? : Ys = 130 kPa(elastic modulus), Yp = 242 kPa(elastic component of loss), Dp = 1.958 MPa (loss modulus)
 % Huang2023 Y @ 10% strain : Y = 119 kPa
-The relative permittivity, $\varepsilon_r$, used in Equation \ref{eqn:DEA_stress} was approximated to be 4.5$\pm$0.2 due to pre-strain effects seen in literature\cite{Kofod2003, Choi2005, Wissler2007, Pan2015} .
+The relative permittivity, $\epsilon_r$, used in Equation \ref{eqn:DEA_stress} was approximated to be 4.5$\pm$0.2 due to pre-strain effects seen in literature\cite{Kofod2003, Choi2005, Wissler2007, Pan2015} .
 % VHB rel permittivity in lit :::
 % Askounis2020 : e_r = 4.2 (no strain mentioned)
 % McKay2009 : e_r = 4.5 (zero strain), 4.6 - 6 (for a range of electric field strengths applied??) -- only abstract available..
@@ -284,18 +284,18 @@ Prior to constructing the DEA, the compliant CBSR inter-electrode resistances, $
 
 \subsection{DEA Validation}
 \label{subsec:dea_validation2}
-Before testing the piezoresistive compliant electrodes for both actuation and pressure mapping capability, the reference DEA was tested for its voltage actuation strain relationship. The theoretical actuation strain versus voltage was compared to the measured strain for the reference DEA shown in Figure \ref{subfig:ref_DEA}. The actuation strain data gathered is shown in Figure \ref{fig:ref_DEA_results}. The range given was derived from substituting the range of $K$ and $\varepsilon_r$ parameter values found in previous similar works\cite{Liu2018, Helal2018, Huang2023} into Equations \ref{eqn:DEA_stress} - \ref{eqn:DEA_strain_z_r}.
+Before testing the piezoresistive compliant electrodes for both actuation and pressure mapping capability, the reference DEA was tested for its voltage actuation strain relationship. The theoretical actuation strain versus voltage was compared to the measured strain for the reference DEA shown in Figure \ref{subfig:ref_DEA}. The actuation strain data gathered is shown in Figure \ref{fig:ref_DEA_results}. The range given was derived from substituting the range of $K$ and $\epsilon_r$ parameter values found in previous similar works\cite{Liu2018, Helal2018, Huang2023} into Equations \ref{eqn:DEA_stress} - \ref{eqn:DEA_strain_z_r}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width = 0.8\textwidth]{Figures/CB_vs_theory_range_vs_fitv2.png} % TODO: determine a range of K and perm_r values that put our experiment within the range given.
 	\vspace{0.2cm}
-	\caption{Comparing the measured CB reference DEA strain, the theoretical strain average and range, and the data fitted to Equation \ref{eqn:DEA_strain_z_r} by fitting either parameter $K$ or $\varepsilon_r$.}
-	% \caption{Comparing the measured DEA strain, the theoretical strain given the assumed $K$ and $\varepsilon_r$ values, 142 kPa and 4.5 respectively, and the fitted curve using either assumed $K$ or $\varepsilon_r$ value and fitting the other. X* denotes the fitted parameter given our assumption of the other parameter is correct.}
+	\caption{Comparing the measured CB reference DEA strain, the theoretical strain average and range, and the data fitted to Equation \ref{eqn:DEA_strain_z_r} by fitting either parameter $K$ or $\epsilon_r$.}
+	% \caption{Comparing the measured DEA strain, the theoretical strain given the assumed $K$ and $\epsilon_r$ values, 142 kPa and 4.5 respectively, and the fitted curve using either assumed $K$ or $\epsilon_r$ value and fitting the other. X* denotes the fitted parameter given our assumption of the other parameter is correct.}
 	\label{fig:ref_DEA_results}
 \end{figure}
-The curve fit shown in Figure \ref{fig:ref_DEA_results} was found to have a linear set of solutions for $K$ and $\varepsilon_r$ with values similar to those limits of the material given characterisation determined in previous literature \cite{Carpi2003} .
+The curve fit shown in Figure \ref{fig:ref_DEA_results} was found to have a linear set of solutions for $K$ and $\epsilon_r$ with values similar to those limits of the material given characterisation determined in previous literature \cite{Carpi2003} .
 
-The CBSR compliant electrode experiments showed significantly smaller strains relative to the DEA with the CB powder compliant electrode as displayed in Figure \ref{fig:DEA_CBSR_thickness_results}. The effective mechanical impedance for the DEA with the CBSR compliant electrodes was significantly increased due to the relative thickness of the CBSR electrode and similar bulk modulus relative to the DE VHB material. Hence an effective bulk modulus, $K_{e\!f\!f}$, was calculated from fitting to the measured data, as a sum of the existing DE bulk modulus, $K$, and the effect of the compliant electrode's bulk modulus. $K_{e\!f\!f}$ is the a key characteristic of using thick compliant electrodes on a DEA that limits the actuation performance. When calculating $K_{e\!f\!f}$, $\varepsilon_r$ is assumed constant, as the effects of this different compliant electrode thickness on $\varepsilon_r$ is assumed relatively negligible. % TODO?: Insert citation showing that the $\varepsilon_r$ is less variable than K_eff (ideally by an order of magnitude!)
+The CBSR compliant electrode experiments showed significantly smaller strains relative to the DEA with the CB powder compliant electrode as displayed in Figure \ref{fig:DEA_CBSR_thickness_results}. The effective mechanical impedance for the DEA with the CBSR compliant electrodes was significantly increased due to the relative thickness of the CBSR electrode and similar bulk modulus relative to the DE VHB material. Hence an effective bulk modulus, $K_{e\!f\!f}$, was calculated from fitting to the measured data, as a sum of the existing DE bulk modulus, $K$, and the effect of the compliant electrode's bulk modulus. $K_{e\!f\!f}$ is the a key characteristic of using thick compliant electrodes on a DEA that limits the actuation performance. When calculating $K_{e\!f\!f}$, $\epsilon_r$ is assumed constant, as the effects of this different compliant electrode thickness on $\epsilon_r$ is assumed relatively negligible. % TODO?: Insert citation showing that the $\epsilon_r$ is less variable than K_eff (ideally by an order of magnitude!)
 \begin{figure}[H]
 	\centering
 	\includegraphics[width = 0.8\textwidth]{Figures/DEA_CBSR_thickness_strains_vs_fits_hyb.jpg}
