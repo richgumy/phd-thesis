@@ -397,7 +397,7 @@ Currently dielectric elastomer actuators all require voltages within the kilo-vo
 Magnetorheological elastomer (MRE) actuators, also known as magnetoactive soft materials (MSMs), are a relatively new form of actuator however the theory reinforcing operating principle has been known since at least the 1980s \citep{Jolly1996}. The structure of an MRE actuator generally consists of a ferromagnetic elastic composite and a driving magnetic field. An example of this is a composite of iron-carbonyl powder and PDMS. The operating principle of MREs is that magnetic flux travelling through the MRE will change mechanical characteristics within the elastomer (i.e. stiffness or displacement of the body). The operation of a MRE actuator is similar to a DEA however instead of having an electric field cause a contraction it is a magnetic field causing a deformation. An MRE is typically made of silicone rubber containing magnetic ferrite based particles uniformly distributing throughout its volume. This kind of actuator is current controlled and can hence operate at a low voltage. This helps mitigate the risk of electric shock of a device in close proximity to humans (unlike HASEL actuators and DEAs).
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.6\linewidth]{Figures/MRE_actuate.jpg}
+  \includegraphics[width=0.6\linewidth]{Figures/MRE_actuate.jpg} %%% TO DO: get permission from Author!!
   \caption{Diagram showing MRE contraction actuation when a magnetic field is applied\citep{Park2018a}}
   \label{fig:Artificial Muscle_MRE}
 \end{figure}
@@ -450,16 +450,27 @@ Conductive particle dispersion is an important characterstic of CPECs when optim
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\linewidth]{Figures/simple_random_percolation.jpg}
-    \caption{Example of a randomised cube percolation with a volume percentage of 8\% of particles}
+    \caption{Example of a randomised cube percolation with a volume percentage of 8\% of 1$\mu$m particles}
     \label{fig:simp_rand_perc}
 \end{figure}
 
 % How you can model CBSR type material and the conduction mechanisms
 Microscale models for CPECs and the relationship between particle and electric charge motion are often computationally heavy, overly idealised, and non-invertible \cite{Wang2022}. A microscale model example can be seen in Figure \ref{fig:simp_rand_perc}. However, microscale modelling of CPECs may give insight into understanding complex physical phenomena that may relate to the macroscale models made for CPECs. An alternate method for modelling CPECs is the formation of macroscale models\cite{Neffati2019}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figures/conduction-tunneling-mechanisms.jpg}
+	\caption{Electrical conduction and tunneling representation diagram.}
+	\label{fig:tunneling-model-rep}
+\end{figure}
+Electrical DC conduction through a CPEC occurs via two main mechanisms, electrical conduction and quantum tunneling \cite{Bloor2006,Duan2014,Zhang2007,Madrid2017}. Electrical conduction uses the conduction band electrons shared by adjacent atoms to allow movement of electrons throughout chains of cascading these conductive atoms. The second mechanism of conduction is through quantum tunneling which is stochastic in nature and allows for conduction through insulative boundaries between the percolative network of conductive particles \cite{Hu2008,Grimaldi2006}. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{Figures/conduction-AC-mechanisms.jpg}
+	\caption{AC conduction RC network representation diagram.}
+	\label{fig:AC-model-rep}
+\end{figure}
+The a CPEC can be modelled with an RC network as shown in Figure \ref{fig:AC-model-rep}. Electrical AC conduction can occur through a CPEC through capacitive means depending of particle spacing with a decrease in reactance becoming more prominent for composites near the percolation threshold\cite{HindermannBischoff2001}.
 
-Electrical DC conduction through a CPEC occurs via two main mechanisms, Coulomb conduction and quantum tunneling \cite{Bloor2006,Duan2014,Zhang2007,Madrid2017}. Coulomb conduction uses the conduction band electrons are shared by adjacent atoms allow conduction throughout chains of cascading conductive particles. The second mechanism of conduction is through quantum tunneling which is stochastic in nature and allows for conduction through insulative boundaries between the percolative network of conductive particles \cite{Hu2008,Grimaldi2006}. 
-
-Electrical AC conduction can occur through a CPEC through capacitive means depending of particle spacing with a decrease in reactance becoming more prominent for composites near the percolation threshold\cite{HindermannBischoff2001}.
 
 % What have I contributed to the modelling of CBSR composites?
 \newpage

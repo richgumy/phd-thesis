@@ -108,7 +108,7 @@ LaTeX document class]
 \setcounter{dbltopnumber}{9}
 \usepackage{graphicx}
 \usepackage{epstopdf}
-\usepackage[scriptsize]{subfigure}
+%\usepackage[scriptsize]{subfigure}
 \usepackage{booktabs}
 \usepackage{rotating}
 \usepackage{listings}
@@ -147,7 +147,7 @@ pdfstartview={FitV},unicode,breaklinks=true]{hyperref}
 
 \chapii     {Literature Review}
 
-\chapiii    {A Simple Conductive Elastomer Composite Material with Complex Behaviour}
+\chapiii    {A Simple Conductive Elastomer Composite with Complex Behaviour}
 
 \chapiv      {An Improved an Electrical Impedance Tomography Based Artificial Soft Skin Pressure Sensor}
 
