@@ -26,7 +26,7 @@ Carbon nanoparticle-silicone elastomer composites are stretchable conductive mat
 
 Some characteristics of CBSR composites which make it suitable for strain sensors include that, the material is relatively inexpensive, readily available, non-toxic, bio-compatible, and can have a high gauge factor. Other alternative composite conductive particles, such as carbon nanotubes (CNTs) \cite{Maddipatla2017,Wang2013} and metallic particles \cite{Quinsaat2015,Racles2021}, have been seen to be more carcinogenic than CB alternatives \cite{Fukushima2018,Ferdous2020,Rausch2004}. The fabrication of CBSR composites requires a degree of optimisation to ensure that the carbon particles are adequately dispersed to ensure high conductivity and high yield strength of the material. More importantly the homogeneous dispersion of CB particles means improved repeatability of experimental results and more accurate models for the eventual applications of CBSR composites. A comprehensive model of how the resistivity changes with strain has not yet been developed. 
 
-While previous work from our research group \cite{Giffney2017,Devaraj2018} has focused on the response to quasi-static and low-strain rate behaviour, these materials show dynamic effects where a significant resistance strain-rate relationship is present. The main characterisation investigated in this work for CBSR sensing involves understanding the relationship between the mechanical stress relaxation, electrical resistance relaxation and strain in time. A difference in time constants between the stress and resistance relaxations have been noted before in literature \cite{Kost1994,Wang2013,Maddipatla2017,Wang2004}, but never accurately modelled with the physical theory explained. Mersch et al. \cite{Mersch2020} have classified several transient `shoulder' events and their related deformation events, compressive, tensile, and bending. These transient peaks have been observed by several researchers using the similar CBSR materials, however there is no conclusive mathematical model relating these transient peaks to strain in time. An understanding of this resistance relaxation and other transient phenomena would mean an accurate model could be made to predict the relationship between stress, strain and resistance within a CBSR composite. 
+While previous work from our research group \cite{Giffney2017,Devaraj2018} has focused on the response to quasi-static and low-strain-rate behaviour, these materials show dynamic effects where a significant resistance strain-rate relationship is present. The main characterisation investigated in this work for CBSR sensing involves understanding the relationship between the mechanical stress relaxation, electrical resistance relaxation and strain in time. A difference in time constants between the stress and resistance relaxations have been noted before in literature \cite{Kost1994,Wang2013,Maddipatla2017,Wang2004}, but never accurately modelled with the physical theory explained. Mersch et al. \cite{Mersch2020} have classified several transient `shoulder' events and their related deformation events, compressive, tensile, and bending. These transient peaks have been observed by several researchers using the similar CBSR materials, however there is no conclusive mathematical model relating these transient peaks to strain in time. An understanding of this resistance relaxation and other transient phenomena would mean an accurate model could be made to predict the relationship between stress, strain and resistance within a CBSR composite. 
 
 Determining a stress-strain-resistance model would also allow us to understand the limitations of using this composite in sensing and actuation applications, so that the material can be used simultaneously as an actuation excitation electrode and a strain sensor. Understanding these characteristics may give rise to new applications of the composites material, for example, if the resistive relaxation properties of the material were known, it could be used as a mechanically activated timing device. An oscillatory flexible dynamic circuit has been demonstrated when mimicking the motion of a caterpillar as shown by Henke et al. \cite{Henke2018}, where the resistance relaxation modelling is be useful for more accurate electrical circuit dynamics. The theory behind mechanical stress relaxation is widely known and has been modelled using a variety of mathematical models \cite{Fung1993} depending on the material modelled. 
 
@@ -150,25 +150,36 @@ These plots in Figures \ref{raman_0CB} - \ref{raman_8CB_cut} show that surface e
 % To do: CB dispersion imaging - show Raman mapping and SAXS results. SAXS analysis may take time, and potential inclonclusive results.
 
 \subsection{Stress-Strain-Resistance Measurement}
-A custom test measurement device was made for measuring the desired characteristics of the CBSR material, so that parameters driving the data collection could be easily altered. The strain, stress and resistivity of the specimen were measured in in parallel. The setup included the use of a 500 g TAL221 loadcell (HT Sensor Technology Co. Limited., Xi'an, China) in combination with a linear actuator stage driven by a NEMA23 stepper motor and a 2634B Keithley source measurement unit (SMU) (Tektronix, Beaverton, USA). A custom electrode clamp mechanism was designed to fix the electrodes onto the test specimen during the straining of the specimen. This consists of two copper plates sandwiching the composite material at each end of the dogbone test specimen.
+A custom test measurement device was made for measuring the desired characteristics of the CBSR material, so that parameters driving the data collection such as the current source and strain profile could be easily customised to suit the experiment. The strain, stress, and resistivity of the specimen were measured in in parallel. The setup included the use of a 500 g TAL221 loadcell (HT Sensor Technology Co. Limited., Xi'an, China) in combination with a linear actuator stage driven by a NEMA23 stepper motor and a 2634B Keithley source measurement unit (SMU) (Tektronix, Beaverton, USA). The loadcell was found to have a resolution of $\pm$ 30 mN and the linear actuator stage used a micro-stepper controller allowing for 40 $\mu$m steps.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{Figures/4wire_specimen.png}
 	\caption{The composite dog-bone test specimen pierced by 4 metal pin electrodes. The outer and inner electrodes connected to an SMU current source and voltmeter respectively}
 	\label{fig:four_wire_dogbone}
 \end{figure}
-Two configurations of resistance measurement were tested, a two-wire and a four-wire method. The two-wire measurement method used two electrodes which also clamped the test specimen at each end. It was observed that compressive strain applied to CBSR composite alters the resistivity of the specimen in a similar fashion to tensile stress. Only a compressive strain was applied to the material by the clamps such that the material would not slip during tensile testing and not deform giving erroneous resistance results. The Poisson's ratio of the material which was found experimentally to be 0.29 for both CB percentages. 
+Two configurations of resistance measurement were tested, a two-wire and a four-wire method. The two-wire measurement method used two copper plate electrodes which also clamped the test specimen at each end. It was observed that compressive strain applied to CBSR composite alters the resistivity of the specimen in a similar fashion to tensile stress. Only a compressive strain was applied to the material by the clamps such that the material would not slip during tensile testing and not deform giving erroneous resistance results.
 
 The two-wire method used a controlled current source in parallel with a voltmeter attached to the same two electrodes to measure a resistance. The four-wire method uses four pin electrodes as seen in Figure \ref{fig:four_wire_dogbone}. The four-wire method applies a constant current source through the outer electrodes and uses a voltmeter on the inner two electrode to determine the resistance of the specimen. The four-wire electrode configuration exhibited a larger signal-to-noise-ratio (SNR) compared to the two-wire alternative for resistance measurements.
 
-Four-wire pin electrodes were selected over the two-wire copper clamp and conductive adhesive alternatives as they deformed the specimen the least, showed a high SNR, had a consistently low specimen-electrode contact resistance, and did not slip during test sequences. The inner pin electrodes were symmetric about the centre and placed 20 mm apart with the outer pin electrodes being 40 mm apart as shown in Figure \ref{fig:electromech-setup}.
+Four-wire pin electrodes were selected because they resulted in minimal deformation, exhibited a high measurement SNR, no slip, and the electrode can pierce through the specimen with a relatively constant electrode impedance. The inner pin electrodes were symmetric about the centre and placed 20 mm apart with the outer pin electrodes being 40 mm apart as shown in Figure \ref{fig:electromech-setup}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Figures/ELECTROMECH-SETUP.png}
 	\caption{Photo of test measurement setup}
 	\label{fig:electromech-setup}
 \end{figure}
-The measurements were completed using finite pulse trains of strain to ensure repeatability of the models were consistent across varying experimental parameters. If this material is used as a sensor the model fitted to the stress relaxation must hold over many consecutive tensile strain events. As these materials are intended as large strain sensors, the main strains tested in this work were ranged between 0 and 30\%, with a strain rates ranging from 40 to 160 $mms^{-1}$.
+The dogbone specimen was held in place using clamps with an a 3D pyramidal array surface. 
+The specimen clamp strain was calculated using the specimen Poisson's ratio and the maximum expected tensile experiment strain; to ensure the specimen would not slip, and ensure minimal deformation to the specimen.
+  
+The measurements were completed using finite pulse trains of strain to ensure repeatability of the models were consistent across varying experimental parameters. If this material is used as a sensor the model fitted to the stress relaxation must hold over many consecutive tensile strain events. As these materials are intended as large strain sensors, the main strains tested in this work were ranged between 0 and 30\%, with a strain-rates ranging from 40 to 160 $mms^{-1}$.
+
+All data was captured through serial interfaces and logged on a PC with a python-based program. An open source G-code platform GRBL was used to control the motion of the linear actuator. The PyVISA library was used to obtain all of the measurement data and to send commands to measurement devices. A calibration procedure ensured that the stress and strain of the specimen was always zero'd before each experiment. An overall architectural diagram of the system is shown in Figure \ref{fig:electromech-architecture}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figures/Electromech_tester.png}
+	\caption{System architecture for the electromechanical tensile test rig showing data/physical connections}
+	\label{fig:electromech-architecture}
+\end{figure}
 
 
 \section{Results and Analysis}
@@ -177,41 +188,147 @@ The CBSR composite material has shown complex nonlinear behaviour in previous li
 % See CBSR behaviours document and flesh out with data!!
 
 
-\subsection{Rising and Falling Edge Step Response}
-The first phenomena to analyse is the rising and falling edges of the resistance responding to a strain step input. 
+\subsection{Stress-Strain and Viscoelasticity}
+All of the specimens fabricated indicated a degree of viscoelasticity shown by the hysteresis seen when loading and unloading the material with 30\% tensile strain in Figure \ref{fig:loading-and-unloading-specimens}. The 0, 7.5, and 10 w.t.\% CB specimens have average elastic moduli, as measured in the loading phase, of 205.2 kPa, 321.4 kPa, and 342.1 kPa, respectively.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.69\linewidth]{Figures/load_unload_1_10_E4pin_20mm_v9_0.3Strain.png}
+	\includegraphics[width=0.69\linewidth]{Figures/load_unload_2_7-5_E4pin_20mm_v10_0.3Strain.png}
+	\includegraphics[width=0.69\linewidth]{Figures/load_unload_1_CB0_v1_0.3Strain.png}
+	\caption{The loading and unloading of 30\% strain on a composite test specimens with CB weight percentages from top to bottom of 10\%, 7.5\%, and 0\% with data collected over five loading and unloading cycles}
+	\label{fig:loading-and-unloading-specimens}
+\end{figure}
 
 
-A parameter fit study has been completed to determine the resistance peak can be controlled with a strain input. We can see a repeated property in Figure \ref{fig:poly2_r_strain} whereby the derivative of the resistance signal seems to be equal to the strain curve. 
-
-To prove that there does exist a mathematical relationship between the two signals the relationship first each signal is given a generalised formula. The resistance signal is parabolic Equation \ref{eqn:gen_parabolic}. 
+\subsection{Quasi-Static Tensile Resistance-Strain}
+\label{subsec:Quasi-Static Tensile Resistance-Strain}
+First the underlying steady-state relationship between resistance and strain was produced by producing a quasi-static linear resistance-strain formula for strains between 0 to 30\% strain as shown in Figure \ref{fig:quasi_static_tensile}. Data was gathered using steady-state measurements from four separate tensile strain pulses performed on the same CBSR specimen.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{Figures/2_7-5_4Epin_20mm_v2_Quasi_static_fit.jpg}
+	\caption{Linear quasi-static resistance-strain fit for 7.5 w.t.\% CBSR specimen}
+	\label{fig:quasi_static_tensile}
+\end{figure}
+The fitted linear parameters are given in Equation \ref{eqn:quasi-R-strain_7-5}.
 \begin{equation}
-	R_p = A \cdot (t-H)^2 + K
-	% A : concavity
-	% H : horizontal shift
-	% K : vertical shift
-	\label{eqn:gen_parabolic}
+	R = 6530 \cdot \varepsilon + 970
+	\label{eqn:quasi-R-strain_7-5}
 \end{equation}
-Where strain rate changes the vertical shift, K, time shift, H, and concavity, A, of the parabola. 
 
-\subsection{Strain Rate Resistance Relationship}
-A narrow peak in the apparent resistance has been observed in the collected data when changing from 10\% strain to a zero strain. This peak is not present in the stress plot, hence is a proposed characteristic of electrical behaviour only as a function of strain. In previous literature, the effects of the rate of change of strain on apparent resistance of the CBSR material has not been modelled or shown. When the material has finished a tensile cycle of strain and is returning a zero strain state the a component of the resistance, $R_p$, can be modelled with a second order polynomial. When differentiated, this peak gives a linear function in a similar form of the linear strain curve seen in Figure \ref{fig:poly2_r_strain}. Hence we form an equation which relates a component of resistance,
+
+\subsection{Dynamic Resistance-Strain-Rate Response}
+When using this material as a tensile strain sensor many applications will require a strain-rate superseding the capabilities of the quasi-static model given in Section \ref{subsec:Quasi-Static Tensile Resistance-Strain}. The dynamic characteristics of the CBSR material is investigated to find a relationship between the strain-rate and resistance. Several saw-tooth strain signal experiments were completed using four different strain-speeds of 40, 80, 120, and 160 mm$cdot$min$^{-1}$ (i.e. strain-rates of 1.67, 3.33, 5, and 6.67 \%$\cdot$s$^{-1}$). To avoid misconstruing strain-rate dependent relationship from a time dependent relationship the saw-tooth strain signal completed repeated the three times as shown in Figure \ref{fig:saw-tooth-diff-v}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{Figures/saw_tooth_diff_speeds_strain_only.jpg}
+	\caption{Strain input waveform for investigating strain-rate dependent resistance}
+	\label{fig:saw-tooth-diff-v}
+\end{figure}
+The resulting resistance response exhibits a shoulder peak phenomena where a second peak is developed when changing direction of the strain. The resistance response is shown in Figure \ref{fig:saw-tooth-res-response}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{Figures/saw_tooth_diff_speeds_res_only.jpg}
+	\caption{Resistance response from saw-tooth strain input Figure \ref{fig:saw-tooth-diff-v}.}
+	\label{fig:saw-tooth-res-response}
+\end{figure}
+Hysteresis plots were used in Figure \ref{fig:saw-tooth-hysteresis-loops} to show resistance offset as a function of the strain-speed and simultaneously displaying the resistance hysteresis loops of different strain speeds. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\linewidth]{Figures/hysteresis_strain_varSpeeds_ledge_corrected.jpg}
+	\caption{Resistance vs strain hysteresis loops from from a saw-tooth strain input.}
+	\label{fig:saw-tooth-hysteresis-loops}
+\end{figure}
+Using the 1.67 \%$\cdot$s$^{-1}$ strain-rate as a reference the average resistance offset of the other three strain-rates tested were calculated as shown in Table \ref{tab:rel-dR-strain-rate}.
+\begin{table}[H]
+	\centering
+	\caption{Strain-rate dynamic resistance offset comparison. Using S1 as the reference resistance loop.}
+	\label{tab:rel-dR-strain-rate}
+	\begin{tabular}{c|cccc}
+		Strain-rate \# & S1 & S2 & S3 & S4 \\
+		\hline
+		$\dot\varepsilon$ $[\%\cdot s^{-1}]$ & 1.67 & 3.33 & 5.00 & 6.67 \\
+		\hline
+		$\Delta R_{S1}$ [\%] & 0 & +5.0 & +8.3 & +10.7 \\
+		% \hline
+	\end{tabular}
+\end{table}
+
+
+\subsection{Falling Edge Strain-Rate-Resistance}
+A narrow peak in the apparent resistance has been observed in the collected data when during a falling edge. This peak is not present in the stress plot, hence is a proposed characteristic of electrical behaviour only as a function of strain.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{Figures/2_7-5_E4pin_20mm_v6_stress_strain_res_pulse.png}
+	\hspace{1cm}
+	\includegraphics[width=0.3\linewidth]{Figures/2_7-5_E4pin_20mm_v6_stress_strain_res_pulse_f-edge.png}
+	\caption{Left: Singluar tensile strain pulse with resulting stress and resistance reponse. Right: Zoomed to to higlight falling edge phenomena.}
+	\label{fig:stress_strain_res_pulse}
+\end{figure}
+A parameter fit study has been completed to determine the resistance peak amplitude can be determined with a strain input. We can see a repeated phenomena in Figure \ref{fig:poly2_r_strain} whereby the derivative of the resistance signal seems to be equal to the strain curve. The resistance peak curve, $R_p$, can be modelled with a second order polynomial. When differentiated, this peak gives a linear function in a similar form of the linear strain curve seen in Figure \ref{fig:poly2_r_strain}. Hence we form Equation \ref{eqn:dR_dt_strain} which relates resistance to strain as a function of time.
 \begin{equation} 
 	%TODO: Double check this equation makes sense.
 	\frac{dR_p}{dt} = J(\varepsilon) \cdot t + c
 	\label{eqn:dR_dt_strain}
 \end{equation}
 where $J$ is a function of strain, $\varepsilon(t)$, and c is an offset bias determined by the initial strain condition.
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Figures/strain_velocity_res_80mms_2_7-5_E4pin_20mm_v11_0.2Strain_velocityprof.png}
-	\caption{Strain rate resistance relationship showing the specimen is returning to a 0\% tensile strain state from 10\% at a strain rate of 80mm/s for four tests for a 7.5\% CBSR specimen}
+	\caption{strain-rate resistance relationship showing the specimen is returning to a 0\% tensile strain state from 10\% at a strain-rate of 80mm/s for four tests for a 7.5\% CBSR specimen}
 	\label{fig:poly2_r_strain}
 \end{figure}
-To show the strain rate resistance relationship, more strain pulse train tests of 20\% strain were completed. Using 20\% strain allowed us to see a sufficient number of data points to observe a trend. The pulses had four repetitions with a range of strain rates, $\dot{\varepsilon}(t)$, of 40, 80, 120 and 160 $\mathrm{mms^{-1}}$. Using a 7.5 w.t.\% CBSR specimen we obtain a relationship that agrees with the strain resistance component equation \ref{eqn:dR_dt_strain}. As $\dot{\varepsilon}(t)$ increases through strain rates so does the magnitude of the resistance peak (i.e. maximum height of the resistance peak - the previous steady state of value resistance) of 400, 510, 569, and 641 $\Omega$ for $\dot{\varepsilon}(t)$ of 40, 80, 120 and 160 $\mathrm{mms^{-1}}$  respectively. A new model is required which can accurately reproduce the additional decay time constant and small peak features seen in the resistance relaxation data, so that the resistance can inversely calculate the strain in the material. 
+To show the strain-rate resistance relationship, more strain pulse train tests of 20\% strain were completed. Using 20\% strain allowed us to see a sufficient number of data points to observe a trend. The pulses had four repetitions with a range of strain-rates, $\dot{\varepsilon}(t)$, of 40, 80, 120 and 160 $\mathrm{mms^{-1}}$. Using a 7.5 w.t.\% CBSR specimen we obtain a relationship that agrees with the strain resistance component equation \ref{eqn:dR_dt_strain}. As $\dot{\varepsilon}(t)$ increases through strain-rates in parallel with the magnitude of the resistance peak relative to the previous steady state of value resistance. Two formulae are fitting to the linear strain and resistance peak features given by Equations \ref{eqn:strain-t-lin-fit} and \ref{eqn:res-t-ploy2-fit} respectively.
+\begin{equation}
+	\varepsilon = A \cdot t + B
+	\label{eqn:strain-t-lin-fit}
+\end{equation}
+\begin{equation}
+	R_{peak} = C \cdot (t - D)^2 + E
+	\label{eqn:res-t-ploy2-fit}
+\end{equation}
+The resulting plots fitting of the averaged data points for the strain and resistance peak curves are given in Figure \ref{}.
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[t]{.49\textwidth}
+		\centering
+		\subfloat[][$\dot\varepsilon = 1.67 \% s^{-1}$]{\includegraphics[width=\textwidth]{Figures/fitted_strain-r-strain-rate_1.67.png}\label{subfig:strain-rate-1.67}}
+		\vfill
+		\subfloat[][$\dot\varepsilon = 3.33 \% s^{-1}$]{\includegraphics[width=\textwidth]{Figures/fitted_strain-r-strain-rate_3.33.png}\label{subfig:strain-rate-3.33}
+		}
+	\end{minipage}
+	\begin{minipage}[t]{.49\textwidth}
+		\centering
+		\subfloat[][$\dot\varepsilon = 5.00 \% s^{-1}$]{\includegraphics[width=\textwidth]{Figures/fitted_strain-r-strain-rate_5.00.png}\label{subfig:strain-rate-5.00}}
+		\vfill
+		\subfloat[][$\dot\varepsilon = 6.67 \% s^{-1}$]{\includegraphics[width=\textwidth]{Figures/fitted_strain-r-strain-rate_6.67.png}\label{subfig:strain-rate-6.67}}
+	\end{minipage}
+	\caption{Fitting curves to a range of different tensile falling edge strain strain-rates.}
+	\label{fig:}
+\end{figure}
+\begin{table}[H]
+	\centering
+	\caption{text}
+	\label{tab:}
+	\begin{tabular}{lllll}
+		\hline
+		\textbf{Strain rate [\%/s]} & \textbf{1.67} & \textbf{3.33} & \textbf{5.00} & \textbf{6.67} \\ \hline
+		\textbf{A} ($\mathbf{\times 10^3}$) & -16.83 ± 0.09 & -33.40 ± 0.02 & -50.34 ± 0.36 & -66.82 ± 0.37 \\ \hline
+		\textbf{B} ($\mathbf{\times 10^3}$) & -0.45 ± 0.93 & -0.69 ± 1.20 & -1.77 ± 1.72 & -0.13 ± 2.15 \\ \hline
+		\textbf{C} & -22.10 ± 0.55 & -103.19 ± 2.30 & -250.40 ± 9.95 & -478.81 ± 32.87 \\ \hline
+		\textbf{D} & 4.58 ± 0.02 & 2.37 ± 0.02 & 1.60 ± 0.06 & 1.12 ± 0.05 \\ \hline
+		\textbf{E} & 403.27 ± 13.52 & 586.87 ± 23.46 & 711.96 ± 7.19 & 809.21 ± 26.46 \\ \hline
+	\end{tabular}
+\end{table}
 
-
-\subsection{Saw Tooth Response}
-
+%To prove that there does exist a mathematical relationship between the two signals the relationship first each signal is given a generalised formula. The resistance signal is parabolic Equation \ref{eqn:gen_parabolic}. 
+%\begin{equation}
+%	R_p = A \cdot (t-H)^2 + K
+%	% A : concavity
+%	% H : horizontal shift
+%	% K : vertical shift
+%	\label{eqn:gen_parabolic}
+%\end{equation}
+%Where strain-rate changes the vertical shift, K, time shift, H, and concavity, A, of the parabola. 
 
 \subsection{Resistance Relaxation Fitting}
 The initial model chosen to fit the stress and resistance relaxation data was the generalized Maxwell body model shown in Figure \ref{eqn:Maxwell_general} with n = 3 cascading elements using Equation \ref{eqn:Maxwell_general_3elementS} to fit the model. Fitting the data using Levenberg–Marquardt non-linear least square algorithm over 30 data sets showed an instability with the algorithm using this model. When feeding the previously fitted stress relaxation model constants as initial conditions for the fitting of the next stress relaxation data set, the values of the constants diverged exhibiting signs of overfitting. This divergence of the model constants meant that they had a large standard deviation showing the model was changing significantly each iteration of fitting. Hence a more simple model using Equation \ref{eqn:Maxwell_general} with n = 2 was used to fit the stress relaxation data to Equation \ref{eqn:Maxwell_general_2elementS} with lower standard deviation of the model constants. Conversely when the resistance relaxation model analogous to stress relaxation model, shown in Equation \ref{eqn:Maxwell_general_3elementR}, was fitted to the resistance relaxation data there was a stable fit with a better goodness of fit.
@@ -239,7 +356,7 @@ Analogously for the resistance relaxation function $H(t)$, the constants $b_{0-3
 The mean magnitude and decay time constants for the resistance and stress relaxations using 30 relaxation periods to fit the models to are given in table \ref{tab:generalised_model_constants}. The data gathered show that the stress relaxation time constant values decrease with an increasing carbon black percentage, indicating that all constants in Equations \ref{eqn:Maxwell_general_3elementR} and \ref{eqn:Maxwell_general_2elementS} are also functions of the carbon black percentage.
 
 % \newpage
-\begin{table}[h!]
+\begin{table}[H]
 	\caption{Fitted constants and their mean, $\mu$, standard deviation values for 0\%, 7.5\%, and 10\% CBSR composite specimens using Equation \ref{eqn:Maxwell_general_2elementS}.}
 	\begin{center}
 		\label{tab:generalised_model_constants}
@@ -313,6 +430,9 @@ The mean magnitude and decay time constants for the resistance and stress relaxa
 		\end{tabular}
 	\end{center}
 \end{table}
+
+
+\subsection{Resistance-Stress Relationship}
 To display the non-linear relationship between the stress and calculated resistance within the material they are plotted against each other over 30 sequential relaxation periods of 300s. The non-linear relationship between stress and resistance changes over time for each relaxation as shown in Figure \ref{fig:res_vs_stress_30pulses}, where the data for the first relaxation is displayed in green and the last relaxation in blue.
 \begin{figure}[H]
 	\centering
@@ -351,18 +471,6 @@ where $\sigma$ is stress, $R$ is the calculated resistance. When fit to the latt
 	\end{center}
 \end{table}
 
-\subsection{Stress-Strain}
-All of the specimens fabricated indicated a degree of viscoelasticity shown by the hysteresis seen when loading and unloading the material with 30\% tensile strain in Figure \ref{fig:loading-and-unloading-specimens}. The 0, 7.5, and 10 w.t.\% CB specimens have average elastic moduli, as measured in the loading phase, of 205.2 kPa, 321.4 kPa, and 342.1 kPa, respectively.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.69\linewidth]{Figures/load_unload_1_10_E4pin_20mm_v9_0.3Strain.png}
-	\includegraphics[width=0.69\linewidth]{Figures/load_unload_2_7-5_E4pin_20mm_v10_0.3Strain.png}
-	\includegraphics[width=0.69\linewidth]{Figures/load_unload_1_CB0_v1_0.3Strain.png}
-	\caption{The loading and unloading of 30\% strain on a composite test specimens with CB weight percentages from top to bottom of 10\%, 7.5\%, and 0\% with data collected over five loading and unloading cycles}
-	\label{fig:loading-and-unloading-specimens}
-\end{figure}
-
-
 
 \section{Discussion}
 % Insert generic blurb here!
@@ -375,14 +483,27 @@ The pure SR elastic modulus is larger than the 186.2 kPa elastic modulus specifi
 \subsection{Rising and Falling Edges Response}
 
 
-\subsection{Strain Rate Resistance Relationship}
+\subsection{Quasi-static Tensile Resistance-Strain}
 
 
-\subsection{Saw Tooth Response}
+\subsection{Dynamic Resistance-Strain-Rate Response}
 
+
+\subsection{Rising and Falling Edge Step Response}
+
+
+\subsection{Falling Edge Strain-Rate-Resistance}
+Pressumably there is a peak on the rising edge as well as the falling edge which adds to the resistance relaxation dynamics.
+
+In previous literature, the effects of the rate of change of strain on apparent resistance of the CBSR material has not been modelled or shown.
 
 \subsection{Resistance Relaxation Fitting}
 The generalized Maxwell model has been applied to predict the stress relaxation of the CBSR composite and analogously the resistive relaxation seen, which successfully explains a significant fraction of the resistance relaxation seen for a positive strain step input. However, a sudden peak of resistance when changing from +10\% strain to 0\% is not yet explained, and consideration of temperature and strain history \cite{Fung1993} will be useful to confirm the simple mathematical model given as Equation \ref{eqn:dR_dt_strain}.
+
+
+\subsection{Resistance-Stress Relationship}
+There is a non-linear relationship between the stress and resistance
+
 
 \subsection{Viscoelasticity}
 % see CBSR behavious doc for more hysteresis quantification
@@ -391,7 +512,7 @@ The hysteresis loop seen in the 10 w.t.\% CB sample has a larger hysteresis loop
 
 \subsection{Repeatability}
 The resistance relaxation model must be predictable over many strain cycles for use within many high stretch strain sensor application. If the resistance relaxation changes over time this needs is to be modelled. Each test sequence showed that there was a downward trend in the calculated magnitude of resistance for each pulse over time. This downward trend is hypothesised to be due to the accumulation of charge within material over time generated by current source \cite{,,}, and was mitigated by using an alternating polarity measurement technique. The reversible current source helped to mitigate the capacitive effects seen, but a general downward trend in resistance was still observed as shown in Figure \ref{fig:repeatability_pulse_trains}.  
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\linewidth]{Figures/30_pulse_AC_2-7-5_Epin_20mm_v3_res.jpg}
 	\vspace{0.2cm}
@@ -419,6 +540,13 @@ For every sufficiently long test sequence the material reaches a steady state, a
 	\end{tabular}
 \end{table}
 
+A sufficiently high current source value was required to ensure a SNR that would not hinder data analysis. There seemed to be a wetting current threshold where the SNR dropped as shown by the 20 $\mu$A resistance pulse response in Figure \ref{fig:multi_current}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figures/test_multicurrent_2_7-5_v3_res_only.png}
+	\caption{Three identical 15\% strain pulses at three different current values ,in order, 10$\mu$A, 15$\mu$A, and 20$\mu$A.}
+	\label{fig:multi_current}
+\end{figure}
 
 
 
