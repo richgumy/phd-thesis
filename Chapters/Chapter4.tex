@@ -1,7 +1,7 @@
 \chapter{\chapivname}
 \label{chapter4}
+%\textit{The content from this chapter is predominantly from the manuscript published in the journal Sensors and Actuators A Physical - E-Skin special issue.}
 
-\textit{The content from this chapter is predominantly from the manuscript published in the journal Sensors and Actuators A Physical - E-Skin special issue.}
 
 
 \section*{Abstract}
@@ -97,8 +97,8 @@ CBSR        & 9        &         $4.5\pm1.4$           &       98.1\\
 A CBSR sample showing the circular sensitive region with the pin electrodes developed is shown in Figure \ref{fig:CBSR sample and holder}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=3.5cm]{Figures/CBSR_DUT_w_electrodes_sample.jpg}
-    \includegraphics[width=3.5cm]{Figures/CBSR_DUT_sample.jpg}
+    \includegraphics[width=0.3\linewidth]{Figures/CBSR_DUT_w_electrodes_sample.jpg}
+    \includegraphics[width=0.3\linewidth]{Figures/CBSR_DUT_sample.jpg}
     \caption{Left: Example of a CBSR sensing domain with gold pin electrodes penetrating material surface around the boundary on top of the rigid sensor holder (orange/black). Right: CBSR sensing domain.}
     \label{fig:CBSR sample and holder}
 \end{figure}
@@ -107,7 +107,7 @@ A CBSR sample showing the circular sensitive region with the pin electrodes deve
 Quantitative results are required for spatial quantification of the EIT image reconstructions. A cylindrical force applicator head with a diameter of 13 mm and area of 133 mm$^2$ was used to apply the nine compressive loads shown in Figure \ref{fig:force_app_map}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=6cm]{Figures/EIT_force_app_points_v3.11.jpg}
+    \includegraphics[width=0.6\linewidth]{Figures/EIT_force_app_points_v3.11.jpg}
     \caption{Load application areas used for compressive stress testing shown numerically in order of application.}
     \label{fig:force_app_map}
 \end{figure}
@@ -117,7 +117,7 @@ At its core EIT usually requires a current or voltage source, one or multiple vo
 \begin{figure}[H]
     \centering
     % TODO?: insert a image of the system (tidied up)
-    \includegraphics[width=6cm]{Figures/ERT_MUX_CFA_architecture.jpg}
+    \includegraphics[width=0.6\linewidth]{Figures/ERT_MUX_CFA_architecture.jpg}
     % \includegraphics[width=8.5cm]{Figures/cfa_setup_labelled.jpg}
     \caption{Architecture of the Cartesian force applicator setup with red arrows being analogue power lines and black arrows being digital data lines}
     % \caption{Top: Architecture of the Cartesian force applicator setup with red arrows being analogue power lines and black arrows being digital data lines. Bottom: Labelled photo of the EIT sensor and Cartesian force applicator validation system}
@@ -125,7 +125,7 @@ At its core EIT usually requires a current or voltage source, one or multiple vo
 \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=3.5cm]{Figures/wiring_diagram_ERT_sensor.jpg}
+    \includegraphics[width=0.35\linewidth]{Figures/wiring_diagram_ERT_sensor.jpg}
     \caption{Wiring diagram for sensor connection to 4:16 multiplexer and SMU}
     \label{fig:wiring_ERT_sensor}
 \end{figure} 
@@ -137,7 +137,7 @@ At its core EIT usually requires a current or voltage source, one or multiple vo
 
 
 \subsection{1D Material Characterisation} \label{sec:1D Material Characterisation}
-Prior to utilising CBSR materials as a 2D pressure sensor, the piezoresistive properties were analysed in one dimension to establish resistance-stress/strain relationships for each CBSR sample. This 1D material testing was conducted using the Cartesian force applicator in conjunction with the SMU. The stress-strain relationship of the material was determined in previous work and shown in Table \ref{table:DUT_char}. The 1D analysis gave quantitative insight into the material resistivity response to strain in different known areas of the Device Under Test (DUT). 
+Prior to utilising CBSR materials as a 2D pressure sensor, the piezoresistive properties were analysed in one dimension to establish resistance-stress/strain relationships for each CBSR sample. This 1D material testing was conducted using the Cartesian force applicator in conjunction with the SMU. The stress-strain relationship of the material was determined in previous work and shown in Table \ref{table:DUT_char}. The 1D analysis gave quantitative insight into the material resistivity response to strain in different known areas of the Domain Under Test (DUT). 
 
 \subsubsection{Quasi-static Piezoresistivity}\label{sec:Quasi-static Piezoresistivity}
  To determine the piezoresistivity or gauge factor of the material, pin electrodes were pierced through the CBSR samples so that the pin electrodes were parallel and at a distance of 35 mm from each other. The pins were 2.5 mm from each end of the sample. A 2634b source measure unit (Keithley, Solon, USA) was used to apply a constant current of 1 mA between the two pin electrodes while ten compressive loading cycles were applied. The ten loading cycles were applied at strains of 5, 10, 15, 20, 25, and 30\%, with a duty cycle of 50\% and period of 120 s. Loads were applied using the Cartesian force applicator with a 20 mm x 20 mm square flat force applicator head. The strain rate was kept at a constant 16.67$\% \cdot s^{-1}$ to dampen the amplitude of transient effects as proven in previous work \citep{Ellingham2021}.
@@ -268,9 +268,9 @@ To generate a 2D pressure map from the EIT reconstructions a 1D material electro
 
 \subsubsection{Quasi-static Piezoresistivity}\label{sec:Quasi-static Piezoresistivity2}
 Given known strain input data, and measured stress and conductance change output data, a fit is shown in Figure \ref{fig:quasi_r_8p}. The gradient of the linear fit, i.e. the gauge factor, for the CBSR 8 wt\% and 9 wt\% was calculated as 0.6 and 0.2 respectively. Note that in the 9 wt\% relative conductance data the standard deviation of the 5\% strain data was similar to that of the mean, hence the linear range of 10 - 30\% strain was considered when fitting the curve.
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=8cm]{Figures/CBSR_8p_cond_stress_strain_sin_titulo.jpg}
+    \includegraphics[width=0.8\linewidth]{Figures/CBSR_8p_cond_stress_strain_sin_titulo.jpg}
     \caption{Conductance change vs. stress (top) and strain (bottom) data and fitted curves for 8 wt\% CBSR.}
     % TODO?: Change Linear fit to 10^{-1} from 10^{-3}
     \label{fig:quasi_r_8p}
@@ -286,24 +286,24 @@ Given known strain input data, and measured stress and conductance change output
 
 \subsubsection{Transient Piezoresistivity}\label{sec:Transient Piezoresistivity2}
 The transient piezoresistive effects observed within a PNEC limit the frequency response of the sensor. An example of the transient response of the material to a repeated compressive strain pulse input is displayed in Figure \ref{fig:stress_seq}, clearly showing the stress relaxation of the material due to its viscoelasticity. 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=8cm]{Figures/CBSR 8 wt 25p strain - 1D test stress seq.jpg}
+    \includegraphics[width=0.7\linewidth]{Figures/CBSR 8 wt 25p strain - 1D test stress seq.jpg}
     \caption{Compressive loading applied to the CBSR 8 wt\% DUT for 10 loading events of 25\% strain.}
     \label{fig:stress_seq}
 \end{figure}
 In Figure \ref{fig:load_relax_eg} a loading event is shown with the related stress and resistance relaxation curves. The unloading event similarly has a relaxation period for both stress and resistance in the loading case. Unlike the loading stress transient, the resistance transient has a spike during the unloading relaxation event seen in Figure \ref{fig:load_relax_eg}. This rising edge and peak of this spike are ignored and the resistance relaxation edge is characterised.  
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=8cm]{Figures/CBSR 8 wt 25p strain - 1D stress load unload.jpg}
+    \includegraphics[width=0.7\linewidth]{Figures/CBSR 8 wt 25p strain - 1D stress load unload.jpg}
     \caption{Compressive loading and unloading transients for CBSR 8 wt\% material undergoing a 20\% strain pulse from the first pulse given in Figure \ref{fig:stress_seq}.}
     \label{fig:load_relax_eg}
 \end{figure}
 For each stress relaxation Equation \ref{eqn:maxwell_general_n2} was fitted to the data. Analogously the same was done for the resistive relaxation events observed. 
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=8cm]{Figures/Push event 3 - CBSR 8 wt 5p strain - 1D compression test.jpg}
+    \includegraphics[width=0.7\linewidth]{Figures/Push event 3 - CBSR 8 wt 5p strain - 1D compression test.jpg}
     \caption{The fourth 1D load event, $L_{3}$ on the CBSR 8 wt\% sample using 5\% strain showing a stress, $\sigma$ and resistance, R, relaxation event and their corresponding fitted curves.}
     \label{fig:push_event_relax_example}
 \end{figure}
@@ -374,7 +374,7 @@ To validate this 2D pressure sensing platform for specific applications the limi
 
 \subsubsection{Pre-processing}\label{Pre-processing2}
 The noise floor limits the detection of small forces. First the noise floor was found from the no load steady-state of material. The maximum noise from the first eight frames was found and this maximum was subtracted from all contiguous images in the time series experiment.
-% \begin{figure*}[h!]
+% \begin{figure*}[H]
 %     \centering
 %     \includegraphics[width=0.8\textwidth]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_pre_processing.jpg}
 %     \caption{Left: An example of an unprocessed image from an image reconstruction during a 20\% loading event in the middle of the 8wt\% CBSR domain, shown by the transparent white circle. Right: A force plot with a red dot showing the current force reading for the same image reconstruction frame .}
@@ -390,22 +390,24 @@ After a noise mask has eliminated the steady state noise floor, different percen
 % \end{figure}
 \begin{figure}[H]
 \centering
-    \begin{minipage}[t]{.2\textwidth}
+    \begin{minipage}[t]{.3\textwidth}
         \vspace{0pt}
         \subfloat[][]{\includegraphics[width=\textwidth]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_25p_mask_cropx2.jpg}\label{thresh25}}
         \vfill
         \subfloat[][]{\includegraphics[width=\textwidth]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_50p_mask_cropx2.jpg}\label{thresh50}}
         \vspace{0pt}
     \end{minipage}%
-    \begin{minipage}[t]{.2\textwidth}
+    \hspace{0.05\linewidth}
+    \begin{minipage}[t]{.3\textwidth}
         \vspace{0pt}
         \subfloat[][]{\includegraphics[width=\textwidth]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_75p_mask_cropx2.jpg}\label{thresh75}}
         \vfill
         \subfloat[][]{\includegraphics[width=\textwidth]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_85p_mask_cropx2.jpg}\label{thresh85}}
         \hfill
-    \end{minipage} 
-    \begin{minipage}[t]{.08\textwidth}
-        \vspace{0pt}
+    \end{minipage}
+    \hspace{0.05\linewidth}
+    \begin{minipage}[t]{.1\textwidth}
+        \vspace{1cm}
         \subfloat[][]{\includegraphics[width=\textwidth]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_scale_bar.jpg}\label{colour_bar}}
         \hfill
     \end{minipage}  
@@ -422,7 +424,7 @@ To properly determine where the perimeter of a load is multiple threshold mask f
     
 \begin{figure}[H]
     \centering
-    \includegraphics[width=8.2cm]{Figures/CBSR_8p_9push_20strain_60s_4_metrics_thresh_masks_v2_numbd.jpg}
+    \includegraphics[width=0.8\linewidth]{Figures/CBSR_8p_9push_20strain_60s_4_metrics_thresh_masks_v2_numbd.jpg}
     \caption{Spatial performance metrics comparing threshold percentages of 25, 50, 75, and 85\% for a 8 wt\% CBSR sample being loaded with 20\% compressive strain in nine areas, $L_{0-8}$, shown in Figure \ref{fig:force_app_map}. The force time series plot data is light orange.} % TODO?: Determine better way of displaying these metrics??
     \label{fig:recon_perform_8p}
 \end{figure}
@@ -531,7 +533,7 @@ The percentage threshold masks from 25 - 85\% were compared by finding the mean 
 % \end{table}
 %%%% ALT table format %%%%
 
-% TODO: Redo these results using threshold masking and blob separation to see if better results can be obtained. CoM error of 25.68 and 53.78 is a bit shit!
+% TODO: Redo these results using threshold masking and blob separation to see if better results can be obtained. CoM error of 25.68 and 53.78 is a bit shit!??
 
 % TODO?: Create an absolute threshold mask using known expected limits of material in 1D. (i.e. expected dR/R_0=4% for a strain=5% for CBSR 8%)
 % TODO?: Compare threshold masking 50-85% with absolute threshold masking?
@@ -542,7 +544,7 @@ In a real world application the sensor platform in this work will likely experie
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=8.5cm]{Figures/rand1_strain_aplc_points.jpg}
+    \includegraphics[width=0.7\linewidth]{Figures/rand1_strain_aplc_points.jpg}
     \caption{The ten random load point locations, $L_{rand}$ and random strain values proportional to rec circle size as shown on a polar plot.}
     \label{fig:rand1_load_locs}
 \end{figure}
@@ -655,7 +657,7 @@ Temporal performance is crucial for time sensitive applications and the settling
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=8cm]{Figures/2D Push event 0 - CBSR 9 wt 30p strain - 2D compressionv2.jpg}
+    \includegraphics[width=0.8\linewidth]{Figures/2D Push event 0 - CBSR 9 wt 30p strain - 2D compressionv2.jpg}
     \caption{EIT load event $L_0$ on the CBSR 9 wt\% sample using 30\% strain showing a stress, $\sigma$ and conductance, $\rho$, relaxation event and their corresponding fitted curves.}
     \label{fig:blob_global_relaxation}
 \end{figure}
@@ -703,7 +705,7 @@ The force estimation from the inverse quasi-static Equation \ref{eqn:quasi_rstre
 % \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=8cm]{Figures/CBSR_8p_1_9push_XXstrain_60s_3_force_est_frame31.jpg}
+    \includegraphics[width=0.7\linewidth]{Figures/CBSR_8p_1_9push_XXstrain_60s_3_force_est_frame31.jpg}
     \caption{Comparing force estimates, $F_{est}$, and actual force measurements, $F_{meas}$, for 5 - 30\% strain centre loading events at $L_0$ for the EIT sensor system for 8 wt\% CBSR}
     \label{fig:stress_est_8p_3}
 \end{figure}
@@ -722,7 +724,7 @@ The force estimation from the inverse quasi-static Equation \ref{eqn:quasi_rstre
 % \end{figure}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=8cm]{Figures/CBSR_9p_2_9push_XXstrain_60s_1mA_3_force_est_frame31.jpg}
+    \includegraphics[width=0.7\linewidth]{Figures/CBSR_9p_2_9push_XXstrain_60s_1mA_3_force_est_frame31.jpg}
     \caption{Comparing force estimates, $F_{est}$, and actual force measurements, $F_{meas}$, for 5 - 30\% strain centre loading events at $L_0$ for the EIT sensor system for 9 wt\% CBSR}
     \label{fig:stress_est_9p_3}
 \end{figure}
@@ -888,4 +890,6 @@ An EIT-based piezoresistive sensor using a custom made carbon black silicone rub
 
 It was shown that the CBSR 8 wt\% sample out performed the CBSR 8wt\% sample in terms of spatial and temporal metrics across a range of experiments. The best performance metrics observed in the CBSR 8 wt\% sample for $E_{CoM}$, $A_{OL}$, and $S\!D$, were 0.67 $\pm$ 0.41 mm, 87.93 $\pm$ 2.68\%, and 0.12 $\pm$ 0.01 mm$^2$ respectively for three different load locations. For the sensor domains tested, average settling times of between 19.0 - 44.5 s and 22.5 - 36.0 s were determined for 8 and 9 wt\% CBSR samples. A quasi-static conductance-force model of the material was developed with an accuracy of  $\pm$ 0.78 and  $\pm$ 0.81 N for a range of strains from a centre load test for 8 and 9 wt\% CBSR respectively.
 
-Using these performance metric data in future work a piezoresistively inhomogeneous sensor domain could be, calibrated to homogenise the apparent domain piezoresistivity, compensated for transient phenomena, and sense loads with a known degree of accuracy. All of these factors contribute to optimising the EIT-based 2D pressure mapping sensor for different applications. Future work also includes the development of a low-cost, small circuit to capture the the data discretely to open up a larger range of applications. The work shows promise for future use of an EIT-based sensor in a variety of applications requiring a soft sensing domain and non-invasive rigid electrodes. 
+Using these performance metric data in future work a piezoresistively inhomogeneous sensor domain could be, calibrated to homogenise the apparent domain piezoresistivity, compensated for transient phenomena, and sense loads with a known degree of accuracy. All of these factors contribute to optimising the EIT-based 2D pressure mapping sensor for different applications. Future work also includes the development of a low-cost, small circuit to capture the the data discretely to open up a larger range of applications. The work shows promise for future use of an EIT-based sensor in a variety of applications requiring a soft sensing domain and non-invasive rigid electrodes.
+
+\afterpage{\blankpage}

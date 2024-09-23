@@ -149,15 +149,15 @@ pdfstartview={FitV},unicode,breaklinks=true]{hyperref}
 
 \chapiii    {Characterising Non-Linear Behaviour in Carbon-Black Elastomer Nano-Composites}
 
-\chapiv     {An Improved an Electrical Impedance Tomography Based Artificial Soft Skin Pressure Sensor}
+\chapiv     {An Electrical Impedance Tomography Based Soft Pressure Mapping Sensor}
 
-\chapv     	{Giving Artificial Muscles the Sense of Touch}
+\chapv    	{A Portable EIT-Based Pressure Mapping Sensor and Validation System}
 
-\chapvi    	{Unintentional Power Generation in a DEA-EIT Sensor-Actuator Device}
+\chapvi     {Integration of EIT-based Pressure Mapping with Dielectric Elastomer Actuators}
 
-\chapvii    {A Portable Electrical Impedance Tomography Based Pressure Mapping Sensor and Validation System}
+\chapvii    {Unintentional Power Generation in a DEA-EIT Sensor-Actuator Device}
 
-\chapviii   {?? Modelling of DEA-EIT Capacitively driven Hybird Sensing and Actuation Device}
+\chapviii   {?? A Capacitive Shunting in a Dielectric Elastomer EIT-based Pressure Mapping Device}
 
 \chapix     {The Biomimmetic Re-Evolution}
 

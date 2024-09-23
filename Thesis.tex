@@ -22,6 +22,13 @@
 \usepackage{multirow}
 \usepackage{pdfpages}
 \usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{afterpage}
+
+\newcommand\blankpage{%
+	\null
+	\thispagestyle{empty}%
+%	\addtocounter{page}{1}%
+	\newpage}
 
 
 \newgeometry{left=2in,right=0in,bottom=0in,top=2in}
@@ -91,7 +98,7 @@
 	\end{flushright}
 	\vfill\vfill\vfill\vfill\vfill\vfill\null
 	\clearpage  % Funny Quote page ended, start a new page
-	\setstretch{1.5}
+	\setstretch{1.0}
 	%% ----------------------------------------------------------------
 	% The Abstract Page
 	\addtotoc{Abstract}  % Add the "Abstract" page entry to the Contents
@@ -99,9 +106,9 @@
 		% 
 		Some of the world's most advanced technology is rigid due to various factors such as; manufacturability, miniaturisability, physical linearity, and more ideal physics in general. In parallel industries is also looking to use automation to improve and replace laborious tasks whether they be domestic, commercial, or industrially related tasks. Their is a growing need for new innovations in technology to utilise the soft robotic solutions that mimic biological solutions seen in nature. This thesis is part of many to improve an understanding of the electroactive polymer subset of soft robotics and the limitations of specific implementations of artificial skin and artificial muscle technologies.
 		
-		This thesis explores the integration of Electrical Impedance Tomography (EIT) with advanced soft sensing technologies, focusing on carbon black silicone rubber (CBSR) elastomer composites and Dielectric Elastomer Actuators (DEAs) to enhance pressure mapping, strain sensing, and actuation.
+		This thesis explores the integration of Electrical Impedance Tomography (EIT), carbon black silicone rubber (CBSR) elastomer composites, and Dielectric Elastomer Actuators (DEAs) to enhance pressure mapping, strain sensing, and actuation capabilities.
 		
-		CBSR elastomer composites, noted for their high stretchability and biocompatibility, were investigated to understand their resistance relaxation behavior. This research contributes to optimizing the design of flexible dynamic strain sensors by modeling the response of resistance to transient strain inputs. The study developed an EIT-based pressure mapping system using a silicone CB nanoparticle sensing domain that mimics pressure mapping qualities human skin. This system was evaluated for its spatial and temporal resolution, showing potential for creating artificial pressure-sensitive skin with practical applications. Furthermore, the integration of EIT with DEAs was examined to improve the mapping of compressive forces across electrode surfaces. Despite some trade-offs in accuracy due to electrode compliance, this approach offers promising advancements for applications requiring precise actuation and pressure mapping. This work has majorly contributed towards filing a patent for an DEA-EIT actuator-sensor device. Additionally, the research uncovered unintentional power generation in DEAs, which could function as Dielectric Elastomer Generators (DEGs) due to mechanical strain. This finding highlights the dual functionality of DEAs and suggests opportunities for energy harvesting applications. Finally, a portable, low-cost EIT-based hardware system for pressure mapping was introduced. This system enables comprehensive characterization of various sensing domains and supports advancements in EIT-based soft sensor technology, with implications for biomedical devices, robotics, and energy harvesting. 
+		CBSR elastomer composites, noted for their high stretchability and biocompatibility, were investigated to understand their resistance relaxation behavior. This research contributes to optimising the design of flexible dynamic strain sensors by modeling the response of resistance to transient strain inputs. The next past of the work developed an EIT-based pressure mapping system using a CBSR sensing domain that mimics pressure mapping qualities of human skin. This system was evaluated for its spatial and temporal resolution, showing potential for creating artificial pressure-sensitive skin with practical applications. Furthermore, the integration of EIT with DEAs was examined to improve the mapping of compressive forces across the actuator electrode surfaces. Despite some trade-offs in accuracy due to electrode compliance, this approach offers promising advancements for applications requiring precise actuation and pressure mapping. This work has contributed towards filing a patent for an DEA-EIT actuator-sensor device. Additionally, the research has uncovered unintentional power generation in DEAs, which could function as Dielectric Elastomer Generators (DEGs) with mechanical strain inputs. This finding highlights the dual functionality of DEAs and suggests opportunities for energy harvesting applications. Finally, a portable, low-cost EIT-based hardware system for pressure mapping was introduced. This system enables comprehensive characterisation of various sensing domains and supports advancements in EIT-based soft sensor technology, with implications for biomedical devices, robotics, and energy harvesting. 
 		
 		Overall, this research advances the field of soft sensors by integrating EIT with innovative materials and technologies, providing new insights and applications in dynamic sensing and actuation.
 	}
@@ -205,7 +212,7 @@
 	%% ----------------------------------------------------------------
 	% End of the pre-able, contents and lists of things
 	% Begin the Dedication page
-	\setstretch{1.0}  % Return the line spacing back
+	\setstretch{1.5}  % Return the line spacing back
 	\pagestyle{empty}  % Page style needs to be empty for this page
 	\dedicatory{Dedicated to tinned baked beans in all their glory\ldots}
 	\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
@@ -220,14 +227,14 @@
 	\import{Chapters/}{Chapter2.tex} % Literature Review
 	\lhead{\emph{\chapiiiname}}
 	\import{Chapters/}{Chapter3.tex} % CBSR behaviour
-%	\lhead{\emph{\chapivname}}
-%	\import{Chapters/}{Chapter4.tex} % Improved EIT-based sensor
-%	\lhead{\emph{\chapvname}}
-%	\import{Chapters/}{Chapter5.tex} % DEA-EIT 
-%	\lhead{\emph{\chapviname}}
-%	\import{Chapters/}{Chapter6.tex} % DEA-EIT an unintended DEG
+	\lhead{\emph{\chapivname}}
+	\import{Chapters/}{Chapter4.tex} % Improved EIT-based sensor
+	\lhead{\emph{\chapvname}}
+	\import{Chapters/}{Chapter5.tex} % Portable EIT hardware 
+	\lhead{\emph{\chapviname}}
+%	\import{Chapters/}{Chapter6.tex} % DEA-EIT
 %	\lhead{\emph{\chapviiname}}
-%	\import{Chapters/}{Chapter7.tex} % DEA-EIT hardware
+%	\import{Chapters/}{Chapter7.tex} % DEA-EIT an unintended DEG
 %	\lhead{\emph{\chapviiiname}}
 %	\import{Chapters/}{Chapter8.tex} % DEA-EIT capacitive modelling??
 %	\lhead{\emph{\chapixname}}
