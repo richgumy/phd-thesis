@@ -4,15 +4,17 @@
 
 \section*{Abstract}
 % Add captivating abstract
+This work has converged on using conductive particle elastomer composites (CPECs) as the electroactive base for creating improved sensor-actuator devices, due to their superior qualities outlined in the Literature Review. Understanding the dynamic characteristics of a CPEC is critical for using the material in dynamic sensor and actuator devices. Although the fabrication of a CPEC can be simple, the characterisation and optimisation of such a material for various soft robotic applications can require complex models and display non-linear time-dependent behaviour. In this work we uncover several repeatable mathematical relationships seen within the material concerning dynamic time series behaviour between tensile strain, stress, and resistance data. 
 
+First a linear quasi-static model is generated to give a simple formula for estimating strain given a resistance input for a steady state system. Then the time-dependent and dynamic phenomena of the CPEC material were explored. Analogously to fitting stress relaxation to a two-unit generalised Maxwell mechanical model, this work has fitted the resistive relaxation seen after a strain step input to a three-unit generalised Maxwell model. No linear correlation was found between resistive and stress relaxation. For a strain falling edge signal, a positive correlation was found between increased strain-rate and the resistance peak seen in the tensile specimens. Similarly a positive correlation was found between the pre-strain amplitude and the resistance peak generated, for a strain falling edge signal. We have demonstrated a technique to reduce apparent resistance measurement drift in resistance experiments by using a switched AC current source instead of DC.
 
-%% To Do: Replace all \varepsilon's that represent strain to S_x/y/z
-%% To Do: Add proper material referencing. e.g.  (SmoothOn, Macungie, USA)
+All of the behaviours determined in this work set a foundation for understanding the viscoelastic electromechanical nature of a CPEC for further development of the material in more complex sensor and actuator systems. Future work aims to generate a non-linear inverse model to more accurately determine the strain of the CPEC material given a resistance input. With this inverse model the CPEC material would be suited to a plethora of biomedical and agricultural applications which require delicate and non-toxic sensing systems.
+
 
 
 \section{Introduction}
 \label{sec:ch3-intro}
-% Why does this chapters matter? What is the link to soft robotics and artificial skin/muscle?
+% Why does this chapter matter? What is the link to soft robotics and artificial skin/muscle?
 % - Conductive particle elastomer composites are attractive for soft robotics because...
 As discussed in the Literature Review chapter, conductive particle elastomer composites are desirable for soft sensor and actuator applications for a variety of reasons. However, it is crucial to understand the electromechanical behaviour of these composites if we wish to create complex control systems with such materials. Although conductive particle elastomer composites (CPECs) are simple in concept, consisting of dispersed particles through an elastomer matrix, the electromechanical behaviour is not well understood on a macro or micro-scale. This chapter will focuses on only tensile stress of the specimen, and how it relates to the electrical resistive relaxation. Compressive characterisation and modelling is covered in the subsequent chapters. This work endeavours to understand the material behaviours of carbon black silicone rubber composites on a macro-scale to help create better inverse models so that the material can be used more accurately for stress/strain sensors. 
 %\section{Stress and resistive relaxation For Carbon Nanoparticle Silicone Rubber Composite Large-Strain Sensors}
@@ -215,7 +217,7 @@ The fitted parameters for the linear quasi-static model are given in Equation \r
 
 
 \subsection{Dynamic Resistance-Strain-Rate Response}
-When using this material as a tensile strain sensor many applications will require a strain-rate superseding the capabilities of the quasi-static model given in Section \ref{subsec:Quasi-Static Tensile Resistance-Strain} due to the resistive relaxation in the material characterised in Section \ref{subsec:resistive relaxation Fitting}. The dynamic characteristics of the CBSR material is investigated to find a relationship between the strain-rate and resistance. Several saw-tooth strain signal experiments were completed using four different strain-rates of 1.67, 3.33, 5, and 6.67 \%$\cdot$s$^{-1}$. To avoid measuring a time dependent relationship in stead of the desired strain-rate dependent relationship, each set of different strain-rates were repeated as shown in Figure \ref{fig:saw-tooth-diff-v}.
+When using this material as a tensile strain sensor many applications will require a strain-rate superseding the capabilities of the quasi-static model given in Section \ref{subsec:Quasi-Static Tensile Resistance-Strain} due to the resistive relaxation in the material characterised in Section \ref{subsec:resistive relaxation Fitting}. The dynamic characteristics of the CBSR material is investigated to find a relationship between the strain-rate and resistance. Several saw-tooth strain signal experiments were completed using four different strain-rates of 1.67, 3.33, 5, and 6.67 \%$\cdot$s$^{-1}$. To avoid measuring a time-dependent relationship in stead of the desired strain-rate dependent relationship, each set of different strain-rates were repeated as shown in Figure \ref{fig:saw-tooth-diff-v}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{Figures/saw_tooth_diff_speeds_strain_only.jpg}
@@ -271,7 +273,7 @@ A parameter fit study has been completed to determine the resistance peak amplit
 where $J$ is a function of strain, $\varepsilon(t)$, and c is an offset bias determined by the initial strain condition.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{Figures/strain_velocity_res_80mms_2_7-5_E4pin_20mm_v11_0.2Strain_velocityprof.png}
+	\includegraphics[width=0.8\linewidth]{Figures/strain_velocity_res_80mms_2_7-5_E4pin_20mm_v11_0.2Strain_velocityprof.png}
 	\caption{Strain-rate resistance relationship showing the specimen returning to a 0\% tensile strain state from 10\% at a strain-rate of 3.33\%$\cdot s^{-1}$ from four tests for a 7.5\% CBSR specimen}
 	\label{fig:poly2_r_strain}
 \end{figure}
@@ -305,7 +307,7 @@ The resulting plots fitting of the averaged data points for the strain and resis
 \end{figure}
 \begin{table}[H]
 	\centering
-	\caption{text}
+	\caption{The fitted parameters for relationship between the specimen tensile strain-rate the resulting resistance peak for a strain signal falling edge.}
 	\label{tab:}
 	\begin{tabular}{lllll}
 		\hline
@@ -360,9 +362,9 @@ The mean magnitude and decay time constants for the resistance and stress relaxa
 	\begin{center}
 		\label{tab:generalised_model_constants}
 		\begin{tabular}{l l}
-			\textbf{Stress Model Parameters} \\ 
+			\textbf{Stress Model Parameters} & \\ 
 			\hline
-			0 \% CB Specimen \\ 
+			0 \% CB Specimen & \\ 
 			\hline
 			Parameter & $\mu$ \\
 			\hline
@@ -372,7 +374,7 @@ The mean magnitude and decay time constants for the resistance and stress relaxa
 			$\tau_{S1}$ & 72.1 $\pm$ 23.5 \\
 			$\tau_{S2}$ & 5.8 $\pm$ 1.5 \\
 			\hline
-			7.5 w.t.\% CB Specimen \\ 
+			7.5 w.t.\% CB Specimen & \\ 
 			\hline
 			Parameter & $\mu$ \\
 			\hline
@@ -382,7 +384,7 @@ The mean magnitude and decay time constants for the resistance and stress relaxa
 			$\tau_{S1}$ & 71.0 $\pm$ 9.5 \\
 			$\tau_{S2}$ & 5.8 $\pm$ 0.7 \\
 			\hline
-			10 w.t.\% CB Specimen \\
+			10 w.t.\% CB Specimen & \\
 			\hline
 			Parameter & $\mu$ \\
 			\hline
@@ -400,9 +402,9 @@ The mean magnitude and decay time constants for the resistance and stress relaxa
 	\begin{center}
 		\label{tab:generalised_model_constants}
 		\begin{tabular}{l l}
-			\textbf{Resistance Model Parameters} \\
+			\textbf{Resistance Model Parameters} & \\
 			\hline
-			7.5 w.t.\% CB Specimen \\
+			7.5 w.t.\% CB Specimen & \\
 			\hline
 			Parameter & $\mu$\\
 			\hline
@@ -414,7 +416,7 @@ The mean magnitude and decay time constants for the resistance and stress relaxa
 			$\tau_{R2}$ & 22.8 $\pm$ 3.8 \\
 			$\tau_{R3}$ & 3.5 $\pm$ 0.6 \\
 			\hline
-			10 w.t.\% CB Specimen \\
+			10 w.t.\% CB Specimen & \\
 			\hline
 			Parameter & $\mu$ \\
 			\hline
@@ -472,7 +474,7 @@ where $\sigma$ is stress, $R$ is the calculated resistance. When fit to the latt
 
 
 \section{Discussion}
-% Insert generic blurb here!
+This work has successfully uncovered several mathematical relationships between stress, strain, and resistance. The repeatability has also been display graphically and calculating the variance of the fitted models given. This section analyses the results given in the previous sections and highlights limitations of the experiments given.
 
 \subsection{Fabrication}
 In this work, mixing has been performed using a planetary mixer. It has been shown in other works \cite{Xu2016,Spahr2017} that other mixing methods, such as using a sonication bath and the addition of solvents, can yield better particle dispersion. A higher degree of CB particle dispersion has also been shown to alter the viscoelastic creep properties \cite{Xu2016}, and is therefore likely to affect the time constant of resistance.
@@ -483,7 +485,7 @@ When characterising the reference pure SR material, the elastic modulus was larg
 
 
 \subsection{Quasi-static Tensile Resistance-Strain}
-The quasi-static linear model given show promise for using the composite CBSR material for applications requiring a low frequency response sensor. This also gives a good steady-state part of a more complex model which includes the non-linear and time dependent dynamics.
+The quasi-static linear model given show promise for using the composite CBSR material for applications requiring a low frequency response sensor. This also gives a good steady-state part of a more complex model which includes the non-linear and time-dependent dynamics.
 
 
 \subsection{Dynamic Resistance-Strain-Rate Response}
@@ -491,14 +493,17 @@ Increasing strain-rates were shown to increase the offsets in resistance over a 
 
 
 \subsection{Falling Edge Strain-Rate-Resistance}
-A 'falling edge' resistance shoulder phenomena was observed and is clearly seen in Figures \ref{fig:saw-tooth-res-response} and \ref{fig:stress_strain_res_pulse}. This is a result of a change in strain rate. The amplitude of this peak was shown to increase with an increasing change in strain-rate from a steady state strain. The shoulder phenomena may existing on the rising edge of the strain adding to the resistive relaxation response however this was not easily distinguishable. In previous literature, the effects of the strain-rate and sudden change in strain-rate on apparent resistance of the CBSR material has not been modelled or shown.
+A 'falling edge' resistance shoulder phenomena was observed and is clearly seen in Figures \ref{fig:saw-tooth-res-response} and \ref{fig:stress_strain_res_pulse}. This is a result of a change in strain rate. The amplitude of this peak was shown to increase with an increasing change in strain-rate from a steady state strain. The shoulder phenomena may existing on the rising edge of the strain adding to the resistive relaxation response however this was not easily distinguishable. In previous literature, the effects of the strain-rate and sudden change in strain-rate on apparent resistance of the CBSR material has not been modelled or shown. Another characteristic of the falling edge shoulder phenomena is the apparent positive correlation between the strain magnitude prior to the falling edge and the amplitude of the shoulder phenomena, as shown below in Appendix \ref{appendix-B}. Another characteristic of note is that the shoulder phenomena is almost not present on a falling edge that goes from a tensile (positive) strain to a small compressive (negative) strain which is also shown in Figure \ref{fig:strain-hill}.
+
 
 \subsection{Resistive Relaxation Fitting}
 The generalised Maxwell model has been applied to predict the stress relaxation of the CBSR composite and analogously the resistive relaxation seen for a positive strain step input. The data gathered show that the stress relaxation time constant values decrease with an increasing CB percentage, indicating that all constants in Equations \ref{eqn:Maxwell_general_3elementR} and \ref{eqn:Maxwell_general_2elementS} are also functions of CB percentage. The repeatability of this stress relaxation for strain step inputs shows promise to use of this material in controlled environments, such as factory production lines, where there are known periodic strain step inputs. An application for the resistive relaxation decay time characterisation could be for timer with a soft robotic system.
 
+One aim of this work was to prove the hypothesis that the stress relaxation time constant is different to that of the observed resistive relaxation and able to be modelled mathematically. The apparent difference in time constants and the fitting of the data to two different equations show that the stress relaxation is not linearly related to the resistive relaxation shown clearly in Figure \ref{fig:diff_tau_res_stress}.
+
 
 \subsection{Resistance-Stress Relationship}
-A common hypothesis for the resistive relaxation phenomena is that it may be correlated to the resistive relaxation. This work found that the relationship between the two variables, resistance and stress, during relaxation events was non-linear and time-dependent. This non-linearity was found to have a good fit to a second order polynomial as shown in Figure \ref{fig:res_vs_stress_30pulses}. The Mullin's effect was evident in the results and a time dependence where the concavity of the polynomial fitted increased after the first strain pulse.
+A common hypothesis for the resistive relaxation phenomena is that it may be correlated to the resistive relaxation. This work found that the relationship between the two variables, resistance and stress, during relaxation events was non-linear and time-dependent. This non-linearity was found to have a good fit to a second order polynomial as shown in Figure \ref{fig:res_vs_stress_30pulses}. The Mullin's effect was evident in the results and a time-dependence where the concavity of the polynomial fitted increased after the first strain pulse.
 
 
 \subsection{Viscoelasticity}
@@ -509,13 +514,9 @@ The hysteresis loop seen in the 10 w.t.\% CB sample has a larger hysteresis loop
 \subsection{Repeatability}
 The resistive relaxation model must be predictable over many strain cycles for use within high-stretch strain sensor applications. If the resistive relaxation changes over time this needs is to be modelled. Each test sequence showed that there was a downward trend in the calculated magnitude of resistance for each pulse over time. 
 
-The physical phenomena driving this downward trend in resistance magnitude was theorised to be:
+The physical phenomena driving this downward trend in resistance magnitude was theorised to have two possible causes. The first cause being; the accumulation of charge within material over time generated by current source, due to the CBSR material having an RC-network-like behaviour. The second potential cause being; the gradual alignment of the CB particle network due to the electrostatic attraction of CB chains. This could be tested by increasing the current used and observing the gradient of the downward trend.
 
-1. the accumulation of charge within material over time generated by current source.
-
-2. alignment of the CB network due to the elctrostatic attraction of CB chains. This could be tested by increasing the current used and observing the gradient of the downward trend (higher current means higher voltage and higher electrostatic forces??). OR measure the transverse resistance to see how it changes??
-
-The charging theory was mitigated by using an alternating polarity measurement technique. The reversible current source helped to mitigate the charging effects seen, but a general downward trend in resistance was still observed as shown in Figure \ref{fig:repeatability_pulse_trains}.  % Where's the before and after comparison??
+The charging theory was mitigated by using an alternating polarity measurement technique. The reversible current source was switched at 10 Hz dampened this downward trend, however the downward trend in resistance was still observed as shown in Figure \ref{fig:repeatability_pulse_trains}. An example of an experiment with the previous non-switched DC current is shown in Appendix Figures \ref{fig:strain-train-DC-meas} and \ref{fig:res-AC-DC} for comparison.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\linewidth]{Figures/30_pulse_AC_2-7-5_Epin_20mm_v3_res.jpg}
@@ -530,24 +531,10 @@ The charging theory was mitigated by using an alternating polarity measurement t
 	\label{fig:repeatability_pulse_trains}
 \end{figure}
 
-% place the below blurbs in the appropriate sections above.
 
-
-The capacitance read across the inner pin electrodes of the material decreased with increasing strain as shown in Table \ref{tab:capacitance_v_strain}.
-%% To do: Unsure how conclusive this is... could be an incresaingly poor electrode connection impedance??
-\begin{table}[H]
-	\centering
-	\caption{Average inner electrode capacitances, $C_in$, measured for various strain, $\varepsilon$, values using a 7.5 w.t.\% CBSR composite, measured using an LCR meter at 1kHz and 10kHz \newline}
-	\label{tab:capacitance_v_strain}
-	\begin{tabular}{c|cccc}
-		% \hline
-		$\varepsilon [\%]$ & 0 & 10 & 20 & 30 \\
-		\hline
-		$C_in [pF]$ & 53 & 32 & 24 & 20 \\
-		% \hline
-	\end{tabular}
-\end{table}
-
+\subsection{Further Discussion and Future Work}
+%%% place the below blurbs in the appropriate sections above.
+It must be noted that for fitting the resistive relaxation, stress-resistive relaxation and the falling edge phenomena the data was translated in the xy axes for for ease of the regression algorithm fitting.
 
 A sufficiently high current source value was required to ensure a SNR that would not hinder data analysis. There seemed to be a wetting current threshold where the SNR dropped as shown by the 20 $\mu$A resistance pulse response in Figure \ref{fig:multi_current}.
 \begin{figure}[H]
@@ -557,25 +544,35 @@ A sufficiently high current source value was required to ensure a SNR that would
 	\label{fig:multi_current}
 \end{figure}
 
-
 A limitation of using this material as a strain sensor is the non-linearity of the material above a certain strain value, at which the composite's resistivity diverges towards a highly insulative value within the giga-ohms range. This non-linear behaviour of CBSR can be used as a mechanically activated switching device \cite{Henke2018}. If modelled, this non-linearity could extend the range of strains that can be measured.
 
-One aim of this work was to prove the hypothesis that the stress relaxation time constant is different to that of the observed resistive relaxation and able to be modelled mathematically. The apparent difference in time constants and the fitting of the data to two different equations show that the stress relaxation is not linearly related to the resistive relaxation shown clearly in Figure \ref{fig:diff_tau_res_stress}.
+The consideration of temperature and strain history \cite{Fung1993} could be used in further research to characterise a CBSR-based strain sensor for a range of application environments.
 
- The consideration of temperature and strain history \cite{Fung1993} could be used in further research to characterise a CBSR-based strain sensor for a range of application environments.
+Future work includes creating a model that incorporates all of the behaviours shown in this work so that an accurate inverse model can be created to use the material as a strain sensor. To capture all of these phenomena models that can capture and recreate time-dependent phenomena such as recurrent neural networks (RNNs) could be used.
+
+%The capacitance read across the inner pin electrodes of the material decreased with increasing strain as shown in Table \ref{tab:capacitance_v_strain}.
+%%% To do: Unsure how conclusive this is... could be an incresaingly poor electrode connection impedance??
+%\begin{table}[H]
+%	\centering
+%	\caption{Average inner electrode capacitances, $C_{in}$, measured for various strain, $\varepsilon$, values using a 7.5 w.t.\% CBSR composite, measured using an LCR meter at 1 kHz and 10 kHz \newline}
+%	\label{tab:capacitance_v_strain}
+%	\begin{tabular}{c|cccc}
+%		% \hline
+%		$\varepsilon [\%]$ & 0 & 10 & 20 & 30 \\
+%		\hline
+%		$C_in [pF]$ & 53 & 32 & 24 & 20 \\
+%		% \hline
+%	\end{tabular}
+%\end{table}
 
 \section{Conclusions}
-The relationships discussed in this work could be used to define a CBSR-based strain sensor models and show the expected behaviours in the composite material for different strain application scenarios. 
+The CBSR material used in this work provided exaggerated non-linear effects compared to literature where these non-ideal phenomena are often quashed and ignored. The relationships discussed in this work could be used to define a CBSR-based strain sensor models and show the expected behaviours in the composite material for different strain application scenarios. 
 
-In order to improve the accuracy of dynamic strain measurements with CBSR composites a stress and analogous resistive relaxation model was formed. The generalised Maxwell model, Equation \ref{eqn:Maxwell_general_2elementS} was used to fit to the stress relaxation data for three specimen with CB weight percentages of 0, 7.5\% and 10\%. The CV of the stress relaxation magnitude constants $a_0-a_2$ were found to be consistently smaller than the CV of the stress relaxation decay time constants $\tau_{S1}$ and $\tau_{S2}$, with maximum CV values of 15.45\% and 32.54\% respectively. All of the stress relaxation model constants increased with increasing weight percentage of CB.
+In order to improve the accuracy of dynamic strain measurements with CBSR composites a stress and analogous resistive relaxation model was formed. The generalised Maxwell model, Equation \ref{eqn:Maxwell_general_2elementS} was used to fit to the stress relaxation data for three specimen with CB weight percentages of 0, 7.5\% and 10\%. The variation in the fitted stress relaxation parameters was higher than the resistive relaxation parameters. All of the stress relaxation model parameters increased with increasing weight percentage of CB, indicating an increase in viscoelasticity. The resistive relaxation time constant and offset parameters both decreased with increasing CB wt\%. However the change in these parameters is not large and more experimentation with various CB weight percentages would be required to create a model of how the relaxation changes with CB wt\%. The standard deviation of parameters increased with increasing CB wt\%.
 
-% give quantitative relaxation results...
+With the models developed we have shown that the apparent resistive relaxation can be modelled, which will enable more accurate estimation of dynamic strain when these materials are applied as sensors. 
 
-A model relating the resistance and stress relaxation has been developed using a second order polynomial with all of the constants $a$, $b$, and $c$ increasing with increased weight percentage of carbon black. With the models developed we have shown that the apparent resistive relaxation can be modelled, which will enable more accurate estimation of dynamic strain when these materials are applied as sensors. 
-
-% Many repeated behaviours.. Mathematical relationships found...
+Many repeatable behaviours of the CBSR material have been found in this chapter which have not been elucidated in previous literature. Mathematical relationships between parameters stress, strain, and resistance have been developed. These mathematical relationships may be related to physical phenomena occuring within the viscoelastic material, however this work has not found a generalised model that can be inverted to accurately obtain a stress or strain given a resistance input. Future work will look into non-linear modelling of the material by using various methods. One method of interest being recurrent neural networks (RNNs), due to its ability to model time-dependent data.
 
 
 % Future work use RNNs or other non-linear modelling techniques to inversely model the material.
-
-%%%%%%%%%%%%%%%%%% Paper finish.

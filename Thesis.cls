@@ -143,17 +143,17 @@ pdfstartview={FitV},unicode,breaklinks=true]{hyperref}
 \newcommand*{\chapx}[1]{\def\chapxname{#1}}
 
 
-\chapi     {Introduction and Motivation}
+\chapi     	{Introduction and Motivation}
 
 \chapii     {Literature Review}
 
-\chapiii    {A Simple Conductive Elastomer Composite with Complex Behaviour}
+\chapiii    {Characterising Non-Linear Behaviour in Carbon-Black Elastomer Nano-Composites}
 
-\chapiv      {An Improved an Electrical Impedance Tomography Based Artificial Soft Skin Pressure Sensor}
+\chapiv     {An Improved an Electrical Impedance Tomography Based Artificial Soft Skin Pressure Sensor}
 
-\chapv     {Giving Artificial Muscles the Sense of Touch}
+\chapv     	{Giving Artificial Muscles the Sense of Touch}
 
-\chapvi    {Unintentional Power Generation in a DEA-EIT Sensor-Actuator Device}
+\chapvi    	{Unintentional Power Generation in a DEA-EIT Sensor-Actuator Device}
 
 \chapvii    {A Portable Electrical Impedance Tomography Based Pressure Mapping Sensor and Validation System}
 
