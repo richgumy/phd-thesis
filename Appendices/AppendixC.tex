@@ -1,2 +1,59 @@
-\chapter{Chapter Title}
+\chapter{EIT-based Pressure Sensor Review}
 \label{appendix-C}
+
+%%% COMPARISON OF EIT SENSOR EQUIVS %%%
+\newgeometry{left=1.25in,right=0in,bottom=-1in,top=0in}
+\setstretch{1.0}
+\begin{landscape}
+	\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+	\thispagestyle{plain}
+	\begin{table}[H]
+		\caption{Comparison of EIT-based soft pressure mapping sensor technologies. Dashes represent data not present in the related paper.}
+		\label{tab:eit_sensor_compare}
+		\begin{tabular}{|L{1.9cm}|L{2.8cm}|L{2.0cm}|L{2.4cm}|L{2.2cm}|L{2.0cm}|L{1.7cm}|L{1.7cm}|L{2.5cm}|L{2.2cm}|L{1.6cm}|L{1.6cm}|}        \hline
+			\textbf{1st Author} & \textbf{DUT material(s)} & \textbf{Electrode type / number} & \textbf{Repeatability} & \textbf{Resistivity / Conductivity} & \textbf{Softness or max stretch range} & \textbf{Range of applied loads / strains} & \textbf{Transients compensated} & \textbf{Pre/post-processing algorithms for EIT image?} & \textbf{Spatial Performance metrics} & \textbf{Center-of-mass error value range} & \textbf{Quant/ qual-itative pressure analysis} \\ \hline
+			
+			Ellingham (this work) & Custom carbon-black silicone composite & Gold plated electrical pin / x16 & data from 360 loads & 1.58 k$\Omega$/cm - 14.2 k$\Omega$/cm & Tested over 0 - 30\%. Elastic moduli 98.1 kPa and 132.5 kPa  & 0 - 55.8 kPa & No. But transients are quantified. & Positive and negative threshold & Center-of-mass error ($E_{CoM}$), Area overlap ($A_{OL}$), \& shape deform ($S\!D$). & 0.67 - 6.95 mm & Quant \\ \hline
+			
+			Russo \citep{Russo2017} & Polypyrrole and EeonTex NW170-PI fabric (Eeonyx, Pinole, USA) & - / x16 & Means and variances given. Unknown trial amount. & 102 S/cm to 103 S/cm cast film per ASTM F84 \& D257 & Max stretch = 40\%. Tensile strength $>$450 N. & - & - & Positive and negative threshold & Size Error, Position Error ($E_{CoM}$) and Ringing (RNG) & 1.4 - 6.7 \% & Qual \\ \hline
+			
+			Nagakubo \citep{Nagakubo2007} & PCR® piezoresistive silcone composite (JMT, Hidaka, Japan) & Crocodile clips / x16 & x3 pulses of strain applied. & 760 $\Omega$/cm and 14.6 k$\Omega$/cm & - & 0 - 160 kPa & - & - & - & - & Quant \\ \hline
+			
+			Hassan \citep{Hassan2009} & Copper sulfide nylon thread and Ag coated fabric & - / x16 & - & - & - & 0 - 150 kPa & - & - & - & - & Quant \\ \hline
+			
+			Kato \citep{Kato2007} & Pressure-sensitive conductive rubber & Copper tape / x16 & - & - & - & - & - & - & - & - & Qual \\ \hline
+			
+			Silvera-Tawil \citep{Tawil2011} & Piezoresistive fabrics (Eeonyx, Pinole, USA; Less EMF, Inc., Latham, USA) & Eyelets 7-mm diameter / x19 & - & 12.5 mS/sq and 660 mS/sq & - & - & - & 50 and 75\% thresholds & Resolution error (two touch test) and distance error ($E_{CoM}$) & $\sim$ 4 mm & Qual \\ \hline
+			
+		\end{tabular}
+	\end{table}
+\end{landscape}
+
+\begin{landscape}
+	\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+	%		\thispagestyle{plain}
+	\begin{table}[H]
+		\caption{Continuation of the comparison of EIT-based soft pressure mapping sensor technologies from Table \ref{tab:eit_sensor_compare}. Dashes represent data not present in the related paper.}
+		\label{tab:eit_sensor_compare2}
+		\begin{tabular}{|L{1.9cm}|L{2.8cm}|L{2.0cm}|L{2.4cm}|L{2.2cm}|L{2.0cm}|L{1.7cm}|L{1.7cm}|L{2.5cm}|L{2.2cm}|L{1.6cm}|L{1.6cm}|}        \hline
+				\textbf{1st Author} & \textbf{DUT material(s)} & \textbf{Electrode type / number} & \textbf{Repeatability} & \textbf{Resistivity / Conductivity} & \textbf{Softness or max stretch range} & \textbf{Range of applied loads / strains} & \textbf{Transients compensated} & \textbf{Pre/post-processing algorithms for EIT image?} & \textbf{Spatial Performance metrics} & \textbf{Center-of-mass error value range} & \textbf{Quant/ qual-itative pressure analysis} \\ \hline
+				
+				% Ellingham & Custom carbon-black silicone composite & Gold plated electrical pin / x16 & 360 load events used for quantitative EIT experimental data & 1.58 k$\Omega$/cm - 14.2 k$\Omega$/cm & Tested over 0 - 30\%. Elastic moduli 98.1 kPa and 132.5 kPa  & 0 - 55.8 kPa & No. But transients are quantified. & Threshold eliminating negative values and a positive percentage thresholds & Center-of-mass error ($E_{CoM}$), Area overlap ($A_{OL}$) value, and shape deformation ($S\!D$) error value. & 0.67 - 6.95 mm & Quant \\ \hline
+				
+				Yoon \citep{Yoon2017} & CBSR ELASTOSIL LR 3162 (Wacker Ltd., Munich, Germany) & `jewelery ribbon crimps' / x8 and x16 & Mean and variance calculated. No. of trials not mentioned. & 11 $\Omega$·cm & 54 A & 5.5 - 15.8 kPa & Capacitive touch channel compensation & - & Distance error ($E_{CoM}$) & 3.8 - 18.4 mm & Quant \\ \hline
+				
+				Sun \citep{Sun2020} & Custom TPU-CB pressure-sensitive film & Silver conductive paste squares 10x10mm / x8 & 5500 load cycles & - & - & - & - & - & - & - & Qual \\ \hline
+				
+				Yao \citep{Yao2012}& Medical-grade silver-plated nylon Dorlastan  fabric  (Less EMF, Inc., Latham, USA) & Copper tape / x16 & - & $<$ 1 $\Omega$/sq & Max stretch 100\% / 65\% in perpendicular directions & - & `Relatively static, image generated in 60 s' & - & - & - & Qual \\ \hline
+				
+				Visentin \citep{Visentin2016} & Conductive textile, MedTex180 (Shieldex®, Kleiner, Germany) & Crocodile clips / x8 & `low repeatability rate, high hysteresis, and noise sensitivity' & $<$ 1 $\Omega$/sq & 75- 155 \% stretch & 10.2 - 28.3 kPa & - & Centroid detection and threshold masking & - & - & Qual \\ \hline
+				
+				Biasi \citep{Biasi2022} & Conductive ink, EptaTech (EptaNova, Luizago, Italy) & screen printed conductive ink / x16 & 6 positions x 5 trials & 247.56 S/m (Estimated) & - & - & - & ANN used as well as EIT for solver. 40 \% threshold. & - & - & Qual \\ \hline
+				
+				% Zhang & Various conductive materials (Velostat, carbon spray, carbon ABS) and coatings (bare, paper, spray paint) & Copper tape / x8, x16, x32  & 5 experiments and 4 testing rounds mentioned. Means and variances mentioned. & 500 $\Omega$ - 50 M$\Omega$/sq & Softess material mentioned was "silicone" & N/A - capacitive method doesn't encounter this. & N/A - capacitive method doesn't require this. & - & Discrete touch accuracy and average distance error ( $\Bar{E}_{CoM}$) & 7.9 - 15.7 mm & N/A \\ \hline
+				
+			\end{tabular}
+		\end{table}
+\end{landscape}
+\newgeometry{left=2in,right=0in,bottom=0in,top=2in}
+\setstretch{1.5}

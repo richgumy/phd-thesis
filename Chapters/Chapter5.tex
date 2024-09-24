@@ -1,64 +1,27 @@
 \chapter{\chapvname}
 \label{chapter5}
-%\textit{The content from this chapter is contains content from the manuscript to be published in the Journal HardwareX.}
 
 
 
-\section{Abstract}
+\section*{Abstract}
 This work presents portable, low-cost hardware for pressure mapping using EIT-based soft sensors. An important part of developing these EIT-based pressure sensors is the sensor characterisation as shown in the previous chapter. Therefore, this work also provides the design of a system for characterising and validating the spatial, pressure, and temporal performance of different soft sensor material domains. The system is capable of driving soft EIT-based sensors using a range of sensing materials, shapes, and configurations. The hardware allows for the wireless transmission of EIT data to a remote device. 
 A data capture frame rate of 12.7 Hz allows for the analysis of dynamic events. The maximum current drive voltage is $\pm$22 V and a voltage read resolution of $\pm$0.3 $\mu V$ allowing for a range of sensing domain sizes, thicknesses, and materials. A Cartesian force applicator device has been developed for the automatic characterisation of rates of 0 - 800 mm/min for can sense loads from 0 to 100 N with a resolution of $\pm$50 mN. Loads can be applied with an error of $\pm$0.01 mm. A standardised method has been provided for researchers to experiment with a range of different sensing domain materials and shapes. The system described in this work is suitable for both research and practical applications, making it a valuable tool for advancing the field of EIT-based soft sensor technology.
-%\newpage
-%\begin{table}[]
-%	\caption{Specifications table}
-%	\label{tab:specs}
-%	\tabulinesep=1ex
-%	\begin{tabu} to \linewidth {|X|X[3,l]|}
-%		\hline  \textbf{Hardware name} & EIT Pressure Mapping Device and Calibration System
-%		%Please specify the name of the hardware that you invented / customized
-%		\\
-%		\hline \textbf{Subject area} &
-%		% Please state the subject area most relevant to the original community for which this hardware was developed. Example subject areas are listed below.
-%		Engineering and material science
-%		\\
-%		\hline \textbf{Hardware type} &
-%		\begin{itemize}[noitemsep, topsep=0pt]
-%			\item Imaging tools
-%			\item Measuring physical properties and in-lab sensors
-%			\item Mechanical engineering and materials science
-%		\end{itemize}
-%		\\ 
-%		\hline \textbf{Closest commercial analogue} &
-%		%Please specify the open source license. For more details see the guide to authors.
-%		No commercial analogue is available.
-%		\\
-%		\hline \textbf{Open source license} &
-%		%Please specify the open source license. For more details see the guide to authors.
-%		General Public License (GPL)
-%		\\
-%		\hline \textbf{Cost of hardware} &
-%		%Approximate cost of hardware (complete breakdown will be included in the Bill of Materials).
-%		ERT sensor device : USD\$148 \newline
-%		Cartesian force applicator device : USD\$1046 (incl. Prusa MK3s 3D printer - USD\$899 )
-%		\\
-%		\hline \textbf{Source file repository} & 
-%		% Link to the source file repository
-%		\href{http://doi.org/10.5281/zenodo.11520112}{http://doi.org/10.5281/zenodo.11520112}
-%		\\
-%		\hline
-%	\end{tabu}
-%\end{table}
-%\end{flushleft}
-% create the main body of the paper
-%\newpage
 
 
 
 \section{Introduction}
+% TO DO: redo introduction in a regular format:
+% 1. Impact sentence
+% 2. Highlight research gaps
+% 3. Introduce research 'solution'
+To apply the pressure mapping sensor technology given in the previous Chapter to a real world scenario often portability and cost becomes an issue with the commercially available research grade devices. More importantly there is no commercial product specifically made for pressure mapping sensor devices. To combat this, a novel application specific EIT module has been created in this work for developing EIT-based pressure mapping sensors. In parallel there lacks a commercial system which can simulataneously gather compressive spatio-temporal stress-strain data for characterising the EIT-based pressure sensor technology developed. Hence a Cartesian force applicator has been designed for the purpose of researching and comparing the electromechanical properties of a range of potential sensing domain materials. 
+
+% 4. Further background research
 Electrical impedance tomography (EIT) is an imaging technique used to map impedance/resistance throughout a material using multiple boundary electrodes. The boundary electrodes inject current through the homogeneous domain instead of a patterned or layered one, allowing the sensor measurements to be non-invasive. 
 
 EIT is most commonly used for thorax imaging for clinical respiratory analysis; however, this same method can be used for a multitude of applications with conductive bodies to map changes in impedance/resistance as shown in the previous chapter. Commercial devices that perform EIT, or the DC equivalent electrical resistivity tomography (ERT), exist in large-form factors such as Pulmovista 500 (Draeger, Luebeck, Germany), EIT16/32 (Sciospec Scientific Instruments GmbH, Leipzig, Germany), LuMon (Sentec, Lincoln, USA), Zeta (Zonge International, Tucson, USA), WGMD-4 (WTS Geophysical, Wanchai, Hong Kong). All of these options are application-specific for biomedical and geophysical applications. Several research papers \cite{Chen2023,Hong2015,Lee2020,Li2023,Soleimani2006,Suh2022,Tiwari2022,Xu2022,Zhang2015,Zhang2016} have described similar but smaller versions of the commercial products mentioned.
 
-In this work the same physics principles used in bio-medical and geophysical sensing are used to map localised compressive loads on a soft piezoresistive material. Pressure mapping is widely used for many applications including sports equipment grip analysis, foot pressure in gait analysis, in production line part alignment, hospital patient bed and chair pressure minimisation, headphone pressure analysis, amongst many others. These applications are useful for increasing quality of life, optimising sporting performance, object detection, and production efficiency optimisation.
+In this work the same physical principles used in bio-medical and geophysical sensing are used to map localised compressive loads on a soft piezoresistive material. Pressure mapping is widely used for many applications including sports equipment grip analysis, foot pressure in gait analysis, in production line part alignment, hospital patient bed and chair pressure minimisation, headphone pressure analysis, amongst many others. These applications are useful for increasing quality of life, optimising sporting performance, object detection, and production efficiency optimisation.
 
 A core limiting factor of current technology is the lack of customisability in sensor size, shape, sensing domain material softness, and sensing material composition \cite{Gilanizadehdizaj2022,Rossiter2005,Liang2015,Fu2020}. Most often, pressure sensors are given in a rectangular format because of the arrays of wiring and sensing elements required within the sensing domain. EIT-based pressure mapping sensors are not constrained by wires or complex patterning within the sensing domain area. EIT-based pressure sensors can have a homogeneous sensing domain configured in various shapes.
 %	\begin{figure}[H]
@@ -67,25 +30,20 @@ A core limiting factor of current technology is the lack of customisability in s
 %		\caption{Potential future application of sensor technology}
 %		\label{fig:future_app}
 %	\end{figure}
-To advance the research of this soft pressure mapping platform technology, we require a system that is lost cost, open source, easy to use, portable, and sufficiently flexible to test a range of different sensing domain materials. The system developed in this work is for the research and development of EIT-based pressure mapping sensors. 
+To advance the research of this soft pressure mapping platform technology, we require a system that is lost cost, open source, easy to use, portable, and sufficiently flexible to test a range of different sensing domain materials. The system developed in this work is for the research and development of EIT-based pressure mapping sensors.
 
 The hardware of our system has two key components, a circuit for gathering raw ERT data and a Cartesian force applicator (CFA) machine for characterising an ERT-based pressure mapping sensor. The system characterises the sensor and can be used for validating the spatial, pressure, and temporal performance for different piezoresistive sensor material domains. The CFA allows for repeatable experiments and quantifiable data for different sensor configurations.
 
 
 
 \section{Design Method}
-%Provide detailed, step by step instructions for the construction of the reported hardware include all necessary information for reproducing the submitted hardware. Example of reference designator usage (U9:PDM1-S12-S5-S) (REF:MPN)
-% > Explain and, when possible, characterize design decisions. Including design alternatives if they exist. 
-% > Use visual instructions such as schematics, images, and videos. 
-% > Clearly reference design files and component parts described in the Design File Summary and Bill of Materials. 
-% > Highlight potential safety concerns that may arise
-The build is separated into two parts. The first being the assembly of the ERT sensor electronics and housing. The second being the build of the Cartesian force applicator. Text within square brackets refer to the part reference designators (e.g. U1 for the ESP32 module) in the BOMs.
+The build is separated into two parts. The first being the assembly of the ERT sensor module. The second being the build of the Cartesian force applicator. Text within square brackets refer to the part reference designators (e.g. U1 for the ESP32 module) in the BOMs given in the HWX supplementary material.
 
 \subsection{Design Architecture}
 Created an EIT-based pressure mapping sensor toolbox that reliably and repetitively allows for EIT-based pressure mapping and quantification of the sensor performance. The overall system is simple to construct and easy to operate and is split into two main parts: the ERT sensor and the CFA device.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.4\linewidth]{Figures/ERT_PCB_and_CFA_system_simple.png}
+	\includegraphics[width=0.5\linewidth]{Figures/ERT_PCB_and_CFA_system_simple.png}
 	\caption{System architecture of ERT sensor and CFA setup. The large red arrow shows the direction of the force applicator compression onto the sensing domain (DUT) and analogue/power signals are shown with red arrows and digital signals with black arrows.}
 	\label{fig:ERT_PCB_CFA_archit}
 \end{figure}
@@ -94,7 +52,7 @@ The ERT sensor consists of an ERT sensor circuit and the sensing domain under te
 The system has a programmable current source which can drive up to 50 mA of constant current. The voltage measurement circuit has an ADC resolution of 0.3 $\mu$V, ensuring that the small signals generated by small localised loads can be detected. The sensing domain in this work is a soft piezoresistive composite made from carbon black (CB) powder and silicone rubber with 16 boundary electrodes made from gold pins and copper tape, as seen in Figure \ref{fig:CBSR_samples_examples}.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.50\linewidth]{Figures/ert_pcb_and_DUT.png}
+	\includegraphics[width=0.6\linewidth]{Figures/ert_pcb_and_DUT.png}
 	\caption{A soft sensor domain connected to the ERT sensor electronics.}
 	\label{fig:ert_sensor}
 \end{figure}
@@ -102,7 +60,7 @@ The system has a programmable current source which can drive up to 50 mA of cons
 To ensure that the sensor can accurately locate pressure points and their magnitude, the CFA device described in this work is used to apply compressive forces at various locations. The CFA test bed allows for loads within a 220 x 180 mm area.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\linewidth]{Figures/cfa_screen_pic.png}
+	\includegraphics[width=0.6\linewidth]{Figures/cfa_screen_pic.png}
 	\caption{Cartesian force applicator setup with an ERT circuit and EIT reconstruction computer}
 	\label{fig:cfa_setup}
 \end{figure} 
@@ -207,12 +165,11 @@ The print bed of the MK3s 3D printer is removed and replaced with a mount tray [
 The firmware version used in this work was MK3s 3.9.0. Later versions may be compatible. Other 3D printer platforms with a similar gcode command set and a similar core firmware such as the \href{https://marlinfw.org/}{Marlin firmware} may also be used as a CFA. However, minor configuration changes in this work's software and hardware may be required.
 
 
-\section{Design Decisions}
-% validate the main design decision contributing to the performance and novelty of the system.
-This section outlines and justifies some of the important design decisions made for both the ERT sensor and the CFA device.
+\section{Design Justification}
+This section validates the main design decisions contributing to the performance and novelty of the system.
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\linewidth]{Figures/ERT_PCB_and_CFA_system.png}
+\includegraphics[width=\linewidth]{Figures/ERT_PCB_and_CFA_system.png}
 \caption{System architecture of ERT sensor and CFA setup (left) and the key internal electrical signals of the ERT circuit (right). With analogue/power signals shown with red arrows and digital signals with black arrows.}
 \label{fig:ERT_PCB_CFA_archit}
 \end{figure}
@@ -222,9 +179,9 @@ This section outlines and justifies some of the important design decisions made 
 While a sequence of compressive loads are applied by the CFA to the sensing domain, concurrently the ERT sensor circuit gathers data for EIT reconstruction. This cyclic EIT data capture process follows a specific sequence, 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\linewidth]{Figures/eit_sequence.png}
+\includegraphics[width=0.8\linewidth]{Figures/eit_sequence.png}
 \caption{EIT adjacent drive pattern sequence.}
-\label{fig:ERT_PCB_CFA_archit}
+\label{fig:EIT_adj_drive}
 \end{figure}
 \begin{enumerate}
 \item A constant current is applied at adjacent electrode positions $E_i$ and $E_{i+1}$, these electrode positions are selected with the `MUX control' line.
@@ -247,7 +204,7 @@ A script was created to form a square resistor mesh network of various dimension
 \centering
 \includegraphics[width=0.3\linewidth]{Figures/res_mesh_pcb.png}
 \hspace{1cm}
-\includegraphics[width=0.5\linewidth]{Figures/EIT_Vdiff_res_mesh_2k2bg_3k3anom.png} % TODO: change this to a dotted plot as these values shouldn't be linked.
+\includegraphics[width=0.6\linewidth]{Figures/EIT_Vdiff_res_mesh_2k2bg_3k3anom.png} % TODO: change this to a dotted plot as these values shouldn't be linked.
 \caption{Left: A resistor mesh network for validating the ERT circuit, with the anomaly shown highlighted in green. Right: The difference between EIT raw voltage data from a homogeneous square 2.2 k$\Omega$ resistor mesh domain and the same domain with a 3.3 k$\Omega$ resistor mesh anomaly.}
 \label{fig:vdiff_res_mesh}
 \end{figure}
@@ -290,7 +247,7 @@ A passive low-pass filter has been placed between the opamp circuit and the ADC 
 A 4:16 multiplexing circuit allows for a range of EIT switching drive patterns for ERT data acquisition. Previous research has shown the trade-offs with different EIT drive patterns \cite{Tawil2011, Russo2017, Xu2008}. A multiplexer with a low drain-source on-resistance characteristic for smaller drain voltages has been chosen as the majority of the voltage readings being read through the multiplexer will be nearer to zero than $\pm$Vs.
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.6\linewidth]{Figures/mux_r_on_example.png}
+\includegraphics[width=0.7\linewidth]{Figures/mux_r_on_example.png}
 \caption{$R_{DS(on)}$ characteristic diagram for a typical multiplexer analogue channel for a dual and single-ended power supply.}\cite{Vishay2024}.
 \label{fig:mux_r_on}
 \end{figure}
@@ -309,7 +266,7 @@ A static load FEA simulation was completed on the loadcell bracket [PR9] with th
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.4\linewidth]{Figures/fea_ccx_loadcell_bracket.png}
+\includegraphics[width=0.45\linewidth]{Figures/fea_ccx_loadcell_bracket.png}
 \caption{Static load analysis of the loadcell bracket part [PR9] of maximum allowable load of 100 N showing the magnitude of displacement. }
 \label{fig:FEA_force_aplc}
 \end{figure}
@@ -447,7 +404,7 @@ Once the \verb|ertpcb_cfa_reader.py| program has completed capturing data, a tim
 Any significant change in the inter-electrode resistance may cause a poor EIT reconstruction result. A significant change in the inter-electrode resistance could be a result of, applying force too close to the electrodes themselves, an inherently unstable electrode connection, or an external force applied near the electrode. If the $R_{int}$ values are not stable it will be evident in the plot and there will be a warning message in the console. 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.75\linewidth]{Figures/Rint_plot.png}
+\includegraphics[width=0.8\linewidth]{Figures/Rint_plot.png}
 \caption{An example plot of the $R_{int}$ values generated on completion of an experiment for a stable experiment. Where the Electrode \# `i' represents the resistance between electrode `i' and `i+1'.}
 \label{fig:ert_pcb_pinout_mode}
 \end{figure}
@@ -490,7 +447,7 @@ During the operation of the CFA there will be moving parts which could collide t
 The sensing domain may not be bio-compatible so the material safety datasheet(s) for each domain must be followed for each real world sensor application.
 
 
-\section{Validation and characterisation}
+\section{Validation and Characterisation}
 \label{sec:Validation and characterisation}
 %Demonstrate the operation of the hardware and characterize its performance over relevant critical metrics
 %> Demonstrate the use of the hardware for a relevant use case. 
@@ -499,15 +456,15 @@ The sensing domain may not be bio-compatible so the material safety datasheet(s)
 To show that the system is functional, the plots produced from an EIT reconstruction of the voltage data and the force measurements can be compared for a correlation. Examples are given below in Figure \ref{fig:rand_recon_result} and \ref{fig:rand_recon_and force_result}, showing localised blobs at the known locations of the force applicator.
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.45\linewidth]{Figures/DEA1_CBSR_8p_9push_rand10strain_30s_1mA_1_frame184.png}
-\includegraphics[width=0.45\linewidth]{Figures/DEA1_CBSR_8p_9push_rand10strain_30s_1mA_1_frame945.png}
+\includegraphics[width=0.49\linewidth]{Figures/DEA1_CBSR_8p_9push_rand10strain_30s_1mA_1_frame184.png}
+\includegraphics[width=0.49\linewidth]{Figures/DEA1_CBSR_8p_9push_rand10strain_30s_1mA_1_frame945.png}
 \caption{Reconstruction frames from a random push test sequence on a 1mm thick 100mm diameter sample. Strain and applied locations (x, y) [mm] - Left: 24\% (-14.8, -3.4). Right: 36\% (-1.9, -21.3)}
 \label{fig:rand_recon_result}
 \end{figure}
 A raw video of this experiment can be seen in the \verb|/examples| folder. It can be useful to plot the force profile being applied alongside the EIT reconstruction to verify the data is ready for further processing and modelling. 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\linewidth]{Figures/CBSR_8p_OG_10push_RAND1_strain_120s_1mA_2_frame381.png}
+\includegraphics[width=0.9\linewidth]{Figures/CBSR_8p_OG_10push_RAND1_strain_120s_1mA_2_frame381.png}
 \caption{Reconstruction frames from a random push test sequence on a CBSR 100mm diameter sample. The white circle representing the force applicator location and the red dot on the force plot showing the captured frame in time.}
 \label{fig:rand_recon_and force_result}
 \end{figure}
@@ -523,9 +480,9 @@ A raw video of this experiment can be seen in the \verb|/examples| folder. It ca
 Simultaneous application of multiple loads can be achieved with this system using a multi-head force applicator. It has been shown that multiple touch points can be detected as shown in Figure \ref{fig:multi-touch-eit} the supplementary material and in our previous work \cite{Ellingham2022}.
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.4\linewidth]{Figures/multitouch_rect_CBSR_8p_80x70mm_frame69.jpg}% using 1.5mm thick 70 x 80 mm rectangle with 15 mm radius on corners
+\includegraphics[width=0.45\linewidth]{Figures/multitouch_rect_CBSR_8p_80x70mm_frame69.jpg}% using 1.5mm thick 70 x 80 mm rectangle with 15 mm radius on corners
 \hspace{1cm}
-\includegraphics[width=0.4\linewidth]{Figures/multitouch_rect_CBSR_8p_80x70mm_frame69_75p_thresh.png}% using 1.5mm thick 70 x 80 mm rectangle with 15 mm radius on corners
+\includegraphics[width=0.45\linewidth]{Figures/multitouch_rect_CBSR_8p_80x70mm_frame69_75p_thresh.png}% using 1.5mm thick 70 x 80 mm rectangle with 15 mm radius on corners
 \caption{An EIT reconstruction image of a sensing domain with two loads applied simultaneously. Left: Without threshold filtering. Right: With a 75\% threshold amplitude filter applied.}
 \label{fig:multi-touch-eit}
 \end{figure}
@@ -535,9 +492,9 @@ Simultaneous application of multiple loads can be achieved with this system usin
 A major factor constraining the application of EIT-based sensors is the poor frequency response of the material, which limits the detection of rapid successive loads. The system given in this work allows further research into characterising the transient response of a range of sensing domains in 2D. Examples of how transients have been characterised are shown in Figure \ref{fig:2D-transient}
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.3\linewidth]{Figures/res_relax_DEA_EIT_1mm_3load_7kV_1.png}
+\includegraphics[width=0.35\linewidth]{Figures/res_relax_DEA_EIT_1mm_3load_7kV_1.png}
 \hspace{1cm}
-\includegraphics[width=0.5\linewidth]{Figures/2D Push event 0 - CBSR 9 wt 30p strain - 2D compressionv2.jpg}
+\includegraphics[width=0.54\linewidth]{Figures/2D Push event 0 - CBSR 9 wt 30p strain - 2D compressionv2.jpg}
 \caption{Left: Example sequence a resistive relaxation after a loading event at times $t_1$ to $t_4$. Right: Example stress, $\sigma$, and resistive, $\rho$, relaxation plot generated from an ERT CFA experiment given a 30\% strain step input \cite{Ellingham2024}.}
 \label{fig:2D-transient}
 \end{figure}
@@ -560,17 +517,7 @@ Uses of this system vary from 2D piezoresistive material analysis and pressure m
 
 To push the field of EIT-based pressure mapping forward tools are required to standardise testing and reliably acquire quantifiable data for pressure modelling in different sensing domain materials. A toolbox of hardware and software have been described in this work to make EIT-based pressure mapping realisable for more real-world applications.
 
-Proposed future enhancements of the system include minimising noise and offsets in the signal conditioning ERT circuit, adding an auto-calibration procedure to ensure the ADC and $I_{src}$ circuits operate at the expected resolution, and reducing the PCB size. 
-% ... picture of the vision for future applications ...
-The ERT sensor and Cartesian force applicator system described in this work will help transition this technology into real-world applications.
+Proposed future enhancements of the system include minimising noise and offsets in the signal conditioning ERT circuit, adding an auto-calibration procedure to ensure the ADC and $I_{src}$ circuits operate at the expected resolution, and reducing the PCB size. The ERT sensor and Cartesian force applicator system described in this work will help transition this technology into real-world applications.
 
-\section{Future Work}
-The integration of DEA and EIT in a portable package would open a range of applications. To integrate this portable EIT system into the DEA-EIT device mentioned in Chapters 6 and 7, a DEA driver expansion board would be required. This would give an DEA-EIT device could have the capability of contracting and acquiring EIT voltage data for pressure mapping while maintaining a small form factor. A draft design of the DEA PCBA mounted on the portable EIT PCBA can be seen in Figure \ref{fig:DEA-EIT_draft_pcb_assy}. 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.55\linewidth]{Figures/DEA-EIT_mother-daughter_board_draft.jpg}
-	\caption{Render of a DEA daughter board mounted on this work's portable ERT board.}
-	\label{fig:DEA-EIT_draft_pcb_assy}
-\end{figure}
 
 \afterpage{\blankpage}
