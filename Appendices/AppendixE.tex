@@ -1,0 +1,227 @@
+\chapter{Portable EIT-based Pressure Sensor Build and Operation}
+\label{appendix-E}
+
+This appendix is partially extracted from the HardwareX paper "A Portable Electrical Impedance Tomography Based Pressure Mapping Sensor and Validation System"\footnote{currently under review as of 26 September 2024} and gives a high-level description of the build process for both the ERT sensor module, the sensing domain, and the Cartesian force applicator (CFA). The build section are followed by an operation instructions and safety section.
+
+\section{Build Methodology}
+The build was split into two main parts the ERT sensor module electronics and the CFA construction. An example of how a piezoresistive nanoparticle elastomer composite is made is also re-iterated from previous chapters.
+
+
+\subsection{ERT Sensor}
+% grab gerber files send to PCB manufacturer. Place all SMD components. Place all THT components. Don't place jumpers until circuit has been tested. Copy and paste circuit test procedure. Place in housing for mounting on Prusa
+The manufacturing process of the PCB involves first sending the PCB gerber files to a PCB manufacturer. This work used JLC PCB with their default parameters for a 4 layer PCB.
+
+Next populate the PCBs with the SMD parts given in the BOM and place in a reflow oven. First complete the rear side then the top side to ensure components stick. Once all SMD parts have been firmly soldered, solder all of the THT components. Finally attach the jumpers for the desired power mode, explained in Section \ref{sec:Operating modes}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{Figures/HV_ERT_sensor_PCB_unpop2pop.png}
+	\caption{ERT PCB [PCB1] before and after electrical component population.}
+	\label{fig:pcb_to_pcba}
+\end{figure}
+To ensure simple protection against electrical shorts and low-level ingress protection (equivalent to IP20) 3D print an enclosure in PLA using the STL files given in the BOM, \textit{ert\_housing\_top.stl} [PR1]\footnote{Text within square brackets in this section refers to part reference designators (e.g. U1 for the ESP32 module) in the BOMs given in the supplementary material} and \textit{ert\_housing\_base.stl} [PR2]. There are 4 threaded inserts [HW2] to mount the PCB securely in the 3D printed enclosure using four M3 14 mm bolts [HW1].
+
+Attach the 16 way ribbon connector [W1] to the ERT electrodes. In this example there is a ribbon to IDC connector interface board [J8], which then connects to a custom built electrode pin to domain interface [DUT1, DUT2, PR3, PR4]. This electrode interface will vary based on the required sensing domain.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{Figures/ERT_PCB_assembled_in_housing_labelled.png}
+	\caption{ERT sensor PCBA mounted in enclosure and attached electrode harness showing buttons and the main electrical connections.}
+	\label{fig:ert_sensor_in_housing}
+\end{figure}
+The sensor device shown in Figure \ref{fig:ert_sensor_in_housing} shows all of the connections and buttons necessary for the programming and operation of the sensor, as well as two optional buttons SW1 and SW2 for any other desired functions.
+
+\subsection{Sensing Domain}
+\label{sec:Sensing Domain}
+As a reference the method for fabricating a specific sensing domain is given in this section. The sensing domain used was a carbon black (CB) nanoparticle silicone rubber composite.
+
+With the material requirements of a low Shore hardness of 5A - 25A, similar to that of human skin and muscle tissue \cite{Silvera-Tawil2015, Chatzistergos2022}, low viscoelasticity, high yield strength, low resistivity, high strain gauge factor, and non-toxic. Other sensor domain materials may be used for the sensor, such as soft conductive particle composites, conductive polymers, and hydrogels \cite{Giffney2017,Duan2014,Chen2023}.
+
+Researchers fabricating their own sensing domain for use with this system should follow three key requirements, 
+\begin{enumerate}
+	\item The size of the sensing domain must fit within a 220 x 180 x 160 mm volume (X$\times$Y$\times$Z) on the CFA test bed. 
+	\item The bulk modulus of the domain material must be chosen such that the required loads applied to the domain must not exceed 100 N.
+	\item The inter-electrode resistance, $R_{int}$, must be low enough to not saturate the current source, $I_{src}$, given a power supply voltage, $V_s$, as shown in Equation \ref{eqn:r_int},
+\end{enumerate}
+\begin{equation}
+	R_{int} < \alpha \frac{V_s}{I_{src}}
+	\label{eqn:r_int}
+\end{equation}
+Where $R_{int}$ is the resistance values between every configuration of the current drive electrodes during an EIT capture cycle and $\alpha$ is the factor of safety for any electrode movement or incidental increase of $R_{int}$ during experimentation.
+
+The domain under test (DUT) used in this work was a composite comprised of XC 72R carbon black (CB) nanoparticles (Cabot, Alpharetta, USA) [DUT5] of 50 nm average diameter, dispersed in a two part Dragon Skin 10 NV silicone rubber (SR) matrix (SmoothOn, Macungie, USA) [DUT6]. The weight percentage (wt\%) of CB to liquid silicone rubber which resulted in near optimal piezoresistive characteristics was found to be between 8 - 10\%. To ensure homogeneous CB particle dispersion and mitigate air bubble formation an ARV-310 vacuum planetary mixer (Thinky, Tokyo, Japan) was used to mix the CB particles through the liquid silicone matrix. Upon completion of mixing, the uncured composite was poured into the circular sheet domain mould. The curing of the composite was controlled by heating the newly-mixed material in the mould at 80$\degree$C for 90 min. The domain samples used in this work and previous work \cite{Ellingham2022, Ellingham2024} had a diameter of 100 mm as shown in Figure \ref{fig:CBSR_samples_examples}. 
+
+\begin{figure}[H]
+	\centering
+	% \includegraphics[width=0.295\linewidth]{Figures/CBSR_DUT_sample.jpg}
+	% \includegraphics[width=0.275\linewidth]{Figures/ERT_sensing_domain_holder2.jpg}
+	\includegraphics[width=0.3\linewidth]{Figures/DEA-EIT-sample_0.5mm_100mm.png}
+	\hspace{2cm}
+	\includegraphics[width=0.4\linewidth]{Figures/CBSR_DUT_w_electrodes_sample.jpg}
+	\caption{Left: An example of a CBSR sample with copper tape electrodes integrated with a dielectric elastomer actuator setup \cite{Ellingham2024a}. Right: Example of a CBSR sensing domain with gold pin electrodes penetrating material surface around the sensing region boundary.}
+	\label{fig:CBSR_samples_examples}
+\end{figure}
+
+
+\subsection{Cartesian force applicator}
+% Dismantle prusa printhead and trick thermistor. Mount loadcell, loadcell bridge, sensor tray, etc. Prepare sensing region surface...
+To test the spatial and force resolution of the ERT pressure mapping device, the CFA was designed using a Prusa MK3s 3D printer to provide a stable platform. First a functional Prusa MK3s 3D printer was acquired with its printing capabilities tested on several standard demo PLA prints to ensure the print head can move with the expected resolution in the X, Y, and Z directions. Standard benchmark tests and tuning for the printing platform can be found  \href{https://blog.prusa3d.com/does-your-freshly-assembled-original-prusa-i3-mk3-print-as-the-best-it-can_29445/}{here} and \href{https://help.prusa3d.com/category/print-quality-troubleshooting_225}{here} \cite{Stritesky2019, Prusa2024}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\linewidth]{Figures/og_MK3s_print_head.jpg}
+	\hspace{1cm}
+	\includegraphics[width=0.4\linewidth]{Figures/dismantled_MK3s_print_head.jpg}
+	% \includegraphics[width=0.32\linewidth]{Figures/modded_MK3s_print_head.jpg}
+	\caption{MK3s print head. Left: Original print head assembly. Right: Dismantled print head assembly \cite{Kayne2019}.}
+	\label{fig:mk3s_head_old_raw}
+\end{figure}
+
+Next the print head of the MK3s was dismantled, as shown in Figure \ref{fig:mk3s_head_old_raw}, leaving a flat surface to attach first the PINDA adapter [PR8] and the loadcell bracket [PR9], as shown in Figure \ref{fig:mk3s_head_new}. Use M3 bolts to attach the loadcell bracket and PINDA adapter to the dismantled print head surface. See read the printer \href{https://help.prusa3d.com/guide/5-e-axis-assembly_169235#170079}{assembly manual} for more detail on the part assembly\cite{Prusa2023}. Bolt the TAL220 10 kg loadcell [E3] onto the loadcell bracket using M5 bolts [HW4]. Bolt the force applicator head [PR5-7, HW5] onto the other end of the loadcell using M4 bolts [HW3]. A range of force applicator heads shapes and sizes have been created to test the resolution of the sensor. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Figures/modded_MK3s_print_head_clean_labelled.png}
+	\caption{Force applicator head assembly.}
+	\label{fig:mk3s_head_new}
+\end{figure}
+With the thermistor from the original printhead no longer required, a trimpot [RV1] is attached to the thermistor port on the printer's \href{https://help.prusa3d.com/guide/8-electronics-assembly_174100#175539}{control circuit PCBA}\cite{Prusa2023a}. While the 3D printer is turned on, the trimpot is manually adjusted until room temperature is reached on the 3D printer display to avoid any future under/over temperature errors.
+
+The print bed of the MK3s 3D printer is removed and replaced with a mount tray [LC1] for the sensing domain. The ERT tray bearing part [PR10] mounted and bolted [HW6] onto the frame of the MK3s as shown in Figure \ref{fig:mk3s_new_trays}. The ERT sensor tray [LC2] and the sensing domain mount tray are fixed together onto the print bed with two M3 bolts [HW6] clamping the trays to the edge of the print bed.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{Figures/cfa_trays_assm_labelled.png}
+	\caption{MK3s with original print bed tray removed and the ERT sensor trays added.}
+	\label{fig:mk3s_new_trays}
+\end{figure}
+
+The firmware version used in this work was MK3s 3.9.0. Later versions may be compatible. Other 3D printer platforms with a similar gcode command set and a similar core firmware such as the \href{https://marlinfw.org/}{Marlin firmware} may also be used as a CFA. However, minor configuration changes in this work's software and hardware may be required.
+
+\section{Operation instructions}
+%Provide detailed instructions for the safe and proper operation of the hardware. 
+%> Step-by-step operational instructions for operating the hardware. 
+%> Use visual instructions as necessary. 
+%> Highlight potential safety hazards.
+To validate and characterise the ERT pressure mapping sensor the CFA is used to apply a sequence of loads to the material. The below sequence of required operations to complete this experiment includes: 
+\begin{enumerate}
+	\item ERT sensor power modes
+	\item ERT sensor programming
+	\item ERT sensing domain preparation
+	\item Load application point and strain configuration
+	\item Touch based mesh bed leveling
+	\item Load experiment execution
+	\item Data capture
+	\item Data processing
+\end{enumerate}
+This sequence of events is repeated for different sensing domains and different loading conditions.
+
+\subsection{ERT sensor power modes}
+\label{sec:Operating modes}
+Before running any experiments, the ERT sensor power mode must be configured. The jumper configuration for the bipolar supply (blue) and +5 V USB single-ended supply (red) mode is shown in Figure \ref{fig:ert_pcb_pinout_mode}.
+
+The bipolar supply first mode is recommended for driving the ERT signal through a wider range of sensing domains at a higher voltage. A bipolar supply of $\pm$20 V is connected to $\pm V_s$ for the best performance of the circuit.
+
+The second power mode uses a +5 V USB 3.X power supply to run the ERT circuit. The second mode is limited to lower resistance sensing domains that can be tested as it can only drive constant currents using +5 V. When using the +5 V supply mode the $-V_s$ and GND pins on the power input must be shorted for the multiplexers to operate. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\linewidth]{Figures/ert_pcb_pinout.png}
+	\caption{ERT PCB pin-out and power mode options. Blue jumpers are for the bipolar supply mode (i.e. $\pm V_s$ attached). Red jumpers are for the +5 V USB supply mode. }
+	\label{fig:ert_pcb_pinout_mode}
+\end{figure}
+For each power mode there will be a distortion of the signal dependent on the power supply voltages and input signal as exemplified in Figure \ref{fig:mux_r_on}.
+
+
+\subsection{ERT sensor programming}
+The ERT sensor contains an ESP-WROOM32 module [U1] which requires the \verb|main_ert.c| program to be built and flashed. This can be achieved using the default project template from the \href{https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html}{ESP-IDF environment}\cite{espressif2024}. The default ERT circuit firmware \verb|main_ert| completes the well proven adjacent electrode drive pattern \cite{Avis1992,Xu2008,Dang2021,Zamora-Arellano2020}. Upon successful programming of the ERT circuit it will output a constant serial stream of the adjacent electrode pattern ERT data separating each frame of 256 measurements with an `\verb|A|'. The ERT sensor circuit has the capability to send the real-time serial ERT data via a USB serial, Bluetooth, or WiFi connection to a EIT reconstruction capable computer.
+
+
+\subsection{ERT sensing domain preparation}
+For sensing domain fabrication instructions refer to Section \ref{sec:Sensing Domain}. The ERT sensing domain needs to have sufficiently low adjacent inter-electrode resistance to function, so that the current source will not saturate due the power supply voltage. The ET electrodes can be attached to the domain in many ways as shown in Figure \ref{fig:CBSR_samples_examples}, ensure these connections provide a reliable electrical contact to the sensing domain. Connect sensing domain electrodes to the ERT circuit FPC connector[W1] via an adapter[J8]. The ERT sensing domain must be flat and centered on the sensing domain holder [PR3, PR4] as shown in Figure \ref{fig:CBSR_samples_examples} (middle). 
+
+
+\subsection{Load application point and strain configuration}
+Load application points and strains applied to the sensing domain can be configured by altering variables in \verb|ertpcb_cfa_reader.py| code. A loading sequence consists of a series of load applications, in the form of a strain pulse train, applied to a set of X and Y coordinates on the sensing domain. The main parameters to change for running a loading sequence are given in Table \ref{tab:ert_cfa_params}.
+\begin{table}[H]
+	\caption{Experimental parameters.}
+	\label{tab:ert_cfa_params}
+	\begin{tabular}{|p{0.3\linewidth}|p{0.1\linewidth}|p{0.5\linewidth}|}
+		\hline
+		\textbf{Variable:}  & \textbf{Unit:} & \textbf{Description:} \\ \hline
+		Strain speed (\texttt{v\_z\_push}) & mm/min & The rising/falling edge gradient for each pulse. \\ \hline
+		Strain limit (\texttt{strain\_limit}) & \% & The maximum compressive strain allowed. \\ \hline
+		Load locations (\texttt{push\_points}) & [mm, mm] & An array of XY locations of each load pulse. \\ \hline
+		Reference offset (\texttt{ref\_loc\_mm}) & [mm, mm] & The XY offset of the zero point of the sensing domain relative to the CFA home reference. \\ \hline
+	\end{tabular}
+\end{table}
+% \begin{itemize}
+	%     \item Push time [s] - The time each strain pulse is held for.
+	%     \item Strain displacement speed [mm/min] - The rising/falling edge gradient for each pulse.
+	%     \item Load locations [mm, mm] - the xy locations of each load pulse.
+	%     \item Strain values [\%] - The strain values of each load pulse. 
+	%     \item Sample thickness [mm] - The sample domain thickness
+	%     \item Current source [A] - The constant current source value.
+	% \end{itemize}
+These can all be found as variables in the software file \verb|ertpcb_cfa_reader.py| within the \verb|main| function. Before running this program the serial COM ports may need to be changed in the \verb|ertpcb_cfa_reader.py| program to match the comports of the CFA and ERT sensor hardware.
+
+\subsection{Load experiment execution}
+Once all hard-coded parameters have been set the command parameters are set and the load experiment begins. To begin the load experiment use the following terminal command:
+\begin{verbatim}
+	>> python ertpcb_cfa_reader.py <dir/filename> <Isrc_A> <Vmax> <sample_name> <date_fabricated>
+\end{verbatim}
+\vspace{-1cm}
+\begin{verbatim}
+	<load_time_s> <strain>
+\end{verbatim}
+
+Where \verb|<dir/filename>| is includes the file directory and file name, \verb|<Isrc_A>| is the constant current source value set in the ERT circuit in amps, \verb|<Vmax>| is the maximum allowed voltage to be read by the ADC in volts (e.g. 20 V), \verb|<sample_name>| is a descriptive sensing domain name, \verb|<date_fabricated>| is the sample fabrication date (`NA' or leave blank if irrelevant), \verb|<load_time_s>| is the strain pulse on and off time in seconds, and \verb|<strain>| is the desired strain applied to the domain as a percentage. If a random test sequence is desired with randomised strain and locations this can be achieved by simply setting the \verb|<strain>| value to -1.
+
+
+\subsection{Touch-based mesh bed leveling}
+% if sample isn't perfectly flat mesh bed leveling can compensate.
+An undulating sensing domain surface can often be present during testing due to an intentionally curved sensor or manufacturing defects. To compensate for an uneven surface a touch-based mesh bed leveling process has been created to improve the quality of the stress/strain data gathered. The process involves the force applicator head travelling towards the sample until a change in force has been detected above 0.1 N. This mitigates the risk of any misalignment with the force applicator surface plane and the sensing domain surface plane and ensures more accurate strain data capture for low strain magnitudes. This touch-based mesh bed leveling is completed before the load sequence experiment begins. The sensing domain and holding trays should not be physically contacted in any form after beginning the \verb|ertpcb_cfa_reader.py| program.
+
+
+\subsection{Data capture}
+Once the \verb|ertpcb_cfa_reader.py| program has completed capturing data, a time-series plot of the 16 inter-electrode resistances, $R_{int}$, will appear. A stable $R_{int}$ is for stable EIT reconstructions of the sensing domain.  
+
+Any significant change in the inter-electrode resistance may cause a poor EIT reconstruction result. A significant change in the inter-electrode resistance could be a result of, applying force too close to the electrodes themselves, an inherently unstable electrode connection, or an external force applied near the electrode. If the $R_{int}$ values are not stable it will be evident in the plot and there will be a warning message in the console. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{Figures/Rint_plot.png}
+	\caption{An example plot of the $R_{int}$ values generated on completion of an experiment for a stable experiment. Where the Electrode \# `i' represents the resistance between electrode `i' and `i+1'.}
+	\label{fig:ert_pcb_pinout_mode}
+\end{figure}
+Once the inter-electrode resistance plot is closed the program will continue to save all of the data in three separate files for the given \verb|filename|,
+\begin{enumerate}
+	\item \textit{filename}.csv - Time series data for ERT voltages, compression forces, and force applicator XYZ locations. The UTC start date and time of the experiment is given in the top row.  
+	\item \textit{filename}.pkl - Logs the same data as the .csv file \textbf{and} all of the important experiment parameters into a serialised python `pickle' file.
+	\item \textit{filename}.gcode - The gcode file of the commands sent to the 3D printer platform for the experiment run.
+\end{enumerate}
+
+
+\subsection{Data processing}
+% Default EIT reconstruction algorithm (don't need to provide this)
+Once all of the data has been collected in the above steps, the data can be processed. Data processing includes the following,
+\begin{enumerate}
+	\item Pre-processing of the raw voltage, force, and position data. Filtering and data cleaning could be included in this step.
+	\item Image reconstruction using a chosen EIT algorithm with the pre-processing or raw data. EIT reconstruction could include algorithms such as regularised Newton's methods \cite{Lionheart2004}, neural network based methods \cite{Biasi2022, Husain2021}, and back projection methods \cite{Avis1992}.
+	\item Any post-processing of the EIT image reconstruction data and integration with the force applicator stress and/or strain data. Post-processing could include resistance to force inverse modelling, pressure mapping performance metric quantification, an application specific software interface.
+\end{enumerate}
+In this work EIDORS \cite{Sherry2006} has been used to complete the EIT reconstructions of the domain and any post processing is then completed with a python program as shown in Section \ref{sec:Validation and characterisation}.
+
+
+\section{Construction and Operational Safety}
+Various safety concerns must be stated for the construction and operation precautions of this system. This is not a comprehensive safety guide, but will give an overview of some potential safety concerns. Other precautions may be necessary depending on the development location and sensing domain materials used. The construction and operation of the system can each be separated into three parts, the ERT sensor circuit, the CFA, and the sensing domain.
+
+
+\subsection{Construction}
+During the assembly of the ERT sensor circuit the regular health and safety procedures for assembling and soldering a PCB must be followed.
+
+During testing of the CFA as a 3D printer there will be moving parts which could get caught on long hair or collide with a person too close. Steps must be taken to avoid any undesired collisions or any people touching the CFA during operation.
+
+When fabricating the sensing domain often this involves micro/nano sized conductive particles dangerous for inhalation and sometimes dangerous to touch. The material safety datasheet must be consulted for any material used in the sensing domain. Any safety procedures with mixing machines and curing devices must be followed.
+
+\subsection{Operation}
+The PCBA can operate on up to $\pm$ 20 VDC which is within the safe level the SELV as defined by IEC \cite{IEC2005}. However, should the contacts of the power supply to the ERT circuit be electrically shorted, a burn or fire hazard may arise. The current on the sensing domain electrodes is limited to prevent a dangerous short circuit current.
+
+During the operation of the CFA there will be moving parts which could collide tangle long hair or collide with the person operating. Steps must be taken to avoid any undesired collisions or any people touching the CFA during operation.
+
+The sensing domain may not be bio-compatible so the material safety datasheet(s) for each domain must be followed for each real world sensor application.
