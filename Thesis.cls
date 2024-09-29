@@ -159,7 +159,7 @@ pdfstartview={FitV},unicode,breaklinks=true]{hyperref}
 
 \chapviii   {?? A Capacitive Shunting in a Dielectric Elastomer EIT-based Pressure Mapping Device}
 
-\chapix     {A Softer Future}
+\chapix     {Beyond Rigid - A Softer Future}
 
 % front matter defs
 \newcommand*{\supervisor}[1]{\def\supname{#1}}
