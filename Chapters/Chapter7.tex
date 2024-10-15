@@ -4,7 +4,7 @@
 
 
 \section*{Abstract}
-	This chapter investigates the phenomenon of unintentional power generation in Dielectric Elastomer Actuator (DEA) devices integrated with Electrical Impedance Tomography (EIT) for pressure mapping applications. While DEAs are primarily designed for actuation, they can inadvertently function as Dielectric Elastomer Generators (DEGs) due to localised mechanical strain during operation. The research explores the mechanisms behind this unintended energy generation, focusing on the changes in capacitance that occur when the DEA is subjected to varying loads. Through experimental simulations, the study quantifies the energy produced, revealing that energy generation can range from 0.2 $\mathrm{\mu}$J to 4 mJ depending on the load conditions. The findings highlight the dual functionality of DEAs, emphasising the need for careful management of energy generation to prevent potential damage to connected circuitry. This work contributes to the understanding of DEA-EIT devices and their applications in soft robotics and energy harvesting, suggesting that while unintentional, the energy generated could be harnessed for practical use in various scenarios, including vehicular and foot traffic loads. Future work aims towards harnessing the DEG energy shown in this work and using it to power the portable ERT-circuit expanding the range of applications.
+	This chapter investigates the phenomenon of unintentional power generation in Dielectric Elastomer Actuator (DEA) devices integrated with Electrical Impedance Tomography (EIT) for pressure mapping applications. While DEAs are primarily designed for actuation, they can inadvertently function as Dielectric Elastomer Generators (DEGs) due to localised mechanical strain during operation. The research explores the mechanisms behind this unintended energy generation, focusing on the changes in capacitance that occur when the DEA is subjected to varying loads. Through experimental simulations, the study quantifies the energy produced, revealing that energy generation can range from 0.2 $\mathrm{\mu}$J to 4 mJ depending on the load conditions. The findings highlight the dual functionality of DEAs, emphasising the need for careful management of energy generation to prevent potential damage to connected circuitry. This work contributes to the understanding of DEA-EIT devices and their applications in soft robotics and simultaneous energy harvesting, suggesting that the energy generated could be harnessed for practical use in various scenarios, including vehicular and foot traffic loads. Future work aims towards harnessing the DEG energy shown in this work and using it to power the portable ERT-circuit in Chapter \ref{chapter5} expanding the range of potential applications.
 
 
 
@@ -48,10 +48,10 @@ Where $C_i$ is the initial capacitance of the DEA, $C_{ii}$ is the `primed' capa
 \textbf{State A}: the DEA has an initial capacitance of $C_i$, is deformation free, and has zero voltage applied across the compliant electrodes.
 
 \textbf{State B}: the DEA is compressed and deformed with a localised change(s) in thickness of the DE, $\Delta z$, increasing the DEA capacitance to $C_{ii}$. Work is done on the DEA by the compressive load storing elastic potential energy in the strained DE.
-As derived from Hooke's law the elastic potential energy, $U_{\varepsilon}$ for a material of Young's modulus, $Y$, cross-sectional area, $A_i$, original thickness, $z_i$, and change in thickness, $\Delta z$ is given in Equation \ref{eqn:elastic-energy}. This equation is for a singular body with an even change in thickness across the area, $A_{DE}$, showing the core parameters governing the elastic potential energy.
+As derived from Hooke's law the elastic potential energy, $U_{\varepsilon}$ for a material of Young's modulus, $Y$, cross-sectional area, $A_i$, original thickness, $z_i$, and change in thickness, $\Delta z$ is given in Equation \ref{eqn:elastic-energy}. This equation is for a singular body with an even change in thickness across the area, $A_i$, showing the core parameters governing the elastic potential energy.
 % Todo: mention that this equation isn't suffice so we use FEM modelling which gives a better representation of the Hookean continuum model but still neglects viscous damping within the material.
 \begin{equation}
-	U_{\varepsilon} = \frac{YA_0\Delta z^2}{2z_i}
+	U_{\varepsilon} = \frac{YA_i\Delta z^2}{2z_i}
 	\label{eqn:elastic-energy}
 \end{equation}
 
@@ -76,7 +76,7 @@ When the load is released the elastic potential energy, $U_{\varepsilon}$, is us
 	U_{E(D)} = \frac{1}{2}C_{i}V_ii^2
 	\label{eqn:elec-energy2}
 \end{equation}
-Resulting in a gain of electrical potential energy $\Delta U_E$ comprising the difference of $U_{EC}$ and $U_{ED}$.
+Resulting in a gain of electrical potential energy $\Delta U_E$ comprising the difference of $U_{E(C)}$ and $U_{E(D)}$.
 
 \textbf{State A*}: The DEA is discharged into the energy harvesting circuit returning the charge and voltage values across the DEA to zero, returning to State A. 
 
@@ -104,7 +104,9 @@ To confirm the existence of this DEG phenomena in the DEA-EIT device design has 
 To obtain a representation of how the DEA structure will deform during a different loading events, a static load FEA study was performed to determine the expected deformation of the DEA and create mesh models. The deformed mesh models were then used for further electrostatic FEM studies to determine the change in capacitance of the DEA structure.
 
 The materials used for the FEA load study were closely matched to the characteristics of the material used in previous work \cite{Ellingham2024} . For the compliant electrode a Young's modulus of 100 kPa was used with a Possion's ratio, $\nu_{ce}$ of 0.4, an electrode thickness, $z_{CE}$, of 0.5 mm, and the diameter of 100 mm. The DE material Young's modulus was set to 90kPa with a Poisson's ratio, $\nu_{DE}$, of 0.49, a membrane thickness, $z_{DE}$, of 0.5 mm, and the diameter of 100 mm. 
-% Todo add references here for the Poisson's ratio... Investigate whether this value can be derived from already collected data?? Unlikely.. 
+
+The Poisson's ratio of the DE and the compliant CBSR electrodes differs due to viscoelasticity and micro-porosity seen in this material as shown by the SEM images in Figure \ref{fig:SEM_CB_SR} in Chapter \ref{chapter3}. To determine the Poisson's ratio more accurately for the composite material, empirical data should be gathered as there is limited data for similar composite material with microporosity.  % To do: Add more references showing the decrease in Poisson's ratio due to filler and microporosity here??
+% Todo add references here for the Poisson's ratio... Investigate whether this value can be derived from already collected data?? Unlikely.. previously I have measured the Poisson's ratio to be 0.48 for CBSR??
 
 A static load analysis of the circular areas shown in Figure \ref{fig:DEA-EIT_loading}, for a range of force values. The loads ranged from 2.5 to 240 N, to obtain comparable strain values to those seen within our previous research \cite{Ellingham2021,Ellingham2024} . The bottom electrode surface was assumed fixed in place and rigid to simulate a typical application case where the compliant DEA-EIT material is adhered to a rigid body.
 
@@ -117,7 +119,7 @@ The deformed meshes from the previous load study were used to generate new meshe
 
 
 \subsection{Voltage and Energy Generation}
-The voltage increase and energy generated for each DEA load case was calculated from the capacitance values determined in the electrostatics studies using Equations \ref{eqn:charge-cap-volt1} - \ref{eqn:elec-energy2}. Analysis of which types of loads can be handled by the DEA-EIT device when undergoing high voltage switching is a critical step for determining the limitations of future applications of the DEA-EIT device. The capacitance results generated from the FEA studies are then validated using Equation \ref{eqn:capacitance}.
+The voltage increase and energy generated for each DEA load case was calculated from the capacitance values determined in the electrostatics studies using Equations \ref{eqn:charge-cap-volt1} - \ref{eqn:elec-energy2}. Analysis of which types of loads can be handled by the DEA-EIT device when undergoing high voltage switching is a critical step for determining the limitations of future applications of the DEA-EIT device. The capacitance results generated from the FEA studies are then validated using parallel plate capacitor Equation \ref{eqn:capacitance}.
 \begin{equation}
 	C = \epsilon_0 \epsilon_r \frac{A}{z}
 	\label{eqn:capacitance}
@@ -153,16 +155,18 @@ The deformed DEA-EIT structure causes the overall capacitance across the device 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{Figures/d50mm_load_labelled_shoulder_zoom.png}
-	\caption{Electric field simulation of 50 mm diameter 240 N load case. With a zoomed section to show the electric field 'fringe' effects at the shoulder of the load cross-section. Volumetric arrows proportional to electric field strength.}
+	\caption{Electric field simulation of 50 mm diameter 240 N load case. With a zoomed section to show the electric field `fringe' effects at the shoulder of the load cross-section. Volumetric arrows proportional to electric field strength.}
 	\label{fig:FEM_DEA-EIT_cap}
 \end{figure}
 
 
 \subsection{Voltage and Energy Generation}
 \label{subsec:Voltage and Energy Generation}
-The parallel plate assumption for calculating capacitance of the DEA-EIT becomes invalid for the deformed DEA-EIT device. An approximation using the electric field FEM result on the deformed DEA-EIT FEM result is used using Maxwell capacitance matrix.
+To show the scale at which energy is generated an example scenario for the extra voltage generated is given. Given that the values from Figure \ref{fig:dea_eit_deg} are, $C_i = 10 pF$, $C_{ii} = 15 pF$, and $V_i = 5 kV$. We get a charge $Q = 75 nC$, and then at stage D, $V_{ii} = \frac{Q}{C_{i}} = 7.5 kV$. This gives a voltage change, $\Delta V = +2.5 kV$.
 
-To show the scale at which energy is generated an example scenario for the extra voltage generated is given. Given that the values from Figure \ref{fig:dea_eit_deg} are, $C_i = 10 pF$, $C_{ii} = 15 pF$, and $V_i = 5 kV$. We get a charge $Q = 75 nC$, and then at stage D, $V_{ii} = \frac{Q}{C_{i}} = 7.5 kV$. This gives a voltage change, $\Delta V = +2.5 kV$. 
+The parallel plate assumption for calculating capacitance of the DEA-EIT becomes invalid for the deformed DEA-EIT device. An approximation utilising the electric field FEM result on the deformed DEA-EIT FEM result is calculated using Maxwell capacitance matrix.
+
+The change in capacitance was used to calculate the generated energy and voltage, values from the experiment are shown in Tables \ref{tab:volt-energy-gen-d13mm} and \ref{tab:volt-energy-gen-50mm}.
 
 %% Todo: Add energy generated column for each case
 \begin{table}[H]
@@ -202,10 +206,12 @@ To show the scale at which energy is generated an example scenario for the extra
 
 To validate the capacitance results form Tables \ref{tab:volt-energy-gen-d13mm} and \ref{tab:volt-energy-gen-50mm} the the capacitance was solved analytically using the parallel-plate capacitance approximation given in Equation \ref{eqn:capacitance}. Matching the parameters of the FEA simulation the capacitance of the 100 mm DEA device with no load applied, the capacitance was approximated to be 584.13 pF.
 
+A comparison of two similar trends for different loads applied to the DEG using FEM and an analytical method can be observed in Figure \ref{fig:volt-energy-gen-13_and_50mm}. The analytical solution is given in Appendix \ref{appendix-F}.
+
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\linewidth]{Figures/plot_DEG_stress_vs_VgenUgen.png}
-	\caption{Observing the trends from the energy and voltage generation results for the range of loads applied.}
+	\includegraphics[width=0.65\linewidth]{Figures/plot_DEG_strain_vs_Vgen_FEM_vs_analytical.png}
+	\caption{FEM vs analytical solution for voltage generation, $\Delta V$, for an initial voltage input of 5 kV for the range of loads applied.}
 	\label{fig:volt-energy-gen-13_and_50mm}
 \end{figure}
 
@@ -213,7 +219,15 @@ To validate the capacitance results form Tables \ref{tab:volt-energy-gen-d13mm} 
 \section{Discussion}
 \label{sec:discussion}
 % Small impact statement!
-The results from this work show promise towards understanding the energy generated from an EIT-DEA device when used in a particular fashion. The FEA simulations completed were validated analytically with a small discrepancy of 4.73 pF, i.e. 0.8\% error, due to the electric field fringe effects the parallel plate capacitor assumption does not account for. The plot shown in Figure \ref{fig:volt-energy-gen-13_and_50mm} shows the trends for a 13 mm and 50 mm load applicator, from this the prominence of the decreasing dielectric thickness can be seen to give a large increase in voltage and energy generated. At these high strains the likelihood of dielectric break through is significantly increased, especially so in a real world scenario when the load surface may contain sharp features.
+The results from this work show promise towards understanding the energy generated from an EIT-DEA device when used in a particular fashion. The FEA simulations completed were validated analytically with a small discrepancy of 4.73 pF, i.e. 0.8\% error, due to the electric field fringe effects the parallel plate capacitor assumption does not account for. The plot shown in Figure \ref{fig:volt-energy-gen-13_and_50mm} shows the trends for a 13 mm and 50 mm load applicator, from this the prominence of the decreasing dielectric thickness can be seen to give a large increase in voltage and energy generated. At these high strains the likelihood of dielectric break through is significantly increased, especially so in a real world scenario when the load surface may contain sharp features, piercing or forming stress concentrations within the DE. The comparison of the FEM and analytical approximation in Figure \ref{fig:volt-energy-gen-13_and_50mm_err} shows that the fringing electric field effect increases with increasing input strain deformation.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.65\linewidth]{Figures/plot_DEG_strain_vs_Vgen_err.png}
+	\caption{FEM vs analytical solution error for voltage generation, $\Delta V$, for an initial voltage input of 5 kV for the range of loads applied.}
+	\label{fig:volt-energy-gen-13_and_50mm_err}
+\end{figure}
+
 
 % useful applications
 % how to harness it
@@ -221,13 +235,12 @@ The energy generated by the sequence shown in Figure \ref{fig:dea_eit_deg}, can 
 
 Such energy generation case may be avoided in a system by detecting that a pressure event has occurred and preventing the excitation of the DEA or limiting the charge accumulation on each plate of the capacitor.
 
-An example scenario of voltage and energy generation was given in Section \ref{subsec:Voltage and Energy Generation}. This voltage change transient is connected to the EIT multiplexer through the capacitance of the DEA, as shown by Equation \ref{eqn:mux_voltage}. The multiplexer pins used in this case are limited to between the power rails, i.e. $\pm$22 V \cite{VishayPG2018}. In the case described above the minute change in capacitance of the DEA is calculated to generate 93.75 $\mu$J of energy.
+An example scenario of voltage and energy generation was given in Section \ref{subsec:Voltage and Energy Generation}. This voltage change transient could be connected to an EIT multiplexer through the capacitance of the DEA, as shown by Equation \ref{eqn:mux_voltage}. The multiplexer pins used in this case are limited to between the power rails, i.e. $\pm$22 V \cite{VishayPG2018}. In the case described above the minute change in capacitance of the DEA is calculated to generate 93.75 $\mu$J of energy.
 
 
 To determine the device's tolerance against transient voltage spikes, the EIT multiplexer limits would need to be characterised. Otherwise, in the case of an input pin overvoltage CMOS latch-up may occur \cite{Redmond2001} . Typical ESD standards \cite{IEC2008} state that electronic devices must be tolerant to 200 pF capacitance charged to $\pm$15 kV, giving an energy dissipation of 22.5 mJ. This is several orders of magnitude larger than the energy generated in the simulation results shown in Tables \ref{tab:volt-energy-gen-d13mm} and \ref{tab:volt-energy-gen-50mm}. However, for different configurations of DEA device this energy generation may become significant.
 %% justify above statement with references. I.e. how much energy is in a standardised maximum ESD discharge. Typical ESD devices have a 100-200 pF capacitance charged up to 8 - 15 kV voltage. 
 
-The Poisson's ratio of the DE and the compliant CBSR electrodes differs due to viscoelasticity and micro-porosity seen in this material as shown by the SEM images in Figure \ref{fig:SEM_CB_SR} in Chapter \ref{chapter3}. To determine the Poisson's ratio more accurately for the composite material, empirical data should be gathered as there is limited data for similar composite material with microporosity.  % To do: Add more references showing the decrease in Poisson's ratio due to filler and microporosity here??
 
 % To do: Address idealness of FEM study completed and how physical experimentation could help create a relationship between the simulated and real data in future.
 % To do: Run some experiments to see roughly if the same trend from the simulated data is seen in real-life.
@@ -235,6 +248,6 @@ The Poisson's ratio of the DE and the compliant CBSR electrodes differs due to v
 \section{Conclusions}
 % Overall conclusion ... Can be prevented, only significant if delta C is large, requires more testing, could create a DEG-EIT device to capture data from cars, foot traffic?
 
-This work has investigated the prominence of energy generation of a 100 mm diameter DEA device with a 500 $\mu$m dielectric elastomer. The sequence by which this energy generation occurs has been explained, and several scenarios have been tested for energy generation from localised 13 mm and 50 mm diameter loads. Depending on the load force 0.2 $\mu$J to 4 mJ of energy generation has been estimated. Although these are small values, often DEAs require large voltages to actuate so any amplification of these voltages needs to be handled on a case by case basis for each application and DEA device. Using methods to estimate the occurrence of a change in DEA capacitance is recommended in all applications to either avoid or harness this energy generation. Potential future applications of a device that utilises this energy generation ranges from vehicular traffic loads to foot traffic loads. Future work aims to to validate the simulated findings and determine the main losses in a real world application. Then the designed DEG system could be created and used to power a EIT-based pressure sensing circuit. 
+This work has investigated the prominence of energy generation of a 100 mm diameter DEA device with a 500 $\mu$m dielectric elastomer. The sequence by which this energy generation occurs has been explained, and several scenarios have been tested for energy generation from localised 13 mm and 50 mm diameter loads with magnitudes ranging from 0 - 240 N. Depending on the load force, 0.2 $\mu$J to 4 mJ of energy generation has been estimated. Although these are small energy values, often DEAs require large voltages to actuate so any amplification of these voltages needs to be handled on a case by case basis for each application and DEA device. Using methods to estimate the occurrence of a change in DEA capacitance is recommended in all applications to either avoid or harness this energy generation. Potential future applications of a device that utilises this energy generation ranges from vehicular traffic loads to foot traffic loads. Future work aims to to validate the simulated findings and determine the energy losses in a real world application. Then in further future work the designed DEG system may be created and used to power a EIT-based pressure sensing circuit. 
 
-\afterpage{\blankpage}
+%\afterpage{\blankpage}

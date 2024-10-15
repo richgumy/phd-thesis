@@ -70,10 +70,10 @@ where $C$ and $P^{k,j}$ are predetermined vectors that depend only on the known 
 % TODO?: Insert images and equations explaining EIT??
 
 % Explaining the required post processing
-Once the EIT reconstruction algorithm has been tuned for an application, often post-processing is completed on the reconstructed EIT image for filtering and to capture data specific for the application. A consortium of experts in the field of medicine and biomedical imaging  have constructed metrics for quantifying the quality of an EIT reconstruction as shown by Adler et al. \citep{Adler2009} and their GREIT (Graz consensus Reconstruction algorithm for EIT) performance metrics. Although GREIT has been optimised for human thorax imaging, researchers who have used EIT pressure sensing purposes have also developed performance metrics, most of which agree with the GREIT metrics \citep{Wang2020,Silvera-Tawil2015,Visentin2016,Tallman2020,Sun2020,Hassan2009,Kato2007}.
+Once the EIT reconstruction algorithm has been tuned for an application, often post-processing is completed on the reconstructed EIT image for filtering and to capture data specific for the application. A consortium of experts in the field of medicine and biomedical imaging  have constructed metrics for quantifying the quality of an EIT reconstruction as shown by Adler et al. \citep{Adler2009} and their GREIT (Graz consensus Reconstruction algorithm for EIT) performance metrics. Although GREIT has been optimised for human thorax imaging, researchers who have used EIT pressure sensing purposes have also developed performance metrics, most of which agree with the GREIT metrics \citep{Silvera-Tawil2015,Visentin2016,Tallman2020,Sun2020,Hassan2009,Kato2007}.
 
 \subsection{Related Work} \label{sec:Related Work}
-Artificial skins are not a novel subject there are many different methods for localising loads in two-dimensions on a soft domain. A limiting factor found with non-EIT based methods of pressure mapping were the size of discretely sensed regions, also known as sensels. Often these sensels are limited by various factors in the fabrication process and the bulk of electrode wires required. This bulk is exemplified high electrode-to-sensel ratio. Example load mapping technology include, optical \citep{Ramuz2012,Shimadera2022,Rossiter2005}, piezoresistive \citep{Gilanizadehdizaj2022,Fu2020,Yang2022}, capacitive \citep{Liang2015}, and magnetic \citep{Yan2021}.
+Artificial skins are not a novel subject there are many different methods for localising loads in two-dimensions on a soft domain. A limiting factor found with non-EIT based methods of pressure mapping were the size of discretely sensed regions, also known as sensels. Often these sensels are limited by factors in the fabrication process and the bulk of electrode wires required. This bulk is exemplified high electrode-to-sensel ratio. Example load mapping technology include, optical \citep{Ramuz2012,Shimadera2022,Rossiter2005}, piezoresistive \citep{Gilanizadehdizaj2022,Fu2020,Yang2022}, capacitive \citep{Liang2015}, and magnetic \citep{Yan2021}.
 
 
 % related works and holes in their research
@@ -200,7 +200,7 @@ The $A_{OL}$ was found using:
     A_{OL} = 100\times\left[\frac{\left(\sum_i^{N_{b}} A_{e_i}\right)}{A_{FA}} + \frac{\left(\sum_i^{N_{b}} A_{e_i}\right)}{A_{b}}\right]\bigg/2 : e_{{CoM}_i} \in \Omega_{FA}
     \label{eqn:area_overlap}
 \end{equation}
-Where $A_{e_i}$ is the area of an element and $\Omega_{FA}$ is the domain of the force applicator area. $A_{FA}$ and $A_{b}$ are the areas of the force applicator and sensed region respectively. The closer the $A_{OL}$ is to 100\%, the better the overlap of the estimated and actual load application.
+Where $A_{e_i}$ is the area of an element and $\Omega_{FA}$ is the domain of the force applicator area. $A_{FA}$ and $A_{b}$ are the areas of the force applicator and sensed region respectively. The closer the $A_{OL}$ is to 100\%, the more overlap there is between the estimated and actual load application.
 
 The $S\!D$ was found using:
 \begin{equation}
@@ -799,7 +799,7 @@ The $S\!D$ is the mean square error between the force applicator perimeter and s
 
 Comparing the different percentage threshold masks for the experiment shown in Figure \ref{fig:recon_perform_8p}, it was determined that each percentage mask of 50\%, 75\%, and 85\% gave showed the spatial performance for the $E_{CoM}$, $S\!D$, and $A_{OL}$. However, the standard deviation of these values is comparable to the mean itself therefore looking at the mean performance metric value in each location was shown in Table \ref{tab:spatial_metrics_stats_8p_strain20_loads}. The lowest $E_{CoM}$ was found to be 0.67 $\pm$ 0.41 mm, at $L_2$. The highest $A_{OL}$ value was found to be 87.93 $\pm$ 2.68\%. The lowest $S\!D$ value was found to be 0.12 $\pm$ 0.01 mm$^2$ at $L_1$.
 
-The CBSR 8 wt\% samples gave better performance metric results than the 9 wt\% samples due to the residual transient effects of previous load events as exemplified in Figure \ref{fig:recon_perform_9p}. This will be mitigated in future by using a blob separation algorithm whereby each sensed-region/blob is given a weighting based on its appearance time, size, decay characteristic, and performance metric values.
+The CBSR 8 wt\% samples gave superior performance metric results than the 9 wt\% samples due to the residual transient effects of previous load events as exemplified in Figure \ref{fig:recon_perform_9p}. This will be mitigated in future by using a blob separation algorithm whereby each sensed-region/blob is given a weighting based on its appearance time, size, decay characteristic, and performance metric values.
 
 The spatial performance metrics are useful for quantifying future testing with irregular load application area shapes and multiple loading events in future testing to validate a variety of irregular and multi-load test cases. Performance metric inconsistencies in the different load locations show that the electro-mechanical characteristics of the material is varies throughout the material. These metrics would all contribute toward a calibration step to compensate for material inhomogeneity, allowing for a range of materials to be used for the sensing domain.
 
@@ -838,7 +838,7 @@ For the tennis court application, the importance of player location and speed ma
 
 Larger-scale applications of an EIT-based sensor come with challenges such as, scaling the electronics driving the EIT measurement, fabricating such a large homogeneously piezoresistive domain, and ensuring the reliability in a range of outdoor environmental conditions. Conversely, smaller-scale applications are limited by the conductive particle size in the PNEC. A sensing domain thickness sufficiently larger than the average agglomerate size would be required for reliable EIT mapping and force estimates.
 
-Various forms of tribological wear on the device sensing region would alter the piezoresisitive characteristic of the device. Encapsulation of the device could be implemented to minimise wear and increase hermeticity.
+Different forms of tribological wear on the device sensing region would alter the piezoresisitive characteristic of the device. Encapsulation of the device could be implemented to minimise wear and increase hermeticity.
 
 The most obvious limitation of this sensor is the frequency response of the material as shown in Appendices \ref{fig:strain_ts_8p_1D} - \ref{fig:strain_ts_9p}, which could be algorithmically filtered or inverse-modeled to be corrected. Else, other more responsive, less viscoelastic materials could be used, and/or a capacitive EIT-based pressure mapping device used to improve the frequency response of this device.
 
@@ -876,4 +876,4 @@ It was shown that the CBSR 8 wt\% sample out performed the CBSR 8wt\% sample in 
 
 Using these performance metric data in future work a piezoresistively inhomogeneous sensor domain could be, calibrated to homogenise the apparent domain piezoresistivity, compensated for transient phenomena, and sense loads with a known degree of accuracy. All of these factors contribute to optimising the EIT-based 2D pressure mapping sensor for different applications. The next chapter includes the development of a low-cost, small circuit to discretely capture the EIT data to open up a larger range of mobile and wearable applications. The work shows promise for future use of an EIT-based sensor in a variety of applications requiring a soft sensing domain and non-invasive rigid electrodes.
 
-\afterpage{\blankpage}
+%\afterpage{\blankpage}

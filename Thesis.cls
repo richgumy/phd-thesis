@@ -71,11 +71,19 @@ LaTeX document class]
 \renewcommand{\chaptermark}[1]{\btypeout{\thechapter\space #1}\markboth{\@chapapp\ \thechapter\ #1}{\@chapapp\ \thechapter\ #1}}
 \renewcommand{\sectionmark}[1]{}
 \renewcommand{\subsectionmark}[1]{}
-\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+%\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else % enable for two sided doc and also add bindingoffset!
+%	\hbox{}
+%	\thispagestyle{empty}
+%	\newpage
+%	\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\def\cleardoublepage{\clearpage \ifodd\c@page\else
 	\hbox{}
+	\begin{center}
+		\textit{This page is intentionally left blank.}
+	\end{center}
 	\thispagestyle{empty}
 	\newpage
-	\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+	\if@twocolumn\hbox{}\newpage\fi\fi}
 \usepackage{amsmath,amsfonts,amssymb,amscd,amsthm,xspace}
 \theoremstyle{plain}
 \newtheorem{example}{Example}[chapter]
@@ -157,9 +165,7 @@ pdfstartview={FitV},unicode,breaklinks=true]{hyperref}
 
 \chapvii    {Unintentional Power Generation in a DEA-EIT Sensor-Actuator Device}
 
-\chapviii   {?? A Capacitive Shunting in a Dielectric Elastomer EIT-based Pressure Mapping Device}
-
-\chapix     {Beyond Rigid - A Softer Future}
+\chapviii   {Beyond Rigid - A Softer Future}
 
 % front matter defs
 \newcommand*{\supervisor}[1]{\def\supname{#1}}

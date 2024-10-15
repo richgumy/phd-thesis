@@ -24,12 +24,16 @@
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{afterpage}
 
-\newcommand\blankpage{%
-	\null
-	\thispagestyle{empty}%
-%	\addtocounter{page}{1}%
-	\newpage}
-
+%\newcommand\blankpage{%
+%	\null
+%	\thispagestyle{empty}%
+%	\begin{center}
+%		\textit{This page has intentionally been left blank}
+%	\end{center}
+%%	\addtocounter{page}{1}%
+%	\newpage}
+%\newcommand\blankpage{\if@openright\cleardoublepage\else\clearpage\fi
+%	\thispagestyle{plain}%
 
 \newgeometry{left=2in,right=0in,bottom=0in,top=2in}
 
@@ -37,14 +41,11 @@
 \def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
 \let\endchangemargin=\endlist
 
-\def \thesistitle{Sensing and Actuation in Electroactive Elastomeric Bodies}
-\def \thesistitle{Unlocking Synergy Between Sensing and Actuation: Electroactive Elastomeric Composite Bodies for Soft Robotics.}
-\def \thesistitle{The Interplay of Two Soft Robotics Sensor and Actuator Technologies using Carbon Based Elastomer Composites.}
-\def \thesistitle{Beyond Rigid: Forming and Characterising Novel Soft Sensor-Actuator Technologies.}
-\def \thesistitle{Towards Artificial Skin and Muscle: Soft Electroactive Elastomeric Bodies that Can Sense and Contract}
-% Other thesis title ideas:
-% 
-% Conductive Particle Elastomers as Artificial Skins and Actuators
+\def \thesistitle{Sensing and Actuation in Conductive Particle Electroactive Elastomeric Bodies}
+%\def \thesistitle{Unlocking Synergy Between Sensing and Actuation: Electroactive Elastomeric Composite Bodies for Soft Robotics.}
+%\def \thesistitle{The Interplay of Two Soft Robotics Sensor and Actuator Technologies using Carbon Based Elastomer Composites.}
+%\def \thesistitle{Beyond Rigid: Forming and Characterising Novel Soft Sensor-Actuator Technologies.}
+%\def \thesistitle{Towards Artificial Skin and Muscle: Soft Electroactive Elastomeric Bodies that Can Sense and Contract}
 
 %% ----------------------------------------------------------------
 \begin{document}
@@ -81,9 +82,9 @@
 			\item[\tiny{$\blacksquare$}] Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.
 			\\
 		\end{itemize}
-		Signed:\\
+		Signed: \\
 		\rule[1em]{25em}{0.5pt}  % This prints a line for the signature
-		Date:\\
+		Date: \\
 		\rule[1em]{25em}{0.5pt}  % This prints a line to write the date
 	}
 	\clearpage  % Declaration ended, now start a new page
@@ -92,13 +93,9 @@
 	\pagestyle{empty}  % No headers or footers for the following pages
 	\null\vfill
 	% Now comes the "Funny Quote", written in italics
-	\textit{``When do you think you can submit your thesis?''}
+	\textit{``''}
 	\begin{flushright}
-		T. Giffney, April 2024
-	\end{flushright}
-	\textit{``Today.''}
-	\begin{flushright}
-		R. Ellingham, September 2024
+		Rudyard Kipling, 1895
 	\end{flushright}
 	\vfill\vfill\vfill\vfill\vfill\vfill\null
 	\clearpage  % Funny Quote page ended, start a new page
@@ -108,13 +105,11 @@
 	\addtotoc{Abstract}  % Add the "Abstract" page entry to the Contents
 	\abstract{\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 		% 
-		Some of the world's most advanced technology is rigid due to various factors such as; manufacturability, miniaturisability, physical linearity, and more ideal physics in general. In parallel industries is also looking to use automation to improve and replace laborious tasks whether they be domestic, commercial, or industrially related tasks. Their is a growing need for new innovations in technology to utilise the soft robotic solutions that mimic biological solutions seen in nature. This thesis is part of many to improve an understanding of the electroactive polymer subset of soft robotics and the limitations of specific implementations of artificial skin and artificial muscle technologies.
+		Some of the world's most advanced technology is rigid due to various factors such as; manufacturability, miniaturisability, physical linearity, and more ideal physics in general. Their is a growing need for new innovations in technology to utilise the soft robotic solutions that mimic biological solutions seen in nature. This thesis develops and integrates an artificial skin and artificial muscle technology by combining of Electrical Impedance Tomography (EIT), carbon black silicone rubber (CBSR) elastomer composites, and Dielectric Elastomer Actuators (DEAs) to enhance pressure mapping, strain sensing, and actuation capabilities.
 		
-		This thesis explores the integration of Electrical Impedance Tomography (EIT), carbon black silicone rubber (CBSR) elastomer composites, and Dielectric Elastomer Actuators (DEAs) to enhance pressure mapping, strain sensing, and actuation capabilities.
+		CBSR elastomer composites, noted for their high stretchability and biocompatibility, were investigated to understand their resistance relaxation behavior. This research contributes to optimising the design of flexible dynamic strain sensors by modelling the response of resistance to transient strain inputs. The next past of the work developed an EIT-based pressure mapping system using a CBSR sensing domain that mimics pressure mapping qualities of human skin. This system was evaluated for its spatial and temporal resolution, showing potential for creating artificial pressure-sensitive skin with practical applications. Furthermore, the integration of EIT with DEAs was examined to improve the mapping of compressive forces across the actuator electrode surfaces. Despite some trade-offs in accuracy due to electrode compliance, this approach offers promising advancements for applications requiring precise actuation and pressure mapping. This work has contributed towards filing a patent for an DEA-EIT actuator-sensor device. Additionally, the research has uncovered unintentional power generation in DEAs, which could function as Dielectric Elastomer Generators (DEGs) with mechanical strain inputs. This finding highlights the multi-functionality of DEAs and suggests opportunities for energy harvesting applications. To aid the portability of EIT-based pressure mapping sensor developed, a low-cost circuit and evaluation tools were developed. This system enables comprehensive characterisation of various sensing domains and supports advancements in EIT-based soft sensor technology, with implications for biomedical devices, robotics, and energy harvesting. 
 		
-		CBSR elastomer composites, noted for their high stretchability and biocompatibility, were investigated to understand their resistance relaxation behavior. This research contributes to optimising the design of flexible dynamic strain sensors by modeling the response of resistance to transient strain inputs. The next past of the work developed an EIT-based pressure mapping system using a CBSR sensing domain that mimics pressure mapping qualities of human skin. This system was evaluated for its spatial and temporal resolution, showing potential for creating artificial pressure-sensitive skin with practical applications. Furthermore, the integration of EIT with DEAs was examined to improve the mapping of compressive forces across the actuator electrode surfaces. Despite some trade-offs in accuracy due to electrode compliance, this approach offers promising advancements for applications requiring precise actuation and pressure mapping. This work has contributed towards filing a patent for an DEA-EIT actuator-sensor device. Additionally, the research has uncovered unintentional power generation in DEAs, which could function as Dielectric Elastomer Generators (DEGs) with mechanical strain inputs. This finding highlights the dual functionality of DEAs and suggests opportunities for energy harvesting applications. Finally, a portable, low-cost EIT-based hardware system for pressure mapping was introduced. This system enables comprehensive characterisation of various sensing domains and supports advancements in EIT-based soft sensor technology, with implications for biomedical devices, robotics, and energy harvesting. 
-		
-		Overall, this research advances the field of soft sensors by integrating EIT with innovative materials and technologies, providing new insights and applications in dynamic sensing and actuation.
+		Overall, this research advances the field of soft sensors by integrating EIT with electroactive material and actuator technologies, providing new insights and applications in dynamic sensing and actuation.
 	}
 	\clearpage  % Abstract ended, start a new page
 	%% ----------------------------------------------------------------
@@ -122,7 +117,7 @@
 	% The Acknowledgements page, for thanking everyone
 	\acknowledgements{
 		\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
-		I'd like to thank many people who have implicitly and explicitly helped me get through my doctorate. First the UC Bioengineering office including the Lung Ladies, Lung lads, IPC, Hamish for infinite Friday beers, Nic's abstract art. Also included in the office, Geoff Chase, for a constant stream of stories and advice always within earshot. The Mechanical Engineering post-grad office for baking, fruit, and comic relief. The UC Mechanical and Electrical department technicians for yarns and practical advice. All of the students I tutored and mentored keeping me on my toes throughout the doctorate. The motivation from all of my friends with the never ending question `so... when do you finish', a very motivating and difficult question. However, I also couldn't have done it without the side jobs and adventures with colleagues and friends maintaining my sanity. A special thanks to my supervision and collaborations abroad, including my materials science work in IMDEA with Juan Jose and Anastasia and my time with with the MEiTNER soft robotics research group led by Markus Vorrath. Thanks to my internal supervision from Tim teaching me what PHD stands for and my co-supervisors Chris and Lui who have been a great source of yarns, advice, and general guidance. Finally, a big thanks to my partner Tess for her ongoing support and distraction from PhD work, and my family for their support.
+		I'd like to thank many people who have implicitly and explicitly helped me get through my doctorate. Firstly, the UC Bioengineering office including the Lung Ladies, Lung lads, IPC, Hamish for infinite Friday beers, and Nic's abstract art. Also included in the office, Geoff Chase, for a constant stream of stories and advice always within earshot. The Mechanical Engineering post-grad office for baking, fruit, and comic relief. The UC Mechanical and Electrical department technicians for yarns and practical advice. All of the students I tutored and mentored keeping me on my toes throughout the doctorate. Thanks for the motivation from all of my friends with the never ending question `so... when do you finish', a very motivating and difficult question answer. Something that prolonged the journey but kept me sane, were the technical the side jobs and fun adventures with colleagues and friends maintaining my sanity. A special thanks to my supervision and collaborations abroad, including my materials science work in IMDEA with Juan Jose and Anastasia and my time with with the MEiTNER soft robotics research group led by Markus Vorrath. Thanks to my internal supervision from Tim teaching me what PHD stands for and my co-supervisors Chris and Lui who have been a good source of advice, yarns, and general guidance. A thank you to my family for being supportive is times of strife. Finally, a big thanks to my partner Tess for her ongoing support and distractions from PhD work.
 	}
 	\clearpage  % End of the Acknowledgements
 	%% ----------------------------------------------------------------
@@ -225,9 +220,7 @@
 	\lhead{\emph{\chapviiname}}
 	\import{Chapters/}{Chapter7.tex} % DEA-EIT an unintended DEG
 	\lhead{\emph{\chapviiiname}}
-	\import{Chapters/}{Chapter8.tex} % DEA-EIT capacitive modelling??
-	\lhead{\emph{\chapixname}}
-	\import{Chapters/}{Chapter9.tex} % Discussion and Conclusion
+	\import{Chapters/}{Chapter8.tex} % Discussion and Conclusion
 
 	%% ----------------------------------------------------------------
 	% Now begin the Appendices, including them as separate files
@@ -238,7 +231,8 @@
 	\input{Appendices/AppendixC}
 	\input{Appendices/AppendixD}
 	\input{Appendices/AppendixE}
-	
+	\input{Appendices/AppendixF}
+		
 	\addtocontents{toc}{\vspace{2em}}  % Add a gap in the Contents, for aesthetics
 	\backmatter
 	%% ----------------------------------------------------------------
