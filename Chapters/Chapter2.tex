@@ -475,6 +475,23 @@ Electrical DC conduction through a CPEC occurs via two main mechanisms, electric
 The a CPEC can be modelled with an RC network as shown in Figure \ref{fig:AC-model-rep}. Electrical AC conduction can occur through a CPEC through capacitive means depending of particle spacing with a decrease in reactance becoming more prominent for composites near the percolation threshold \cite{HindermannBischoff2001}.
 
 
+\subsection{Viscoelasticity in Composite Elastomers}
+A core difference between a pure elastomer and a composite elastomer is the degree of apparent viscoelasticity. Composite elastomers exhibit viscoelastic phenomena \cite{Ligia2009} similar to regular human biological tissue \cite{Fung1993}. These viscoelastic phenomena include strain creep, stress relaxation, hysteresis, and a strain-rate stiffness relationship. The viscous component of viscoelasticity is more prominent in polymer plastics and plastic composites due to the bonding mechanism between polymer chains within the material. Elasticity is often the result of bond stretching within a polymer material, whereas  viscous effects are often due to the temporary nature of secondary bonds in polymer which break, slip, and reform. % insert physical chemistry here!
+
+The Payne and Mullins effects are important to note when analysing mechanical stress-strain testing results for elastomer composites with conductive filler particles. The Payne effect describes the effect where with a deformation in the material changes the modulus of the material, due to breaks in the microstructure of the material \cite{Payne1972}. Jalocha \cite{Jalocha2020} and Avila-Torrado et al. \cite{AvilaTorrado2022} have clearly displayed the Payne effect experimentally where they compared different conductive fillers and determined their complex moduli for a range of strains and strain frequencies using dynamic mechanical analysis (DMA). The Mullins effect is where the stress-strain curve of a particle filled elastomer composite relies on the maximum load input experienced by the material. The effect causes composite softening due to the lack of stiffening in the composite fillers relative to the usual stiffening seen in the elastomer matrix \cite{Mullins1969}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{Figures/viscoelastic_models.jpg}
+	\caption{Linear viscoelastic models (a) Kelvin-Voight (b) Maxwell (c) A solid linear model variant (d) A Burgers model variant.}
+	\label{fig:linear_viscoelastic_eg}
+\end{figure}
+
+Several linear mechanical models of viscoelastic material are described by simplifying the material to a combination of discrete spring and dashpot elements such as the Maxwell, Kelvin-Voight, Burger, and standard linear models seen in Figure \ref{fig:linear_viscoelastic_eg}. A generalised Maxwell or Prony series linear models can often be used when the other models are underfitting the material data \cite{Babaei2015,Tzikang2000}. 
+
+Non-linear viscoelastic models are similar to the above linear models, however they introduce fractional order elements to model the complex modulus of a material more accurately \cite{Bonfanti2020}. Fractional modelling has also proven useful in complex electrical impedance modelling using constant phase elements (CPEs). These CPEs more accurately describe the non-idealness of real-world capacitors, where a current leakage through the dielectric material exists \cite{Vosika2013, Chang2022}.
+
+
 %\section{Soft Pressure Mapping - Actuator Technology Integration}
 % To do: Throw in some lit review about the intregration of both pressure mapping and actuator devices. How has this been done in the past... if at all?
 
