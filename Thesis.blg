@@ -1,0 +1,98 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Thesis.aux
+The style file: unsrtnat.bst
+Reallocated field_info (elt_size=4) to 14016 items from 5000.
+Database file #1: Bibliography.bib
+I was expecting a `,' or a `}'---line 430 of file Bibliography.bib
+ :    
+ :    url = {https://doi.org/10.1117/12.3010073}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--entry type for "PySpice2021" isn't style-file defined
+--line 1740 of file Bibliography.bib
+Warning--entry type for "IEC2008" isn't style-file defined
+--line 1776 of file Bibliography.bib
+Reallocated str_pool (elt_size=1) to 130000 items from 65000.
+Warning--entry type for "ReynoldsSmith1995" isn't style-file defined
+--line 8253 of file Bibliography.bib
+Warning--entry type for "ReynoldsSmith1999" isn't style-file defined
+--line 8278 of file Bibliography.bib
+Warning--empty journal in Chatfield2021
+Warning--empty booktitle in OBrien2014
+Warning--empty year in Xsensor
+Warning--empty year in PowerOn
+Warning--empty year in Tekscan
+Warning--empty year in SensorProducts
+Warning--empty journal in Teran2003
+Warning--empty booktitle in Yanjie2018
+Warning--empty publisher in Yanjie2018
+Warning--empty booktitle in Park2018a
+Warning--empty booktitle in Ellingham2022
+Warning--empty journal in Ellingham2024a
+Warning--empty chapter and pages in Hazelton2023
+Warning--empty publisher in Hazelton2023
+Warning--empty chapter and pages in Wang2018
+Warning--can't use both author and editor fields in Full2004
+Warning--can't use both author and editor fields in Shahinpoor2016
+Warning--empty journal in Manionn.d.
+Warning--empty booktitle in Krueger2014
+Warning--empty booktitle in Park2018
+Warning--can't use both volume and number fields in Park2018
+Warning--empty journal in Kudryashova2019
+Warning--empty booktitle in Kim2018a
+Warning--empty journal in Eklund2019
+Warning--empty booktitle in Lacasse2010
+Warning--empty booktitle in Mouri2019
+Warning--empty booktitle in Maddipatla2017
+Warning--empty journal in Luo2005
+Warning--empty chapter and pages in Molnar2015
+Warning--empty booktitle in Knight1990
+Warning--empty booktitle in Zhang2015
+Warning--empty booktitle in Zhang2017b
+Warning--empty year in PySpice2021
+Warning--empty booktitle in Thinky2010
+Warning--empty booktitle in Koshiya2023
+Warning--empty chapter and pages in IEC2005
+You've used 322 entries,
+            2481 wiz_defined-function locations,
+            3185 strings with 99736 characters,
+and the built_in function-call counts, 144345 in all, are:
+= -- 12227
+> -- 9198
+< -- 144
++ -- 3430
+- -- 2778
+* -- 12889
+:= -- 24382
+add.period$ -- 1637
+call.type$ -- 322
+change.case$ -- 637
+chr.to.int$ -- 314
+cite$ -- 358
+duplicate$ -- 6207
+empty$ -- 11384
+format.name$ -- 3210
+if$ -- 29933
+int.to.chr$ -- 9
+int.to.str$ -- 323
+missing$ -- 308
+newline$ -- 2278
+num.names$ -- 966
+pop$ -- 1987
+preamble$ -- 1
+purify$ -- 322
+quote$ -- 0
+skip$ -- 3461
+stack$ -- 0
+substring$ -- 5750
+swap$ -- 1132
+text.length$ -- 38
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 2209
+warning$ -- 36
+while$ -- 1022
+width$ -- 0
+write$ -- 5453
+(There was 1 error message)

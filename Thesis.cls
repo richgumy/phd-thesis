@@ -78,9 +78,6 @@ LaTeX document class]
 %	\if@twocolumn\hbox{}\newpage\fi\fi\fi}
 \def\cleardoublepage{\clearpage \ifodd\c@page\else
 	\hbox{}
-	\begin{center}
-		\textit{This page is intentionally left blank.}
-	\end{center}
 	\thispagestyle{empty}
 	\newpage
 	\if@twocolumn\hbox{}\newpage\fi\fi}
