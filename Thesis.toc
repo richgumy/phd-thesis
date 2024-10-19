@@ -16,180 +16,180 @@
 \contentsline {section}{\numberline {1.4}Publications}{4}{section.25}%
 \contentsline {chapter}{\numberline {2}Literature Review}{5}{chapter.26}%
 \contentsline {section}{\numberline {2.1}Biological Skin form and function}{5}{section.27}%
-\contentsline {subsection}{\numberline {2.1.1}Skin Construction and Types}{8}{subsection.33}%
-\contentsline {subsection}{\numberline {2.1.2}Characterising skin}{9}{subsection.35}%
-\contentsline {subsection}{\numberline {2.1.3}Skin Modelling}{12}{subsection.36}%
-\contentsline {section}{\numberline {2.2}Pressure Mapping Artificial Skin Devices}{12}{section.40}%
-\contentsline {subsection}{\numberline {2.2.1}Resistive}{13}{subsection.41}%
-\contentsline {subsection}{\numberline {2.2.2}Capacitive}{14}{subsection.43}%
-\contentsline {subsection}{\numberline {2.2.3}Magnetic}{14}{subsection.45}%
-\contentsline {subsection}{\numberline {2.2.4}Optical}{14}{subsection.46}%
-\contentsline {subsection}{\numberline {2.2.5}Acoustic}{15}{subsection.47}%
-\contentsline {subsection}{\numberline {2.2.6}Soft Pressure mapping technology comparison}{15}{subsection.48}%
-\contentsline {section}{\numberline {2.3}Biological Muscle form and function}{17}{section.50}%
-\contentsline {subsection}{\numberline {2.3.1}Characterising a muscle}{18}{subsection.52}%
-\contentsline {subsection}{\numberline {2.3.2}Muscle Mechanics}{19}{subsection.64}%
-\contentsline {subsection}{\numberline {2.3.3}Electrical Muscle Models}{20}{subsection.68}%
-\contentsline {section}{\numberline {2.4}Artificial Muscle Technology}{21}{section.69}%
-\contentsline {subsection}{\numberline {2.4.1}Ionic polymer–metal composite actuator}{21}{subsection.70}%
-\contentsline {subsection}{\numberline {2.4.2}HASEL actuator}{23}{subsection.72}%
-\contentsline {subsection}{\numberline {2.4.3}Magnetorheological Elastomer}{25}{subsection.75}%
-\contentsline {subsection}{\numberline {2.4.4}Dielectric Elastomer Actuators}{27}{subsection.77}%
-\contentsline {section}{\numberline {2.5}Soft Conductive Particle Piezoresistive Composites}{28}{section.80}%
-\contentsline {subsection}{\numberline {2.5.1}Fabricating Conductive Particle Elastomer Composites}{29}{subsection.81}%
-\contentsline {subsection}{\numberline {2.5.2}Conductive Particle Elastomer Conduction Mechanisms}{30}{subsection.82}%
-\contentsline {subsection}{\numberline {2.5.3}Viscoelasticity in Composite Elastomers}{33}{subsection.88}%
-\contentsline {section}{\numberline {2.6}Literature Review Conclusions}{35}{section.90}%
-\contentsline {chapter}{\numberline {3}Characterising Non-Linear Behaviour in Carbon-Black Elastomer Nano-Composites}{37}{chapter.91}%
-\contentsline {section}{\numberline {3.1}Introduction}{38}{section.93}%
-\contentsline {subsection}{\numberline {3.1.1}Background}{38}{subsection.94}%
-\contentsline {section}{\numberline {3.2}Methods}{41}{section.97}%
-\contentsline {subsection}{\numberline {3.2.1}Composite Fabrication}{41}{subsection.98}%
-\contentsline {subsection}{\numberline {3.2.2}Material Imaging}{42}{subsection.100}%
-\contentsline {subsection}{\numberline {3.2.3}Stress-Strain-Resistance Measurement}{46}{subsection.111}%
-\contentsline {section}{\numberline {3.3}Results and Analysis}{48}{section.115}%
-\contentsline {subsection}{\numberline {3.3.1}Stress-Strain and Viscoelasticity}{48}{subsection.116}%
-\contentsline {subsection}{\numberline {3.3.2}Quasi-Static Tensile Resistance-Strain}{49}{subsection.118}%
-\contentsline {subsection}{\numberline {3.3.3}Dynamic Resistance-Strain-Rate Response}{50}{subsection.121}%
-\contentsline {subsection}{\numberline {3.3.4}Falling Edge Strain-Rate-Resistance}{51}{subsection.126}%
-\contentsline {subsection}{\numberline {3.3.5}Resistive Relaxation Fitting}{54}{subsection.138}%
-\contentsline {subsection}{\numberline {3.3.6}Resistance-Stress Relationship}{57}{subsection.145}%
-\contentsline {section}{\numberline {3.4}Discussion}{59}{section.149}%
-\contentsline {subsection}{\numberline {3.4.1}Fabrication}{59}{subsection.150}%
-\contentsline {subsection}{\numberline {3.4.2}Quasi-static Tensile Resistance-Strain}{59}{subsection.151}%
-\contentsline {subsection}{\numberline {3.4.3}Dynamic Resistance-Strain-Rate Response}{59}{subsection.152}%
-\contentsline {subsection}{\numberline {3.4.4}Falling Edge Strain-Rate-Resistance}{60}{subsection.153}%
-\contentsline {subsection}{\numberline {3.4.5}Resistive Relaxation Fitting}{60}{subsection.154}%
-\contentsline {subsection}{\numberline {3.4.6}Resistance-Stress Relationship}{61}{subsection.155}%
-\contentsline {subsection}{\numberline {3.4.7}Viscoelasticity}{61}{subsection.156}%
-\contentsline {subsection}{\numberline {3.4.8}Repeatability}{61}{subsection.157}%
-\contentsline {subsection}{\numberline {3.4.9}Further Discussion and Future Work}{62}{subsection.159}%
-\contentsline {section}{\numberline {3.5}Conclusions}{63}{section.161}%
-\contentsline {chapter}{\numberline {4}An Electrical Impedance Tomography Based Soft Pressure Mapping Sensor}{65}{chapter.162}%
-\contentsline {section}{\numberline {4.1}Introduction}{66}{section.164}%
-\contentsline {subsection}{\numberline {4.1.1}EIT Background}{67}{subsection.165}%
-\contentsline {subsection}{\numberline {4.1.2}Related Work}{70}{subsection.171}%
-\contentsline {section}{\numberline {4.2}Methodology}{70}{section.172}%
-\contentsline {subsection}{\numberline {4.2.1}Fabrication}{71}{subsection.173}%
-\contentsline {subsubsection}{\numberline {4.2.1.1}Localised Stress Testing}{72}{subsubsection.176}%
-\contentsline {subsubsection}{\numberline {4.2.1.2}EIT Measurement}{72}{subsubsection.178}%
-\contentsline {subsection}{\numberline {4.2.2}1D Material Characterisation}{73}{subsection.181}%
-\contentsline {subsubsection}{\numberline {4.2.2.1}Quasi-static Piezoresistivity}{74}{subsubsection.182}%
-\contentsline {subsubsection}{\numberline {4.2.2.2}Transient Piezoresistivity}{74}{subsubsection.185}%
-\contentsline {subsection}{\numberline {4.2.3}Sensor Performance Metrics}{75}{subsection.187}%
-\contentsline {subsubsection}{\numberline {4.2.3.1}Pre-processing}{75}{subsubsection.188}%
-\contentsline {subsubsection}{\numberline {4.2.3.2}Spatial Performance}{76}{subsubsection.189}%
-\contentsline {subsubsection}{\numberline {4.2.3.3}Temporal Performance}{77}{subsubsection.193}%
-\contentsline {subsubsection}{\numberline {4.2.3.4}Localised Force Sensing Performance}{77}{subsubsection.194}%
-\contentsline {section}{\numberline {4.3}Results}{78}{section.205}%
-\contentsline {subsection}{\numberline {4.3.1}1D Material Characterisation}{79}{subsection.207}%
-\contentsline {subsubsection}{\numberline {4.3.1.1}Quasi-static Piezoresistivity}{79}{subsubsection.208}%
-\contentsline {subsubsection}{\numberline {4.3.1.2}Transient Piezoresistivity}{80}{subsubsection.210}%
-\contentsline {subsection}{\numberline {4.3.2}Sensor Performance Metrics}{82}{subsection.214}%
-\contentsline {subsubsection}{\numberline {4.3.2.1}Pre-processing}{83}{subsubsection.215}%
-\contentsline {subsubsection}{\numberline {4.3.2.2}Spatial Performance}{83}{subsubsection.222}%
-\contentsline {subsection}{\numberline {4.3.3}Randomised Location and Strain Testing}{85}{subsection.226}%
-\contentsline {subsubsection}{\numberline {4.3.3.1}Temporal Performance}{87}{subsubsection.229}%
-\contentsline {subsubsection}{\numberline {4.3.3.2}Localise Force Sensing Performance}{87}{subsubsection.231}%
-\contentsline {section}{\numberline {4.4}Discussion}{89}{section.234}%
-\contentsline {subsection}{\numberline {4.4.1}Quasi-static Piezoresistivity}{89}{subsection.235}%
-\contentsline {subsection}{\numberline {4.4.2}Pre-processing}{90}{subsection.236}%
-\contentsline {subsection}{\numberline {4.4.3}Performance Metrics}{90}{subsection.237}%
-\contentsline {subsubsection}{\numberline {4.4.3.1}Spatial Performance}{90}{subsubsection.238}%
-\contentsline {subsubsection}{\numberline {4.4.3.2}Temporal Performance}{92}{subsubsection.239}%
-\contentsline {subsubsection}{\numberline {4.4.3.3}Localised Force Sensing Performance}{93}{subsubsection.240}%
-\contentsline {subsection}{\numberline {4.4.4}Real World Applications, Manufacturability, and Scalability}{93}{subsection.241}%
-\contentsline {section}{\numberline {4.5}Conclusions}{94}{section.242}%
-\contentsline {chapter}{\numberline {5}A Portable EIT-Based Pressure Mapping Sensor and Validation System}{97}{chapter.243}%
-\contentsline {section}{\numberline {5.1}Introduction}{98}{section.245}%
-\contentsline {section}{\numberline {5.2}Design Methodology and Analysis}{99}{section.247}%
-\contentsline {subsection}{\numberline {5.2.1}EIT cycle and load sequence}{101}{subsection.251}%
-\contentsline {subsection}{\numberline {5.2.2}Small signal measurement}{102}{subsection.257}%
-\contentsline {subsection}{\numberline {5.2.3}Signal generation}{103}{subsection.259}%
-\contentsline {subsection}{\numberline {5.2.4}Signal conditioning}{104}{subsection.261}%
-\contentsline {subsection}{\numberline {5.2.5}Switching circuit}{105}{subsection.264}%
-\contentsline {subsection}{\numberline {5.2.6}Force measurement}{106}{subsection.266}%
-\contentsline {subsection}{\numberline {5.2.7}Position control and measurement}{108}{subsection.269}%
-\contentsline {subsection}{\numberline {5.2.8}Sensing domain}{108}{subsection.270}%
-\contentsline {section}{\numberline {5.3}Validation and Characterisation}{108}{section.271}%
-\contentsline {subsection}{\numberline {5.3.1}Sensor capabilities}{110}{subsection.274}%
-\contentsline {section}{\numberline {5.4}Discussion}{111}{section.277}%
-\contentsline {section}{\numberline {5.5}Conclusions}{111}{section.278}%
-\contentsline {chapter}{\numberline {6}Integration of EIT-based Pressure Mapping with Dielectric Elastomer Actuators}{113}{chapter.279}%
-\contentsline {section}{\numberline {6.1}Introduction}{114}{section.281}%
-\contentsline {subsection}{\numberline {6.1.1}Background}{115}{subsection.283}%
-\contentsline {subsubsection}{\numberline {6.1.1.1}Dielectric Elastomer Actuators}{115}{subsubsection.284}%
-\contentsline {subsubsection}{\numberline {6.1.1.2}Soft EIT-based Pressure Mapping}{116}{subsubsection.288}%
-\contentsline {subsection}{\numberline {6.1.2}Simultaneous Pressure Mapping and Actuation}{118}{subsection.293}%
-\contentsline {section}{\numberline {6.2}Methodology}{119}{section.294}%
-\contentsline {subsection}{\numberline {6.2.1}Dielectric Elastomer Preparation}{119}{subsection.295}%
-\contentsline {subsection}{\numberline {6.2.2}Compliant Electrode Fabrication}{120}{subsection.301}%
-\contentsline {subsection}{\numberline {6.2.3}DEA Hardware}{121}{subsection.302}%
-\contentsline {subsection}{\numberline {6.2.4}EIT Hardware}{122}{subsection.304}%
-\contentsline {subsection}{\numberline {6.2.5}Experimental Method}{123}{subsection.306}%
-\contentsline {subsubsection}{\numberline {6.2.5.1}DEA Validation}{123}{subsubsection.307}%
-\contentsline {subsubsection}{\numberline {6.2.5.2}EIT-based Pressure Mapping on DEA}{124}{subsubsection.312}%
-\contentsline {subsection}{\numberline {6.2.6}Simultaneous Actuation and Pressure Mapping}{126}{subsection.318}%
-\contentsline {section}{\numberline {6.3}Results}{128}{section.323}%
-\contentsline {subsection}{\numberline {6.3.1}Fabrication}{128}{subsection.324}%
-\contentsline {subsection}{\numberline {6.3.2}DEA Validation}{128}{subsection.325}%
-\contentsline {subsection}{\numberline {6.3.3}EIT Validation}{130}{subsection.329}%
-\contentsline {subsection}{\numberline {6.3.4}Simultaneous Actuation and Pressure Mapping}{134}{subsection.348}%
-\contentsline {section}{\numberline {6.4}Discussion}{135}{section.357}%
-\contentsline {subsection}{\numberline {6.4.1}Fabrication}{135}{subsection.358}%
-\contentsline {subsection}{\numberline {6.4.2}DEA Validation}{136}{subsection.359}%
-\contentsline {subsection}{\numberline {6.4.3}EIT Validation}{137}{subsection.360}%
-\contentsline {subsection}{\numberline {6.4.4}Simultaneous Actuation and Mapping}{138}{subsection.361}%
-\contentsline {subsection}{\numberline {6.4.5}Altered Actuation Performance}{138}{subsection.362}%
-\contentsline {subsection}{\numberline {6.4.6}Dielectric Breakdown}{139}{subsection.363}%
-\contentsline {section}{\numberline {6.5}Conclusions}{139}{section.364}%
-\contentsline {section}{\numberline {6.6}Future Work}{140}{section.365}%
-\contentsline {chapter}{\numberline {7}Unintentional Power Generation in a DEA-EIT Sensor-Actuator Device}{141}{chapter.367}%
-\contentsline {section}{\numberline {7.1}Introduction}{142}{section.369}%
-\contentsline {subsection}{\numberline {7.1.1}Background}{142}{subsection.370}%
-\contentsline {section}{\numberline {7.2}Methodology}{145}{section.378}%
-\contentsline {subsection}{\numberline {7.2.1}DEA Load Study}{146}{subsection.380}%
-\contentsline {subsection}{\numberline {7.2.2}Deformed DEA Electrostatics Study}{147}{subsection.381}%
-\contentsline {subsection}{\numberline {7.2.3}Voltage and Energy Generation}{147}{subsection.382}%
-\contentsline {section}{\numberline {7.3}Results}{147}{section.384}%
-\contentsline {subsection}{\numberline {7.3.1}DEA Load Study}{148}{subsection.385}%
-\contentsline {subsection}{\numberline {7.3.2}Deformed DEA Electrostatics Study}{148}{subsection.387}%
-\contentsline {subsection}{\numberline {7.3.3}Voltage and Energy Generation}{149}{subsection.389}%
-\contentsline {section}{\numberline {7.4}Discussion}{151}{section.393}%
-\contentsline {section}{\numberline {7.5}Conclusions}{153}{section.395}%
-\contentsline {chapter}{\numberline {8}Beyond Rigid - A Softer Future}{155}{chapter.396}%
-\contentsline {section}{\numberline {8.1}Core Research Findings}{155}{section.397}%
-\contentsline {section}{\numberline {8.2}Future Work}{156}{section.398}%
-\contentsline {section}{\numberline {8.3}Concluding Statements}{158}{section.399}%
+\contentsline {subsection}{\numberline {2.1.1}Skin Construction and Types}{7}{subsection.32}%
+\contentsline {subsection}{\numberline {2.1.2}Characterising skin}{8}{subsection.34}%
+\contentsline {subsection}{\numberline {2.1.3}Skin Modelling}{10}{subsection.35}%
+\contentsline {section}{\numberline {2.2}Pressure Mapping Artificial Skin Devices}{11}{section.39}%
+\contentsline {subsection}{\numberline {2.2.1}Capacitive}{12}{subsection.41}%
+\contentsline {subsection}{\numberline {2.2.2}Magnetic}{13}{subsection.43}%
+\contentsline {subsection}{\numberline {2.2.3}Optical}{14}{subsection.45}%
+\contentsline {subsection}{\numberline {2.2.4}Acoustic}{14}{subsection.46}%
+\contentsline {subsection}{\numberline {2.2.5}Resistive}{14}{subsection.47}%
+\contentsline {subsection}{\numberline {2.2.6}Soft Pressure mapping technology comparison}{16}{subsection.49}%
+\contentsline {section}{\numberline {2.3}Biological Muscle form and function}{18}{section.51}%
+\contentsline {subsection}{\numberline {2.3.1}Characterising a muscle}{19}{subsection.53}%
+\contentsline {subsection}{\numberline {2.3.2}Muscle Mechanics}{20}{subsection.65}%
+\contentsline {subsection}{\numberline {2.3.3}Electrical Muscle Models}{21}{subsection.69}%
+\contentsline {section}{\numberline {2.4}Artificial Muscle Technology}{22}{section.70}%
+\contentsline {subsection}{\numberline {2.4.1}Ionic polymer–metal composite actuator}{22}{subsection.71}%
+\contentsline {subsection}{\numberline {2.4.2}HASEL actuator}{24}{subsection.73}%
+\contentsline {subsection}{\numberline {2.4.3}Magnetorheological Elastomer}{26}{subsection.76}%
+\contentsline {subsection}{\numberline {2.4.4}Dielectric Elastomer Actuators}{28}{subsection.78}%
+\contentsline {section}{\numberline {2.5}Soft Conductive Particle Piezoresistive Composites}{29}{section.81}%
+\contentsline {subsection}{\numberline {2.5.1}Fabricating Conductive Particle Elastomer Composites}{30}{subsection.82}%
+\contentsline {subsection}{\numberline {2.5.2}Conductive Particle Elastomer Conduction Mechanisms}{31}{subsection.83}%
+\contentsline {subsection}{\numberline {2.5.3}Viscoelasticity in Composite Elastomers}{34}{subsection.89}%
+\contentsline {section}{\numberline {2.6}Literature Review Conclusions}{36}{section.91}%
+\contentsline {chapter}{\numberline {3}Characterising Non-Linear Behaviour in Carbon-Black Elastomer Nano-Composites}{37}{chapter.92}%
+\contentsline {section}{\numberline {3.1}Introduction}{38}{section.94}%
+\contentsline {subsection}{\numberline {3.1.1}Background}{38}{subsection.95}%
+\contentsline {section}{\numberline {3.2}Methods}{41}{section.98}%
+\contentsline {subsection}{\numberline {3.2.1}Composite Fabrication}{41}{subsection.99}%
+\contentsline {subsection}{\numberline {3.2.2}Material Imaging}{42}{subsection.101}%
+\contentsline {subsection}{\numberline {3.2.3}Stress-Strain-Resistance Measurement}{46}{subsection.112}%
+\contentsline {section}{\numberline {3.3}Results and Analysis}{48}{section.116}%
+\contentsline {subsection}{\numberline {3.3.1}Stress-Strain and Viscoelasticity}{48}{subsection.117}%
+\contentsline {subsection}{\numberline {3.3.2}Quasi-Static Tensile Resistance-Strain}{49}{subsection.119}%
+\contentsline {subsection}{\numberline {3.3.3}Dynamic Resistance-Strain-Rate Response}{50}{subsection.122}%
+\contentsline {subsection}{\numberline {3.3.4}Falling Edge Strain-Rate-Resistance}{51}{subsection.127}%
+\contentsline {subsection}{\numberline {3.3.5}Resistive Relaxation Fitting}{54}{subsection.139}%
+\contentsline {subsection}{\numberline {3.3.6}Resistance-Stress Relationship}{57}{subsection.146}%
+\contentsline {section}{\numberline {3.4}Discussion}{59}{section.150}%
+\contentsline {subsection}{\numberline {3.4.1}Fabrication}{59}{subsection.151}%
+\contentsline {subsection}{\numberline {3.4.2}Quasi-static Tensile Resistance-Strain}{59}{subsection.152}%
+\contentsline {subsection}{\numberline {3.4.3}Dynamic Resistance-Strain-Rate Response}{59}{subsection.153}%
+\contentsline {subsection}{\numberline {3.4.4}Falling Edge Strain-Rate-Resistance}{60}{subsection.154}%
+\contentsline {subsection}{\numberline {3.4.5}Resistive Relaxation Fitting}{60}{subsection.155}%
+\contentsline {subsection}{\numberline {3.4.6}Resistance-Stress Relationship}{61}{subsection.156}%
+\contentsline {subsection}{\numberline {3.4.7}Viscoelasticity}{61}{subsection.157}%
+\contentsline {subsection}{\numberline {3.4.8}Repeatability}{61}{subsection.158}%
+\contentsline {subsection}{\numberline {3.4.9}Further Discussion and Future Work}{62}{subsection.160}%
+\contentsline {section}{\numberline {3.5}Conclusions}{63}{section.162}%
+\contentsline {chapter}{\numberline {4}An Electrical Impedance Tomography Based Soft Pressure Mapping Sensor}{65}{chapter.163}%
+\contentsline {section}{\numberline {4.1}Introduction}{66}{section.165}%
+\contentsline {subsection}{\numberline {4.1.1}EIT Background}{67}{subsection.166}%
+\contentsline {subsection}{\numberline {4.1.2}Related Work}{70}{subsection.172}%
+\contentsline {section}{\numberline {4.2}Methodology}{70}{section.173}%
+\contentsline {subsection}{\numberline {4.2.1}Fabrication}{71}{subsection.174}%
+\contentsline {subsubsection}{\numberline {4.2.1.1}Localised Stress Testing}{72}{subsubsection.177}%
+\contentsline {subsubsection}{\numberline {4.2.1.2}EIT Measurement}{72}{subsubsection.179}%
+\contentsline {subsection}{\numberline {4.2.2}1D Material Characterisation}{73}{subsection.182}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}Quasi-static Piezoresistivity}{74}{subsubsection.183}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}Transient Piezoresistivity}{74}{subsubsection.186}%
+\contentsline {subsection}{\numberline {4.2.3}Sensor Performance Metrics}{75}{subsection.188}%
+\contentsline {subsubsection}{\numberline {4.2.3.1}Pre-processing}{75}{subsubsection.189}%
+\contentsline {subsubsection}{\numberline {4.2.3.2}Spatial Performance}{76}{subsubsection.190}%
+\contentsline {subsubsection}{\numberline {4.2.3.3}Temporal Performance}{77}{subsubsection.194}%
+\contentsline {subsubsection}{\numberline {4.2.3.4}Localised Force Sensing Performance}{77}{subsubsection.195}%
+\contentsline {section}{\numberline {4.3}Results}{78}{section.206}%
+\contentsline {subsection}{\numberline {4.3.1}1D Material Characterisation}{79}{subsection.208}%
+\contentsline {subsubsection}{\numberline {4.3.1.1}Quasi-static Piezoresistivity}{79}{subsubsection.209}%
+\contentsline {subsubsection}{\numberline {4.3.1.2}Transient Piezoresistivity}{80}{subsubsection.211}%
+\contentsline {subsection}{\numberline {4.3.2}Sensor Performance Metrics}{82}{subsection.215}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}Pre-processing}{83}{subsubsection.216}%
+\contentsline {subsubsection}{\numberline {4.3.2.2}Spatial Performance}{83}{subsubsection.223}%
+\contentsline {subsection}{\numberline {4.3.3}Randomised Location and Strain Testing}{85}{subsection.227}%
+\contentsline {subsubsection}{\numberline {4.3.3.1}Temporal Performance}{87}{subsubsection.230}%
+\contentsline {subsubsection}{\numberline {4.3.3.2}Localise Force Sensing Performance}{87}{subsubsection.232}%
+\contentsline {section}{\numberline {4.4}Discussion}{89}{section.235}%
+\contentsline {subsection}{\numberline {4.4.1}Quasi-static Piezoresistivity}{89}{subsection.236}%
+\contentsline {subsection}{\numberline {4.4.2}Pre-processing}{90}{subsection.237}%
+\contentsline {subsection}{\numberline {4.4.3}Performance Metrics}{90}{subsection.238}%
+\contentsline {subsubsection}{\numberline {4.4.3.1}Spatial Performance}{90}{subsubsection.239}%
+\contentsline {subsubsection}{\numberline {4.4.3.2}Temporal Performance}{92}{subsubsection.240}%
+\contentsline {subsubsection}{\numberline {4.4.3.3}Localised Force Sensing Performance}{93}{subsubsection.241}%
+\contentsline {subsection}{\numberline {4.4.4}Real World Applications, Manufacturability, and Scalability}{93}{subsection.242}%
+\contentsline {section}{\numberline {4.5}Conclusions}{94}{section.243}%
+\contentsline {chapter}{\numberline {5}A Portable EIT-Based Pressure Mapping Sensor and Validation System}{97}{chapter.244}%
+\contentsline {section}{\numberline {5.1}Introduction}{98}{section.246}%
+\contentsline {section}{\numberline {5.2}Design Methodology and Analysis}{99}{section.248}%
+\contentsline {subsection}{\numberline {5.2.1}EIT cycle and load sequence}{101}{subsection.252}%
+\contentsline {subsection}{\numberline {5.2.2}Small signal measurement}{102}{subsection.258}%
+\contentsline {subsection}{\numberline {5.2.3}Signal generation}{103}{subsection.260}%
+\contentsline {subsection}{\numberline {5.2.4}Signal conditioning}{104}{subsection.262}%
+\contentsline {subsection}{\numberline {5.2.5}Switching circuit}{105}{subsection.265}%
+\contentsline {subsection}{\numberline {5.2.6}Force measurement}{106}{subsection.267}%
+\contentsline {subsection}{\numberline {5.2.7}Position control and measurement}{108}{subsection.270}%
+\contentsline {subsection}{\numberline {5.2.8}Sensing domain}{108}{subsection.271}%
+\contentsline {section}{\numberline {5.3}Validation and Characterisation}{108}{section.272}%
+\contentsline {subsection}{\numberline {5.3.1}Sensor capabilities}{110}{subsection.275}%
+\contentsline {section}{\numberline {5.4}Discussion}{111}{section.278}%
+\contentsline {section}{\numberline {5.5}Conclusions}{111}{section.279}%
+\contentsline {chapter}{\numberline {6}Integration of EIT-based Pressure Mapping with Dielectric Elastomer Actuators}{113}{chapter.280}%
+\contentsline {section}{\numberline {6.1}Introduction}{114}{section.282}%
+\contentsline {subsection}{\numberline {6.1.1}Background}{115}{subsection.284}%
+\contentsline {subsubsection}{\numberline {6.1.1.1}Dielectric Elastomer Actuators}{115}{subsubsection.285}%
+\contentsline {subsubsection}{\numberline {6.1.1.2}Soft EIT-based Pressure Mapping}{116}{subsubsection.289}%
+\contentsline {subsection}{\numberline {6.1.2}Simultaneous Pressure Mapping and Actuation}{118}{subsection.294}%
+\contentsline {section}{\numberline {6.2}Methodology}{119}{section.295}%
+\contentsline {subsection}{\numberline {6.2.1}Dielectric Elastomer Preparation}{119}{subsection.296}%
+\contentsline {subsection}{\numberline {6.2.2}Compliant Electrode Fabrication}{120}{subsection.302}%
+\contentsline {subsection}{\numberline {6.2.3}DEA Hardware}{121}{subsection.303}%
+\contentsline {subsection}{\numberline {6.2.4}EIT Hardware}{122}{subsection.305}%
+\contentsline {subsection}{\numberline {6.2.5}Experimental Method}{123}{subsection.307}%
+\contentsline {subsubsection}{\numberline {6.2.5.1}DEA Validation}{123}{subsubsection.308}%
+\contentsline {subsubsection}{\numberline {6.2.5.2}EIT-based Pressure Mapping on DEA}{124}{subsubsection.313}%
+\contentsline {subsection}{\numberline {6.2.6}Simultaneous Actuation and Pressure Mapping}{126}{subsection.319}%
+\contentsline {section}{\numberline {6.3}Results}{128}{section.324}%
+\contentsline {subsection}{\numberline {6.3.1}Fabrication}{128}{subsection.325}%
+\contentsline {subsection}{\numberline {6.3.2}DEA Validation}{128}{subsection.326}%
+\contentsline {subsection}{\numberline {6.3.3}EIT Validation}{130}{subsection.330}%
+\contentsline {subsection}{\numberline {6.3.4}Simultaneous Actuation and Pressure Mapping}{134}{subsection.349}%
+\contentsline {section}{\numberline {6.4}Discussion}{135}{section.358}%
+\contentsline {subsection}{\numberline {6.4.1}Fabrication}{135}{subsection.359}%
+\contentsline {subsection}{\numberline {6.4.2}DEA Validation}{136}{subsection.360}%
+\contentsline {subsection}{\numberline {6.4.3}EIT Validation}{137}{subsection.361}%
+\contentsline {subsection}{\numberline {6.4.4}Simultaneous Actuation and Mapping}{138}{subsection.362}%
+\contentsline {subsection}{\numberline {6.4.5}Altered Actuation Performance}{138}{subsection.363}%
+\contentsline {subsection}{\numberline {6.4.6}Dielectric Breakdown}{139}{subsection.364}%
+\contentsline {section}{\numberline {6.5}Conclusions}{139}{section.365}%
+\contentsline {section}{\numberline {6.6}Future Work}{140}{section.366}%
+\contentsline {chapter}{\numberline {7}Unintentional Power Generation in a DEA-EIT Sensor-Actuator Device}{141}{chapter.368}%
+\contentsline {section}{\numberline {7.1}Introduction}{142}{section.370}%
+\contentsline {subsection}{\numberline {7.1.1}Background}{142}{subsection.371}%
+\contentsline {section}{\numberline {7.2}Methodology}{145}{section.379}%
+\contentsline {subsection}{\numberline {7.2.1}DEA Load Study}{146}{subsection.381}%
+\contentsline {subsection}{\numberline {7.2.2}Deformed DEA Electrostatics Study}{147}{subsection.382}%
+\contentsline {subsection}{\numberline {7.2.3}Voltage and Energy Generation}{147}{subsection.383}%
+\contentsline {section}{\numberline {7.3}Results}{147}{section.385}%
+\contentsline {subsection}{\numberline {7.3.1}DEA Load Study}{148}{subsection.386}%
+\contentsline {subsection}{\numberline {7.3.2}Deformed DEA Electrostatics Study}{148}{subsection.388}%
+\contentsline {subsection}{\numberline {7.3.3}Voltage and Energy Generation}{149}{subsection.390}%
+\contentsline {section}{\numberline {7.4}Discussion}{151}{section.394}%
+\contentsline {section}{\numberline {7.5}Conclusions}{153}{section.396}%
+\contentsline {chapter}{\numberline {8}Beyond Rigid - A Softer Future}{155}{chapter.397}%
+\contentsline {section}{\numberline {8.1}Core Research Findings}{155}{section.398}%
+\contentsline {section}{\numberline {8.2}Future Work}{156}{section.399}%
+\contentsline {section}{\numberline {8.3}Concluding Statements}{158}{section.400}%
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Thesis Crossword}{159}{appendix.400}%
-\contentsline {chapter}{\numberline {B}Strain-Stress-Resistance Experiments}{161}{appendix.402}%
-\contentsline {chapter}{\numberline {C}EIT-based Pressure Sensor Review}{163}{appendix.406}%
-\contentsline {chapter}{\numberline {D}EIT-based Pressure Sensor Performance Metrics}{167}{appendix.409}%
-\contentsline {section}{\numberline {D.1}Noise Removal}{167}{section.410}%
-\contentsline {section}{\numberline {D.2}More Threshold Percentage Masks}{169}{section.413}%
-\contentsline {section}{\numberline {D.3}Quasi-static Conductance Strain Fitted Data}{170}{section.420}%
-\contentsline {section}{\numberline {D.4}1D and 2D Strain Settling Times}{171}{section.422}%
-\contentsline {section}{\numberline {D.5}Performance Metrics Example}{173}{section.427}%
-\contentsline {section}{\numberline {D.6}Randomised test $S\!D$ metrics data}{174}{section.429}%
-\contentsline {chapter}{\numberline {E}Portable EIT-based Pressure Sensor Build and Operation}{175}{appendix.431}%
-\contentsline {section}{\numberline {E.1}Build Methodology}{175}{section.433}%
-\contentsline {subsection}{\numberline {E.1.1}ERT Sensor}{175}{subsection.434}%
-\contentsline {subsection}{\numberline {E.1.2}Sensing Domain}{177}{subsection.438}%
-\contentsline {subsection}{\numberline {E.1.3}Cartesian force applicator}{178}{subsection.444}%
-\contentsline {section}{\numberline {E.2}Operation instructions}{180}{section.448}%
-\contentsline {subsection}{\numberline {E.2.1}ERT sensor power modes}{181}{subsection.457}%
-\contentsline {subsection}{\numberline {E.2.2}ERT sensor programming}{181}{subsection.459}%
-\contentsline {subsection}{\numberline {E.2.3}ERT sensing domain preparation}{182}{subsection.460}%
-\contentsline {subsection}{\numberline {E.2.4}Load application point and strain configuration}{182}{subsection.461}%
-\contentsline {subsection}{\numberline {E.2.5}Load experiment execution}{183}{subsection.463}%
-\contentsline {subsection}{\numberline {E.2.6}Touch-based mesh bed leveling}{183}{subsection.464}%
-\contentsline {subsection}{\numberline {E.2.7}Data capture}{184}{subsection.465}%
-\contentsline {subsection}{\numberline {E.2.8}Data processing}{185}{subsection.470}%
-\contentsline {section}{\numberline {E.3}Construction and Operational Safety}{185}{section.474}%
-\contentsline {subsection}{\numberline {E.3.1}Construction}{185}{subsection.475}%
-\contentsline {subsection}{\numberline {E.3.2}Operation}{186}{subsection.476}%
-\contentsline {chapter}{\numberline {F}Dielectric Elastomer Generator Validation}{187}{appendix.477}%
-\contentsline {section}{\numberline {F.1}$\Delta V$ Calculcation}{187}{section.478}%
+\contentsline {chapter}{\numberline {A}Thesis Crossword}{159}{appendix.401}%
+\contentsline {chapter}{\numberline {B}Strain-Stress-Resistance Experiments}{161}{appendix.403}%
+\contentsline {chapter}{\numberline {C}EIT-based Pressure Sensor Review}{163}{appendix.407}%
+\contentsline {chapter}{\numberline {D}EIT-based Pressure Sensor Performance Metrics}{167}{appendix.410}%
+\contentsline {section}{\numberline {D.1}Noise Removal}{167}{section.411}%
+\contentsline {section}{\numberline {D.2}More Threshold Percentage Masks}{169}{section.414}%
+\contentsline {section}{\numberline {D.3}Quasi-static Conductance Strain Fitted Data}{170}{section.421}%
+\contentsline {section}{\numberline {D.4}1D and 2D Strain Settling Times}{171}{section.423}%
+\contentsline {section}{\numberline {D.5}Performance Metrics Example}{173}{section.428}%
+\contentsline {section}{\numberline {D.6}Randomised test $S\!D$ metrics data}{174}{section.430}%
+\contentsline {chapter}{\numberline {E}Portable EIT-based Pressure Sensor Build and Operation}{175}{appendix.432}%
+\contentsline {section}{\numberline {E.1}Build Methodology}{175}{section.434}%
+\contentsline {subsection}{\numberline {E.1.1}ERT Sensor}{175}{subsection.435}%
+\contentsline {subsection}{\numberline {E.1.2}Sensing Domain}{177}{subsection.439}%
+\contentsline {subsection}{\numberline {E.1.3}Cartesian force applicator}{178}{subsection.445}%
+\contentsline {section}{\numberline {E.2}Operation instructions}{180}{section.449}%
+\contentsline {subsection}{\numberline {E.2.1}ERT sensor power modes}{181}{subsection.458}%
+\contentsline {subsection}{\numberline {E.2.2}ERT sensor programming}{181}{subsection.460}%
+\contentsline {subsection}{\numberline {E.2.3}ERT sensing domain preparation}{182}{subsection.461}%
+\contentsline {subsection}{\numberline {E.2.4}Load application point and strain configuration}{182}{subsection.462}%
+\contentsline {subsection}{\numberline {E.2.5}Load experiment execution}{183}{subsection.464}%
+\contentsline {subsection}{\numberline {E.2.6}Touch-based mesh bed leveling}{183}{subsection.465}%
+\contentsline {subsection}{\numberline {E.2.7}Data capture}{184}{subsection.466}%
+\contentsline {subsection}{\numberline {E.2.8}Data processing}{185}{subsection.471}%
+\contentsline {section}{\numberline {E.3}Construction and Operational Safety}{185}{section.475}%
+\contentsline {subsection}{\numberline {E.3.1}Construction}{185}{subsection.476}%
+\contentsline {subsection}{\numberline {E.3.2}Operation}{186}{subsection.477}%
+\contentsline {chapter}{\numberline {F}Dielectric Elastomer Generator Validation}{187}{appendix.478}%
+\contentsline {section}{\numberline {F.1}$\Delta V$ Calculcation}{187}{section.479}%
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{191}{dummy.488}%
+\contentsline {chapter}{Bibliography}{191}{dummy.489}%
