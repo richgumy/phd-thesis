@@ -30,48 +30,6 @@ Various methods and topologies of 2D pressure mapping sensors can be employed fo
 % TODO?: Mention capacitive sensor equivalents
 % cite{Goncalves2017,Loew2019,Silvera-Tawil2015,Lee2019,Gilanizadehdizaj2022,Zhu2021}. 
 
-
-\subsection{EIT Background} \label{sec:Background}
-% Defining EIT
-To estimate the 2D resistivity of the PNEC a technique called electrical impedance tomography (EIT) was used. EIT allows the generation of a map of impedance values for a cross section of a domain under test (DUT). EIT uses a set of boundary electrodes to pass known electrical currents and measure voltages along the boundary of the DUT. From these known current injections and voltage measurements, an ill-posed inverse problem can be defined. To obtain an EIT image reconstruction three key steps are required: data acquisition, forward modelling, and inverse problem solving. A constant current can be employed to capture solely the resistance values of the DUT. To capture impedance data an AC signal is implemented to sweep through a range of frequencies. 
-
-Various electrode excitation patterns can be utilised for EIT, each with distinct reconstruction performance characteristics \citep{Russo2017,Sherry2006,Brown1987}. The most prevalent excitation pattern is the Adjacent Electrode pattern, where a current source is placed across adjacent electrodes, and the voltages at all other adjacent electrodes are measured \citep{Adler2021}. This process repeats for each pair of adjacent electrodes as exemplified in Figure \ref{fig:EIT_adj_drive}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.8\linewidth]{Figures/eit_sequence.png}
-	\caption{EIT adjacent drive pattern sequence for a circular domain with 16 boundary electrodes.}
-	\label{fig:EIT_adj_drive}
-\end{figure}
-
-The forward problem in EIT is a well-posed mathematical problem, so linear algebra can be employed for obtaining electric field data for a DUT of known conductivity and a known current injection. Utilising a mesh-based coordinate system and FEM, proves to be an efficient solution for the forward model, accommodating diverse shapes. Solving the forward problem entails applying Maxwell's electromagnetic formulae and Ohm's law to determine how an electric field would propagate through the DUT, considering the DUT conductivity. voltage, $\phi$, in a domain, $\Omega$ is governed by the Equation \ref{eqn:eit-maxwells} derived from Maxwell's equations \cite{Cheney1999},
-\begin{equation}
-	\nabla \cdot \gamma(x,\omega) \nabla \phi = 0,
-	\label{eqn:eit-maxwells}
-\end{equation}
-where $x$ is a point in $\Omega$ with admittivity, $\gamma$, and $\omega$ is the angular frequency of the driving current. Admittivity, $\gamma$, comprises of a real and imaginary parts $\rho(x,\omega) + i\omega\epsilon(x,\omega)$, where $\rho$ is the electric conductivity, and $\epsilon$ is the electric permittivity. Current is applied to the surface of the domain, $\delta\Omega$, through electrodes like those given in \ref{fig:EIT_adj_drive} and the current density, $J$, can be formulated with the equation
-\begin{equation}
-	\gamma \frac{\delta \phi}{\delta v} = J \quad on \quad \delta\Omega,
-	\label{eqn:eit-current-density}
-\end{equation}
-where $v$ is a spatial unit restricted to the DUT boundary, $\delta\Omega$. A common continuum model used for EIT incorporates Equations \ref{eqn:eit-maxwells}, \ref{eqn:eit-current-density}, and the Law of Charge Conservation, whereby the sum of the current density and sum of the voltages on the boundary is zero. However to use these equations in practice the electrical current, $I$, is known and not current density, $J$. This is found by integrating Equation \ref{eqn:eit-current-density} for each $i$th electrode as shown in the following equation,
-\begin{equation}
-	\int_{e_i} \gamma \frac{\delta\phi}{\delta v} ds = I_i, \quad i = 1, 2, ..., n,
-	\label{eqn:eit-current}
-\end{equation}
-where $e_i$ is the part of DUT boundary, $\delta\Omega$ at the $i$th electrode and $I_i$ is the current injected at the $i$th electrode. Another assumption is made with the electrode gap model when the current density between the electrodes is on $\delta\Omega$ is zero, while the current across each electrode is constant.
-
-Unlike typical biomedical EIT imaging where there is often significant and variable electrode impedance, the device in this work uses DC meaning that no complete electrode model is needed on top of the above model constituents.
-
-An initial estimate of the DUT resistivity is necessary for the first step of an EIT algorithm. Once the EIT forward model is solved, EIT inverse problem can be solved iteratively using the forward problem's solution. This inherently unstable problem requires optimisation algorithms and regularisation to create and linearise a solution \citep{Bayford2018,Lionheart2003,Martins2019,Adler2021}. This work uses an efficient inverse solver algorithm called Newton One-Step Error Reconstructor (NOSER) which uses a regularised form of Newton's method to solve a modified version of the inverse forward problem to generate an impedance or conductivity map based on known current and voltage values\cite{Cheney1999}. The NOSER EIT reconstruction is done via the formula
-\begin{equation}
-	\rho = \rho^0 C + 2 \sum_{k=1}^{K}\sum_{j=1}^{K} v_{k,j} P^{k,j},
-\end{equation}
-where $C$ and $P^{k,j}$ are predetermined vectors that depend only on the known geometry and regularisation parameters, and $\rho^0$ and $v^{k,j}$ are scalars determined from known data. $k$ and $j$ are the related to amount of the electrodes used and the electrode drive pattern used.
-% TODO?: Insert images and equations explaining EIT??
-
-% Explaining the required post processing
-Once the EIT reconstruction algorithm has been tuned for an application, often post-processing is completed on the reconstructed EIT image for filtering and to capture data specific for the application. A consortium of experts in the field of medicine and biomedical imaging  have constructed metrics for quantifying the quality of an EIT reconstruction as shown by Adler et al. \citep{Adler2009} and their GREIT (Graz consensus Reconstruction algorithm for EIT) performance metrics. Although GREIT has been optimised for human thorax imaging, researchers who have used EIT pressure sensing purposes have also developed performance metrics, most of which agree with the GREIT metrics \citep{Silvera-Tawil2015,Visentin2016,Tallman2020,Sun2020,Hassan2009,Kato2007}.
-
 \subsection{Related Work} \label{sec:Related Work}
 Artificial skins are not a novel subject there are many different methods for localising loads in two-dimensions on a soft domain. A limiting factor found with non-EIT based methods of pressure mapping were the size of discretely sensed regions, also known as sensels. Often these sensels are limited by factors in the fabrication process and the bulk of electrode wires required. This bulk is exemplified high electrode-to-sensel ratio. Example load mapping technology include, optical \citep{Ramuz2012,Shimadera2022,Rossiter2005}, piezoresistive \citep{Gilanizadehdizaj2022,Fu2020,Yang2022}, capacitive \citep{Liang2015}, and magnetic \citep{Yan2021}.
 
@@ -79,7 +37,6 @@ Artificial skins are not a novel subject there are many different methods for lo
 % related works and holes in their research
 Other attempts at creating artificial sensitive skins using EIT have been shown in a review by Silvera-Tawil et al. \cite{Silvera-Tawil2015}. This review provides adequate evidence to display a growing interest in the field; however, there is still no commercial EIT-based pressure sensor that is comparable in terms of spatial and temporal resolution, to commercially available non-EIT-based 2D pressure sensors.
 One of the earliest applications of EIT to an elastic piezoresistive domain was achieved by Knight and Lipczynski \cite{Knight1990} in 1990. Since this application, several other similar systems have been created using EIT and similar pressure sensitive fabrics or elastomeric materials\cite{Nagakubo2007,Russo2017,Sun2020,Silvera-Tawil2015,Yoon2017,Kato2007,Biasi2022}. A comparison of similar devices is given in Appendix \ref{tab:eit_sensor_compare}. None of these researched devices focus on using a material with similar softness, and quantify the stress data captured in real-time like this work. All of the referenced `EIT' soft sensors employ electrical resistivity tomography (ERT), however, the term ERT is most commonly associated with geological subsurface imaging applications, henceforth, EIT is be used in place of ERT in this work.
-
 
 
 \section{Methodology} \label{sec:Methodology}

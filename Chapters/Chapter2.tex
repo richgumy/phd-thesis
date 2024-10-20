@@ -258,6 +258,7 @@ To quantify the performance of a biological muscle, certain metrics are compared
     \item Stress - Force that is applied to the normal of the cross section of the muscle through various states of muscle excitation. [$Pa$]
     \item Strain - The muscle change of length due to the stress applied through various states of muscle excitation. [\%]
     \item Elastic modulus - The elasticity determining the relationship between stress and strain for the linear region of the stress strain characteristic curve. [$Pa$]
+    \item Actuation voltage - The voltage required to trigger saltatory conduction in a neuron [V]
     \item Energy density - The work done by the muscle per unit volume or mass. [$J.kg^{-1}$]
     \item Power density - The work done by the muscle per unit volume or mass per unit time. [$W.kg^{-1}$]
     \item Ultimate tensile strength - The maximum tensile stress that a material can tolerate before breaking. [$Pa$]
@@ -265,17 +266,17 @@ To quantify the performance of a biological muscle, certain metrics are compared
     \item Actuation frequency - The frequency range of actuation cycles using the system's method of excitation. [$Hz$]
     \item Stroke - The maximum displacement an actuator can achieve [$m$]
     \item Life cycle - The time or number of actuation cycles in which it takes for the actuator to degrade such that it cannot perform its intended purpose to specified standards.
-\newline
-\newline
-    As well as the commonly used medical/biological muscle metric:
-\newline
-    \item Maximum isometric contraction force - the maximum force a muscle can apply without changing strain. This is also related to the ratchet-like mechanism and muscle locking where a muscle can apply a much larger force in a static state, as seen in the myosin binding \citep{Cross2006}.
+%\newline
+%\newline
+%    As well as the commonly used medical/biological muscle metric:
+%\newline
+%    \item Maximum isometric contraction force - the maximum force a muscle can apply without changing strain. This is also related to the ratchet-like mechanism and muscle locking where a muscle can apply a much larger force in a static state, as seen in the myosin binding \citep{Cross2006}.
 
 \end{enumerate}
-Other qualities of muscle should be quantified on a case by case basis depending on the artificial muscle technology being investigated. For example, a major issue with dielectric elastomer actuators is the excitation voltage required for actuation is too large for many applications. Hence, excitation voltage could be another parameter considered for some electroactive artificial muscles.
-
-Some of the biological muscle metrics have been quantified by previous research as seen below:
+Only the main characteristics of muscle have been described above. If wanting to mimic other qualities of a biological muscle they should be quantified on a case by case basis depending on the artificial muscle technology being investigated. Some of the above biological muscle metrics have been quantified by previous research as seen below:
 \begin{itemize}
+	\item Actuation voltage - action potential voltage threshold for a muscle resting at -70 mV is -55 mV. With a peak voltage of +30 mV \cite{Filatov2005,Schmidt-Nielsen2002}.
+	\item Actuation frequency - action potentials are commonly between 4 - 12Hz \citep{Popovic2004}
     \item Energy density - energy densities ranging from 0.4 - 40 $J.kg^{-1}$ \citep{Alexander1977}.
     \item Power density - power densities ranging from 9 - 284 $W.kg^{-1}$ \citep{Full2004}
     \item Actuation frequency - natural actuation frequencies ranges 1 to 180 $Hz$ \citep{Full2004}.
@@ -285,7 +286,7 @@ Some of the biological muscle metrics have been quantified by previous research 
     
 
 \subsection{Muscle Mechanics}
-Before attempting to recreate a bio-mimetic actuator it is important to acknowledge the numerous simplified electro-mechanical system models of parts of the muscle actuation process. These models need to be understood to gain an understanding of the application of biomimetic actuators can be used in assistive soft robotic devices. From here we will present basics of the subject of bio-mechanics.
+A variety of simplified electro-mechanical muscle models have been developed. Understanding these models is essential for exploring how biomimetic actuators can be applied in assistive soft robotic devices. First, some fundamental biomechanical muscle models will be discussed.
 
 The stress and strain involved in muscle contraction is more complex than uniform materials and is non-linear. The stress and strain of a passive muscle (i.e. contractile units are not producing internal muscle tension) can be modelled with the following equation; 
 \begin{equation}
@@ -295,7 +296,7 @@ Where $\varepsilon$ \& $\sigma$ are strain and stress respectively. A solution f
 \begin{equation}
     \sigma = \mu e^{\alpha\varepsilon} - \beta
 \end{equation}
-Where $\mu$ is a free parameter determined empirically. The stress-strain of a passive muscle can be likened to tension being applied yarn. As more strands of the yarn are pulled into tension the stress increases, then as the last strands are brought into tension a maximum stress is reached, until the yield stress is reached. Linear approximations can still be made over regions of elongation depending on accuracy required for application. The stress-strain of an active muscle (i.e. when it is tetanised) is approximated to a piece-wise quadratic function or bell curve. It is important to note that the stress for both active and passive muscle is zero when the strain is less than 0.4, demonstrating the yarn-like nature of the muscle stress-strain as shown in Figure \ref{fig:muscle-fibre-stress}.
+Where $\mu$ is a free parameter determined empirically. The stress-strain of a passive muscle can be likened to tension being applied yarn. As more strands of the yarn are pulled into tension the stress increases, then as the last strands are brought into tension a maximum stress is reached, until the yield stress is reached. Linear approximations can still be made over regions of elongation depending on accuracy required for application. The stress-strain of an active muscle (i.e. when it is tetanised) is approximated to a piece-wise quadratic function or bell curve. It is important to note that the stress for both active and passive muscle is near zero when the strain is less than 0.4, demonstrating the yarn-like nature of the muscle stress-strain as shown in Figure \ref{fig:muscle-fibre-stress}.
 \begin{figure}[H]
   \centering
   \includegraphics[width=8cm]{Figures/Muscle-fiber-active-and-passive-behavior.png}
@@ -316,24 +317,29 @@ Hill's muscle models commonly refer to a mechanical three element model \citep{H
 %\end{equation}
 
 
-\subsection{Electrical Muscle Models}
-Similar to EAP-based artificial skin and artificial muscles, biological muscles also require electrical stimulation to function. The main method for providing an artificial electrical stimulation to a muscle, to simulate the signal a motor neuron would give to a muscle, is functional electrical stimulation (FES). Due to the biochemical nature of the motor neuron signal transport and the purely electrical stimulation provided by the FES device, the process isn't as efficient as the naturally occurring electro-chemical muscle activation, often resulting in increased muscle fatigue when compared to equivalent voluntary muscle contractions \citep{Ibitoye2016}. FES applies a voltage across between two electrodes on the user's skin above a specific muscle. The voltage simulates the signal form and frequency of action potentials between 4 - 12Hz \citep{Popovic2004}. The threshold for a muscle action potential to cause a muscle contraction is approximately 70 mV \cite{Schmidt-Nielsen2002}.
-%\begin{figure}[H]
-%  \centering
-%  \includegraphics[width=8cm]{Figures/FES_electric_field.PNG}
-%  \caption{Electric field generated by two electrodes on the surface of the skin above a specific muscle and hence it's activating nerve bundle \citep{Bajd2010}}
-%  \label{fig:Muscle}
-%\end{figure}
-To artificially sense an intended muscle contraction electromyography (EMG) can be used. EMG also commonly uses two electrodes on the surface of the skin above a desired muscle. This EMG signal can be used as a sensor input for joint pose estimation. EMG senses the action potential impulses conducted along motor neurons to the muscle. 
-There are many models for limb motion and EMG- and FES-based therapies \cite{Meadmore2014,Freeman2015,Hodkin2018,Popovic2014}.
+%\subsection{Electrical Muscle Stimulation and Models}
+Similar to EAP-based artificial skin and artificial muscles, biological muscles also require electrical stimulation in the form of neuronal action potentials to function. These models often require many input parameters to determine the out contraction force and strain of a muscle such as action potential frequency, nerve conduction velocity, calcium ion absorption dynamics, and concentrations of many other molecules required in the process \cite{Purves2001}. In contrast, when designing artificial muscle technology there is opportunity to control the parameters for their electromechanical models.
+%
+%For an artificial electrical stimulation to a muscle, 
+%
+%to simulate the signal a motor neuron would give to a muscle, is functional electrical stimulation (FES). Due to the biochemical nature of the motor neuron signal transport and the purely electrical stimulation provided by the FES device, the process isn't as efficient as the naturally occurring electro-chemical muscle activation, often resulting in increased muscle fatigue when compared to equivalent voluntary muscle contractions \citep{Ibitoye2016}. FES applies a voltage across between two electrodes on the user's skin above a specific muscle. The voltage simulates the signal form and frequency of action potentials between 4 - 12Hz \citep{Popovic2004}. The threshold for a muscle action potential to cause a muscle contraction is approximately  mV \cite{}.
+%%\begin{figure}[H]
+%%  \centering
+%%  \includegraphics[width=8cm]{Figures/FES_electric_field.PNG}
+%%  \caption{Electric field generated by two electrodes on the surface of the skin above a specific muscle and hence it's activating nerve bundle \citep{Bajd2010}}
+%%  \label{fig:Muscle}
+%%\end{figure}
+%To artificially sense an intended muscle contraction electromyography (EMG) can be used. EMG also commonly uses two electrodes on the surface of the skin above a desired muscle. This EMG signal can be used as a sensor input for joint pose estimation. EMG senses the action potential impulses conducted along motor neurons to the muscle. 
+%There are many models for limb motion and EMG- and FES-based therapies \cite{Meadmore2014,Freeman2015,Hodkin2018,Popovic2014}.
 
 
 
 
-\section{Artificial Actuation - Actuator Technology}
-There are many types of electrically actuated artificial muscles technology. Artificial muscle actuator technology that has gained particular interest in recent years include, the ionic polymer-metal composite (IPMC) actuator, the hydraulically amplified self‐healing electrostatic (HASEL) actuator, magnetorheolgical elastomer (MRE) actuators, and dielectric elastomer actuators (DEAs). Each of these having qualities very similar to that of biological muscle usually with a trade-off in actuation response time, actuation force, and actuation strain for their various possible topologies. This section gives a brief overview of four state-of-art soft electromagnetically driven actuator technologies.
+\section{Artificial Actuation - Electromagnetic Actuator Technology}
+\label{sec:Artificial Actuation - Electromagnetic Actuator Technology}
+Artificial muscle actuator technology has been refined over the course of the 21st century to more closely match biological muscle and supersede them in certain performance metrics. The most prominent soft actuator technologies researched in recent years include, ionic polymer-metal composite (IPMC) actuators, hydraulically amplified self‐healing electrostatic (HASEL) actuators, magnetorheolgical elastomer (MRE) actuators, and dielectric elastomer actuators (DEAs). Each of these having qualities similar to that of biological muscle usually with a trade-off in actuation response time, actuation force, and actuation strain for their various possible topologies. This section gives a brief overview of four state-of-art soft EAP actuator technologies.
 
-\subsection{Ionic polymer–metal composite actuator}
+\subsection{Current Driven - Ionic polymer–metal composite actuator}
 Ionic polymer-metal composite actuators (IPMCs) are soft actuators that can be actuated at a much lower excitation voltage than DEAs, commonly less than 10V. IPMCs are also desirable as artificial muscles they have shown large bending deformations, simple to fabricate, light weight and thin in design, and can have a fast actuation response time ($>$15Hz) at small displacements \citep{Ma2020}. IPMCs also have a high work density and maintain a constant volume during actuation like biological muscles \cite{Neuhaus2020}.
 \begin{figure}[H]
   \centering
@@ -343,57 +349,65 @@ Ionic polymer-metal composite actuators (IPMCs) are soft actuators that can be a
 \end{figure}
 An IPMC is made up of an ionic polymer interlayer, two electrode conductive layers, and a voltage source. The ionic polymer interlayer allows for ionic transport and is typically made of treated Nafion or Flemion. These materials are typically used as ion exchange membranes so have the characteristics desired for the transporting ions during the actuation of the IPMC actuator. The two electrodes are made of a suitably conductive and flexible material. The interlayer is treated such that it is filled with water molecules and cations, with the chemical backbone of the interlayer being slightly negatively charged. When a voltage is applied across the electrodes the cations are repelled from the cathode and travel towards the anode while the water molecules are displaced in the opposite direction towards the cathode. The ionic polymer then swells as the cations repel each other along the anode side of the interlayer, while the polymer elements on the cathode side effectively shrink \citep{Segalman1999}. This swelling adjacent to the cathode provides the device's bending actuation.
 
-There are many variations of the design and manufacturing of IPMCs to optimise the actuator for an application as shown by \cite{Shahinpoor2016}.Although the process of manufacturing IPMCs is simple, it takes a long amount of time (often $>$48 hours \citep{Ma2020}) for the ionic polymer interlayer to absorb the necessary ions and undergo the necessary reactions. There has been much research into the optimal manufacturing of an IPMC \citep{HOMMA1999,Liu1992,Shahinpoor2016}. The use of additive manufacturing has been used successfully to generate more complex geometries using fused filament deposition \citep{Carrico2015}.
+There are many variations of the design and manufacturing of IPMCs to optimise the actuator for an application as shown by \cite{Shahinpoor2016}.
+
+Although the process of manufacturing IPMCs is simple, the typical duration for the ionic polymer to absorb the necessary ions and undergo necessary reaction during fabrication can exceed 48 hours \cite{Ma2020a}. There has been much research into the optimal manufacturing of an IPMC \citep{Homma1999,Liu1992,Shahinpoor2016}. The use of additive manufacturing has been used successfully to generate more complex geometries using fused filament deposition \citep{Carrico2015}.
 
 IPMCs can also be used as sensors. When an IPMC undergoes bending due to an external force there is a potential generated across the electrodes, which indicates bending direction and magnitude \citep{Shahinpoor2004}.
 
-Two key deficiencies of current IPMC actuator technology are the maximum force output achievable and the life cycle of the actuator in a dry (non-aqueous) environment.The force output optimisation of IPMCs has been investigated by several researchers, all of which having a maximum actuation force in the milli-newton scale \citep{Akle2004,Xu2014,Shahinpoor2004}. 
-Because the IPMC actuators rely on hydrated ionic transport to actuate this means if the IPMCs are in a dry environment then over time they will decrease their maximum actuation force.
+Two key deficiencies of current IPMC actuator technology are the maximum force output achievable and the life cycle of the actuator in a dry (non-aqueous) environment. The force output optimisation of IPMCs has been investigated by several researchers, all of which having a maximum actuation force in the milli-newton scale \citep{Akle2004,Xu2014,Shahinpoor2004}. Because the IPMC actuators rely on hydrated ionic transport to actuate this means if the IPMCs are in a dry environment then over time they will decrease their maximum actuation force.
 
-The applications of this actuator is limited to applications requiring a small actuation force and a wet environment. Current applications include flexible catheters \citep{Guo1994}, small biomimetic robotics \citep{Kodaira2019,Chang2013}, aquatic robotics \citep{Hubbard2014,Khawwaf2019}, with many other applications yet to be discovered.
+The applications of this actuator is limited to applications requiring a small actuation force and a wet environment. Some current applications include flexible catheters \citep{Guo1994}, small biomimetic robotics \citep{Kodaira2019,Chang2013}, and aquatic robotics \citep{Hubbard2014,Khawwaf2019}.
 
-\subsection{HASEL actuator}
-A hydraulically amplified self‐healing electrostatic (HASEL) actuator is a recent soft actuator technology developed in 2018 by Kellaris et al. \citep{Kellaris2018} which displays many qualities that are superior than current artificial muscle technology. HASEL actuators are made up of three main components: electrodes, dielectric fluid, and an elastomeric shell. The electrodes need to be highly conductive, able to handle high electric potential, and can be solid or flexible. Hydrogel electrodes have been proven to be a good material for the electrodes because of their elasticity while still maintaining a high conductivity \citep{Acome2018}. In one application the hydrogel material is bonded to a polydimethylsiloxane (PDMS) substrate for mechanical strength and for ease of bonding to the actuator biaxially-oriented polypropylene (BOPP) shell \citep{Kellaris2018,Yuk2016}. HASEL actuators use high electric potential across two electrodes to create an electrostatic force. This force induces a zipping effect which pulls the electrode together from one end to the other as the electric field strength increases. The zipping of the two electrodes pushes the dielectric fluid into the reservoir increasing the pressure which alters the shape of the reservoir bounds providing an actuation motion. When the electrodes have displaced all of the fluid between them the actuation displacement is at a maximum. The electrostatic zipping action allows a large force to be generated due to snap-through transition. Snap-through transition is an actuation instability which has been discussed in previous research as a means of amplifying DEA actuation strain \citep{Keplinger2012}. 
+
+\subsection{Magnetically Driven - Magnetorheological Elastomer}
+Magnetorheological elastomer (MRE) actuators, also known as magnetoactive soft materials (MSMs), are a relatively new form of actuator however the theory reinforcing operating principle has been known since at least the 1980s \citep{Jolly1996}. The structure of an MRE actuator generally consists of a ferromagnetic elastic composite and a driving magnetic field. An example of this is a composite of iron-carbonyl powder and PDMS. The operating principle of MREs is magnetostriction, where magnetic flux travelling through the MRE will change mechanical characteristics within the elastomer (i.e. stiffness and/or deformation of the body). The operation of a MRE actuator is similar to a DEA however instead of having an electric field cause a contraction it is a magnetic field causing a deformation. An MRE is typically made of silicone rubber containing magnetic ferrite based particles uniformly distributing throughout its volume. This kind of actuator is current controlled and can hence operate at a low voltage. This helps mitigate the risk of electric shock of a device in close proximity to humans, unlike HASEL and DE actuators discussed in the following Sections \ref{subsec:hasel-actuator} and \ref{subsec:DEA}.
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.7\linewidth]{Figures/HASEL_actuator_crop.jpg}
-  \caption{Diagram of the typical architecture and the contraction stages of a HASEL actuator \citep{Kellaris2018}}
-  \label{fig:Artificial Muscle_HASEL}
+  \includegraphics[width=0.6\linewidth]{Figures/MRE_actuate.jpg} %%% TO DO: get permission from Author!!
+  \caption{Diagram showing MRE contraction forces when a magnetic field is applied \citep{Park2018a}}
+  \label{fig:Artificial Muscle_MRE}
+\end{figure}
+A key issue with using magnetorheological elastomers as soft actuators is that they require heavy gauge conductors for the high current they require for generating a magnetic field. The high current requirement means that actuators have only been created that have a rigid electromagnet driving a soft MRE \citep{Bose2012}. 
+
+When manufacturing MREs, uncured liquid silicone rubber is mixed with magnetic (commonly carbonyl iron) particles to form a 3D matrix of crosslinked elastomer with homogeneously dispersed magnetic particles. A core issue when creating an MRE is the agglomeration and corrosion of magnetic particles due to residual water within the mixing operation. The magnetic particles can be processed to have a hydrophobic quality to mitigate this issue \cite{Burhannuddin2020,Ge2020}. During the curing process a magnetic field can be applied to align the particles within the elastomer to control the particle isotropy \cite{Ge2020,LaleganiDezaki2023}.
+
+There have been attempts to use additive manufacturing to make MREs \citep{Krueger2014,Ge2020}, however the method described has not optimsied the structure of MRE for any application and the particle dipersion throughout the MRE has not been proven uniform throughout the print volume. 
+
+To sense the contraction and deformation of an MRE a hybrid iron-carbon particle elastomer composite can be made. Where the carbon particles' contribute to the material piezoresistivity to determine the material loading \cite{Bica2011,Costi2024}. 
+
+The current applications of MRE actuators are limited, however magnetorheological fluid (MRF), is a fluid which becomes more viscous with an applied magnetic field as currently has many modern applications. This fluid substance is largely used in applications where damping control is desired such as vehicle suspension \citep{UnuhH2019}, medical assitive devices \citep{Chen2017} and helicopter seat damping \citep{Hiemenz2007}. Potential MRE actuator applications include fluid valve control \citep{Bose2012} and active vibration control similar to that mentioned for MRFs \citep{UnuhH2019}. 
+
+
+\subsection{Electrostatically Driven - HASEL actuator}
+\label{subsec:hasel-actuator}
+A hydraulically amplified self‐healing electrostatic (HASEL) actuator is a recent soft actuator technology developed in 2018 by Kellaris et al.\citep{Kellaris2018} which displays many qualities that are superior than current artificial muscle technology. HASEL actuators are made up of three main components: electrodes, dielectric fluid, and an elastomeric shell. The electrodes need to be highly conductive, able to handle high electric potential, and can be solid or flexible. Hydrogel electrodes have been proven to be a good material for the electrodes because of their elasticity while still maintaining a high conductivity \citep{Acome2018}. In one application the hydrogel material is bonded to a polydimethylsiloxane (PDMS) substrate for mechanical strength and for ease of bonding to the actuator biaxially-oriented polypropylene (BOPP) shell \citep{Kellaris2018,Yuk2016}. HASEL actuators use high electric potential across two electrodes to create an electrostatic force. This force induces a zipping effect which pulls the electrode together from one end to the other as the electric field strength increases. The zipping of the two electrodes pushes the dielectric fluid into the reservoir increasing the pressure which alters the shape of the reservoir bounds providing an actuation motion. When the electrodes have displaced all of the fluid between them the actuation displacement is at a maximum. The electrostatic zipping action allows a large force to be generated due to snap-through transition. Snap-through transition is an actuation instability which has been discussed in previous research as a means of amplifying DEA actuation strain \citep{Keplinger2012}. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figures/HASEL_actuator_crop.jpg}
+	\caption{Diagram of the typical architecture and the contraction stages of a HASEL actuator \citep{Kellaris2018}}
+	\label{fig:Artificial Muscle_HASEL}
 \end{figure}
 Recorded efficiency values of HASEL actuators of 21\% are comparable to that of human muscles of 20 - 35\% \citep{Smith2005}. The actuators have had a frequency response of up to 20Hz. Large strains of 124\% have been recorded, but can only be achieved when actuating at a resonant frequency. Strains of up to 79\% have been recorded using a linear planar HASEL actuator configuration and DC voltage stepping.  Else, strains of only 10\% have been recorded for static steady strain \citep{Kellaris2018}.
 Because there is a relationship between the motion of the actuation and capacitance between the electrodes, this means self sensing can be achieved through the electrodes. Although due to the flexible and fluid nature of the device, modelling of the HASEL is difficult and limited in accuracy.
 
 The simple and commonly used manufacturing process for HASEL actuators is completed in six steps as shown by the diagram below:
 \begin{figure}[H]
-  \centering
-  \includegraphics[width=0.7\linewidth]{Figures/HASEL_manuf.jpg}
-  \caption{Diagram of the simplified stages of HASEL actuator production \citep{Kellaris2018}}
-  \label{fig:Artificial Muscle_HASEL_manf}
+	\centering
+	\includegraphics[width=0.7\linewidth]{Figures/HASEL_manuf.jpg}
+	\caption{Diagram of the simplified stages of HASEL actuator production \citep{Kellaris2018}}
+	\label{fig:Artificial Muscle_HASEL_manf}
 \end{figure}
 
 Other attempts have been made to use polyjet inkjet based additive manufacturing to make the whole HASEL actuator and have been successful with proof of concept, but are yet to be developed from prototype stage \citep{Manionn.d.}. 
 
-The cyclic life of HASEL actuators are high, because of their self-healing properties. When there is a dielectric breakdown through the liquid dielectric the damage caused is not permanent like when a DE breaks down. The liquid may form some small air bubbles, however these may not effect the operation of the actuator, instead this can increase the likelihood of a another dielectric breakdown. The cycle life of the HASEL actuator was seen to be larger than one million with a given torus shaped HASEL actuator \citep{Acome2018}. The HASEL technology is promising with a number topologies possible, some topologies include toroidal, planar linear \citep{Acome2018}, and scorpion metasoma(tail) \citep{Mitchell2019}.
+The cyclic life of HASEL actuators are high, because of their self-healing properties. When there is a dielectric breakdown through the liquid dielectric the damage caused is not permanent like when a DE breaks down. The liquid may form some small air bubbles, however these may not effect the operation of the actuator, instead this can increase the likelihood of a another dielectric breakdown. The cycle life of the HASEL actuator was seen to be larger than one million with a given torus shaped HASEL actuator \citep{Acome2018}. The HASEL technology is promising with a number topologies possible,  including toroidal, planar linear \citep{Acome2018}, and scorpion metasoma(tail) \citep{Mitchell2019}.
 
-\subsection{Magnetorheological Elastomer}
-Magnetorheological elastomer (MRE) actuators, also known as magnetoactive soft materials (MSMs), are a relatively new form of actuator however the theory reinforcing operating principle has been known since at least the 1980s \citep{Jolly1996}. The structure of an MRE actuator generally consists of a ferromagnetic elastic composite and a driving magnetic field. An example of this is a composite of iron-carbonyl powder and PDMS. The operating principle of MREs is that magnetic flux travelling through the MRE will change mechanical characteristics within the elastomer (i.e. stiffness or displacement of the body). The operation of a MRE actuator is similar to a DEA however instead of having an electric field cause a contraction it is a magnetic field causing a deformation. An MRE is typically made of silicone rubber containing magnetic ferrite based particles uniformly distributing throughout its volume. This kind of actuator is current controlled and can hence operate at a low voltage. This helps mitigate the risk of electric shock of a device in close proximity to humans (unlike HASEL actuators and DEAs).
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.6\linewidth]{Figures/MRE_actuate.jpg} %%% TO DO: get permission from Author!!
-  \caption{Diagram showing MRE contraction actuation when a magnetic field is applied \citep{Park2018a}}
-  \label{fig:Artificial Muscle_MRE}
-\end{figure}
-A key issue with using magnetorheological elastomers as soft actuators is that they require heavy gauge conductors for the high current they require for generating a magnetic field. The high current requirement means that actuators have only been created that have a solid electromagnet driving a soft MRE \citep{Bose2012}. 
 
-When manufacturing MREs, uncured liquid silicone rubber is mixed with magnetic (commonly carbonyl iron) particles to form a 3 dimensional matrix of crosslinks with the magnetic particles fixed between the crosslinked polymers. A core issue when creating an MRE is the agglomeration and corrosion of magnetic particles due to residual water within the mixing operation. The magnetic particles can be processed to have a hydrophobic quality to mitigate this issue \cite{Burhannuddin2020,Ge2020}. During the curing process a magnetic field can be applied to align the particles within the elastomer to control the particle isotropy \cite{Ge2020,LaleganiDezaki2023}.
-
-There have been attempts to use additive manufacturing to make MREs \citep{Krueger2014,Ge2020}, however the method described has not optimsied the structure of MRE for any application and the particle dipersion throughout the MRE has not been proven uniform throughout the print volume.
-
-The current applications of MRE actuators are limited, however magnetorheological fluid (MRF), is a fluid which becomes more viscous with an applied magnetic field as currently has many modern applications. This fluid substance is largely used in applications where damping control is desired such as vehicle suspension \citep{UnuhH2019}, medical assitive devices \citep{Chen2017} and helicopter seat damping \citep{Hiemenz2007}. Potential MRE actuator applications include fluid valve control \citep{Bose2012} and active vibration control similar to that mentioned for MRFs \citep{UnuhH2019}.
-
-\subsection{Dielectric Elastomer Actuators}
+\subsection{Electrostatically Driven - Dielectric Elastomer Actuators}
+\label{subsec:DEA}
 % How do DEAs work
-The dielectric elastomer actuator (DEAs) are often called artificial muscles because they share similar characteristics to biological muscle such as, the large strains achievable, the high elastic energy density, many topologies/configurations achievable, and constant volume during its contraction.
+DEAs share many similar characteristics to biological muscle such as, the large strains achievable, the high elastic energy density, many topologies/configurations achievable, and constant volume during its contraction. Compared to the previous soft actuator technologies discussed, the dielectric elastomer actuator (DEA) better fits the term `artificial muscle'. 
 
 A DEA consists of a dielectric elastomer (DE) film sandwiched between two compliant electrodes. To excite the actuation, a high electric potential is applied to across the electrodes creating an electrostatic force between the two compliant electrodes. This force pulls the two electrodes together applying stress (known as Maxwell's stress) to the elastomer and hence strain parallel and perpendicular to direction of the electrostatic force. When the DEA is contracted the surface area of the electrodes increases and the thickness of the DE decreases causing a change in capacitance and Maxwell's stress.
 \begin{figure}[H]
@@ -406,36 +420,25 @@ A dielectric elastomer actuator can be modelled as a flexible parallel plate cap
 \begin{equation}
 	\sigma_{es} = \epsilon_0 \epsilon_r \frac{V^2}{z^2}
 \end{equation}
-Where $\sigma_{es}$ is the electrostatic pressure, $\epsilon_0$ and $\epsilon_r$ are the vacuum and relative permittivity constants, $V$ is the voltage potential applied across the electrodes and $z$ is the thickness of the DE. The electrodes used for a DEA need to be made of a conductive material, but require similar elasticity to the dielectric material. An ideal material for these electrodes would have high conductivity. This conductivity would change minimally and predicatively under large strains. Many composites have been used in practice for these electrodes, with the most common in early development being a silicone rubber and carbon powder composite. However, the unpredictable nature of carbon powder elastomer composites has lead to research into many other materials/silicone additives such as hydrogels, graphene sheets, metallic nanostructures, carbon nanotubes, liquid metal \citep{Liu2013,Rogers2013,Bele2018,Quinsaat2015}. The ideal material for the dielectric elastomer should have a high elastic modulus and a high electric breakdown voltage. The elastic modulus needs to be sufficiently high so that less electrostatic pressure can create a larger strain. While the breakdown voltage of the material needs to be sufficiently high such that the material will not break down at the maximum desired strain. If a material can be found with a high enough electric breakdown strength at a smaller thickness than current research prototypes then a higher stress can be achieved giving a larger or equivalent actuation force at a lower voltage.
+Where $\sigma_{es}$ is the electrostatic pressure, $\epsilon_0$ and $\epsilon_r$ are the vacuum and relative permittivity constants, $V$ is the voltage potential applied across the electrodes and $z$ is the thickness of the DE. The electrodes used for a DEA need to be made of a conductive material, but require similar elasticity to the dielectric material. An ideal material for these electrodes would have high conductivity. This conductivity would change minimally and predicatively under large strains. Many composites have been used in practice for these electrodes, with the most common in early development being a silicone rubber and carbon powder composite or a carbon grease. However, the unpredictable nature of carbon powder elastomer composites has lead to research into many other materials/silicone additives such as hydrogels, graphene sheets, metallic nanostructures, carbon nanotubes, liquid metal \citep{Liu2013,Rogers2013,Bele2018,Quinsaat2015}. The ideal material for the dielectric elastomer should have a high elastic modulus and a high electric breakdown voltage. The elastic modulus needs to be sufficiently low so that less electrostatic pressure can create a larger strain. The actuation force is also a function of the dielectric constant, with increased dielectric constant resulting in increased actuator force.  
 
-Many other topologies exist to generate different actuation motions using the same electrostatic pressure generation principle. These include actuator topologies such as stack \citep{Hau2018,Kovacs2009}, helical \citep{Carpi2012}, bending \citep{Pfeil2020}, lens \citep{Ghilardi2019}, cylindrical, and rolled shaped actuators \citep{Amin2018}. Each of which having a range of applications.
+While the breakdown voltage of the material needs to be sufficiently high such that the material will not break down at the maximum desired strain. If a material can be found with a high enough electric breakdown strength at a smaller thickness than current research prototypes then a higher stress can be achieved giving a larger or equivalent actuation force at a lower voltage. 
+
+While disc shaped DEAs are the most commonly used actuator topology many other topologies exist to generate different actuation motions using the same electrostatic pressure generation principle. These include actuator topologies such as stack \citep{Hau2018,Kovacs2009}, helical \citep{Carpi2012}, bending \citep{Pfeil2020}, lens \citep{Ghilardi2019}, cylindrical, and rolled shaped actuators \citep{Amin2018}. Each of which having a range of applications.
 
 DEAs are often fabricated in a laboratory environment using a pre-strained elastomer. The pre-straining accomplishes four key qualities; stores elastic strain energy, ensures DE is planar within the bounds of the jig, controls the initial thickness of the DE, and puts the DE in an optimal stress-strain region, often taking advantage of elastomer hyper-elasticity. There is no standard practice for the fabrication of DEAs, other methods such as additive manufacturing have also been explored to generate more complex geometries and to increase production speed \citep{Park2018,McCoul2017}.
 
 As well as actuating, DEAs can also be used for sensing. DEAs can be used as sensitive capactive sensors, where any strain applied to the DE will relate to the effective capacitance between the two electrodes \citep{Jung2008,Goulbourne2007,Gisby2013}. 
 
-Currently dielectric elastomer actuators all require voltages within the kilo-volt range to generate an adequate stress and strain for a range of applications. A key problem encountered by researchers designing DEAs is the trade-off between actuation force and strain magnitude \citep{Hau2018}. This high voltage requirement may deem the technology dangerous for use where there is a possibility that a human may come into physical contact with the high voltage electrodes.
+Currently DEAs often require voltages within the kilo-volt range to generate an adequate stress and strain for a range of applications. A key problem encountered by researchers designing DEAs is the trade-off between actuation force and strain magnitude \citep{Hau2018}. This high voltage requirement may deem the technology dangerous for use where there is a possibility that a human may come into physical contact with the high voltage electrodes.
 
 
 \section{Electroactive Material - Soft Conductive Particle Piezoresistive Composites}
 \label{sec:Soft Piezoresistive Composites}
 % Why are soft piezo resistive composites used in S&As?
-Soft sensors and actuators require low-stiffness materials for their active sensing/actuation domains. The requirement of softness is governed by the mechanical modulus values depend on the application requirements. The use of conductive particle elastomer composites is explored in this work due to the customisability of the electromechanical characteristics.
+Most soft sensors and actuators require low-stiffness materials for their active sensing/actuation domains. The requirement of softness is governed by the mechanical modulus values depend on the application requirements. The use of conductive particle elastomer composites is explored in this work due to the customisability of the electromechanical characteristics. Although HASEL actuators have been defined soft actuators they commonly BOPP or BOPP-like plastic polymers which are flexible, however do not have the desired stretchability of elastomers. When comparing the limited amount of relatively soft piezoresistive materials in comparison Table \ref{tab:comparing-piezo-r-materials}, conductive particle polymers were determined to have the best fit for the sensor and actuator technology developed in this work.
 % Why CPECs
-A core part of this thesis is understanding the behaviour of conductive particle elastomer composites for their use as a range of EAP-based sensing and actuating devices. The characteristics that make conductive particle elastomer composites (CPECs) ideal for soft sensor and actuator devices often include, low stiffness, controllable conductivity, controllable piezoresistivity, mouldable, 3D printable, low toxicity, durable, inexpensive, easy to obtain, simple fabrication process, and sustainable \cite{Chung2020,Ge2020,HindermannBischoff2001,Kim2012}.
-
-\subsection{Fabricating Conductive Particle Elastomer Composites}
-\label{subsec:Fabricating Conductive Particle Elastomer Composites}
-Before exploring the known conduction and piezoresistive mechanisms and models for CPECs, it is important to understand how the fabrication process of a CPEC may affect its physical structure. 
-
-CPECs are made by dispersing conductive particles through a curable liquid elastomer matrix. To change the electromechanical properties of the material, the dispersion of the conductive particles throughout the matrix can be optimised through various methods such as mixture sonication, and mix speed and timing. To minimise the agglomerations of primary conductive particles often a sonication step is completed. This involves a mixture of the conductive particles and a liquid, usually in the form of a solvent, to be placed in a ultra-sonication bath. 
-
-The sonication bath performs a frequency sweep and it has been shown that sudden implosion cavitation near the agglomerates help cause the separation of the agglomerates into their primary particles \cite{Priyadarshi2021,Kudryashova2019}. The degree of deagglomeration and dispersion is affected by various factors including sonciation time, frequency of oscillations, oscillation intensity, particle wettability, and liquid matrix viscosity \cite{Kudryashova2019,Chen2020a}. 
-
-This sonication usually occurs before the the particles are added to the elastomeric matrix due to the large viscous damping effects of liquid elastomers. The next step involves mixing the dispersed conductive particles throughout the liquid elastomer, this can be done using a variety of mixing methods, including a planetary mixer, magnetic mixer, screw mixer, static mixers, amongst others \cite{Pegel2008,Rosset2016,Fekiri2020,Kim2012}. During the mixing process often the liquid solvent used in the dispersion stage is evaporated, leaving only the curable elastomer and the conductive particles. Although often impurities and voids are a by-product of the previous processes which can give undesirable qualities.
-
-When sufficient mixing of the liquid elastomer and conductive particles have been completed the material is formed into a desired final shape using advanced additive manufacturing methods \cite{Bastola2018,Sapra2023,Krueger2014,Li2020,McCoul2017,Yi2023,Park2018} or traditional moulding \cite{Kim2018} or film making techniques \cite{Fasolt2017}. During the moulding process the material undergoes a form of curing, such as UV, catalysed, or moisture curing. If the composite material has not already been integrated into a device containing electrodes and other mechanical support structures these are integrated at the end of the process.
-
+A core part of this thesis is understanding the behaviour of conductive particle elastomer composites for their use as a range of EAP-based sensing and actuating devices. The characteristics that make conductive particle elastomer composites (CPECs) ideal for soft sensor and actuator devices often include, its customisable low stiffness, conductivity, piezoresistivity, elasticity, mouldability,  aswell well as its 3D printability, low toxicity, durability, cost, simple fabrication process, and sustainability \cite{Chung2020,Ge2020,HindermannBischoff2001,Kim2012}.
 
 
 \subsection{Conductive Particle Elastomer Conduction Mechanisms}
@@ -448,11 +451,11 @@ Depending on the fabrication process stages stated in Section \ref{subsec:Fabric
     \label{fig:res_deformed_cube}
 \end{figure}
 
-From percolation theory \cite{Spahr2017} there is a threshold volume percentage of CB required for there to be a high likelihood that there is a conductive link of CB particles between two sides of a volume. Some of the physical features of these conductive percolation networks can be quantified and directly relate to the macro-level electromechanical properties of the material. Such characteristics of a conductive percolation network include, the type of conductive particle(s) used, particle dispersion, the elastomeric matrix, and any impurities or voids. The aspect ratio of a conductive particle filler can drastically change the conductivity and piezoresistivity of a CPEC. For example the aspect ratio of carbon nanotube particles (CNTs) is very large compared to that of regular carbon black (CB) particles, this has been shown to give improved conductivity for smaller weight volume percentages \cite{Wu2019,Flandin1999}, among other electromechanical property changes. Also the inherent particle conductivity a core parameter to consider when choosing a conductive particle composite. An example percolation threshold plot is shown in Figure \ref{fig:perc-thresh-plot}.
+Derived from percolation theory \cite{Spahr2017}, there is a percolation threshold volume percentage of CB required for there to be a high likelihood that there is a conductive link of CB particles between two sides of a volume. Some of the physical features of these conductive percolation networks can be quantified and directly relate to the macro-level electromechanical properties of the material. Such characteristics of a conductive percolation network include, the type of conductive particle(s) used, particle dispersion, the elastomeric matrix, and any impurities or voids. The aspect ratio of a conductive particle filler can drastically change the conductivity and piezoresistivity of a CPEC. For example the aspect ratio of carbon nanotube particles (CNTs) is very large compared to that of regular carbon black (CB) particles, this has been shown to give improved conductivity for smaller weight/volume percentages \cite{Wu2019,Flandin1999}, among other electromechanical property changes. Also the inherent particle conductivity a core parameter to consider when choosing a conductive particle composite. An example percolation threshold plot is shown in Figure \ref{fig:perc-thresh-plot}.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\linewidth]{Figures/percolation-plot-example.png}
+	\includegraphics[width=0.7\linewidth]{Figures/percolation-plot-example_labelled.png}
 	\caption{Example percolation threshold plot for a conductive particle composite with the plot settling at the conductive particle resistivity.}
 	\label{fig:perc-thresh-plot}
 \end{figure}
@@ -485,6 +488,19 @@ Electrical DC conduction through a CPEC occurs via two main mechanisms, electric
 The a CPEC can be modelled with an RC network as shown in Figure \ref{fig:AC-model-rep}. Electrical AC conduction can occur through a CPEC through capacitive means depending of particle spacing with a decrease in reactance becoming more prominent for composites near the percolation threshold \cite{HindermannBischoff2001}.
 
 
+\subsection{Fabricating Conductive Particle Elastomer Composites}
+\label{subsec:Fabricating Conductive Particle Elastomer Composites}
+Before exploring the known conduction and piezoresistive mechanisms and models for CPECs, it is important to understand how the fabrication process of a CPEC may affect its physical structure. 
+
+CPECs are made by dispersing conductive particles through a curable liquid elastomer matrix. To change the electromechanical properties of the material, the dispersion of the conductive particles throughout the matrix can be optimised through various methods such as mixture sonication, and mix speed and timing. Sonication serves to minimise the agglomerations of primary conductive particles as a preliminary step. This involves a mixture of the conductive particles and a liquid, usually in the form of a solvent, to be placed in a ultra-sonication bath. 
+
+The sonication bath performs a frequency sweep and it has been shown that sudden implosion cavitation near the agglomerates help cause the separation of the agglomerates into their primary particles \cite{Priyadarshi2021,Kudryashova2019}. The degree of deagglomeration and dispersion is affected by various factors including sonciation time, frequency of oscillations, oscillation intensity, particle wettability, and liquid matrix viscosity \cite{Kudryashova2019,Chen2020a}. 
+
+This sonication usually occurs before the the particles and solvent are added to the elastomeric matrix due to the large viscous damping effects of liquid elastomers. The next step involves mixing the dispersed conductive particles throughout the liquid elastomer, this can be done using a variety of mixing methods, including a planetary mixer, magnetic mixer, screw mixer, static mixers, amongst others \cite{Pegel2008,Rosset2016,Fekiri2020,Kim2012}. During the mixing process often the liquid solvent used in the dispersion stage is evaporated, leaving only the curable elastomer and the conductive particles. Although often impurities and voids are a by-product of the previous processes which can give undesirable qualities.
+
+When sufficient mixing of the liquid elastomer and conductive particles have been completed the material is formed into a desired final shape using advanced additive manufacturing methods \cite{Bastola2018,Sapra2023,Krueger2014,Li2020,McCoul2017,Yi2023,Park2018} or traditional moulding \cite{Kim2018} or film making techniques \cite{Fasolt2017}. During the moulding process the material undergoes a form of curing, such as UV, catalysed, or moisture curing. If the composite material has not already been integrated into a device containing electrodes and other mechanical support structures these are integrated at the end of the process.
+
+
 \subsection{Viscoelasticity in Composite Elastomers}
 A core difference between a pure elastomer and a composite elastomer is the degree of apparent viscoelasticity. Composite elastomers exhibit viscoelastic phenomena \cite{Ligia2009} similar to regular human biological tissue \cite{Fung1993}. These viscoelastic phenomena include strain creep, stress relaxation, hysteresis, and a strain-rate stiffness relationship. The viscous component of viscoelasticity is more prominent in polymer plastics and plastic composites due to the bonding mechanism between polymer chains within the material. Elasticity is often the result of bond stretching within a polymer material, whereas  viscous effects are often due to the temporary nature of secondary bonds in polymer which break, slip, and reform. % insert physical chemistry here!
 
@@ -508,13 +524,54 @@ Non-linear viscoelastic models are similar to the above linear models, however t
 % To do: Throw in some lit review about the intregration of both pressure mapping and actuator devices. How has this been done in the past... if at all?
 
 % Copy from Chapter 6??
+As mentioned in Section \ref{sec:Artificial Actuation - Electromagnetic Actuator Technology} comparing electromagnetically driven actuator technology. Each of these technologies can use their active actuation area as a sensor area. IPMCs can sense bending direction and deformation with output voltage. MREs have been shown to self sense with the additional dispersion of conductive particles. HASEL and DE actuators have been shown to self sense using capacitive means. 
 
+In this thesis the integration of a artificial skin and muscle is desired to advance the current state of soft robotic technology. To emulate this integration with current soft pressure mapping and soft actuator technology each of these actuators can be arrange in an array structure to generate pressure maps while maintaining actuation function. However, this array design introduces complications with connecting each sensel/actuation-unit and the bulk involved with wire routing and related circuitry. A more elegant solution is to maintain the active sensing and actuation area free of wires with the addition of only periodic boundary electrodes, which can be achieved using electrical impedance tomography (EIT).
 
-\subsection{Electrical Impedance Tomography}
+\subsection{Electrical Impedance Tomography and Pressure Mapping}
 % To do: Why EIT-based pressure mapping?
+% Defining EIT
+To approximate changes of resistivity in a planar CPEC sensing domain a technique called electrical impedance tomography (EIT) is used. EIT generates impedance maps for a domain under test (DUT). Unlike most pressure mapping sensors, EIT uses periodically spaced boundary electrodes to pass known electrical current and measure voltage potentials around the DUT. From these known current injections and voltage measurements, an ill-posed inverse problem can be defined. To obtain an EIT image reconstruction three key steps are required: data acquisition, forward modelling, and inverse problem solving. A constant current can be employed to capture solely the resistance values of the DUT. To capture impedance data an AC signal is implemented to sweep through a range of frequencies. 
+
+Various electrode excitation patterns can be utilised for EIT, each with distinct reconstruction performance characteristics \citep{Russo2017,Sherry2006,Brown1987}. The most prevalent excitation pattern is the Adjacent Electrode pattern, where a current source is placed across adjacent electrodes, and the voltages at all other adjacent electrodes are measured \citep{Adler2021}. This process repeats for each pair of adjacent electrodes as exemplified in Figure \ref{fig:EIT_adj_drive}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\linewidth]{Figures/eit_sequence.png}
+	\caption{EIT adjacent drive pattern sequence for a circular domain with 16 boundary electrodes.}
+	\label{fig:EIT_adj_drive}
+\end{figure}
+
+The forward problem in EIT is a well-posed mathematical problem, so linear algebra can be employed for obtaining electric field data for a DUT of known conductivity and a known current injection. Utilising a mesh-based coordinate system and FEM, proves to be an efficient solution for the forward model, accommodating diverse shapes. Solving the forward problem entails applying Maxwell's electromagnetic formulae and Ohm's law to determine how an electric field would propagate through the DUT, considering the DUT conductivity. voltage, $\phi$, in a domain, $\Omega$ is governed by the Equation \ref{eqn:eit-maxwells} derived from Maxwell's equations \cite{Cheney1999},
+\begin{equation}
+	\nabla \cdot \gamma(x,\omega) \nabla \phi = 0,
+	\label{eqn:eit-maxwells}
+\end{equation}
+where $x$ is a point in $\Omega$ with admittivity, $\gamma$, and $\omega$ is the angular frequency of the driving current. Admittivity, $\gamma$, comprises of a real and imaginary parts $\rho(x,\omega) + i\omega\epsilon(x,\omega)$, where $\rho$ is the electric conductivity, and $\epsilon$ is the electric permittivity. Current is applied to the surface of the domain, $\delta\Omega$, through electrodes like those given in \ref{fig:EIT_adj_drive} and the current density, $J$, can be formulated with the equation
+\begin{equation}
+	\gamma \frac{\delta \phi}{\delta v} = J \quad on \quad \delta\Omega,
+	\label{eqn:eit-current-density}
+\end{equation}
+where $v$ is a spatial unit restricted to the DUT boundary, $\delta\Omega$. A common continuum model used for EIT incorporates Equations \ref{eqn:eit-maxwells}, \ref{eqn:eit-current-density}, and the Law of Charge Conservation, whereby the sum of the current density and sum of the voltages on the boundary is zero. However to use these equations in practice the electrical current, $I$, is known and not current density, $J$. This is found by integrating Equation \ref{eqn:eit-current-density} for each $i$th electrode as shown in the following equation,
+\begin{equation}
+	\int_{e_i} \gamma \frac{\delta\phi}{\delta v} ds = I_i, \quad i = 1, 2, ..., n,
+	\label{eqn:eit-current}
+\end{equation}
+where $e_i$ is the part of DUT boundary, $\delta\Omega$ at the $i$th electrode and $I_i$ is the current injected at the $i$th electrode. Another assumption is made with the electrode gap model when the current density between the electrodes is on $\delta\Omega$ is zero, while the current across each electrode is constant.
+
+Unlike typical biomedical EIT imaging where there is often significant and variable electrode impedance, the device in this work uses DC meaning that no complete electrode model is needed on top of the above model constituents.
+
+An initial estimate of the DUT resistivity is necessary for the first step of an EIT algorithm. Once the EIT forward model is solved, EIT inverse problem can be solved iteratively using the forward problem's solution. This inherently unstable problem requires optimisation algorithms and regularisation to create and linearise a solution \citep{Bayford2018,Lionheart2003,Martins2019,Adler2021}. This work uses an efficient inverse solver algorithm called Newton One-Step Error Reconstructor (NOSER) which uses a regularised form of Newton's method to solve a modified version of the inverse forward problem to generate an impedance or conductivity map based on known current and voltage values\cite{Cheney1999}. The NOSER EIT reconstruction is done via the formula
+\begin{equation}
+	\rho = \rho^0 C + 2 \sum_{k=1}^{K}\sum_{j=1}^{K} v_{k,j} P^{k,j},
+\end{equation}
+where $C$ and $P^{k,j}$ are predetermined vectors that depend only on the known geometry and regularisation parameters, and $\rho^0$ and $v^{k,j}$ are scalars determined from known data. $k$ and $j$ are the related to amount of the electrodes used and the electrode drive pattern used.
+% TODO?: Insert images and equations explaining EIT??
+
+% Explaining the required post processing
+Once the EIT reconstruction algorithm has been tuned for an application, often post-processing is completed on the reconstructed EIT image for filtering and to capture data specific for the application. A consortium of experts in the field of medicine and biomedical imaging  have constructed metrics for quantifying the quality of an EIT reconstruction as shown by Adler et al. \citep{Adler2009} and their GREIT (Graz consensus Reconstruction algorithm for EIT) performance metrics. Although GREIT has been optimised for human thorax imaging, researchers who have used EIT pressure sensing purposes have also developed performance metrics, most of which agree with the GREIT metrics \citep{Silvera-Tawil2015,Visentin2016,Tallman2020,Sun2020,Hassan2009,Kato2007b}.
 
 
-\subsection{EIT-based Pressure Mapping Sensor Integration with Dielectric Elastomer Actuators}
+%\subsection{EIT-based Pressure Mapping Sensor Integration with Dielectric Elastomer Actuators}
 % To do: Why DEAs? Simple construction and similar qualities to muscle.
 % Why integrate? 
 
@@ -522,14 +579,13 @@ Non-linear viscoelastic models are similar to the above linear models, however t
 \section{Literature Review Conclusions}
 % Summarise: biological skin, artificial skin, biological muscle, artificial muscle, electroactive polymers.
 % Clarify: the focus of the thesis.
-The original purpose of this thesis was to develop novel sensor and actuator technology that mimics the pressure mapping capabilities of human skin and combine this with the actuation properties of human muscle. Through this review of current literature, several key conclusions can be drawn that will lay the foundational knowledge for the rest of this work.
+The purpose of this thesis was to develop novel sensor and actuator technology that mimics the pressure mapping capabilities of human skin and combine this with the actuation properties of human muscle. Through this review of current literature, several key conclusions can be drawn that will lay the foundational knowledge for the rest of this work.
 
-The review of biological skin has revealed quantitative parameters that define its mechanical and sensory capabilities. This review highlighted mechanical characteristics such as the elastic modulus, viscoelastic creep, and surface area, as well as functional properties like spatial and temporal resolution. These factors provide a foundation for designing artificial skin that can replicate or even surpass the sensing functions of soft human skin. The review on pressure mapping technologies was then completed showing a range of different transduction methods for similarly soft sensing domains, showing that replicating human mechanoreceptor sensation is a multifaceted problem. Human skin uses various mechanoreceptors with different qualities and trade-offs and similarly different pressure mapping technologies use different pressure transduction methods each with different performance characteristics and limitations. The parallel review on biological and artificial muscles showed that DEAs and HASEL actuators are promising technologies for mimicking biological muscle quantitatively. Although characteristics common to both technologies such as high actuation voltage and limited device lifetime limit the applications of them.
+The review of biological skin has revealed quantitative parameters that define its mechanical and sensory capabilities. This review highlighted mechanical characteristics such as the elastic modulus, viscoelastic creep, and surface area, as well as functional properties like spatial and temporal resolution. These factors provide a foundation for designing artificial skin that can replicate or even surpass the sensing functions of soft human skin. The review on pressure mapping technologies was then completed showing a range of different transduction methods for similarly soft sensing domains, showing that replicating human mechanoreceptor sensation is a multifaceted problem. Human skin uses various mechanoreceptors with different qualities and trade-offs and similarly different pressure mapping technologies use different pressure transduction methods each with different performance characteristics and limitations. The parallel review on biological and artificial muscles showed that DEAs and HASEL actuators are promising technologies for mimicking biological muscle quantitatively. Although characteristics common to both technologies such as high actuation voltage and limited device lifetime limit the applications of them. DEAs were shown to be more akin to human muscle and skin tissue than HASEL actuators due to not only their flexibility, but their high degree stretchability, potential biocompatilibility, and potential for integration with an EIT-based soft pressure mapping technology. The integration of these DEA and EIT-based pressure mapping technologies  has not yet been explored in previous literature.
 
-The thesis has converged on using CPECs to fabricate EAP sensor and actuator devices, hence a brief literature review highlighting CPEC fabrication techniques and electromechanical characterisation has been given. These composites exhibit beneficial properties like flexibility, tunable electromechanical behavior, and ease of fabrication, which make them suitable for integrating into soft robotic systems. However, challenges such as achieving uniform particle dispersion, minimising agglomeration, and optimising the conductive network for stable long-term operation are still active areas of investigation.
+The thesis has converged on using CPECs to fabricate EAP sensor and actuator devices, hence a brief literature review highlighting CPEC fabrication techniques and electromechanical characterisation has been given. These composites exhibit beneficial properties like flexibility, tunable electromechanical behavior, and ease of fabrication, which make them suitable for integrating into soft robotic systems. However, challenges such as achieving uniform particle dispersion, minimising agglomeration, and optimising the conductive network for stable long-term operation are still active areas of investigation. Hence, this thesis first characterises some of the dynamic and time dependent properties of the material for repeated discretely categorised strain input scenarios.
 
-This literature review has given a brief overview of some of the devices and theory related to the thesis, throughout the thesis there will be more background theory given on a need-to-know basis for each chapter.
-
+The investigation of the dynamic electromechanical characteristics of CPECs and how they are used in EIT-based pressure sensors and their integration into dielectric elastomer actuators is shown in this thesis; generating technology that is more akin human muscle and skin for future integration within ubiquitous rigid robotics.
 % Excite: the reader into wanting to read the rest of the thesis!
 
 %\section{Natural World Equivalents}
