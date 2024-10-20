@@ -1,17 +1,14 @@
 \chapter{\chapivname}
 \label{chapter4}
-
-
-
-\section*{Abstract}
-To accomplish pressure mapping with comparable properties to human skin a novel conductive particle elastomer based sensor device has been created. Using electrical impedance tomography (EIT) to drive a pressure mapping sensor device shows great potential, due to the customisability of the sensing domain and the non-invasive nature of the boundary electrodes required. To translate this research device into a commercial application the performance of such an EIT-based sensor must be quantifiable and repeatable. In this work a series of experiments on a carbon black silicone rubber sensing domain were repeated for various load locations, strains, and carbon black percentages. Capturing this data gave insight into the how the sensing domain performs over time and captured the transient events limiting the sensor. Metrics were determined to quantify the sensor's spatial resolution. A quasi-static conductance-force model of the material was developed with an accuracy of $\pm$0.78 N. One important metric is temporal resolution, as it is the least quantified performance metric in literature, however can be the most important for some applications. For the sensor domains tested, average settling times of between 19.0 - 44.5 s and 22.5 - 36.0 s were determined for 8 and 9 wt\% CBSR samples. A series of randomised test loads gave similar spatial performance results to the structured experiments. This sensor platform shows promise for future applications, with further materials development and modelling the rise of a biomimmetic pressure sensitive skin is imminent.
+\section*{Overview}
+To accomplish pressure mapping with comparable properties to human skin, a novel conductive particle elastomer based sensor device has been created. Using electrical impedance tomography (EIT) to drive a pressure mapping sensor device shows great potential, due to the customisability of the sensing domain and the non-invasive nature of the boundary electrodes required. To translate this research device into a commercial application the performance of such an EIT-based sensor must be quantifiable and repeatable, to be further optimised. In this work a series of experiments on a carbon black silicone rubber sensing domain were repeated for various load locations, strains, and carbon black percentages. Capturing this data gave insight into the how the sensing domain performs over time and captured the transient events limiting the sensor. Metrics were determined to quantify the sensor's spatial resolution. A quasi-static conductance-force model of the material was developed with an accuracy of $\pm$0.78 N. One important metric is temporal resolution, as it is the least quantified performance metric in literature, however can be the most important for some applications. For the sensor domains tested, average settling times of between 19.0 - 44.5 s and 22.5 - 36.0 s were determined for 8 and 9 wt\% CBSR samples. A series of randomised test loads gave similar spatial performance results to the structured experiments. This sensor platform shows promise for future applications, with further materials development and modelling the rise of a biomimmetic pressure sensitive skin is imminent.
 
 
 \section{Introduction} \label{sec:introduction}
 % A poetic start
 % Pressure-sensitive biological tissue is critical for humans and animals and has evolved for billions of years to ensure their survival. One of the earliest known animals, the choanoflagellate, required mechanosensation for digestion, locomotion and hence for survival \citep{Maldonado2004}. 
 
-Approximately 1 billion years after the first animals developed mechanosensation \citep{Parfrey2011}, evolution has allowed humans to detect pressure through the use of many mechanoreceptors lying within the skin and other organ tissue. Two mechanoreceptors which are desirable to emulate human touch are Merkel's disks and Meissner's corpuscles \citep{Kamkim2008}. Both of which are ubiquitous in human hands and lips for high spatial resolution, low pressure and low frequency touch/pressure events \citep{Molnar2015}. These mechanoreceptors in a human hand enable object identification and closed loop fine motor control. 
+Approximately 1 billion years after the first animals developed mechanosensation \citep{Parfrey2011}, evolution has allowed humans to detect pressure through the use of many mechanoreceptors lying within the skin and other organ tissue. As mentioned in the Literature Review, two mechanoreceptors which are desirable to mimic human touch are Merkel's disks and Meissner's corpuscles \citep{Kamkim2008}. Both of which are ubiquitous in human hands and lips for high spatial resolution, low pressure and low frequency touch/pressure events \citep{Molnar2015}. These mechanoreceptors in a human hand enable object identification and closed loop fine motor control. 
 
 With the creation of pressure mapping technology which has the similar soft mechanical properties and sensing qualities to that of human skin, many applications requiring dexterous human-like touch could be directly fulfilled. This work presents characterisation of a soft mapping pressure sensor which utilises electrical impedance tomography to map resistance changes and subsequently stress changes throughout a soft material surface. 
 
@@ -31,7 +28,7 @@ Various methods and topologies of 2D pressure mapping sensors can be employed fo
 % cite{Goncalves2017,Loew2019,Silvera-Tawil2015,Lee2019,Gilanizadehdizaj2022,Zhu2021}. 
 
 \subsection{Related Work} \label{sec:Related Work}
-Artificial skins are not a novel subject there are many different methods for localising loads in two-dimensions on a soft domain. A limiting factor found with non-EIT based methods of pressure mapping were the size of discretely sensed regions, also known as sensels. Often these sensels are limited by factors in the fabrication process and the bulk of electrode wires required. This bulk is exemplified high electrode-to-sensel ratio. Example load mapping technology include, optical \citep{Ramuz2012,Shimadera2022,Rossiter2005}, piezoresistive \citep{Gilanizadehdizaj2022,Fu2020,Yang2022}, capacitive \citep{Liang2015}, and magnetic \citep{Yan2021}.
+Various methods and devices have been designed for localising loads in two-dimensions on a soft domain. A limiting factor found with non-EIT based methods of pressure mapping were the size of discretely sensed regions, also known as sensels. Often these sensels are limited by factors in the fabrication process and the bulk of electrode wires required. This bulk is exemplified high electrode-to-sensel ratio. Example load mapping technology include, optical \citep{Ramuz2012,Shimadera2022,Rossiter2005}, piezoresistive \citep{Gilanizadehdizaj2022,Fu2020,Yang2022}, capacitive \citep{Liang2015}, and magnetic \citep{Yan2021}.
 
 
 % related works and holes in their research
@@ -103,10 +100,18 @@ At its core EIT usually requires a current or voltage source, one or multiple vo
 
 
 \subsection{1D Material Characterisation} \label{sec:1D Material Characterisation}
-Prior to utilising CBSR materials as a 2D pressure sensor, the piezoresistive properties were analysed in one dimension to establish resistance-stress/strain relationships for each CBSR sample. This 1D material testing was conducted using the Cartesian force applicator in conjunction with the SMU. The stress-strain relationship of the material was determined in previous work and shown in Table \ref{tab:DUT_char}. The 1D analysis gave quantitative insight into the material resistivity response to strain in different known areas of the Domain Under Test (DUT). 
+Prior to utilising CBSR materials as a 2D pressure sensor, the piezoresistive properties were analysed in one dimension to establish resistance-stress/strain relationships for each CBSR sample. This 1D material testing was conducted using the Cartesian force applicator in conjunction with the SMU. The stress-strain relationship of the material was determined in previous work and shown in Table \ref{tab:DUT_char}. The 1D analysis gave quantitative insight into the material resistivity response to strain in different known areas of the Domain Under Test (DUT) and aligned with the phenomena characterised in the previous chapter, Section \ref{subsec:Quasi-Static Tensile Resistance-Strain}.
 
 \subsubsection{Quasi-static Piezoresistivity}\label{sec:Quasi-static Piezoresistivity}
- To determine the piezoresistivity or gauge factor of the material, pin electrodes were pierced through the CBSR samples so that the pin electrodes were parallel and at a distance of 35 mm from each other. The pins were 2.5 mm from each end of the sample. A 2634b source measure unit (Keithley, Solon, USA) was used to apply a constant current of 1 mA between the two pin electrodes while ten compressive loading cycles were applied. The ten loading cycles were applied at strains of 5, 10, 15, 20, 25, and 30\%, with a duty cycle of 50\% and period of 120 s. Loads were applied using the Cartesian force applicator with a 20 mm x 20 mm square flat force applicator head. The strain rate was kept at a constant 16.67$\% \cdot s^{-1}$ to dampen the amplitude of transient effects as proven in previous work \citep{Ellingham2021}.
+To determine the piezoresistivity or gauge factor of the material, pin electrodes were pierced through the CBSR samples so that the pin electrodes were parallel and at a distance of 35 mm from each other. The pins were 2.5 mm from each end of the sample. A 2634b source measure unit (Keithley, Solon, USA) was used to apply a constant current of 1 mA between the two pin electrodes while ten compressive loading cycles were applied. The ten loading cycles were applied at strains of 5, 10, 15, 20, 25, and 30\%, with a duty cycle of 50\% and period of 120 s. Loads were applied using the Cartesian force applicator with a 20 mm x 20 mm square flat force applicator head. The strain rate was kept at a constant 16.67$\% \cdot s^{-1}$ to dampen the amplitude of transient effects as proven in previous work \citep{Ellingham2021}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.25\linewidth]{Figures/QS_load_applicator.png}
+	\includegraphics[width=0.4\linewidth]{Figures/QS_load_applicator_w_pins.png}
+	\caption{Compressive loading force applicator. Left: Load applicator on sample CBSR material. Right: Pin electrode jig for sample CBSR material compressive loading test.}
+	\label{fig:compressive_CBSR_load}
+\end{figure}  
 
 When using this material to estimate stress based on resistance, any transient effects that are not correlated between resistance and stress must be accounted for. To obtain a stress reading from this PNEC CBSR material using the quasi-static model given in Equations \ref{eqn:quasi_rstress} and \ref{eqn:quasi_rstrain}, transient events were ignored, so only the steady-state conductance of the material was utilised. 
 \begin{equation}
@@ -120,7 +125,7 @@ When using this material to estimate stress based on resistance, any transient e
 Where $\alpha$ and $\beta$ are the linear fit parameters, $\sigma$ is the compressive stress, $\varepsilon$ is the strain, $\Delta \rho$ is the change in conductance, and $\rho_0$ is the original material conductance.
 
 \subsubsection{Transient Piezoresistivity}\label{sec:Transient Piezoresistivity}
-There are two main piezoresistive events that occur during these compressive stress pulse response experiments. They are the compressive loading and unloading transients. Both of which result in stress relaxation and resistance relaxation behaviour until a steady-state resistance is reached. The stress relaxation can be approximated by a generalised Maxwell linear viscoelastic model \citep{Ju2022}. A two component model was found to fit all curves without overfitting, the relaxation model from a step input is given in Equation \ref{eqn:maxwell_general_n2}.
+There are two main piezoresistive events that occur during these compressive stress pulse response experiments. They are the compressive loading and unloading transients. Both of which result in stress relaxation and resistance relaxation behaviour until a steady-state resistance is reached. The stress relaxation can be approximated by a generalised Kelvin linear viscoelastic model \citep{Ju2022} as shown in the previous chapter Section \ref{subsec:resistive relaxation Fitting}. A two component model was found to fit all curves without overfitting, the relaxation model from a step input is given in Equation \ref{eqn:maxwell_general_n2}.
 \begin{equation}
     G_2(t) = a_o + a_1 e^{-t/\tau_1} + a_2 e^{-t/\tau_2}
     \label{eqn:maxwell_general_n2}
@@ -140,7 +145,7 @@ To ensure that the resistance/conductance image reconstructions which will form 
 \subsubsection{Pre-processing}\label{Pre-processing}
 To ascertain the occurrence of a piezoresistive event in the material, it is necessary to identify a change in resistivity that surpasses the noise floor level. This precaution is taken to differentiate between a stress compression event and potential noise artefacts. A threshold was established to eliminate the noise floor, thereby isolating the loading signal and any noise or artefacts generated by the loading signal(s).
 
-A second threshold filter was implemented to compensate for the regularisation of the reconstruction using a percentage of the largest peak observed in the sensor image domain. The percentage threshold value used in previous work has been 25, 50, 60, 70, 75\% of the maximum domain amplitude \citep{Adler2009,Visentin2016,Silvera-Tawil2015}. In this work percentage threshold masking have been applied for comparison. To validate the best percentage threshold, these thresholds were completed for a CBSR 8 and 9 wt\% PNEC under nine successive loading events comparing the mean of the three main performance metrics given in Section \ref{sec:Spatial Performance}. After these threshold masks have been applied to the 2D EIT images, blob(s) are observed as the sensed regions-of-interest. In this work the term 'blob' refers to an amorphous 2D shape made of several aggregated finite mesh elements. These blobs are usually observed after percentage threshold masking of an EIT image reconstruction. 
+A second threshold filter was implemented to compensate for the regularisation of the reconstruction using a percentage of the largest peak observed in the sensor image domain. The percentage threshold value used in previous work has been 25, 50, 60, 70, 75\% of the maximum domain amplitude \citep{Adler2009,Visentin2016,Silvera-Tawil2015}. In this work percentage threshold masking have been applied for comparison. To validate the best percentage threshold, these thresholds were completed for a CBSR 8 and 9 wt\% PNEC under nine successive loading events comparing the mean of the three main performance metrics given in Section \ref{sec:Spatial Performance}. After these threshold masks have been applied to the 2D EIT images, blob(s) are observed as the sensed regions-of-interest. In this work the term `blob' refers to an amorphous 2D shape made of several aggregated finite mesh elements. These blobs are usually observed after percentage threshold masking of an EIT image reconstruction. 
 
 \subsubsection{Spatial Performance}\label{sec:Spatial Performance}
 The three main metrics of spatial performance are the centroid or centre of `mass' error, $E_{CoM}$, the detected area overlap $A_{OL}$ value, and the fit of the detected blob relative to the force input, the shape distortion, $S\!D$.
@@ -203,7 +208,7 @@ To obtain the stress estimate, $\hat\sigma_j$ and hence force estimate given a k
 
 
 \section{Results}\label{sec: Results}
-In the following sections the EIT image pre-processing, spatial, temporal, and localised force sensing performance metrics are displayed and quantified. First the steady state electrical noise, $\sigma_n$, and noise figure, NF, were determined, as given in Table \ref{tab:DUT_noise}. The NF value being a common metric showing noise amplification as a consequence of the EIT algorithm as used by Adler et al \citep{Adler2009}.
+In the following sections the EIT image pre-processing, spatial, temporal, and localised force sensing performance metrics are displayed and quantified. First the steady state electrical noise, $\sigma_n$, and noise figure, NF, were determined, as given in Table \ref{tab:DUT_noise}. The NF value is a common metric showing noise amplification as a consequence of the EIT algorithm as used by Adler et al \citep{Adler2009}.
 \begin{table}[H]
 \caption{DUT noise figure, NF, and noise, $\sigma_n$, at steady-state}
 \label{tab:DUT_noise}
@@ -284,7 +289,7 @@ The settling times of the resistance relaxations give an indication of the frequ
 
 
 \subsection{Sensor Performance Metrics}\label{sec:Sensor Performance Metrics2}
-To validate this 2D pressure sensing platform for specific applications the limits of the sensor must be known. Metrics to analyse and quantify the limits such as sensor noise, spatial-, temporal-, and stress- performance metrics are given in this section.
+To validate this 2D pressure sensing platform for specific applications the limits of the sensor must be known. Metrics to analyse and quantify the sensor limits such as noise, spatial-, temporal-, and stress- performance metrics are given in this section.
 
 % \subsubsection{Noise Figure}\label{sec:Noise Figure2}
 % To determine whether the noise floor of the material in steady-state was sufficiently low the noise figure was calculated for the unloaded state of the material and given in Table \ref{tab:DUT_nf_char}. 
@@ -698,7 +703,7 @@ Potential applications that emulate human-like skin pressure sensing characteris
 %  1D stress-strain
 %N/A
 % 1D quasi-static piezoR
-To make a low-frequency response load sensor, a quasi-static piezoresistive linear model was created as shown in Section \ref{sec:1D Material Characterisation2}. However, this model is only valid for sufficiently slow pressure applications or after a sufficiently long time period. This time period is determined by the largest expected steady-state relaxation time for the material shown in \ref{sec:Quasi-static Piezoresistivity2}
+To make a low-frequency response load sensor, a quasi-static piezoresistive linear model was created as shown in Section \ref{sec:1D Material Characterisation2}. However, this model is only valid for sufficiently slow pressure applications or after a sufficiently long time period. This time period is determined by the largest expected steady-state relaxation time for the material, using data gathered in the Temporal Performance Section \ref{sec:Temporal Performance2}.
 % 1D transient piezoresistivity 
 % N/A
 

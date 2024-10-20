@@ -1,10 +1,7 @@
 \chapter{\chapviiname}
 \label{chapter7}
-
-
-
-\section*{Abstract}
-	This chapter investigates the phenomenon of unintentional power generation in Dielectric Elastomer Actuator (DEA) devices integrated with Electrical Impedance Tomography (EIT) for pressure mapping applications. While DEAs are primarily designed for actuation, they can inadvertently function as Dielectric Elastomer Generators (DEGs) due to localised mechanical strain during operation. The research explores the mechanisms behind this unintended energy generation, focusing on the changes in capacitance that occur when the DEA is subjected to varying loads. Through experimental simulations, the study quantifies the energy produced, revealing that energy generation can range from 0.2 $\mathrm{\mu}$J to 4 mJ depending on the load conditions. The findings highlight the dual functionality of DEAs, emphasising the need for careful management of energy generation to prevent potential damage to connected circuitry. This work contributes to the understanding of DEA-EIT devices and their applications in soft robotics and simultaneous energy harvesting, suggesting that the energy generated could be harnessed for practical use in various scenarios, including vehicular and foot traffic loads. Future work aims towards harnessing the DEG energy shown in this work and using it to power the portable ERT-circuit in Chapter \ref{chapter5} expanding the range of potential applications.
+\section*{Overview}
+This chapter investigates the phenomenon of unintentional power generation in Dielectric Elastomer Actuator (DEA) devices integrated with Electrical Impedance Tomography (EIT) for pressure mapping applications. While DEAs are primarily designed for actuation, they can inadvertently function as Dielectric Elastomer Generators (DEGs) due to localised mechanical strain during operation. The research explores the mechanisms behind this unintended energy generation, focusing on the changes in capacitance that occur when the DEA is subjected to varying loads. Through experimental simulations, the study quantifies the energy produced, revealing that energy generation can range from 0.2 $\mathrm{\mu}$J to 4 mJ depending on the load conditions. The findings highlight the multi-functionality of DEAs; actuation,sensing, and energy generation, emphasising the need for careful management of energy generation to prevent potential damage to connected circuitry. This work contributes to the understanding of DEA-EIT devices and their applications in soft robotics and simultaneous energy harvesting, suggesting that the energy generated could be harnessed for practical use in various scenarios, including vehicular and foot traffic loads. Future work aims towards harnessing the DEG energy shown in this work and using it to power the portable ERT-circuit in Chapter \ref{chapter5} expanding the range of potential applications.
 
 
 
@@ -101,7 +98,7 @@ To confirm the existence of this DEG phenomena in the DEA-EIT device design has 
 
 \subsection{DEA Load Study}
 %% Todo: Describe FEM parameters for DEA loading and FEM tool used!
-To obtain a representation of how the DEA structure will deform during a different loading events, a static load FEA study was performed to determine the expected deformation of the DEA and create mesh models. The deformed mesh models were then used for further electrostatic FEM studies to determine the change in capacitance of the DEA structure.
+To obtain a representation of how the DEA structure will deform during a different loading events, a static load FEA study was performed using COMSOL Multiphysics \cite{COMSOL2022} to determine the expected deformation of the DEA and create mesh models. The deformed mesh models were then used for further electrostatic FEM studies to determine the change in capacitance of the DEA structure. A physics controlled mesh was used with a maximum element size of 10 mm and a minimum element size of 0.2 mm to ensure deformation features within the 0.5 mm thick DE membrane were captured.
 
 The materials used for the FEA load study were closely matched to the characteristics of the material used in previous work \cite{Ellingham2024} . For the compliant electrode a Young's modulus of 100 kPa was used with a Possion's ratio, $\nu_{ce}$ of 0.4, an electrode thickness, $z_{CE}$, of 0.5 mm, and the diameter of 100 mm. The DE material Young's modulus was set to 90kPa with a Poisson's ratio, $\nu_{DE}$, of 0.49, a membrane thickness, $z_{DE}$, of 0.5 mm, and the diameter of 100 mm. 
 
@@ -115,7 +112,7 @@ A mesh of the deformed DEA models from each of different load case was saved for
 
 \subsection{Deformed DEA Electrostatics Study}
 %% Todo: Describe FEM parameters for DEA capacitance and FEM tool used!
-The deformed meshes from the previous load study were used to generate new meshes for an electrostatics study. To determine the change in capacitance from the undeformed DEA model and the deformed DEA cases, an electrostatic study was performed. The same dimensions as the load study were used the compliant electrode was assumed to have an ideal conductivity and the DE membrane relative dielectric permittivity was set to 4.2 as seen in the other studies done on similar DE material \cite{Pan2015}. The a positive voltage was set on the upper electrode and the lower electrode was grounded. After the electric field model was generated using COMSOL Multiphysics \cite{COMSOL2022} for each case the compliant electrode capacitance was calculated using Maxwell capacitance matrices \cite{Smolic2021} . 
+The deformed meshes from the previous load study were used to generate new meshes for an electrostatics study. To determine the change in capacitance from the undeformed DEA model and the deformed DEA cases, an electrostatic study was performed. The same dimensions as the load study were used the compliant electrode was assumed to have an ideal conductivity and the DE membrane relative dielectric permittivity was set to 4.2 as seen in tvhe other studies done on similar DE material \cite{Pan2015}. The a positive voltage was set on the upper electrode and the lower electrode was grounded. After the electric field model was generated using COMSOL Multiphysics \cite{COMSOL2022} for each case the compliant electrode capacitance was calculated using Maxwell capacitance matrices \cite{Smolic2021} . 
 
 
 \subsection{Voltage and Energy Generation}
@@ -133,7 +130,7 @@ The a series of models were generated from a sequence of FEM studies to obtain t
 
 
 \subsection{DEA Load Study}
-To determine how various localised loads deform the DEA-EIT device structure FEM was performed. Examples of the deformations caused are given in Figure \ref{fig:FEM_DEA-EIT_loading}.
+To determine how various localised loads deform the DEA-EIT device structure FEM was performed. Examples of the deformations caused are given in Figure \ref{fig:FEM_DEA-EIT_loading}. The equivalent strain, ESTRN, was calculated giving an summation of the plastic and elastic strain experienced.
 %% Todo: FEM load plot example (redo!! maybe use the deformed meshes generated?)
 %% Todo: Re-run in COMSOL? or re-run with three layers?
 \begin{figure}[H]
@@ -175,7 +172,7 @@ The change in capacitance was used to calculate the generated energy and voltage
 	\label{tab:volt-energy-gen-d13mm}
 	\vspace{0.3cm}
 	\begin{tabular}{llllll}
-		\textbf{Load {[}N{]}} & \textbf{ESTRN} & \textbf{C {[}pF{]}} & \textbf{dC {[}pF{]}} & \textbf{dV\_DE {[}V{]}} & \textbf{dU {[}uJ{]}} \\ \hline
+		\textbf{Load [N]} & \textbf{ESTRN} & \textbf{C [pF]} & \textbf{dC [pF]} & \textbf{dV$_{DE}$ [V]} & \textbf{dU [uJ]} \\ \hline
 		0.00  & 0.00 & 588.86 & 0.00  & 0.00   & 0.00    \\
 		2.50  & 0.08 & 589.69 & 0.83  & 7.04   & 31.14   \\
 		5.00  & 0.15 & 590.73 & 1.87  & 15.83  & 70.20   \\
@@ -192,7 +189,7 @@ The change in capacitance was used to calculate the generated energy and voltage
 	\label{tab:volt-energy-gen-50mm}
 	\vspace{0.3cm}
 	\begin{tabular}{llllll}
-		\textbf{Load {[}N{]}} & \textbf{ESTRN} & \textbf{C {[}pF{]}} & \textbf{dC {[}pF{]}} & \textbf{dV\_DE {[}V{]}} & \textbf{dU {[}uJ{]}} \\ \hline
+		\textbf{Load [N]} & \textbf{ESTRN} & \textbf{C [pF]} & \textbf{dC [pF]} & \textbf{dV$_{DE}$ [V]} & \textbf{dU [uJ]} \\ \hline
 		0.00 & 0.00 & 588.86 & 0.00 & 0.00 & 0.00 \\
 		% 5.00 & 0.01 & mesh   error - too fine & \#VALUE! & \#VALUE! & \#VALUE! \\
 		10.00 & 0.02 & 591.90 & 3.04 & 25.68 & 0.20 \\
@@ -219,7 +216,7 @@ A comparison of two similar trends for different loads applied to the DEG using 
 \section{Discussion}
 \label{sec:discussion}
 % Small impact statement!
-The results from this work show promise towards understanding the energy generated from an EIT-DEA device when used in a particular fashion. The FEA simulations completed were validated analytically with a small discrepancy of 4.73 pF, i.e. 0.8\% error, due to the electric field fringe effects the parallel plate capacitor assumption does not account for. The plot shown in Figure \ref{fig:volt-energy-gen-13_and_50mm} shows the trends for a 13 mm and 50 mm load applicator, from this the prominence of the decreasing dielectric thickness can be seen to give a large increase in voltage and energy generated. At these high strains the likelihood of dielectric break through is significantly increased, especially so in a real world scenario when the load surface may contain sharp features, piercing or forming stress concentrations within the DE. The comparison of the FEM and analytical approximation in Figure \ref{fig:volt-energy-gen-13_and_50mm_err} shows that the fringing electric field effect increases with increasing input strain deformation.
+The results from this work show promise towards understanding the energy generated from an EIT-DEA device when used in a particular fashion. The FEA simulations completed were validated analytically with a small discrepancy of 4.73 pF, i.e. 0.8\% error, due to the electric field fringe effects the parallel plate capacitor assumption does not account for. The plot shown in Figure \ref{fig:volt-energy-gen-13_and_50mm} shows the trends for a 13 mm and 50 mm load applicator, from this decreasing the dielectric thickness is seen to give a large increase in voltage and energy generated. At these high strains the likelihood of dielectric break through is significantly increased, especially so in a real world scenario when the load surface may contain sharp features, piercing or forming stress concentrations within the DE. The comparison of the FEM and analytical approximation in Figure \ref{fig:volt-energy-gen-13_and_50mm_err} shows that the fringing electric field effect increases with increasing input strain deformation.
 
 \begin{figure}[H]
 	\centering
@@ -228,18 +225,17 @@ The results from this work show promise towards understanding the energy generat
 	\label{fig:volt-energy-gen-13_and_50mm_err}
 \end{figure}
 
-
 % useful applications
 % how to harness it
 The energy generated by the sequence shown in Figure \ref{fig:dea_eit_deg}, can be harnessed if there is a sensing mechanism put in place to determine when the capacitance of the DEA will change and apply the voltage appropriately. Conversely, this energy generation can be undesirable for certain applications as it may cause damage to the attached circuitry.
 
-Such energy generation case may be avoided in a system by detecting that a pressure event has occurred and preventing the excitation of the DEA or limiting the charge accumulation on each plate of the capacitor.
+Such energy generation case may be avoided in a system by detecting that a pressure event has occurred and preventing the excitation of the DEA or limiting the charge accumulation on each plate of the capacitor. Example applications could include a DEA-EIT device laid on a surface such as a road or footpath for surveying and energy generation from vehicular or foot traffic loads.
 
 An example scenario of voltage and energy generation was given in Section \ref{subsec:Voltage and Energy Generation}. This voltage change transient could be connected to an EIT multiplexer through the capacitance of the DEA, as shown by Equation \ref{eqn:mux_voltage}. The multiplexer pins used in this case are limited to between the power rails, i.e. $\pm$22 V \cite{VishayPG2018}. In the case described above the minute change in capacitance of the DEA is calculated to generate 93.75 $\mu$J of energy.
 
-
 To determine the device's tolerance against transient voltage spikes, the EIT multiplexer limits would need to be characterised. Otherwise, in the case of an input pin overvoltage CMOS latch-up may occur \cite{Redmond2001} . Typical ESD standards \cite{IEC2008} state that electronic devices must be tolerant to 200 pF capacitance charged to $\pm$15 kV, giving an energy dissipation of 22.5 mJ. This is several orders of magnitude larger than the energy generated in the simulation results shown in Tables \ref{tab:volt-energy-gen-d13mm} and \ref{tab:volt-energy-gen-50mm}. However, for different configurations of DEA device this energy generation may become significant.
 %% justify above statement with references. I.e. how much energy is in a standardised maximum ESD discharge. Typical ESD devices have a 100-200 pF capacitance charged up to 8 - 15 kV voltage. 
+
 
 
 % To do: Address idealness of FEM study completed and how physical experimentation could help create a relationship between the simulated and real data in future.
