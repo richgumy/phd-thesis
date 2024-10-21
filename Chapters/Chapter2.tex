@@ -48,7 +48,7 @@ Depending on the region of skin different force resolution and spatial resolutio
 	\caption{Comparison of typical mammalian mechanoreceptor characteristics \cite{Roudaut2012}.}
 	\label{tab:mechanoreceptors-table}
 	\begin{tabular}{|p{0.24\linewidth}|p{0.21\linewidth}|p{0.21\linewidth}|p{0.21\linewidth}|} \hline
-		\textbf{Receptor} & Meissner corpuscle A1 & Ruffini Corpuscle A2 & Pancian Corpuscle B1 \\ \hline
+		\textbf{Mechanoreceptor} & Meissner corpuscle A1 & Ruffini Corpuscle A2 & Pancian Corpuscle B1 \\ \hline
 		\textbf{Perceptual   sensory functions} & Skin movement, handling objects & Skin stretch, movement direction,   hand shape, and finger position & Fine tactile discrimination, form   and texture perception \\ \hline
 		\textbf{Skin stimulus} & Dynamic deformation & Skin stretch & Indentation depth \\ \hline
 		\textbf{Localisation} & Dermal papillae & Dermis & Basal layer of epidermis / around   guard hair \\ \hline
@@ -107,7 +107,7 @@ Developing robust mechanical models for human skin is non-trivial for three main
     \item Self-regeneration and healing
     \item Constructed from various types of cells in a laminate structure 
 \end{enumerate}
-To solve the complexity of modelling such a material a review by Landry et al. \cite{Landry2021} shows that many researchers have applied various non-linear mechanical models including Ogden, Mooney–Rivlin, Neo-Hookean, Yeoh, Humphrey, and Veronda–Westmann. When recreating an artificial muscle it is desirable to minimise the mechanical material model complexity so that the material can be more easily integrated into a control system with known behaviour. Similar modelling techniques can be used to model conductive particle elastomer composites due to the similar hyper-elastic and visco-elastic behaviours observed.
+To solve the complexity of modelling such a material a review by Landry et al. \cite{Landry2021} shows that many researchers have applied various non-linear mechanical models including Ogden, Mooney–Rivlin, Neo-Hookean, Yeoh, Humphrey, and Veronda–Westmann. When recreating an artificial muscle it is desirable to minimise the mechanical material model complexity so that the material can be more easily integrated into a control system with known behaviour. Similar modelling techniques can be used to model conductive particle elastomer composites due to the similar hyper-elastic and viscoelastic behaviours observed.
 
 
 
@@ -115,7 +115,7 @@ To solve the complexity of modelling such a material a review by Landry et al. \
 % Artificial skin review
 % Give the range of technologies available expand upon review given in Pt II EIT sensor paper.
 This section outlines some of the main technologies which are flexible and/or soft a comparable softness to human skin tissue and can map force events throughout a surface.
-Through comparison of various materials EAPs have shown many similarities in mechanical properties to biological skin, identifying EAPs as a promising material for further use in sensor and actuator devices. A particular focus on electro-active polymer (EAP) based sensing is present due to the potential of miniaturising the technology and the range of miniaturised electronics currently available. EAPs are polymer materials which can be used as transducers that change electrical properties based on a mechanical input, and vice-versa.
+Through comparison of various materials EAPs have shown many similarities in mechanical properties to biological skin, identifying EAPs as a promising material for further use in sensor and actuator devices. A particular focus on electroactive polymer (EAP) based sensing is present due to the potential of miniaturising the technology and the range of miniaturised electronics currently available. EAPs are polymer materials which can be used as transducers that change electrical properties based on a mechanical input, and vice-versa.
 
 % Why does this section matter? How does it link to my research goals? What is it adding to the greater research pool? A large part of my research was looking into making an 'artificial skin sensor'. It has been requested by several reviewers of my journal article to look at state of the art devices similar to mine, from 2020 onwards and for variant of EIT sensing especially. 
 Pressure mapping devices can be categorised into their various sensing technology, such as resistive, capacitive, inductive, magnetic, optical, and acoustic. Transduction methods have been compared by Tiwana et al. \cite{Tiwana2012}, with recommendations to pursue `capacitive, resistive, piezoelectric, piezoresistive or a combination' of methods to replicate mechanoreceptors in the human skin. However, additional optical and magnetic/inductive methods will also be considered in the following sections.
@@ -130,7 +130,7 @@ Cutaneous mechanoreceptors have been mimicked by the development of pressure map
 	\includegraphics[width=0.4\linewidth]{Figures/powerOn_gripper_apple.jpg}
 	\includegraphics[width=0.4\linewidth]{Figures/tekscan-pressure-sensor.jpg} % only commercial image without permission granted.
 	\includegraphics[width=0.4\linewidth]{Figures/tactilus-pressuremap-sensor-laptop.jpg}
-	\caption{Various pressure mapping devices. From top-left then clockwise: XSsensor wheelchair pressure mapping sheet ($\copyright$ 2024 XSENSOR\textsuperscript{\textregistered} Technology) \cite{Xsensor}, Pressure Profile Systems pressure sensors on a robotic hand ($\copyright$ 2023 PPS UK limited) \cite{PressureProfile2023}, Soft pressure mapping gripper($\copyright$ 2023 PowerON) \cite{PowerOn}, Tekscan thin pressure mapping platform \cite{Tekscan}($\copyright$ 2024 Tekscan Inc.), Tactilus seat pressure mapping system \cite{SensorProducts}($\copyright$ 2024 Sensor Products Inc.)}
+	\caption{Various pressure mapping devices. From top-left then clockwise: Xsensor wheelchair pressure mapping sheet ($\copyright$ 2024 XSENSOR\textsuperscript{\textregistered} Technology) \cite{Xsensor}, Pressure Profile Systems pressure sensors on a robotic hand ($\copyright$ 2023 PPS UK limited) \cite{PressureProfile2023}, Soft pressure mapping gripper($\copyright$ 2023 PowerON) \cite{PowerOn}, Tekscan thin pressure mapping platform \cite{Tekscan}($\copyright$ 2024 Tekscan Inc.), Tactilus seat pressure mapping system \cite{SensorProducts}($\copyright$ 2024 Sensor Products Inc.)}
 	
 	\label{fig:mechano-tech}
 \end{figure}
@@ -157,14 +157,19 @@ Magnetic strain mapping devices can be achieved using several methods. One metho
 	\caption{Example of a magnetically-based pressure mapping system designed by Yan et al. \cite{Yan2022} ($\copyright$ 2022 IEEE).}
 	\label{fig:mag_pressure_map_sensor}
 \end{figure}
-The main advantages of this method is that each hall sensor can detect in three dimensions, hence normal and shear forces can be detected, and using magnetismfor sensing means less electrical noise in the system. The main disadvantages of this method of sensing is the added complexity in scaling the system and the electronics required and the rigid surface required.  
+The main advantages of this method is that each hall sensor can detect in three dimensions, hence normal and shear forces can be detected, and using magnetism for sensing means less electrical noise in the system. The main disadvantages of this method of sensing is the added complexity in scaling the system and the electronics required and the rigid surface required.  
 
 \subsection{Optical}
-There are various methods for making a optically driven artificial skins. A recent review has been curated by Lee et al. \cite{Lee2023} all of the different methods of using optics for creating tactile sensors. The main advantages of optical sensors include the high speed sensor response, immunity to electrical noise, and their non-invasive nature. The main disadvantages include, the bulky hardware required for driving the optics and signal processing, the potential interference of external light sources, and the materials that can carry optical signals. 
-
+There are various methods for making a optically driven artificial skins. A recent review has been curated by Lee et al. \cite{Lee2023} all of the different methods of using optics for creating tactile sensors. The main advantages of optical sensors include the high speed sensor response, immunity to electrical noise, and their non-invasive nature. The main disadvantages include, the bulky hardware required for driving the optics and signal processing, the potential interference of external light sources, and the materials that can carry optical signals. An example application of an optically-based soft pressure mapping sensor is provided in Figure \ref{fig:optical_soft_mapping}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\linewidth]{Figures/optical_soft_pressure_mapping.jpg}
+	\caption{Example optical pressure mapping sensor using a planar PDMS waveguides. a) Schematic of the two-directional stretchable optical pressure sensor. The active	pressure area is comprised of PDMS. b) A cross section view of the optical pressure sensor ($\copyright$ 2012 Wiley) \cite{Ramuz2012}.}
+	\label{fig:optical_soft_mapping}
+\end{figure}
 
 \subsection{Acoustic}
-Acoustic soft tactile sensing has not been explored much compared to the other forms of sensing given. Park et al., Hughes and Correll \cite{Park2022,Hughes2015} have created a system which uses passive acoustic tomogrpahy (PAT) to localise and and classify different types of touch. This form of tactile sensing is the most similar to the biological system of mechanoreceptors which are specialised to detect certain frequencies of vibration.
+Acoustic soft tactile sensing has not been explored much compared to the other forms of sensing given. Park et al., Hughes and Correll \cite{Park2022,Hughes2015} have created a system which uses passive acoustic tomography (PAT) to localise and and classify different types of touch. This form of tactile sensing is the most similar to the biological system of mechanoreceptors which are specialised to detect certain frequencies of vibration.
 
 
 \subsection{Resistive}
@@ -172,12 +177,12 @@ Soft resistive pressure mapping has been commonly achieved in the past by using 
 
 \begin{table}[H]
 	\centering
-	\caption{Comparison of different potential piezo-resistive sensor materials. Rated 1 to 5, where 1 is low and 5 is high.}
+	\caption{Comparison of different potential piezoresistive sensor materials. Rated 1 to 5, where 1 is low and 5 is high.}
 	\label{tab:comparing-piezo-r-materials}
 	\vspace{3cm}
 	\begin{tabular}{|p{5cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|}
 		\multicolumn{1}{l}{\textbf{Material:}} & \multicolumn{1}{c}{\begin{rotate}{60} \hspace{0.1cm}\vspace{-2cm} \textbf{Conductivity} \end{rotate}} & 
-		\multicolumn{1}{c}{\begin{rotate}{60} \hspace{0.2cm}\vspace{-2cm} \textbf{Piezo-resistivity} \end{rotate}} & 
+		\multicolumn{1}{c}{\begin{rotate}{60} \hspace{0.2cm}\vspace{-2cm} \textbf{Piezoresistivity} \end{rotate}} & 
 		\multicolumn{1}{c}{\begin{rotate}{60} \hspace{0.2cm}\vspace{-2cm} \textbf{Softness} \end{rotate}} & 
 		\multicolumn{1}{c}{\begin{rotate}{60} \hspace{0.2cm}\vspace{-2cm} \textbf{Manufacturability} \end{rotate}} & 
 		%			\multicolumn{1}{c}{\begin{rotate}{60} \hspace{0.2cm}\vspace{-2cm} \textbf{Cost} \end{rotate}} & 
@@ -197,6 +202,8 @@ Conducting polymers, also known as intrinsically conducting polymers (ICPs), wer
 
 \subsection{Soft Pressure mapping technology comparison}
 To improve upon existing pressure mapping technology and ensure novelty, the state-of-the-art technologies are compared. There have been a range of works investigating sensors with a range of softness' and performance. A comparison of these start-of-the-art soft pressure mapping sensor works is given in Table \ref{tab:non_eit_sensor_compare}.  The range of softnesses and seen in this comparison is comparable to that mentioned in Section \ref{subsec:Characterising skin}. However other the characteristics such as durability, reliability, biocompatibility, topology, and resolution of each sensor technology cannot match that of biological human skin.
+
+The main advantage for using EAP based composite materials for pressure mapping sensors over magnetic and optical sensors include the lack of bulky external drive components such as electromagnetics, lasers, and optical detectors. Although capacitive sensors have similarly small bulk for their external drive components compared to resistive sensors, capacitive sensors require more complex layering, which increases the fabrication complexity when scaling into a 2D array of capacitive sensels. 
 %%% COMPARISON OF NON-EIT SENSOR EQUIVS %%%
 \newgeometry{left=2in,right=0in,bottom=-0.25in,top=0in}
 \setstretch{1.0}
@@ -208,13 +215,13 @@ To improve upon existing pressure mapping technology and ensure novelty, the sta
 		 	\label{tab:non_eit_sensor_compare}
 			\begin{tabular}{|L{2.9cm}|L{2.4cm}|L{2.8cm}|L{3cm}|L{3.0cm}|L{2cm}|L{2.4cm}|L{2cm}|L{2.1cm}|} \hline 
 				\textbf{1st Author} & \textbf{Sensing principle} & \textbf{Sensing region material} & \textbf{Sensing region elastic modulus or shore hardness} & \textbf{Electrodes per sensing position} & \textbf{Repeatability} & \textbf{Time series data given} & \textbf{Spatial resolution} & \textbf{Temporal resolution} \\ \hline
-				Gilanizadehdizaj \citep{Gilanizadehdizaj2022} & Piezo-resistive & Ecoflex30-00 rGO sponge & 40 kPa & 2 sensels / electrode & 10 cycles for each stress & \textit{-} & 10 $\times$ 10 mm & - \\ \hline
-				Fu \citep{Fu2020} & Piezo-resistive & Carbon black silicone composite & 1.5 Mpa & 0.625 sensels / electrode & 50000 cycles & Yes. & 12 $\times$ 12 mm & 60 ms \\ \hline
-				Yang \citep{Yang2022} & Piezo-resistive & Ecoflex graphene sponge & - & 2 sensels / electrode & 800 cycles & Yes. & 10 $\times$ 10 mm & 150 ms \\ \hline
-				Liang \citep{Liang2015} & Capacitive & PDMS, PET, Si, Sio2, Cu laminate & 4000 Mpa & 1 sensel / electrode & - & Implicitly. & 4 $\times$ 4 mm & - \\ \hline
+				Gilanizadehdizaj \citep{Gilanizadehdizaj2022} & Piezoresistive & Ecoflex30-00 rGO sponge & 40 kPa & 2 sensels / electrode & 10 cycles for each stress & \textit{-} & 10 $\times$ 10 mm & - \\ \hline
+				Fu \citep{Fu2020} & Piezoresistive & Carbon black silicone composite & 1.5 MPa & 0.625 sensels / electrode & 50000 cycles & Yes. & 12 $\times$ 12 mm & 60 ms \\ \hline
+				Yang \citep{Yang2022} & Piezoresistive & Ecoflex graphene sponge & - & 2 sensels / electrode & 800 cycles & Yes. & 10 $\times$ 10 mm & 150 ms \\ \hline
+				Liang \citep{Liang2015} & Capacitive & PDMS, PET, Si, SiO$_2$, Cu laminate & 4000 MPa & 1 sensel / electrode & - & Implicitly. & 4 $\times$ 4 mm & - \\ \hline
 				Yan \citep{Yan2021,Yan2022} & Magnetic & Ecoflex 00-50 & 83 kPa & 11 IC pins / sensel & 30,000 cycles & Yes. & 0.2 mm & 15 ms \\ \hline
 				Rossiter \citep{Rossiter2005} & Optical & Polymer foam & - & 2 sensels / electrode & - & - & 10 $\times$ 10 mm & - \\ \hline
-				Shimdera \citep{Shimadera2022} & Optical & Super clear silcone & 40 A & N/A. One fiber optic LASER and   one camera. & Error rose 1.7\% in 30 days & Yes. & approx. 20 $\times$ 20 mm / 0 - 1100 um & Sample rate 1.6s. \\ \hline
+				Shimdera \citep{Shimadera2022} & Optical & Super clear silicone & 40 A & N/A. One fibre optic LASER and   one camera. & Error rose 1.7\% in 30 days & Yes. & approx. 20 $\times$ 20 mm / 0 - 1100 um & Sample rate 1.6s. \\ \hline
 				Ramuz \citep{Ramuz2012} & Optical & PDMS & - & N/A. Two arrays of OLEDs and Detectors used. & 900 cycles & Yes. & Not localised. & 300 ms \\ \hline
 			\end{tabular}
 		\end{table}
@@ -248,7 +255,7 @@ Biological muscle is a naturally occurring tissue comprised of muscle fibres bun
 \end{figure}
 The sliding motion of the myosin and actin filaments is due myosin heads binding to the actin and pulling the actin towards a middle line (M-line) in multiple stroke actions. These filament actuators are stacked in three dimensions within a muscle fibre to amplify contractile stress and strain as shown in Figure \ref{fig:muscle_units}.
 
-On a macro scale, muscle is made up of bundles of fasicles connected together with a tissue called perimysium. Within the fasicles are many muscle fibres (i.e. muscle cells) which are surrounded by a connective tissue called endomysium. Within the muscle fibres there are many sacromeres stacked within a cyclindrical-like structure called a myofibril. Each sacromere contains a contractile unit of myofilaments. 
+On a macro scale, muscle is made up of bundles of fasicles connected together with a tissue called perimysium. Within the fasicles are many muscle fibres (i.e. muscle cells) which are surrounded by a connective tissue called endomysium. Within the muscle fibres there are many sacromeres stacked within a cylindrical-like structure called a myofibril. Each sacromere contains a contractile unit of myofilaments. 
 
 
 
@@ -286,7 +293,7 @@ Only the main characteristics of muscle have been described above. If wanting to
     
 
 \subsection{Muscle Mechanics}
-A variety of simplified electro-mechanical muscle models have been developed. Understanding these models is essential for exploring how biomimetic actuators can be applied in assistive soft robotic devices. First, some fundamental biomechanical muscle models will be discussed.
+A variety of simplified electromechanical muscle models have been developed. Understanding these models is essential for exploring how biomimetic actuators can be applied in assistive soft robotic devices. First, some fundamental biomechanical muscle models will be discussed.
 
 The stress and strain involved in muscle contraction is more complex than uniform materials and is non-linear. The stress and strain of a passive muscle (i.e. contractile units are not producing internal muscle tension) can be modelled with the following equation; 
 \begin{equation}
@@ -347,7 +354,7 @@ Ionic polymer-metal composite actuators (IPMCs) are soft actuators that can be a
   \caption{Diagram of the typical architecture of an IPMC actuator \citep{Wang2018} ($\copyright$ 2018 Yanjie Wang and Takushi Sugino)}
   \label{fig:Artificial Muscle_IPMC}
 \end{figure}
-An IPMC is made up of an ionic polymer interlayer, two electrode conductive layers, and a voltage source. The ionic polymer interlayer allows for ionic transport and is typically made of treated Nafion or Flemion. These materials are typically used as ion exchange membranes so have the characteristics desired for the transporting ions during the actuation of the IPMC actuator. The two electrodes are made of a suitably conductive and flexible material. The interlayer is treated such that it is filled with water molecules and cations, with the chemical backbone of the interlayer being slightly negatively charged. When a voltage is applied across the electrodes the cations are repelled from the cathode and travel towards the anode while the water molecules are displaced in the opposite direction towards the cathode. The ionic polymer then swells as the cations repel each other along the anode side of the interlayer, while the polymer elements on the cathode side effectively shrink \citep{Segalman1999}. This swelling adjacent to the cathode provides the device's bending actuation.
+An IPMC is made up of an ionic polymer inter-layer, two electrode conductive layers, and a voltage source. The ionic polymer inter-layer allows for ionic transport and is typically made of treated Nafion or Flemion. These materials are typically used as ion exchange membranes so have the characteristics desired for the transporting ions during the actuation of the IPMC actuator. The two electrodes are made of a suitably conductive and flexible material. The inter-layer is treated such that it is filled with water molecules and cations, with the chemical backbone of the inter-layer being slightly negatively charged. When a voltage is applied across the electrodes the cations are repelled from the cathode and travel towards the anode while the water molecules are displaced in the opposite direction towards the cathode. The ionic polymer then swells as the cations repel each other along the anode side of the inter-layer, while the polymer elements on the cathode side effectively shrink \citep{Segalman1999}. This swelling adjacent to the cathode provides the device's bending actuation.
 
 There are many variations of the design and manufacturing of IPMCs to optimise the actuator for an application as shown by \cite{Shahinpoor2016}.
 
@@ -370,18 +377,18 @@ Magnetorheological elastomer (MRE) actuators, also known as magnetoactive soft m
 \end{figure}
 A key issue with using magnetorheological elastomers as soft actuators is that they require heavy gauge conductors for the high current they require for generating a magnetic field. The high current requirement means that actuators have only been created that have a rigid electromagnet driving a soft MRE \citep{Bose2012}. 
 
-When manufacturing MREs, uncured liquid silicone rubber is mixed with magnetic (commonly carbonyl iron) particles to form a 3D matrix of crosslinked elastomer with homogeneously dispersed magnetic particles. A core issue when creating an MRE is the agglomeration and corrosion of magnetic particles due to residual water within the mixing operation. The magnetic particles can be processed to have a hydrophobic quality to mitigate this issue \cite{Burhannuddin2020,Ge2020}. During the curing process a magnetic field can be applied to align the particles within the elastomer to control the particle isotropy \cite{Ge2020,LaleganiDezaki2023}.
+When manufacturing MREs, uncured liquid silicone rubber is mixed with magnetic (commonly carbonyl iron) particles to form a 3D matrix of cross-linked elastomer with homogeneously dispersed magnetic particles. A core issue when creating an MRE is the agglomeration and corrosion of magnetic particles due to residual water within the mixing operation. The magnetic particles can be processed to have a hydrophobic quality to mitigate this issue \cite{Burhannuddin2020,Ge2020}. During the curing process a magnetic field can be applied to align the particles within the elastomer to control the particle isotropy \cite{Ge2020,LaleganiDezaki2023}.
 
-There have been attempts to use additive manufacturing to make MREs \citep{Krueger2014,Ge2020}, however the method described has not optimsied the structure of MRE for any application and the particle dipersion throughout the MRE has not been proven uniform throughout the print volume. 
+There have been attempts to use additive manufacturing to make MREs \citep{Krueger2014,Ge2020}, however the method described has not optimised the structure of MRE for any application and the particle dispersion throughout the MRE has not been proven uniform throughout the print volume. 
 
 To sense the contraction and deformation of an MRE a hybrid iron-carbon particle elastomer composite can be made. Where the carbon particles' contribute to the material piezoresistivity to determine the material loading \cite{Bica2011,Costi2024}. 
 
-The current applications of MRE actuators are limited, however magnetorheological fluid (MRF), is a fluid which becomes more viscous with an applied magnetic field as currently has many modern applications. This fluid substance is largely used in applications where damping control is desired such as vehicle suspension \citep{UnuhH2019}, medical assitive devices \citep{Chen2017} and helicopter seat damping \citep{Hiemenz2007}. Potential MRE actuator applications include fluid valve control \citep{Bose2012} and active vibration control similar to that mentioned for MRFs \citep{UnuhH2019}. 
+The current applications of MRE actuators are limited, however magnetorheological fluid (MRF), is a fluid which becomes more viscous with an applied magnetic field as currently has many modern applications. This fluid substance is largely used in applications where damping control is desired such as vehicle suspension \citep{UnuhH2019}, medical assistive devices \citep{Chen2017} and helicopter seat damping \citep{Hiemenz2007}. Potential MRE actuator applications include fluid valve control \citep{Bose2012} and active vibration control similar to that mentioned for MRFs \citep{UnuhH2019}. 
 
 
 \subsection{Electrostatically Driven - HASEL actuator}
 \label{subsec:hasel-actuator}
-A hydraulically amplified self‐healing electrostatic (HASEL) actuator is a recent soft actuator technology developed in 2018 by Kellaris et al.\citep{Kellaris2018} which displays many qualities that are superior than current artificial muscle technology. HASEL actuators are made up of three main components: electrodes, dielectric fluid, and an elastomeric shell. The electrodes need to be highly conductive, able to handle high electric potential, and can be solid or flexible. Hydrogel electrodes have been proven to be a good material for the electrodes because of their elasticity while still maintaining a high conductivity \citep{Acome2018}. In one application the hydrogel material is bonded to a polydimethylsiloxane (PDMS) substrate for mechanical strength and for ease of bonding to the actuator biaxially-oriented polypropylene (BOPP) shell \citep{Kellaris2018,Yuk2016}. HASEL actuators use high electric potential across two electrodes to create an electrostatic force. This force induces a zipping effect which pulls the electrode together from one end to the other as the electric field strength increases. The zipping of the two electrodes pushes the dielectric fluid into the reservoir increasing the pressure which alters the shape of the reservoir bounds providing an actuation motion. When the electrodes have displaced all of the fluid between them the actuation displacement is at a maximum. The electrostatic zipping action allows a large force to be generated due to snap-through transition. Snap-through transition is an actuation instability which has been discussed in previous research as a means of amplifying DEA actuation strain \citep{Keplinger2012}. 
+A hydraulically amplified self‐healing electrostatic (HASEL) actuator is a recent soft actuator technology developed in 2018 by Kellaris et al.\citep{Kellaris2018} which displays many qualities that are superior than current artificial muscle technology. HASEL actuators are made up of three main components: electrodes, dielectric fluid, and an elastomeric shell. The electrodes need to be highly conductive, able to handle high electric potential, and can be solid or flexible. Hydrogel electrodes have been proven to be a good material for the electrodes because of their elasticity while still maintaining a high conductivity \citep{Acome2018}. In one application the hydrogel material is bonded to a polydimethylsiloxane (PDMS) substrate for mechanical strength and for ease of bonding to the actuator bi-axially-oriented polypropylene (BOPP) shell \citep{Kellaris2018,Yuk2016}. HASEL actuators use high electric potential across two electrodes to create an electrostatic force. This force induces a zipping effect which pulls the electrode together from one end to the other as the electric field strength increases. The zipping of the two electrodes pushes the dielectric fluid into the reservoir increasing the pressure which alters the shape of the reservoir bounds providing an actuation motion. When the electrodes have displaced all of the fluid between them the actuation displacement is at a maximum. The electrostatic zipping action allows a large force to be generated due to snap-through transition. Snap-through transition is an actuation instability which has been discussed in previous research as a means of amplifying DEA actuation strain \citep{Keplinger2012}. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Figures/HASEL_actuator_crop.jpg}
@@ -428,7 +435,7 @@ While disc shaped DEAs are the most commonly used actuator topology many other t
 
 DEAs are often fabricated in a laboratory environment using a pre-strained elastomer. The pre-straining accomplishes four key qualities; stores elastic strain energy, ensures DE is planar within the bounds of the jig, controls the initial thickness of the DE, and puts the DE in an optimal stress-strain region, often taking advantage of elastomer hyper-elasticity. There is no standard practice for the fabrication of DEAs, other methods such as additive manufacturing have also been explored to generate more complex geometries and to increase production speed \citep{Park2018,McCoul2017}.
 
-As well as actuating, DEAs can also be used for sensing. DEAs can be used as sensitive capactive sensors, where any strain applied to the DE will relate to the effective capacitance between the two electrodes \citep{Jung2008,Goulbourne2007,Gisby2013}. 
+As well as actuating, DEAs can also be used for sensing. DEAs can be used as sensitive capacitive sensors, where any strain applied to the DE will relate to the effective capacitance between the two electrodes \citep{Jung2008,Goulbourne2007,Gisby2013}. 
 
 Currently DEAs often require voltages within the kilo-volt range to generate an adequate stress and strain for a range of applications. A key problem encountered by researchers designing DEAs is the trade-off between actuation force and strain magnitude \citep{Hau2018}. This high voltage requirement may deem the technology dangerous for use where there is a possibility that a human may come into physical contact with the high voltage electrodes.
 
@@ -438,7 +445,7 @@ Currently DEAs often require voltages within the kilo-volt range to generate an 
 % Why are soft piezo resistive composites used in S&As?
 Most soft sensors and actuators require low-stiffness materials for their active sensing/actuation domains. The requirement of softness is governed by the mechanical modulus values depend on the application requirements. The use of conductive particle elastomer composites is explored in this work due to the customisability of the electromechanical characteristics. Although HASEL actuators have been defined soft actuators they commonly BOPP or BOPP-like plastic polymers which are flexible, however do not have the desired stretchability of elastomers. When comparing the limited amount of relatively soft piezoresistive materials in comparison Table \ref{tab:comparing-piezo-r-materials}, conductive particle polymers were determined to have the best fit for the sensor and actuator technology developed in this work.
 % Why CPECs
-A core part of this thesis is understanding the behaviour of conductive particle elastomer composites for their use as a range of EAP-based sensing and actuating devices. The characteristics that make conductive particle elastomer composites (CPECs) ideal for soft sensor and actuator devices often include, its customisable low stiffness, conductivity, piezoresistivity, elasticity, mouldability,  aswell well as its 3D printability, low toxicity, durability, cost, simple fabrication process, and sustainability \cite{Chung2020,Ge2020,HindermannBischoff2001,Kim2012}.
+A core part of this thesis is understanding the behaviour of conductive particle elastomer composites for their use as a range of EAP-based sensing and actuating devices. The characteristics that make conductive particle elastomer composites (CPECs) ideal for soft sensor and actuator devices often include, its customisable low stiffness, conductivity, piezoresistivity, elasticity, mouldability,  as well as its 3D printability, low toxicity, durability, cost, simple fabrication process, and sustainability \cite{Chung2020,Ge2020,HindermannBischoff2001,Kim2012}.
 
 
 \subsection{Conductive Particle Elastomer Conduction Mechanisms}
@@ -460,7 +467,7 @@ Derived from percolation theory \cite{Spahr2017}, there is a percolation thresho
 	\label{fig:perc-thresh-plot}
 \end{figure}
 
-Conductive particle dispersion is an important characterstic of CPECs when optimising the electrical properties of a CPEC. Particle dispersion includes the inter-particle distance distribution \cite{Kim2012}, particle agglomeration distribution \cite{Pegel2008}, particle isotropy/anisotropy \cite{Song2022}, and sedimentation \cite{Eklund2019}. The filler elastomer matrix also contributes to the piezoresistive effect, through it's viscoelasticity, elastic modulus, and dielectric permittivity within the CPEC.
+Conductive particle dispersion is an important characteristic of CPECs when optimising the electrical properties of a CPEC. Particle dispersion includes the inter-particle distance distribution \cite{Kim2012}, particle agglomeration distribution \cite{Pegel2008}, particle isotropy/anisotropy \cite{Song2022}, and sedimentation \cite{Eklund2019}. The filler elastomer matrix also contributes to the piezoresistive effect, through it's viscoelasticity, elastic modulus, and dielectric permittivity within the CPEC.
 % To do: Mention voids and impurities?
 
 \begin{figure}[H]
@@ -475,10 +482,10 @@ Microscale models for CPECs and the relationship between particle and electric c
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.7\linewidth]{Figures/conduction-tunneling-mechanisms.jpg}
-	\caption{Electrical conduction and tunneling representation diagram.}
+	\caption{Electrical conduction and tunnelling representation diagram.}
 	\label{fig:tunneling-model-rep}
 \end{figure}
-Electrical DC conduction through a CPEC occurs via two main mechanisms, electrical conduction and quantum tunneling \cite{Bloor2006,Duan2014,Zhang2007,Madrid2017}. Electrical conduction uses the conduction band electrons shared by adjacent atoms to allow movement of electrons throughout chains of cascading these conductive atoms. The second mechanism of conduction is through quantum tunneling which is stochastic in nature and allows for conduction through insulative boundaries between the percolative network of conductive particles \cite{Hu2008,Grimaldi2006}. 
+Electrical DC conduction through a CPEC occurs via two main mechanisms, electrical conduction and quantum tunnelling \cite{Bloor2006,Duan2014,Zhang2007,Madrid2017}. Electrical conduction uses the conduction band electrons shared by adjacent atoms to allow movement of electrons throughout chains of cascading these conductive atoms. The second mechanism of conduction is through quantum tunnelling which is stochastic in nature and allows for conduction through insulative boundaries between the percolative network of conductive particles \cite{Hu2008,Grimaldi2006}. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.4\linewidth]{Figures/conduction-AC-mechanisms.jpg}
@@ -494,7 +501,7 @@ Before exploring the known conduction and piezoresistive mechanisms and models f
 
 CPECs are made by dispersing conductive particles through a curable liquid elastomer matrix. To change the electromechanical properties of the material, the dispersion of the conductive particles throughout the matrix can be optimised through various methods such as mixture sonication, and mix speed and timing. Sonication serves to minimise the agglomerations of primary conductive particles as a preliminary step. This involves a mixture of the conductive particles and a liquid, usually in the form of a solvent, to be placed in a ultra-sonication bath. 
 
-The sonication bath performs a frequency sweep and it has been shown that sudden implosion cavitation near the agglomerates help cause the separation of the agglomerates into their primary particles \cite{Priyadarshi2021,Kudryashova2019}. The degree of deagglomeration and dispersion is affected by various factors including sonciation time, frequency of oscillations, oscillation intensity, particle wettability, and liquid matrix viscosity \cite{Kudryashova2019,Chen2020a}. 
+The sonication bath performs a frequency sweep and it has been shown that sudden implosion cavitation near the agglomerates help cause the separation of the agglomerates into their primary particles \cite{Priyadarshi2021,Kudryashova2019}. The degree of deagglomeration and dispersion is affected by various factors including sonication time, frequency of oscillations, oscillation intensity, particle wettability, and liquid matrix viscosity \cite{Kudryashova2019,Chen2020a}. 
 
 This sonication usually occurs before the the particles and solvent are added to the elastomeric matrix due to the large viscous damping effects of liquid elastomers. The next step involves mixing the dispersed conductive particles throughout the liquid elastomer, this can be done using a variety of mixing methods, including a planetary mixer, magnetic mixer, screw mixer, static mixers, amongst others \cite{Pegel2008,Rosset2016,Fekiri2020,Kim2012}. During the mixing process often the liquid solvent used in the dispersion stage is evaporated, leaving only the curable elastomer and the conductive particles. Although often impurities and voids are a by-product of the previous processes which can give undesirable qualities.
 
@@ -581,9 +588,9 @@ Once the EIT reconstruction algorithm has been tuned for an application, often p
 % Clarify: the focus of the thesis.
 The purpose of this thesis was to develop novel sensor and actuator technology that mimics the pressure mapping capabilities of human skin and combine this with the actuation properties of human muscle. Through this review of current literature, several key conclusions can be drawn that will lay the foundational knowledge for the rest of this work.
 
-The review of biological skin has revealed quantitative parameters that define its mechanical and sensory capabilities. This review highlighted mechanical characteristics such as the elastic modulus, viscoelastic creep, and surface area, as well as functional properties like spatial and temporal resolution. These factors provide a foundation for designing artificial skin that can replicate or even surpass the sensing functions of soft human skin. The review on pressure mapping technologies was then completed showing a range of different transduction methods for similarly soft sensing domains, showing that replicating human mechanoreceptor sensation is a multifaceted problem. Human skin uses various mechanoreceptors with different qualities and trade-offs and similarly different pressure mapping technologies use different pressure transduction methods each with different performance characteristics and limitations. The parallel review on biological and artificial muscles showed that DEAs and HASEL actuators are promising technologies for mimicking biological muscle quantitatively. Although characteristics common to both technologies such as high actuation voltage and limited device lifetime limit the applications of them. DEAs were shown to be more akin to human muscle and skin tissue than HASEL actuators due to not only their flexibility, but their high degree stretchability, potential biocompatilibility, and potential for integration with an EIT-based soft pressure mapping technology. The integration of these DEA and EIT-based pressure mapping technologies  has not yet been explored in previous literature.
+The review of biological skin has revealed quantitative parameters that define its mechanical and sensory capabilities. This review highlighted mechanical characteristics such as the elastic modulus, viscoelastic creep, and surface area, as well as functional properties like spatial and temporal resolution. These factors provide a foundation for designing artificial skin that can replicate or even surpass the sensing functions of soft human skin. The review on pressure mapping technologies was then completed showing a range of different transduction methods for similarly soft sensing domains, showing that replicating human mechanoreceptor sensation is a multifaceted problem. Human skin uses various mechanoreceptors with different qualities and trade-offs and similarly different pressure mapping technologies use different pressure transduction methods each with different performance characteristics and limitations. The parallel review on biological and artificial muscles showed that DEAs and HASEL actuators are promising technologies for mimicking biological muscle quantitatively. Although characteristics common to both technologies such as high actuation voltage and limited device lifetime limit the applications of them. DEAs were shown to be more akin to human muscle and skin tissue than HASEL actuators due to not only their flexibility, but their high degree stretchability, potential biocompatibility, and potential for integration with an EIT-based soft pressure mapping technology. The integration of these DEA and EIT-based pressure mapping technologies  has not yet been explored in previous literature.
 
-The thesis has converged on using CPECs to fabricate EAP sensor and actuator devices, hence a brief literature review highlighting CPEC fabrication techniques and electromechanical characterisation has been given. These composites exhibit beneficial properties like flexibility, tunable electromechanical behavior, and ease of fabrication, which make them suitable for integrating into soft robotic systems. However, challenges such as achieving uniform particle dispersion, minimising agglomeration, and optimising the conductive network for stable long-term operation are still active areas of investigation. Hence, this thesis first characterises some of the dynamic and time dependent properties of the material for repeated discretely categorised strain input scenarios.
+The thesis has converged on using CPECs to fabricate EAP sensor and actuator devices, hence a brief literature review highlighting CPEC fabrication techniques and electromechanical characterisation has been given. These composites exhibit beneficial properties like flexibility, tunable electromechanical behaviour, and ease of fabrication, which make them suitable for integrating into soft robotic systems. However, challenges such as achieving uniform particle dispersion, minimising agglomeration, and optimising the conductive network for stable long-term operation are still active areas of investigation. Hence, this thesis first characterises some of the dynamic and time dependent properties of the material for repeated discretely categorised strain input scenarios.
 
 The investigation of the dynamic electromechanical characteristics of CPECs and how they are used in EIT-based pressure sensors and their integration into dielectric elastomer actuators is shown in this thesis; generating technology that is more akin human muscle and skin for future integration within ubiquitous rigid robotics.
 % Excite: the reader into wanting to read the rest of the thesis!

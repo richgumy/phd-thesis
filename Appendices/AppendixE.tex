@@ -9,7 +9,7 @@ The build was split into two main parts the ERT sensor module electronics and th
 
 \subsection{ERT Sensor}
 % grab gerber files send to PCB manufacturer. Place all SMD components. Place all THT components. Don't place jumpers until circuit has been tested. Copy and paste circuit test procedure. Place in housing for mounting on Prusa
-The manufacturing process of the PCB involves first sending the PCB gerber files to a PCB manufacturer. This work used JLC PCB with their default parameters for a 4 layer PCB.
+The manufacturing process of the PCB involves first sending the PCB Gerber files to a PCB manufacturer. This work used JLC PCB with their default parameters for a 4 layer PCB.
 
 Next populate the PCBs with the SMD parts given in the BOM and place in a reflow oven. First complete the rear side then the top side to ensure components stick. Once all SMD parts have been firmly soldered, solder all of the THT components. Finally attach the jumpers for the desired power mode, explained in Section \ref{sec:Operating modes}.
 \begin{figure}[H]
@@ -75,7 +75,7 @@ To test the spatial and force resolution of the ERT pressure mapping device, the
 	\label{fig:mk3s_head_old_raw}
 \end{figure}
 
-Next the print head of the MK3s was dismantled, as shown in Figure \ref{fig:mk3s_head_old_raw}, leaving a flat surface to attach first the PINDA adapter [PR8] and the loadcell bracket [PR9], as shown in Figure \ref{fig:mk3s_head_new}. Use M3 bolts to attach the loadcell bracket and PINDA adapter to the dismantled print head surface. See read the printer \href{https://help.prusa3d.com/guide/5-e-axis-assembly_169235#170079}{assembly manual} for more detail on the part assembly\cite{Prusa2023}. Bolt the TAL220 10 kg loadcell [E3] onto the loadcell bracket using M5 bolts [HW4]. Bolt the force applicator head [PR5-7, HW5] onto the other end of the loadcell using M4 bolts [HW3]. A range of force applicator heads shapes and sizes have been created to test the resolution of the sensor. 
+Next the print head of the MK3s was dismantled, as shown in Figure \ref{fig:mk3s_head_old_raw}, leaving a flat surface to attach first the PINDA adaptor [PR8] and the loadcell bracket [PR9], as shown in Figure \ref{fig:mk3s_head_new}. Use M3 bolts to attach the loadcell bracket and PINDA adaptor to the dismantled print head surface. See read the printer \href{https://help.prusa3d.com/guide/5-e-axis-assembly_169235#170079}{assembly manual} for more detail on the part assembly\cite{Prusa2023}. Bolt the TAL220 10 kg loadcell [E3] onto the loadcell bracket using M5 bolts [HW4]. Bolt the force applicator head [PR5-7, HW5] onto the other end of the loadcell using M4 bolts [HW3]. A range of force applicator heads shapes and sizes have been created to test the resolution of the sensor. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\linewidth]{Figures/modded_MK3s_print_head_clean_labelled.png}
@@ -106,7 +106,7 @@ To validate and characterise the ERT pressure mapping sensor the CFA is used to 
 	\item ERT sensor programming
 	\item ERT sensing domain preparation
 	\item Load application point and strain configuration
-	\item Touch based mesh bed leveling
+	\item Touch based mesh bed levelling
 	\item Load experiment execution
 	\item Data capture
 	\item Data processing
@@ -134,7 +134,7 @@ The ERT sensor contains an ESP-WROOM32 module [U1] which requires the \verb|main
 
 
 \subsection{ERT sensing domain preparation}
-For sensing domain fabrication instructions refer to Section \ref{sec:Sensing Domain}. The ERT sensing domain needs to have sufficiently low adjacent inter-electrode resistance to function, so that the current source will not saturate due the power supply voltage. The ET electrodes can be attached to the domain in many ways as shown in Figure \ref{fig:CBSR_samples_examples}, ensure these connections provide a reliable electrical contact to the sensing domain. Connect sensing domain electrodes to the ERT circuit FPC connector[W1] via an adapter[J8]. The ERT sensing domain must be flat and centered on the sensing domain holder [PR3, PR4] as shown in Figure \ref{fig:CBSR_samples_examples} (middle). 
+For sensing domain fabrication instructions refer to Section \ref{sec:Sensing Domain}. The ERT sensing domain needs to have sufficiently low adjacent inter-electrode resistance to function, so that the current source will not saturate due the power supply voltage. The ET electrodes can be attached to the domain in many ways as shown in Figure \ref{fig:CBSR_samples_examples}, ensure these connections provide a reliable electrical contact to the sensing domain. Connect sensing domain electrodes to the ERT circuit FPC connector[W1] via an adaptor[J8]. The ERT sensing domain must be flat and centred on the sensing domain holder [PR3, PR4] as shown in Figure \ref{fig:CBSR_samples_examples} (middle). 
 
 
 \subsection{Load application point and strain configuration}
@@ -174,9 +174,9 @@ Once all hard-coded parameters have been set the command parameters are set and 
 Where \verb|<dir/filename>| is includes the file directory and file name, \verb|<Isrc_A>| is the constant current source value set in the ERT circuit in amps, \verb|<Vmax>| is the maximum allowed voltage to be read by the ADC in volts (e.g. 20 V), \verb|<sample_name>| is a descriptive sensing domain name, \verb|<date_fabricated>| is the sample fabrication date (`NA' or leave blank if irrelevant), \verb|<load_time_s>| is the strain pulse on and off time in seconds, and \verb|<strain>| is the desired strain applied to the domain as a percentage. If a random test sequence is desired with randomised strain and locations this can be achieved by simply setting the \verb|<strain>| value to -1.
 
 
-\subsection{Touch-based mesh bed leveling}
+\subsection{Touch-based mesh bed levelling}
 % if sample isn't perfectly flat mesh bed leveling can compensate.
-An undulating sensing domain surface can often be present during testing due to an intentionally curved sensor or manufacturing defects. To compensate for an uneven surface a touch-based mesh bed leveling process has been created to improve the quality of the stress/strain data gathered. The process involves the force applicator head travelling towards the sample until a change in force has been detected above 0.1 N. This mitigates the risk of any misalignment with the force applicator surface plane and the sensing domain surface plane and ensures more accurate strain data capture for low strain magnitudes. This touch-based mesh bed leveling is completed before the load sequence experiment begins. The sensing domain and holding trays should not be physically contacted in any form after beginning the \verb|ertpcb_cfa_reader.py| program.
+An undulating sensing domain surface can often be present during testing due to an intentionally curved sensor or manufacturing defects. To compensate for an uneven surface a touch-based mesh bed levelling process has been created to improve the quality of the stress/strain data gathered. The process involves the force applicator head travelling towards the sample until a change in force has been detected above 0.1 N. This mitigates the risk of any misalignment with the force applicator surface plane and the sensing domain surface plane and ensures more accurate strain data capture for low strain magnitudes. This touch-based mesh bed levelling is completed before the load sequence experiment begins. The sensing domain and holding trays should not be physically contacted in any form after beginning the \verb|ertpcb_cfa_reader.py| program.
 
 
 \subsection{Data capture}
