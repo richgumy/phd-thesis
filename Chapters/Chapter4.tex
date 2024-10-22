@@ -76,7 +76,7 @@ Quantitative results are required for spatial quantification of the EIT image re
 \end{figure}
 
 \subsubsection{EIT Measurement}\label{sec:EIT Measurement}
-At its core EIT usually requires a current or voltage source, one or multiple voltmeters, and a switching device. When integrating a mechanical pressure validation system a Cartesian force applicator (CFA) and is also required to capture data simultaneously. The system architecture and DUT electrical connections are shown in Figure \ref{fig:eit_sensor_architecture} and \ref{fig:wiring_ERT_sensor}. 
+EIT data acquisition usually requires a current or voltage source, one or multiple voltmeters, and a switching device. When integrating a mechanical pressure validation system a Cartesian force applicator (CFA) and is also required to capture data simultaneously. The system architecture and DUT electrical connections are shown in Figure \ref{fig:eit_sensor_architecture} and \ref{fig:wiring_ERT_sensor}. This work uses a 2634b source measure unit (SMU) (Keithley, Solon, USA) as a current source and voltage measurement unit for EIT data acquisition.
 \begin{figure}[H]
     \centering
     % TODO?: insert a image of the system (tidied up)
@@ -103,7 +103,7 @@ At its core EIT usually requires a current or voltage source, one or multiple vo
 Prior to utilising CBSR materials as a 2D pressure sensor, the piezoresistive properties were analysed in one dimension to establish resistance-stress/strain relationships for each CBSR sample. This 1D material testing was conducted using the Cartesian force applicator in conjunction with the SMU. The stress-strain relationship of the material was determined in previous work and shown in Table \ref{tab:DUT_char}. The 1D analysis gave quantitative insight into the material resistivity response to strain in different known areas of the Domain Under Test (DUT) and aligned with the phenomena characterised in the previous chapter, Section \ref{subsec:Quasi-Static Tensile Resistance-Strain}.
 
 \subsubsection{Quasi-static Piezoresistivity}\label{sec:Quasi-static Piezoresistivity}
-To determine the piezoresistivity or gauge factor of the material, pin electrodes were pierced through the CBSR samples so that the pin electrodes were parallel and at a distance of 35 mm from each other. The pins were 2.5 mm from each end of the sample. A 2634b source measure unit (Keithley, Solon, USA) was used to apply a constant current of 1 mA between the two pin electrodes while ten compressive loading cycles were applied. The ten loading cycles were applied at strains of 5, 10, 15, 20, 25, and 30\%, with a duty cycle of 50\% and period of 120 s. Loads were applied using the Cartesian force applicator with a 20 mm x 20 mm square flat force applicator head. The strain rate was kept at a constant 16.67$\% \cdot s^{-1}$ to dampen the amplitude of transient effects as proven in previous work \citep{Ellingham2021}.
+To determine the piezoresistivity or gauge factor of the material, pin electrodes were pierced through the CBSR samples so that the pin electrodes were parallel and at a distance of 35 mm from each other. The pins were 2.5 mm from each end of the sample. A 2634b SMU was used to apply a constant current of 1 mA between the two pin electrodes while ten compressive loading cycles were applied. The ten loading cycles were applied at strains of 5, 10, 15, 20, 25, and 30\%, with a duty cycle of 50\% and period of 120 s. Loads were applied using the Cartesian force applicator with a 20 mm x 20 mm square flat force applicator head. The strain rate was kept at a constant 16.67$\% \cdot s^{-1}$ to dampen the amplitude of transient effects as proven in previous work \citep{Ellingham2021}.
 
 \begin{figure}[H]
 	\centering
@@ -125,13 +125,13 @@ When using this material to estimate stress based on resistance, any transient e
 Where $\alpha$ and $\beta$ are the linear fit parameters, $\sigma$ is the compressive stress, $\varepsilon$ is the strain, $\Delta \rho$ is the change in conductance, and $\rho_0$ is the original material conductance.
 
 \subsubsection{Transient Piezoresistivity}\label{sec:Transient Piezoresistivity}
-There are two main piezoresistive events that occur during these compressive stress pulse response experiments. They are the compressive loading and unloading transients. Both of which result in stress relaxation and resistance relaxation behaviour until a steady-state resistance is reached. The stress relaxation can be approximated by a generalised Kelvin linear viscoelastic model \citep{Ju2022} as shown in the previous chapter Section \ref{subsec:resistive relaxation Fitting}. A two component model was found to fit all curves without overfitting, the relaxation model from a step input is given in Equation \ref{eqn:maxwell_general_n2}.
+There are two main piezoresistive events that occur during these compressive stress pulse response experiments. They are the compressive loading and unloading transients. Both of which result in stress relaxation and resistance relaxation behaviour until a steady-state resistance is reached. The stress relaxation can be approximated by a generalised Kelvin linear viscoelastic model \citep{Ju2022} as shown in the previous chapter Section \ref{subsec:resistive relaxation Fitting}. A two component model was found to fit all curves without overfitting, the relaxation model from a step input is given in Equation \ref{eqn:kelvin_general_n2}.
 \begin{equation}
     G_2(t) = a_o + a_1 e^{-t/\tau_1} + a_2 e^{-t/\tau_2}
-    \label{eqn:maxwell_general_n2}
+    \label{eqn:kelvin_general_n2}
 \end{equation}
-Where $G_2(t)$ is the stress relaxation function, $a_0$ is the relaxation offset, $a_1$ \& $a_2$ are the magnitude weightings for each time constant $\tau_1$ \& $\tau_2$. Equation \ref{eqn:maxwell_general_n2} was used analogously for the resistance relaxation. % TODO?: justify?
-To ensure repeatability of the experiment the ten loading and unloading events were fitted using equation \ref{eqn:maxwell_general_n2} to the each relaxation, then the $R^2$ goodness of fit was compared for all of the relaxations.
+Where $G_2(t)$ is the stress relaxation function, $a_0$ is the relaxation offset, $a_1$ \& $a_2$ are the magnitude weightings for each time constant $\tau_1$ \& $\tau_2$. Equation \ref{eqn:kelvin_general_n2} derived from the generalised Kelvin viscoelastic model was used analogously for the resistance relaxation. % TODO?: justify?
+To ensure repeatability of the experiment the ten loading and unloading events were fitted using equation \ref{eqn:kelvin_general_n2} to the each relaxation, then the $R^2$ goodness of fit was compared for all of the relaxations.
 % TODO?: explain why there are outliers. Due to noise error and the nature of the fitting algorithn LM-LS??
 
 An important temporal characteristic of this system is the settling time, $t_s$, given a strain step input. In this system the resistance step response settling time was the time taken to reach and stay within a specified tolerance about final steady-state resistance, given a strain step input. The tolerance chosen is about the steady state was $\pm$ 15\%. % When using this settling time to gather sensor data, if the tolerance is increased the response time decreases and the sensor force accuracy decreases, vice versa for a decreased tolerance. 
@@ -270,7 +270,7 @@ In Figure \ref{fig:load_relax_eg} a loading event is shown with the related stre
     \caption{Compressive loading and unloading transients for CBSR 8 wt\% material undergoing a 20\% strain pulse from the first pulse given in Figure \ref{fig:stress_seq}.}
     \label{fig:load_relax_eg}
 \end{figure}
-For each stress relaxation Equation \ref{eqn:maxwell_general_n2} was fitted to the data. Analogously the same was done for the resistive relaxation events observed similar to the tensile testing shown in the previous chapter.
+For each stress relaxation Equation \ref{eqn:kelvin_general_n2} was fitted to the data. Analogously the same was done for the resistive relaxation events observed similar to the tensile testing shown in the previous chapter.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth]{Figures/Push event 3 - CBSR 8 wt 5p strain - 1D compression test.jpg}
@@ -279,7 +279,7 @@ For each stress relaxation Equation \ref{eqn:maxwell_general_n2} was fitted to t
 \end{figure}
 The fitted parameters were found for both 8 and 9 wt\% CBSR samples, giving an indication of the differences due to CB weight percentage and the apparent viscoelasticity.
 
-The settling times of the resistance relaxations give an indication of the frequency response of material. Thus, parameters were fitted to a series of relaxations using Equation \ref{eqn:maxwell_general_n2}, then a series of fit parameters could be used to determine a mean fit. The mean fit was then used to determine the mean settling time over each ten loading events and each of the six strain values. The mean relaxation settling times were compared for each CB weight percentage as shown in Appendices \ref{fig:strain_ts_8p_1D} and \ref{fig:strain_ts_9p_1D}.
+The settling times of the resistance relaxations give an indication of the frequency response of material. Thus, parameters were fitted to a series of relaxations using Equation \ref{eqn:kelvin_general_n2}, then a series of fit parameters could be used to determine a mean fit. The mean fit was then used to determine the mean settling time over each ten loading events and each of the six strain values. The mean relaxation settling times were compared for each CB weight percentage as shown in Appendices \ref{fig:strain_ts_8p_1D} and \ref{fig:strain_ts_9p_1D}.
 
 % \subsubsection{Sensor System}\label{sec:Sensor System2}
 % % TODO:
@@ -603,7 +603,7 @@ Temporal performance is crucial for time sensitive applications and the settling
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\linewidth]{Figures/2D Push event 0 - CBSR 9 wt 30p strain - 2D compressionv2.jpg}
+    \includegraphics[width=0.7\linewidth]{Figures/2D Push event 0 - CBSR 9 wt 30p strain - 2D compression.jpg}
     \caption{EIT load event $L_0$ on the CBSR 9 wt\% sample using 30\% strain showing a stress, $\sigma$ and conductance, $\rho$, relaxation event and their corresponding fitted curves.}
     \label{fig:blob_global_relaxation}
 \end{figure}

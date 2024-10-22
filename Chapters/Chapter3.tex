@@ -25,7 +25,7 @@ Carbon nanoparticle-silicone elastomer composites are stretchable conductive mat
 
 Some characteristics of CBSR composites which make it suitable for strain sensors include that, the material is relatively inexpensive, readily available, non-toxic, bio-compatible, and can have a high gauge factor. Other alternative composite conductive particles, such as carbon nanotubes (CNTs) \cite{Maddipatla2017,Wang2013} and metallic particles \cite{Quinsaat2015,Racles2021}, have been seen to be more carcinogenic than CB alternatives \cite{Fukushima2018,Ferdous2020,Rausch2004}. The fabrication of CBSR composites requires a degree of optimisation to ensure that the carbon particles are adequately dispersed to ensure high conductivity and high yield strength of the material. More importantly the homogeneous dispersion of CB particles means improved repeatability of experimental results and more accurate models for the eventual applications of CBSR composites. A comprehensive model of how the resistivity changes with strain has not yet been developed. 
 
-While previous work from our research group \cite{Giffney2017,Devaraj2018} has focused on the response to quasi-static and low-strain-rate behaviour, these materials show dynamic effects where a significant resistance strain-rate relationship is present. The main characterisation investigated in this work for CBSR sensing involves understanding the relationship between the mechanical stress relaxation, electrical resistive relaxation and strain in time. A difference in time constants between the stress and resistive relaxations have been noted before in literature \cite{Kost1994,Wang2013,Maddipatla2017,Wang2004}, but never accurately modelled with the physical theory explained. Mersch et al. \cite{Mersch2020} have classified several transient `shoulder' events and their related deformation events, compressive, tensile, and bending. These transient peaks have been observed by several researchers using the similar CBSR materials, however there is no conclusive mathematical model relating these transient peaks to strain in time. An understanding of this resistive relaxation and other transient phenomena would mean an accurate model could be made to predict the relationship between stress, strain and resistance within a CBSR composite. 
+While previous work from our research group \cite{Giffney2017,Devaraj2018} has focused on the response to quasi-static and low-strain-rate behaviour, these materials show dynamic effects where a significant resistance strain-rate relationship is present. The main characterisation investigated in this work for CBSR sensing involves understanding the relationship between the mechanical stress relaxation, electrical resistive relaxation and strain in time. Both stress and resistance relaxation phenomena are discussed in the following in this section and are shown in our experimental work in Figure \ref{fig:stress_strain_res_pulse}. A difference in time constants between the stress and resistive relaxations have been noted before in literature \cite{Kost1994,Wang2013,Wang2004}, but never accurately modelled with the physical theory explained. Mersch et al. \cite{Mersch2020} have classified several transient `shoulder' events and their related deformation events, compressive, tensile, and bending. These transient peaks have been observed by several researchers using the similar CBSR materials, however there is no conclusive mathematical model relating these transient peaks to strain in time. An understanding of this resistive relaxation and other transient phenomena would mean an accurate model could be made to predict the relationship between stress, strain and resistance within a CBSR composite. 
 
 Determining a stress-strain-resistance model would also allow us to understand the limitations of using this composite in sensing and actuation applications, so that the material can be used simultaneously as an actuation excitation electrode and a strain sensor. Understanding these characteristics may give rise to new applications of the composites material, for example, if the resistive relaxation properties of the material were known, it could be used as a mechanically activated timing device. An oscillatory flexible dynamic circuit has been demonstrated when mimicking the motion of a caterpillar as shown by Henke et al. \cite{Henke2018}, where the resistive relaxation modelling is be useful for more accurate electrical circuit dynamics. The theory behind mechanical stress relaxation is widely known and has been modelled using a variety of mathematical models \cite{Fung1993} depending on the material modelled. 
 
@@ -221,7 +221,7 @@ When using this material as a tensile strain sensor many applications will requi
 	\caption{Strain input waveform for investigating strain-rate dependent resistance}
 	\label{fig:saw-tooth-diff-v}
 \end{figure}
-The resulting resistance response exhibits a shoulder peak phenomena where a second peak is developed when suddenly decreasing the strain-rate, a phenomena not seen in the stress response. The resistance response is shown in Figure \ref{fig:saw-tooth-res-response}.
+The resulting resistance response exhibits a shoulder peak phenomena where a second peak is developed when suddenly decreasing the strain-rate. Unlike stress relaxation, this a phenomena not replicated in the stress response only the resistance response. The resistance response is shown in Figure \ref{fig:saw-tooth-res-response}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\linewidth]{Figures/saw_tooth_diff_speeds_res_only.jpg}
@@ -431,10 +431,10 @@ The mean magnitude and decay time constants for the resistance and stress relaxa
 
 
 \subsection{Resistance-Stress Relationship}
-To display the non-linear relationship between the stress and calculated resistance within the material they are plotted against each other over 30 sequential relaxation periods of 300s. The non-linear relationship between stress and resistance changes over time for each relaxation as shown in Figure \ref{fig:res_vs_stress_30pulses}, where the data for the first relaxation is displayed in green and the last relaxation in blue.
+To display the non-linear relationship between the stress and calculated resistance within the material they are plotted against each other over 30 sequential relaxation periods of 300s similar to the relaxation shown in Figure \ref{fig:diff_tau_res_stress}. The non-linear relationship between stress and resistance changes over time for each relaxation as shown in Figure \ref{fig:res_vs_stress_30pulses}, where the data for the first relaxation is displayed in green and the last relaxation in blue.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.7\linewidth]{Figures/relax_res_stress_non_lin_rgby_MAF8_2_7-5_Epin_20mm_v3.png}
+	\includegraphics[width=0.7\linewidth]{Figures/relax_res_stress_non_lin_rgby_MAF8_2_7-5_Epin_20mm_v4.png}
 	\caption{Comparing resistance and stress relaxation data against each other occurring during 30 pulses of a 10\% strain step input for a 7.5 w.t.\% CBSR composite}
 	\label{fig:res_vs_stress_30pulses}
 \end{figure}
@@ -500,8 +500,7 @@ One aim of this work was to prove the hypothesis that the stress relaxation time
 
 
 \subsection{Resistance-Stress Relationship}
-A hypothesis for the resistive relaxation phenomena is that it may be correlated to the resistive relaxation \cite{Wang2013}. This work found that the relationship between the two variables, resistance and stress, during relaxation events was non-linear and time-dependent. This non-linearity was found to have a good fit to a second order polynomial as shown in Figure \ref{fig:res_vs_stress_30pulses}. The Mullin's effect was evident in the results and a time-dependence where the concavity of the polynomial fitted increased after the first strain pulse.
-
+A hypothesis for the resistive relaxation phenomena is that it may be correlated to the resistive relaxation \cite{Wang2013}. This work found that the relationship between the two variables, resistance and stress, during their concurrent relaxation events was non-linear. This non-linearity was found to have a good fit to a second order polynomial as shown in Figure \ref{fig:res_vs_stress_30pulses}. The Mullin's effect was evident in the results and a time-dependence where the concavity of the polynomial fitted increased after the first strain pulse. A physical explanation behind the second order relationship between stress and strain relaxation could be due to strain dependence of the elastomer dielectric constant and hence capacitance as shown in literature \cite{Wissler2007,Kofod2003}.
 
 \subsection{Viscoelasticity}
 % see CBSR behavious doc for more hysteresis quantification
@@ -541,7 +540,7 @@ An encompassing model for translating resistance samples to a stress value can b
 \end{figure}
 
 
-It must be noted that for fitting the resistive relaxation, stress-resistive relaxation and the falling edge phenomena the data was translated in the xy axes for ease of the regression algorithm fitting.
+It must be noted that for fitting the resistive relaxation, stress-resistive relaxation and the falling edge phenomena the data was zeroed on the x and y axes for ease of the regression algorithm fitting.
 
 A sufficiently high current source value was required to ensure a SNR that would not hinder data analysis. There seemed to be a wetting current threshold where the SNR dropped as shown by the 20 $\mu$A resistance pulse response in Figure \ref{fig:multi_current}.
 \begin{figure}[H]
