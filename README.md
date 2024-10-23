@@ -1,2 +1,2 @@
 # phd-thesis
-Monolithic Piezoresistive Elastomer Composite Artificial Skin and Muscle Bodies
+Integration of Biomimetic Pressure Mapping and Actuation in Soft Electroactive Elastomer Composites
