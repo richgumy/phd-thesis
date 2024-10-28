@@ -3,6 +3,7 @@
 \section*{Overview}
 To accomplish pressure mapping with comparable properties to human skin, a novel conductive particle elastomer based sensor device has been created. Using electrical impedance tomography (EIT) to drive a pressure mapping sensor device shows great potential, due to the customisability of the sensing domain and the non-invasive nature of the boundary electrodes required. To translate this research device into a commercial application the performance of such an EIT-based sensor must be quantifiable and repeatable, to be further optimised. In this work a series of experiments on a carbon black silicone rubber sensing domain were repeated for various load locations, strains, and carbon black percentages. Capturing this data gave insight into the how the sensing domain performs over time and captured the transient events limiting the sensor. Metrics were determined to quantify the sensor's spatial resolution. A quasi-static conductance-force model of the material was developed with an accuracy of $\pm$0.78 N. One important metric is temporal resolution, as it is the least quantified performance metric in literature, however can be the most important for some applications. For the sensor domains tested, average settling times of between 19.0 - 44.5 s and 22.5 - 36.0 s were determined for 8 and 9 wt\% CBSR samples. A series of randomised test loads gave similar spatial performance results to the structured experiments. This sensor platform shows promise for future applications, with further materials development and modelling the rise of a biomimetic pressure sensitive skin is imminent.
 
+\footnote{Content from this chapter has been taken from a publication in Sensors and Actuators A: Physical \cite{Ellingham2024}}
 
 \section{Introduction} \label{sec:introduction}
 % A poetic start
@@ -76,7 +77,7 @@ Quantitative results are required for spatial quantification of the EIT image re
 \end{figure}
 
 \subsubsection{EIT Measurement}\label{sec:EIT Measurement}
-EIT data acquisition usually requires a current or voltage source, one or multiple voltmeters, and a switching device. When integrating a mechanical pressure validation system a Cartesian force applicator (CFA) and is also required to capture data simultaneously. The system architecture and DUT electrical connections are shown in Figure \ref{fig:eit_sensor_architecture} and \ref{fig:wiring_ERT_sensor}. This work uses a 2634b source measure unit (SMU) (Keithley, Solon, USA) as a current source and voltage measurement unit for EIT data acquisition.
+EIT data acquisition usually requires a current or voltage source, one or multiple voltmeters, and a switching device. When integrating a mechanical pressure validation system a Cartesian force applicator (CFA) and is also required to capture data simultaneously. The system architecture and DUT electrical connections are shown in Figure \ref{fig:eit_sensor_architecture} and \ref{fig:wiring_ERT_sensor}. This work uses a 2634b source measure unit (SMU) (Keithley, Solon, USA) as a current source and voltage measurement unit for EIT data acquisition. In the following chapter the SMU is miniaturised to a specialised PCB for portable, battery-powered applications.
 \begin{figure}[H]
     \centering
     % TODO?: insert a image of the system (tidied up)
@@ -270,7 +271,7 @@ In Figure \ref{fig:load_relax_eg} a loading event is shown with the related stre
     \caption{Compressive loading and unloading transients for CBSR 8 wt\% material undergoing a 20\% strain pulse from the first pulse given in Figure \ref{fig:stress_seq}.}
     \label{fig:load_relax_eg}
 \end{figure}
-For each stress relaxation Equation \ref{eqn:kelvin_general_n2} was fitted to the data. Analogously the same was done for the resistive relaxation events observed similar to the tensile testing shown in the previous chapter.
+For each stress relaxation Equation \ref{eqn:kelvin_general_n2} was fitted to the data. Due to the similarity of  the viscoelastic behaviour seen in the stress-strain relationship, analogously the same generalised linear model was fitted to the resistive relaxation events observed similar to the tensile testing shown in the previous chapter.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth]{Figures/Push event 3 - CBSR 8 wt 5p strain - 1D compression test.jpg}
