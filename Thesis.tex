@@ -63,27 +63,7 @@
 	\rhead{\thepage}  % Sets the right side header to show the page number
 	\lhead{}  % Clears the left side page header
 	\pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
-	%% ----------------------------------------------------------------
-	% Declaration Page required for the Thesis, your institution may give you a different text to place here
-	\Declaration{
-		\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
-		I, AUTHOR NAME, declare that this thesis titled, `\thesistitle' and the work presented in it are my own. I confirm that:
-		\begin{itemize}
-			\item[\tiny{$\blacksquare$}] This work was done wholly or mainly while in candidature for a research degree at this University.
-			\item[\tiny{$\blacksquare$}] Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
-			\item[\tiny{$\blacksquare$}] Where I have consulted the published work of others, this is always clearly attributed.
-			\item[\tiny{$\blacksquare$}] Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
-			\item[\tiny{$\blacksquare$}] I have acknowledged all main sources of help.
-			\item[\tiny{$\blacksquare$}] Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.
-			\\
-		\end{itemize}
-		Signed: \\
-		\rule[1em]{25em}{0.5pt}  % This prints a line for the signature
-		Date: \\
-		\rule[1em]{25em}{0.5pt}  % This prints a line to write the date
-	}
-	\clearpage  % Declaration ended, now start a new page
-	%% ----------------------------------------------------------------
+
 	% The "Funny Quote Page"
 	\pagestyle{empty}  % No headers or footers for the following pages
 	\null\vfill
@@ -101,13 +81,74 @@
 	\addtotoc{Abstract}  % Add the "Abstract" page entry to the Contents
 	\abstract{\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
 		% 
-	Some of the world's most advanced technology is rigid due to various factors such as; manufacturability, miniaturisability, physical linearity, and more ideal linear physical mechanics. Rigid mechanisms were engineered first and have been refined to a high level, but now are encountering limitations leading to demand for soft robotic solutions that mimic biological evolution. This thesis develops and integrates an artificial skin and artificial muscle technology by combining of Electrical Impedance Tomography (EIT), carbon black silicone rubber (CBSR) elastomer composites, and Dielectric Elastomer Actuators (DEAs) to enhance pressure mapping, strain sensing, and actuation capabilities. 
-	CBSR elastomer composites, noted for their high stretchability, piezoresistivity, and biocompatibility, were investigated to understand their non-linear time dependent phenomena in particular, resistance relaxation behavior. This research contributes to optimising the design of flexible dynamic strain sensors by modelling the response of resistance to transient strain inputs. The next part of the thesis describes development of an EIT-based pressure mapping system using a CBSR sensing domain that mimics pressure mapping qualities of human skin. This system was evaluated for its spatial and temporal resolution, showing potential for creating artificial pressure-sensitive skin with practical applications. At the core of this thesis the integration of EIT-based sensing with DEAs was tested and analysed to improve the mapping of compressive forces across the actuator electrode surfaces. Despite some trade-offs in accuracy due to electrode compliance, this approach offers promising advancements for applications requiring precise actuation and pressure mapping. This work has contributed towards filing a patent for an DEA-EIT actuator-sensor device. Additionally, the research has uncovered unintentional power generation in DEA-EIT systems through FEA studies and analytical validation, which could function as Dielectric Elastomer Generators (DEGs) with mapped compressive load inputs. This finding highlights the multi-functionality of DEAs and suggests opportunities for energy harvesting applications. To aid the portability of EIT-based pressure mapping sensor developed, a low-cost circuit and evaluation tools were developed. This system enables comprehensive characterisation of various sensing domains and supports advancements in EIT-based soft sensor technology, with implications for biomedical devices, robotics, and energy harvesting. 
+	Some of the world's most advanced technology is rigid due to various factors such as; manufacturability, miniaturisability, physical linearity, and more ideal linear physical mechanics. Since before the industrial revolution rigid sensors and actuators have been evolving and have been refined to a high level, but now these rigid devices are encountering limitations, leading to demand for soft robotic solutions that mimic biological evolution. This thesis develops and integrates an artificial skin and artificial muscle technology by combining of Electrical Impedance Tomography (EIT), carbon black silicone rubber (CBSR) elastomer composites, and Dielectric Elastomer Actuators (DEAs) to enhance pressure mapping, strain sensing, and actuation capabilities. 
+	CBSR elastomer composites, noted for their high stretchability, piezoresistivity, and biocompatibility, were investigated to understand their non-linear time dependent phenomena in particular, resistance relaxation behavior. This research contributes to optimising the design of flexible dynamic strain sensors by modelling the response of resistance to transient strain inputs. The next part of the thesis describes development of an EIT-based pressure mapping system using a CBSR sensing domain that mimics pressure mapping qualities of human skin. This system was evaluated for its spatial and temporal resolution, showing potential for creating artificial pressure-sensitive skin with practical applications. At the core of this thesis, the integration of EIT-based sensing with DEAs was tested and analysed to improve the mapping of compressive forces across the actuator electrode surfaces. Despite trade-offs in accuracy due to electrode compliance, this approach offers promising advancements for applications requiring precise actuation and pressure mapping. This work has contributed towards filing a patent for an DEA-EIT actuator-sensor device. Additionally, the research has uncovered unintentional power generation in DEA-EIT systems through FEA studies and analytical validation, which could function as Dielectric Elastomer Generators (DEGs) with mapped compressive load inputs. This finding highlights the multi-functionality of DEAs and suggests opportunities for energy harvesting applications. To aid the portability of EIT-based pressure mapping sensor developed, a low-cost circuit and evaluation tools were developed. This system enables comprehensive characterisation of various sensing domains and supports advancements in EIT-based soft sensor technology, with implications for biomedical devices, robotics, and energy harvesting. 
 	Overall, this thesis advances the field of soft sensors by investigating an electroactive material and using the material to integrate EIT-based pressure mapping with dielectric elastomer actuator technologies, providing new insights and applications in dynamic sensing and actuation.
 	}
 	\clearpage  % Abstract ended, start a new page
 	%% ----------------------------------------------------------------
+
+	%% ----------------------------------------------------------------
+	% Declaration Page required for the Thesis, your institution may give you a different text to place here
+	\Declaration{
+		\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
+		This form is to accompany the submission of any thesis that contains research reported in co-authored work that has been published, accepted for publication, or submitted for publication. A copy of this form should be included for each co-authored work that is included in the thesis.	Completed forms should be included at the front (after the thesis abstract) of each copy of the thesis submitted for examination and library deposit.
+		
+		\textbf{This form should be completed by a co-author, not by the candidate.}
+		
+		Please indicate the chapter/section/pages of this thesis that are extracted from co-authored work and provide	details of the publication or submission from the extract comes:
+		\begin{enumerate}
+			\item ``Stress and Resistance Relaxation for Carbon Nanoparticle Silicone Rubber Composite Large-Strain Sensors'' - Proceedings 17th IEEE/ASME International Conference on Mechatronic and Embedded Systems and Applications (MESA) - Ellingham R, Giffney T, 2021. 
+			
+			Data and analysis from this work is present throughout \textbf{Chapter 3}.
+			
+			\item ``Carbon Black Silicone Piezoresistive Electrical Impedance Tomography Stress Sensor Device'' -  Proceedings Electroactive Polymer Actuators and Devices (EAPAD) XXIV - Ellingham R, Giffney T, 2022.
+			
+			The methodology from this work is present \textbf{Chapter 4}. 
+			
+			\item ``An Electrical Impedance Tomography Based Artificial Soft Skin Pressure Sensor: Characterisation and Force Modelling'' - Sensors and Actuators A: Physical - Ellingham R, Pretty C, Holder-Pearson L, Aw K, Giffney T, 2024.
+
+			\textbf{Chapter 4} is an adaptation of this work.
+			
+			\item ``Deformation Mapping in Dielectric Elastomer Actuators using Electrical Impedance Tomography'' - Proceedings Electroactive Polymer Actuators and Devices (EAPAD) XXVI - Ellingham R, Choi Y, Giffney T, 2024.
+			
+			\textbf{Chapter 6} is an extension of this work.
+			
+			\item ``A Portable Electrical Impedance Tomography Based Pressure Mapping Sensor and Validation System'' - HardwareX - Ellingham R, Holder-Pearson L, Pretty C, Giffney T, [Under Review, Submitted Aug 2024]. 
+			
+			\textbf{Chapter 5} is adpated from this work.
+			
+		\end{enumerate}
+		
+		Please detail the nature and extent (\%) of contribution by the candidate:
+		\begin{enumerate}
+			\item The methodology, hardware, and software were all developed by the candidate. Experimentation and analysis of results and written content were produced by the candidate. All other authors reviewed the draft manuscript. 90\% of the research and 90\% of the writing were contributed by the candidate.
+			\item The methodology, hardware, and software were all developed by the candidate. Experimentation and analysis of results and written content were produced by the candidate. All other authors reviewed the draft manuscript. 90\% of the research and 90\% of the writing were contributed by the candidate.
+			\item The methodology, hardware, and software were all developed by the candidate. Experimentation and analysis of results and written content were produced by the candidate. All other authors reviewed the draft manuscript. 90\% of the research and 90\% of the writing were contributed by the candidate.
+			\item The methodology, hardware, and software were all developed by the candidate. Experimentation and analysis of results and written content were produced by the candidate. All other authors reviewed the draft manuscript. 90\% of the research and 90\% of the writing were contributed by the candidate.
+			\item The methodology, hardware, and software were all developed by the candidate. Experimentation and analysis of results and written content were produced by the candidate. All other authors reviewed the draft manuscript. 90\% of the research and 90\% of the writing were contributed by the candidate.
+		\end{enumerate}
+	
+		\textbf{Certification by Co-authors:}
+		
+		If there is more than one co-author then a single co-author can sign on behalf of all
+		The undersigned certifies that:
+		\begin{itemize}
+			\item The above statement correctly reflects the nature and extent of the Doctoral candidate’s contribution to this co-authored work
+			\item In cases where the candidate was the lead author of the co-authored work he or she wrote the text
+		\end{itemize}
+			
+		Name: Tim Giffney \\
+		\hspace{1cm}\rule[1em]{20em}{0.5pt} \\  % This prints a line for the signature
+		Signed: \textit{Tim Giffney}\\
+		\hspace{1cm}\rule[1em]{20em}{0.5pt} \\  % This prints a line for the signature
+		Date: \textit{30-10-2024}\\
+		\hspace{1cm}\rule[1em]{20em}{0.5pt} \\ % This prints a line to write the date
+	}
+	\clearpage  % Declaration ended, now start a new page
+	
 	\setstretch{1.3}  % Reset the line-spacing to 1.3 for body text (if it has changed)
+	%% ----------------------------------------------------------------
 	% The Acknowledgements page, for thanking everyone
 	\acknowledgements{
 		\addtocontents{toc}{\vspace{1em}}  % Add a gap in the Contents, for aesthetics
