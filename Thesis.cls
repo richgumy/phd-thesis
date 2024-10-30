@@ -26,12 +26,12 @@ LaTeX document class]
 \newcommand\bhrule{\typeout{------------------------------------------------------------------------------}}
 
 \newcommand\Declaration[1]{
-	\btypeout{Declaration of Authorship}
-	\addtotoc{Declaration of Authorship}
+	\btypeout{Co-Authorship Form}
+	\addtotoc{Co-Authorship Form}
 	\thispagestyle{plain}
 	\null\vfil
 	%\vskip 60\p@
-	\begin{center}{\huge\bf Declaration of Authorship\par}\end{center}
+	\begin{center}{\huge\bf Co-Authorship Form\par}\end{center}
 	%\vskip 60\p@
 	{\normalsize #1}
 	\vfil\vfil\null
