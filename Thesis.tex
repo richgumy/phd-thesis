@@ -62,7 +62,6 @@
 	\fancyhead{}  % Clears all page headers and footers
 	\rhead{\thepage}  % Sets the right side header to show the page number
 	\lhead{}  % Clears the left side page header
-	\pagestyle{fancy}  % Finally, use the "fancy" page style to implement the FancyHdr headers
 
 	% The "Funny Quote Page"
 	\pagestyle{empty}  % No headers or footers for the following pages
@@ -75,7 +74,8 @@
 	\end{flushright}
 	\vfill\vfill\vfill\vfill\vfill\vfill\null
 	\clearpage  % Funny Quote page ended, start a new page
-	\setstretch{1.0}
+	\setstretch{1.1}
+	\pagestyle{plain}  % Finally, use the "fancy" page style to implement the FancyHdr headers
 	%% ----------------------------------------------------------------
 	% The Abstract Page
 	\addtotoc{Abstract}  % Add the "Abstract" page entry to the Contents

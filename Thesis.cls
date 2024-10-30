@@ -30,7 +30,7 @@ LaTeX document class]
 	\addtotoc{Co-Authorship Form}
 	\thispagestyle{plain}
 	\null\vfil
-	%\vskip 60\p@
+	\vspace{-2cm}
 	\begin{center}{\huge\bf Co-Authorship Form\par}\end{center}
 	%\vskip 60\p@
 	{\normalsize #1}
@@ -271,8 +271,9 @@ pdfstartview={FitV},unicode,breaklinks=true]{hyperref}
 \newenvironment{abstract}
 {
 	\btypeout{Abstract Page}
-	\thispagestyle{empty}
+	\thispagestyle{plain}
 	\null\vfil
+	\vspace{-0.5cm}
 	\begin{center}
 		\setlength{\parskip}{0pt}
 		{\normalsize \UNIVNAME \par}
