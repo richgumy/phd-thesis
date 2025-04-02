@@ -1,7 +1,22 @@
-\chapter{Dielectric Elastomer Generator Validation}
-\label{appendix-F}
+\chapter{Dielectric Elastomer Actuator and Generator Validation}
+
+\section{DEA Energy Density Calculations}
+\label{DEA_Edensity}
+For the following energy density calculations the device material is assumed a homogeneous Hookean solid and fringing effects are ignored by using the parallel plate capacitor assumption. First the mechanical energy density, $U_{mech}$ is calculated followed by the electrical energy density, $U_{elec}$. The difference is found to generate a 'total' energy density, $U_{tot}$. Note this is an estimation, for a more comprehensive and physically realistic calculation please refer to state-of-art literature.
+\begin{equation}
+	U_{mech} = 0.5 \cdot \sigma \cdot \varepsilon
+\end{equation}
+Where $\sigma$ is average stress during a maximum strain event, $\varepsilon$.
+\begin{equation}
+	U_{elec} = 0.5 \cdot \varepsilon_0 \cdot \varepsilon_r \cdot E^2
+\end{equation}
+Where $\varepsilon_0$ and $\varepsilon_r$ are vacuum and relative permittivity respectively, and $E$ is the electric field at maximum excitation strain.
+\begin{equation}
+	U_{tot} = U_{elec} - U_{mech}
+\end{equation}
 
 \section{$\Delta V$ Calculcation}
+\label{appendix-F}
 An estimate of the ideal voltage, $\Delta V$, generated from a circular compression load of radius, $r_L$, on a circular DE domain of radius, $r_{DE}$, with two conductive compliant electrodes covering the area $A_{DE}$ of the DE.
 
 Several assumptions are made to simplify the calculation to be solved analytically:

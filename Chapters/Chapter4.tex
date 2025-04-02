@@ -42,8 +42,8 @@ One of the earliest applications of EIT to an elastic piezoresistive domain was 
 To ensure the applicability of Electrical Impedance Tomography (EIT) with a soft PNEC sample, we fabricated the material for testing. The material needed to adhere to specific requirements: highly elastic,  high yield strength, low resistivity, high piezoresistivity, non-toxic, and be a low Shore hardness of 5A - 25A akin to human soft tissue \citep{Silvera-Tawil2015,Chatzistergos2022,McDermott2017,Landry2021}. Additionally, a system of devices was devised to facilitate EIT measurements which concurrently captured force, strain, and timestamps for each measurement. Lastly, to evaluate the sensor's suitability for diverse applications, spatial, temporal, and localised force sensing performance metrics were quantified.
 
 
-\subsection{Fabrication} \label{sec:Fabrication}
-The fabrication of the piezoresistive composite materials, as described and justified in previous chapter and in our previous work \citep{Ellingham2021}, involved dispersing 8 and 9 wt\% of carbon black (CB) nanoparticles in a silicone rubber (SR) matrix. Because of the difference in fabrication processes seen in literature \cite{D'Asaro2017, Shang2016} and degree of dispersion generating variability in the percolation, an iterative trial and error approach using the starting point found in literature was used to get 8 wt \% and 9 wt \% values for CB in SR. Within this range the material was sufficiently conductive while maintaining mechanical strength through sufficient elastomeric cross-linking. Previous research indicates that there is a weight percentage at which the gauge-factor/piezoresistivity is at a maximum within a similar range used in this work \cite{Dong2017, Yang2020}. The composite, designated as the domain under test (DUT), was created using 50 nm average diameter XC 72R CB nanoparticles (Cabot, Alpharetta, USA) in a Dragon Skin 10 NV silicone rubber matrix (SmoothOn, Macungie, USA). Homogeneous dispersion was ensured using an ARV-310 vacuum planetary mixer (Thinky, Tokyo, Japan).
+\subsection{Fabrication} \label{subsec:EIT dev Fabrication}
+The fabrication of the piezoresistive composite materials, as described and justified in previous chapter and in our previous work \citep{Ellingham2021}, involved dispersing 8 and 9 wt\% of carbon black (CB) nanoparticles in a silicone rubber (SR) matrix. Because of the difference in fabrication processes seen in literature \cite{D'Asaro2017, Shang2016} and degree of dispersion generating variability in the percolation, an iterative trial and error approach using values determined experimentally and theoretically in literature and the previous chapter to get 8 wt \% and 9 wt \% CB for the CBSR composite. Within this range the material was sufficiently conductive while maintaining mechanical strength through sufficient elastomeric cross-linking, indicating a better proximity to the percolation threshold than the previously used 7.5 and 10 wt\% CBSR. Previous research indicates that there is a weight percentage at which the gauge-factor/piezoresistivity is at a maximum within a similar range used in this work \cite{Dong2017, Yang2020}. The composite, designated as the domain under test (DUT), was created using 50 nm average diameter XC 72R CB nanoparticles (Cabot, Alpharetta, USA) in a Dragon Skin 10 NV silicone rubber matrix (SmoothOn, Macungie, USA). Homogeneous dispersion was ensured using an ARV-310 vacuum planetary mixer (Thinky, Tokyo, Japan).
 \begin{table}[H]
 \caption{DUT mechanical characteristics and electrical characteristics}
 \label{tab:DUT_char}
@@ -104,7 +104,7 @@ EIT data acquisition usually requires a current or voltage source, one or multip
 Prior to utilising CBSR materials as a 2D pressure sensor, the piezoresistive properties were analysed in one dimension to establish resistance-stress/strain relationships for each CBSR sample. This 1D material testing was conducted using the Cartesian force applicator in conjunction with the SMU. The stress-strain relationship of the material was determined in previous work and shown in Table \ref{tab:DUT_char}. The 1D analysis gave quantitative insight into the material resistivity response to strain in different known areas of the Domain Under Test (DUT) and aligned with the phenomena characterised in the previous chapter, Section \ref{subsec:Quasi-Static Tensile Resistance-Strain}.
 
 \subsubsection{Quasi-static Piezoresistivity}\label{sec:Quasi-static Piezoresistivity}
-To determine the piezoresistivity or gauge factor of the material, pin electrodes were pierced through the CBSR samples so that the pin electrodes were parallel and at a distance of 35 mm from each other. The pins were 2.5 mm from each end of the sample. A 2634b SMU was used to apply a constant current of 1 mA between the two pin electrodes while ten compressive loading cycles were applied. The ten loading cycles were applied at strains of 5, 10, 15, 20, 25, and 30\%, with a duty cycle of 50\% and period of 120 s. Loads were applied using the Cartesian force applicator with a 20 mm x 20 mm square flat force applicator head. The strain rate was kept at a constant 16.67$\% \cdot s^{-1}$ to dampen the amplitude of transient effects as proven in previous work \citep{Ellingham2021}.
+To determine the piezoresistivity or gauge factor of the material, pin electrodes were pierced through the CBSR samples so that the pin electrodes were parallel and at a distance of 35 mm from each other. The pins were 2.5 mm from each end of the sample. Using pin electrodes piercing the material allowed for a improved connection to the conductive network and was how the 2D EIT-based sensor in upcoming chapters was primarily connected to the conductive filler network. The spacing of the electrodes was also similar to that seen within the EIT-based sensor. A 2634b SMU was used to apply a constant current of 1 mA between the two pin electrodes while ten compressive loading cycles were applied. The ten loading cycles were applied at strains of 5, 10, 15, 20, 25, and 30\%, with a duty cycle of 50\% and period of 120 s. Loads were applied using the Cartesian force applicator with a 20 mm x 20 mm square flat force applicator head. The strain rate was kept at a constant 16.67$\% \cdot s^{-1}$ to dampen the amplitude of transient effects, such as rising/falling edge shoulder peaks, as proven in previous work \citep{Ellingham2021}.
 
 \begin{figure}[H]
 	\centering
@@ -132,7 +132,7 @@ There are two main piezoresistive events that occur during these compressive str
     \label{eqn:kelvin_general_n2}
 \end{equation}
 Where $G_2(t)$ is the stress relaxation function, $a_0$ is the relaxation offset, $a_1$ \& $a_2$ are the magnitude weightings for each time constant $\tau_1$ \& $\tau_2$. Equation \ref{eqn:kelvin_general_n2} derived from the generalised Kelvin viscoelastic model was used analogously for the resistance relaxation. % TODO?: justify?
-To ensure repeatability of the experiment the ten loading and unloading events were fitted using equation \ref{eqn:kelvin_general_n2} to the each relaxation, then the $R^2$ goodness of fit was compared for all of the relaxations.
+To ensure repeatability of the experiment the ten loading and unloading events were fitted using equation \ref{eqn:kelvin_general_n2} to each relaxation, then the $R^2$ goodness of fit was compared for all of the relaxations.
 % TODO?: explain why there are outliers. Due to noise error and the nature of the fitting algorithn LM-LS??
 
 An important temporal characteristic of this system is the settling time, $t_s$, given a strain step input. In this system the resistance step response settling time was the time taken to reach and stay within a specified tolerance about final steady-state resistance, given a strain step input. The tolerance chosen is about the steady state was $\pm$ 15\%. % When using this settling time to gather sensor data, if the tolerance is increased the response time decreases and the sensor force accuracy decreases, vice versa for a decreased tolerance. 
@@ -243,7 +243,7 @@ Given known strain input data, and measured stress and conductance change output
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{Figures/CBSR_8p_cond_stress_strain_sin_titulo.jpg}
-    \caption{Conductance change vs. stress (top) and strain (bottom) data and fitted curves for 8 wt\% CBSR.}
+    \caption{Conductance change vs. stress (top) and strain (bottom) data and fitted curves for 8 wt\% CBSR for three trials.}
     % TODO?: Change Linear fit to 10^{-1} from 10^{-3}
     \label{fig:quasi_r_8p}
 \end{figure}
@@ -261,10 +261,10 @@ The transient piezoresistive effects observed within a PNEC limit the frequency 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth]{Figures/CBSR 8 wt 25p strain - 1D test stress seq.jpg}
-    \caption{Compressive loading applied to the CBSR 8 wt\% DUT for 10 loading events of 25\% strain.}
+    \caption{Compressive loading applied to the CBSR 8 wt\% DUT for 10 loading events of 25\% strain at 16.67\%$\cdot s^{-1}$ strain rate.}
     \label{fig:stress_seq}
 \end{figure}
-In Figure \ref{fig:load_relax_eg} a loading event is shown with the related stress and resistance relaxation curves. The unloading event similarly has a relaxation period for both stress and resistance in the loading case. Unlike the loading stress transient, the resistance transient has a spike during the unloading relaxation event seen in Figure \ref{fig:load_relax_eg}. This rising edge and peak of this spike are ignored and the resistance relaxation edge is characterised.  
+In Figure \ref{fig:load_relax_eg} a loading event is shown with the related stress and resistance relaxation curves. The unloading event similarly has a relaxation period for both stress and resistance. Unlike the loading stress transient, the resistance transient has a spike during the unloading relaxation event seen in Figure \ref{fig:load_relax_eg}. This rising edge and peak of this spike are ignored and the resistance relaxation edge is characterised.  
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth]{Figures/CBSR 8 wt 25p strain - 1D stress load unload.jpg}
@@ -328,7 +328,7 @@ The noise floor limits the detection of small forces. First the noise floor was 
 %     \label{fig:pre_process}
 % \end{figure*}
 
-After a noise mask has eliminated the steady state noise floor, different percentage thresholds can be used to compensate for different regularisation and different material push area edge softness as shown in Figure \ref{fig:thresh_masks}.
+After a noise mask has eliminated the steady state noise floor, different percentage thresholds can be used to compensate for different regularisation and different material push area edge gradient as shown in Figure \ref{fig:thresh_masks_8p}. This push area edge gradient is referring to the sharpness of the edge of the force applicator and how that is then captured and softened by the EIT reconstruction regularisation. For a more pronounced edge softening effect see Appendix \ref{fig:thresh_masks}. However this regularisation is a necessary part of reliably converging on a solution for the domain.
 % \begin{figure}[H]
 %     \centering
 %     \includegraphics[width=9.3cm]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_all_masks.jpg}
@@ -339,34 +339,34 @@ After a noise mask has eliminated the steady state noise floor, different percen
 \centering
     \begin{minipage}[t]{.3\textwidth}
         \vspace{0pt}
-        \subfloat[][]{\includegraphics[width=\textwidth]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_25p_mask_cropx2.jpg}\label{thresh25}}
+        \subfloat[][]{\includegraphics[width=\textwidth]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_25p_mask_cropx2.jpg}\label{thresh25_8p}}
         \vfill
-        \subfloat[][]{\includegraphics[width=\textwidth]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_50p_mask_cropx2.jpg}\label{thresh50}}
+        \subfloat[][]{\includegraphics[width=\textwidth]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_50p_mask_cropx2.jpg}\label{thresh50_8p}}
         \vspace{0pt}
     \end{minipage}%
     \hspace{0.05\linewidth}
     \begin{minipage}[t]{.3\textwidth}
         \vspace{0pt}
-        \subfloat[][]{\includegraphics[width=\textwidth]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_75p_mask_cropx2.jpg}\label{thresh75}}
+        \subfloat[][]{\includegraphics[width=\textwidth]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_75p_mask_cropx2.jpg}\label{thresh75_8p}}
         \vfill
-        \subfloat[][]{\includegraphics[width=\textwidth]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_85p_mask_cropx2.jpg}\label{thresh85}}
+        \subfloat[][]{\includegraphics[width=\textwidth]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_85p_mask_cropx2.jpg}\label{thresh85_8p}}
         \hfill
     \end{minipage}
     \hspace{0.05\linewidth}
     \begin{minipage}[t]{.1\textwidth}
         \vspace{1cm}
-        \subfloat[][]{\includegraphics[width=\textwidth]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_scale_bar.jpg}\label{colour_bar}}
+        \subfloat[][]{\includegraphics[width=\textwidth]{Figures/CBSR_8p_9push_20strain_60s_4_frame20_scale_bar.jpg}\label{colour_bar_8p}}
         \hfill
     \end{minipage}  
 \caption{A series of threshold percentage masks (A) 25\%, (B) 50\%, (C) 75, and (D) 85\% for the same reconstruction given in Figure \ref{fig:noise_floor_mask_8p}. (E) is the resistance change scale bar.}
-\label{fig:thresh_masks}
+\label{fig:thresh_masks_8p}
 \end{figure}
-The threshold masked image blobs and the force applicator shapes in Figures \ref{thresh25} - \ref{thresh85} are compared and quantified in the following section.
+The threshold masked image blobs and the force applicator shapes in Figures \ref{thresh25_8p} - \ref{thresh85_8p} are compared and quantified in the following section.
 
 \subsubsection{Spatial Performance}\label{sec:Spatial Performance2}
 %% TODO: Turn this section into a flowing story - Pre-processing highlights points of interest. Prove good data is being captured, i.e. E_CoM is super low, SD is low and A_OL is high!.
 To properly determine where the area and perimeter of a load are, multiple threshold mask filters were applied. To validate the threshold mask percentages
- the three main performance characteristics were displayed as separate time series for each material, each applied strain, and each threshold percentage mask. These time series show how each metric changed over the course of a loading test sequence and how the metrics vary across the surface of the DUT. An example comparing this time series data for two instances where a 20\% strain pulse train was applied to a the nine loading locations with multiple threshold mask percentages is shown in Figures \ref{fig:recon_perform_8p} and Appendix \ref{fig:recon_perform_9p} for for 8 and 9 wt\% CBSR samples respectively.
+ the three main performance characteristics were displayed as separate time series for each material, each applied strain, and each threshold percentage mask. These time series show how each metric changed over the course of a loading test sequence and how the metrics vary across the surface of the DUT. An example comparing this time series data for two instances where a 20\% strain pulse train was applied to the nine loading locations with multiple threshold mask percentages is shown in Figures \ref{fig:recon_perform_8p} and Appendix \ref{fig:recon_perform_9p} for 8 and 9 wt\% CBSR samples respectively.
 % TODO: Table of threshold percentages (25, 50, 75, 85\%) comparing the mean of the 3 performance metrics for 8 and/or 9 wt\%
     
 \begin{figure}[H]
@@ -679,7 +679,7 @@ The force estimation from the inverse quasi-static Equation \ref{eqn:quasi_rstre
 
 
 \section{Discussion}\label{sec:Discussion}
-Potential applications that emulate human-like skin pressure sensing characteristics require a forms of quantification to compare the technology to the specific requirements. This work quantitatively characterises performance metrics to help facilitate that comparison and optimisation process. The sensor developed could be likened to slow acting mechanoreceptors within human skin, such as Meissner's corpuscles and Merkel's discs, which combined can detect static pressure, and high resolution touch. For other EIT-based pressure mapping applications to be realised, the metrics developed in this work are some of the core metrics required to determine which soft sensing domains are suitable and are their limits.
+Potential applications that emulate human-like skin pressure sensing characteristics require a form of quantification to compare the technology to the specific requirements. This work quantitatively characterises performance metrics to help facilitate that comparison and optimisation process. The sensor developed could be likened to slow acting mechanoreceptors within human skin, such as Meissner's corpuscles and Merkel's discs, which combined can detect static pressure, and high resolution touch. For other EIT-based pressure mapping applications to be realised, the metrics developed in this work are some of the core metrics required to determine which soft sensing domains are suitable and are their limits.
 
 % \subsection{Fabrication}\label{Fabrication3}
 % % Fabrication
@@ -704,7 +704,7 @@ Potential applications that emulate human-like skin pressure sensing characteris
 %  1D stress-strain
 %N/A
 % 1D quasi-static piezoR
-To make a low-frequency response load sensor, a quasi-static piezoresistive linear model was created as shown in Section \ref{sec:1D Material Characterisation2}. However, this model is only valid for sufficiently slow pressure applications or after a sufficiently long time period. This time period is determined by the largest expected steady-state relaxation time for the material, using data gathered in the Temporal Performance Section \ref{sec:Temporal Performance2}.
+To make a low-frequency response load sensor, a quasi-static piezoresistive linear model was created as shown in Section \ref{sec:1D Material Characterisation2}. However, this model is only valid for sufficiently slow pressure applications or after a sufficiently long time period. This time period is determined by the largest expected steady-state relaxation time for the material, using data gathered in the Temporal Performance Section \ref{sec:Temporal Performance2}. There is an inherent trade-off here between accuracy and time response, in many applications where a low force resolution is required the sensor could respond more quickly with low measurement accuracy, depending on the filtering methods used for mitigating transient effects.
 % 1D transient piezoresistivity 
 % N/A
 
@@ -760,7 +760,7 @@ It is important to note, when a force is applied in an small area of a domain, h
     % SD
 The $S\!D$ is the mean square error between the force applicator perimeter and sensed region perimeter taken radially from the force applicator centroid, so will likely be lower with a low $E_{CoM}$ and a higher $A_{OL}$. The closer the $S\!D$ value is to zero the more accurately the shape of the load area applied has been sensed. The $S\!D$ metric is also affected significantly by the quantisation error depending on the mesh coarseness.
 
-Comparing the different percentage threshold masks for the experiment shown in Figure \ref{fig:recon_perform_8p}, it was determined that each percentage mask of 50\%, 75\%, and 85\% gave showed the spatial performance for the $E_{CoM}$, $S\!D$, and $A_{OL}$. However, the standard deviation of these values is comparable to the mean itself therefore looking at the mean performance metric value in each location was shown in Table \ref{tab:spatial_metrics_stats_8p_strain20_loads}. The lowest $E_{CoM}$ was found to be 0.67 $\pm$ 0.41 mm, at $L_2$. The highest $A_{OL}$ value was found to be 87.93 $\pm$ 2.68\%. The lowest $S\!D$ value was found to be 0.12 $\pm$ 0.01 mm$^2$ at $L_1$.
+Comparing the different percentage threshold masks for the experiment shown in Figure \ref{fig:recon_perform_8p}, it was determined that each percentage mask of 50\%, 75\%, and 85\% gave varying spatial performance values for their $E_{CoM}$, $S\!D$, and $A_{OL}$. However, the standard deviation of these values is comparable to the mean itself therefore looking at the mean performance metric value in each location was shown in Table \ref{tab:spatial_metrics_stats_8p_strain20_loads}. The lowest $E_{CoM}$ was found to be 0.67 $\pm$ 0.41 mm, at $L_2$. The highest $A_{OL}$ value was found to be 87.93 $\pm$ 2.68\%. The lowest $S\!D$ value was found to be 0.12 $\pm$ 0.01 mm$^2$ at $L_1$.
 
 The CBSR 8 wt\% samples gave superior performance metric results than the 9 wt\% samples due to the residual transient effects of previous load events as exemplified in Figure \ref{fig:recon_perform_9p}. This will be mitigated in future by using a blob separation algorithm whereby each sensed-region/blob is given a weighting based on its appearance time, size, decay characteristic, and performance metric values.
 
@@ -795,7 +795,7 @@ Stress relaxation of the composite CBSR material as a whole gives a good indicat
 
 
 \subsection{Real World Applications, Manufacturability, and Scalability}
-Using EIT-based pressure mapping on a larger scale is feasibly as shown by the use of ERT in geophysics \citep{Griffiths1993}. However using the PNEC-based methods given in this work on this scale have not yet been trialled, but potential larger-scale applications include adding a pressure mapping layer under a tennis court to map force exerted by athletes onto a court or a method of measuring foot traffic in buildings and urban areas. The use of the performance metrics discussed in this work would be applicable for both scenarios. 
+ Using EIT-based pressure mapping principles on a larger scale is feasible as shown by the use of ERT in geophysical applications which map geological subterranean areas/volumes \citep{Griffiths1993}. However, using the PNEC-based methods given in this work on this scale have not yet been trialled, but potential larger-scale applications include adding a pressure mapping layer under a tennis court to map force exerted by athletes onto a court or a method of measuring foot traffic in buildings and urban areas. The use of the performance metrics discussed in this work would be applicable for both scenarios. 
 
 For the tennis court application, the importance of player location and speed may be more important than detecting the footprint shape and exact force applied to the court surface. This means that the $E_{CoM}$ and decay time values would be more heavily weighted than the $S\!D$ and force values, and hence could be tuned for these characteristics. For the urban floor mat application, the importance of footprint shape and force estimation may give useful insight into the physical demographic of people or animals walking across the mat \cite{Yuan2023}. This may mean that the $S\!D$ and force resolution values are more highly weighted in the design and process.
 
@@ -835,7 +835,7 @@ Mass production of an EIT-based sensor would use the performance metrics given i
 
 An EIT-based piezoresistive sensor using a custom made carbon black silicone rubber composite material has been developed for sensing compressive pressure events and applying performance metrics to obtain the validity of the output EIT images. To be able to apply this EIT-based PNEC pressure sensor to a variety of scenarios, replacing human-like touch, performance metrics has been formed to quantify the sensor's suitability for each application. Sensing domains of 8 and 9 wt\% carbon black silicone rubber have been tested using: 6 strain values, 9 load locations, and 3 trials. From this raw data we have calculated data for: spatial resolution, transient settling time, and force sensor resolution. 
 
-It was shown that the CBSR 8 wt\% sample out performed the CBSR 8wt\% sample in terms of spatial and temporal metrics across a range of experiments. The best performance metrics observed in the CBSR 8 wt\% sample for $E_{CoM}$, $A_{OL}$, and $S\!D$, were 0.67 $\pm$ 0.41 mm, 87.93 $\pm$ 2.68\%, and 0.12 $\pm$ 0.01 mm$^2$ respectively for three different load locations. For the sensor domains tested, average settling times of between 19.0 - 44.5 s and 22.5 - 36.0 s were determined for 8 and 9 wt\% CBSR samples. A quasi-static conductance-force model of the material was developed with an accuracy of  $\pm$ 0.78 and  $\pm$ 0.81 N for a range of strains from a centre load test for 8 and 9 wt\% CBSR respectively.
+It was shown that the CBSR 8 wt\% sample out performed the CBSR 9 wt\% sample in terms of spatial and temporal metrics across a range of experiments. The best performance metrics observed in the CBSR 8 wt\% sample for $E_{CoM}$, $A_{OL}$, and $S\!D$, were 0.67 $\pm$ 0.41 mm, 87.93 $\pm$ 2.68\%, and 0.12 $\pm$ 0.01 mm$^2$ respectively for three different load locations. For the sensor domains tested, average settling times of between 19.0 - 44.5 s and 22.5 - 36.0 s were determined for 8 and 9 wt\% CBSR samples respectively. A quasi-static conductance-force model of the material was developed with an accuracy of  $\pm$ 0.78 and  $\pm$ 0.81 N for a range of strains from a centre load test for 8 and 9 wt\% CBSR respectively.
 
 Using these performance metric data in future work a piezoresistively inhomogeneous sensor domain could be, calibrated to homogenise the apparent domain piezoresistivity, compensated for transient phenomena, and sense loads with a known degree of accuracy. All of these factors contribute to optimising the EIT-based 2D pressure mapping sensor for different applications. The next chapter includes the development of a low-cost, small circuit to discretely capture the EIT data to open up a larger range of mobile and wearable applications. The work shows promise for future use of an EIT-based sensor in a variety of applications requiring a soft sensing domain and non-invasive rigid electrodes.
 

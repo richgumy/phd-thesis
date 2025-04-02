@@ -64,7 +64,7 @@ The core experimental part of this chapter will be described from composite fabr
 \subsection{Composite Fabrication}
 The CBSR composite was composed of Vulcan XC-72 CB powder (Fuel Cell Store, Bryan, USA) and two part Pt cured Dragon Skin 10 NV SR (SmoothOn, Macungie, USA). The CB powder has an average particle size of 50 nm and typical bulk density of 96 kg/m$^3$. This grade of SR was chosen due to the following characteristics low elastic modulus, $E$, of 186 kPa tensile strength, $\sigma_Y$, of 2.75 MPa, and a low mixed viscosity, $\eta$, of 6,000 cps \cite{SmoothOn2021}. This $E$ value is within the range of human skin tissue and the low $\eta$ facilitates material processing in potential future applications with additive manufacturing.
 
-The volume resistivity of pure CB powder itself is between $10^{-1}$ and $10^2 \mathrm{\Omega \cdot cm}$ depending on how densely the particles are packed and the purity of the CB \cite{Spahr2017}. The ability of a CB matrix embedded within a highly insulative SR substrate to become conductive is determined mainly by the dispersion of the CB particles, and the tunnelling that occurs between conductive CB and insulative SR bodies within the material volume \cite{Spahr2017,Wang2013}. The composite being created must be highly conductive without compromising the elastic modulus and yield strength of the material. From percolation theory observed in literature \cite{Spahr2017} there is a threshold volume percentage of CB required to ensure that conductivity is maintained with certainty throughout the composite volume within the linear volume resistivity region. The percolation threshold for composite used in this work was difficult to predict due to the unknown configurations of agglomerations and dispersion of CB particles within the composite material. Empirically it was found that a CB volume percentage of 7.5\% or greater meant the composite material had a resistivity of less than 3.5 $\mathrm{k\Omega \cdot cm}$ consistently with the fabrication method used.
+The volume resistivity of pure CB powder itself is between $10^{-1}$ and $10^2 \mathrm{\Omega \cdot cm}$ depending on how densely the particles are packed and the purity of the CB \cite{Spahr2017}. The ability of a CB matrix embedded within a highly insulative SR substrate to become conductive is determined mainly by the dispersion of the CB particles, and the tunnelling that occurs between conductive CB and insulative SR bodies within the material volume \cite{Spahr2017,Wang2013}. The composite being created must be highly conductive without compromising the elastic modulus and yield strength of the material. From percolation theory observed in literature \cite{Spahr2017} there is a threshold volume percentage of CB required to ensure that conductivity is maintained with certainty throughout the composite volume within the linear volume resistivity region as exmeplified in Figure \ref{fig:perc-thresh-plot}. Modelling the percolation threshold of a material contains many variable material and process parameters making it difficult to obtain a good estimation. The percolation threshold for composite used in this work was difficult to predict due to the unknown configurations of agglomerations and dispersion of CB particles within the composite material. Empirically it was found that a CB volume percentage of 7.5\% or greater meant the composite material had a resistivity of less than 3.5 $\mathrm{k\Omega \cdot cm}$ consistently with the fabrication method used.
 
 The first fabrication step was to mix the CB nano-powder with part A of the liquid SR using a KK-50S planetary mixer (Kurabo, Osaka, Japan). A mixing function was used with specific rotational velocities and times for each axis, which was well suited towards de-aeration and viscous particle mixing. The composite mixture was then mixed with the cross-linker part B of the liquid SR using the same planetary mixing function to ensure adequate dispersion of the CB particles throughout the SR volume.
 \begin{figure}[H]
@@ -73,15 +73,16 @@ The first fabrication step was to mix the CB nano-powder with part A of the liqu
 	\caption{The steps involved in creating the CBSR composite material}
 	\label{fig:CBSR_flow_diagram}
 \end{figure}
-For the fabrication of the CBSR specimens, a standard dog-bone shaped mould was developed for the mixed CBSR to cure in, based on ASTM standard D412 \cite{ASTM2020}. Before the mould was clamped shut the composite filled mould was immediately placed in a vacuum chamber for ten minutes to de-aerate the still liquid, curing CBSR mixture. The specimen was placed in a lab oven at a temperature of 80 $^{\circ}$C for a two hours to accelerate curing. It has been shown that an increase in curing temperature for two part SR increases elastic moduli and decreases yield strength \cite{Johnston2014, Wu2005}.
+For the fabrication of the CBSR specimens, a standard dog-bone shaped mould was developed for the mixed CBSR to cure in, based on ASTM standard D412 \cite{ASTM2020}. Before the mould was clamped shut the composite filled mould was immediately placed in a vacuum chamber for ten minutes to de-aerate the still liquid, curing CBSR mixture. The specimen was placed in a lab oven at a temperature of 80 $^{\circ}$C for a two hours to accelerate curing. It has been shown that an increase in curing temperature for two part SR increases elastic moduli and decreases yield strength \cite{Johnston2014, Wu2005}. Two part curing is reliant on additional heat added to the mix to form the crosslinks. A higher temperature means more crosslinks per second and less time for the material to relax, hence a higher degree of polymer chain entanglement is present. More heat can also increase the likelihoodof unwanted side-reactions causing decreased crosslinking.
 
 
 \subsection{Material Imaging}
+\label{subsec:Material Imaging}
 % This section will contain data gathered about the internal structure of the CBSR material. Including: Optical microscope, SEM, Raman spectroscopy, SAXS.
 % Why is this section important? Ideally we would have an image of the percolated structure and how the particles move when deformed. However it is an arudous process to see nanometer scale structures using SEM or TEM and also run in-situ strain testing. Also the particles and agglomerates range from 50nm to ~5um in size, which means the largest particles can be seen with Raman and 50nm cannot be seen clearly by any method.
 % What is the contribution towards research? Show some kind of patterning and agglomeration size??
 % If we can find any form of fractal patterning at a micro-scale we could then imply that the fractal patterning exists at a nano-scale???Check-microscope,raman uscopy, and SEM for evidence of this!
-To determine how the microstructure may effect the macro-behaviour observed in the following electromechanical testing of the material, three optical imaging methods were used, including optical microscopy, scanning electron microscopy (SEM), and Raman spectroscopy. 
+To determine how the microstructure may affect the macro-behaviour observed in the following electromechanical testing of the material, three optical imaging methods were used, including optical microscopy, scanning electron microscopy (SEM), and Raman spectroscopy. 
 % ... and small angle x-ray scattering (SAXS). 
 
 The initial step was to observe the fabricated CBSR composite specimen using a stereoscopic microscope to view the internal structure of the CBSR composite specimens as shown in Figure \ref{fig:CBSR_8p_uscope_scalpel_frac}.
@@ -93,7 +94,7 @@ The initial step was to observe the fabricated CBSR composite specimen using a s
 	\caption{Microscope images at x20 magnification of a CBSR specimens with cross-sections made by; Left: Cutting with a scalpel. Right: Inducing an embrittlement fracture.}
 	\label{fig:CBSR_8p_uscope_scalpel_frac}
 \end{figure}
-It is known in literature that preparing flat planar surfaces through elastomer composites for micro- and nano-scopic imaging is non-trivial \cite{Luo2005}. Due to the silicone material elasticity and a low embrittlement point of -60 to -70$\degree$C , traditional polymer composite specimen machining methods cannot be used if a flat surface is desired. Because of the lack of water content in the CBSR composite traditional biological specimen preparations methods are also not feasible. 
+It is known in literature that preparing flat planar surfaces through elastomer composites for micro- and nano-scopic imaging is non-trivial \cite{Luo2005}. Due to the silicone material elasticity and a low embrittlement point of -60 to -70$\degree$C , traditional polymer composite specimen machining methods, such as milling and microtomes, are difficult to perform require these cold conditions to keep the material in a stiffer state. Other methods such as ultracryotomes, laser cutting, water-jet cutting, and focused ion-beam milling can be considered for cutting silicone, each with their advantages and disadvantages.
 
 % Could have trialled many more... e.g. LASER and water jet, but these may chemically alter and contaminate the specimen respectively.
 Two methods were trialled to prepare the cross-sectional surface of the specimen for imaging, a scalpel cut and an induced embrittlement fracture. The scalpel cut was completed at room temperature conditions aligned vertically with the specimen. The induced embrittlement fracture used required extreme cooling by pouring liquid nitrogen over the specimen for 2 minutes, then snapping the specimen in two.
@@ -117,7 +118,10 @@ To observe smaller features such as voids and CB particle dispersion within the 
 	\caption{SEM images of; (A): CB agglomerated particles $\times$40,000. (B): CBSR cross-section top surface edge site 1 $\times$250. (C): CBSR cross-section site 1 $\times$2000.}
 	\label{fig:SEM_CB_SR}
 \end{figure}
-When measuring CBSR specimen for bulk electrical properties a reliable electrical connection to the material's conductive matrix is necessary. Obtaining high conductivity connection between the measurement electrodes and the material volume was investigated. The surface of the cured CBSR specimen is smooth and has proven highly insulative upon measurement, indicating that there is a thin insulative silicone film around the edges of the specimen as shown in Figure \ref{subfig:SEM_CBSR_edge}. This surface insulation film existed in each side of the specimen, potentially indicating that the viscosity of the SR matrix is high enough to prevent the CB nanoparticles from settling on the bottom surface of the mould used. The white dots shown in Figure \ref{subfig:SEM_CBSR} represent carbon particles throughout the SR matrix. Resolution was limited due to the insulative SR matrix charging from the electron beam. This is resolution discrepancy is apparent when comparing to the more conductive CB particles in Figure \ref{subfig:SEM_CB}.
+When measuring CBSR specimen for bulk electrical properties a reliable electrical connection to the material's conductive matrix is necessary. Obtaining high conductivity connection between the measurement electrodes and the material volume was investigated. The surface of the cured CBSR specimen is smooth and has proven highly insulative upon measurement, indicating that there is a thin insulative silicone film around the edges of the specimen as shown in Figure \ref{subfig:SEM_CBSR_edge}. This surface insulation film existed in each side of the specimen, potentially indicating that the viscosity of the SR matrix is high enough to prevent the CB nanoparticles from settling on the bottom surface of the mould used. It was also theorised that the thin outer silicone layer on the samples due to the relatively high surface energy of the carbon black and the acrylic mould used to form the composite. This meant that the wettability of the acrylic and carbon black was high and the effective spreadability of the liquid silicone was also high. To control the thickness of this thin layer of silicone different viscosities of silicone could be used in conjunction with different filler and mould materials.
+
+
+The white dots shown in Figure \ref{subfig:SEM_CBSR} represent carbon particles throughout the SR matrix. Resolution was limited due to the insulative SR matrix charging from the electron beam. This is resolution discrepancy is apparent when comparing to the more conductive CB particles in Figure \ref{subfig:SEM_CB}.
 
 To determine the presence and dispersion of CB particles on the surface of the CBSR specimens a inVia confocal Raman microscope (Renishaw, Wotton-under-Edge, United Kingdom) was used. A 532 nm laser with a was used in the Raman microscope. Several surface and cross-sectional images were taken showing a considerable difference in the CB-SR ratio as shown in Figure \ref{fig:Raman_CB_SR}. The prominent 1350 $cm^{-1}$ and 1600 $cm^{-1}$ intensity peaks indicate the presence of CB and the prominent 490 $cm^{-1}$, 2906 $cm^{-1}$, and 2965 $cm^{-1}$ peaks indicate the presence of SR \cite{Pawlyta2015,RamanLife2024}. 
 \begin{figure}[H]
@@ -167,7 +171,7 @@ The SMU current source used was switched between $\pm I_src$ at 10 Hz to mitigat
 \end{figure}
 The dogbone specimen was held in place using clamps with an a 3D pyramidal array surface. The specimen clamp strain was calculated using the specimen Poisson's ratio and the maximum expected tensile experiment strain; to ensure the specimen would not slip, and ensure minimal deformation to the specimen.
   
-The measurements were completed using controlled sinusoidal, saw-tooth, and pulse trains of strain to ensure repeatability of the models were consistent across varying experimental parameters. If this material is used as a sensor the model fitted to the stress relaxation must hold over many consecutive tensile strain events. As these materials are intended as large strain sensors, the main strains tested in this work were ranged between 0 and 30\%, with a strain-rates ranging from 0 to 6.67 $\% \cdot s^{-1}$. Two samples of each CBSR weight percentage 7.5 and 10 wt\% were used in this work's experiments to ensure repeatability.
+The measurements were completed using controlled sinusoidal, saw-tooth, and pulse trains of strain to ensure repeatability of the models were consistent across varying experimental parameters. If this material is used as a sensor the model fitted to the stress relaxation must hold over many consecutive tensile strain events. As these materials are intended as large strain sensors, the main strains tested in this work were ranged between 0 and 30\%, with a strain-rates ranging from 0 to 6.67 $\% \cdot s^{-1}$. Two samples of each CBSR weight percentage 7.5 and 10 wt\% were used in this work's experiments to ensure repeatability of two weight percentages presumed above and below the percolation threshold of the composite.
 
 All data was captured through serial interfaces and logged on a PC with a python-based program. An open source G-code platform GRBL was used to control the motion of the linear actuator. The PyVISA library was used to obtain all of the measurement data and to send commands to measurement devices. A calibration procedure ensured that the stress and strain of the specimen was always zero'd before each experiment. The functional architecture of the system is shown in Figure \ref{fig:electromech-architecture}.
 \begin{figure}[H]
@@ -217,17 +221,12 @@ The fitted parameters for the linear quasi-static model are given in Equation \r
 When using this material as a tensile strain sensor many applications will require a strain-rate superseding the capabilities of the quasi-static model given in Section \ref{subsec:Quasi-Static Tensile Resistance-Strain} due to the resistive relaxation in the material characterised in Section \ref{subsec:resistive relaxation Fitting}. The dynamic characteristics of the CBSR material is investigated to find a relationship between the strain-rate and resistance. Several saw-tooth strain signal experiments were completed using four different strain-rates of 1.67, 3.33, 5, and 6.67 \%$\cdot$s$^{-1}$. To avoid measuring a time-dependent relationship in stead of the desired strain-rate dependent relationship, each set of different strain-rates were repeated as shown in Figure \ref{fig:saw-tooth-diff-v}.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\linewidth]{Figures/saw_tooth_diff_speeds_strain_only.jpg}
+	\includegraphics[width=\linewidth]{Figures/saw_tooth_diff_speeds_combo.jpg}
 	\caption{Strain input waveform for investigating strain-rate dependent resistance}
 	\label{fig:saw-tooth-diff-v}
 \end{figure}
-The resulting resistance response exhibits a shoulder peak phenomena where a second peak is developed when suddenly decreasing the strain-rate. Unlike the similarity between the stress and resistance relaxations, this a phenomena not replicated in the stress response only the resistance response. The resistance response is shown in Figure \ref{fig:saw-tooth-res-response}.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\linewidth]{Figures/saw_tooth_diff_speeds_res_only.jpg}
-	\caption{Resistance response from saw-tooth strain input Figure \ref{fig:saw-tooth-diff-v}.}
-	\label{fig:saw-tooth-res-response}
-\end{figure}
+The resulting resistance response exhibits a shoulder peak phenomena, shown in Figure \ref{fig:saw-tooth-diff-v}, where a second peak is developed when suddenly decreasing the strain-rate. Unlike the similarity between the stress and resistance relaxations, this a phenomena not replicated in the stress response only the resistance response.
+
 Hysteresis loops were used in Figure \ref{fig:saw-tooth-hysteresis-loops} to show resistance offset as a function of the strain-speed and simultaneously displaying the resistance hysteresis loops of different strain speeds. 
 \begin{figure}[H]
 	\centering
@@ -258,7 +257,7 @@ A narrow peak in the measured resistance has been observed in the collected data
 	\includegraphics[width=0.6\linewidth]{Figures/2_7-5_E4pin_20mm_v6_stress_strain_res_pulse.png}
 	\hspace{1cm}
 	\includegraphics[width=0.3\linewidth]{Figures/2_7-5_E4pin_20mm_v6_stress_strain_res_pulse_f-edge.png}
-	\caption{Left: Singular tensile strain pulse with resulting stress and resistance response. Right: Zoomed to highlight falling edge shoulder phenomena.}
+	\caption{Left: Singular tensile strain pulse with resulting stress and resistance response for a 7.5 wt\% CBSR dogbone specimen and pin electrode separated by 20 mm. Right: Zoomed to highlight falling edge shoulder phenomena.}
 	\label{fig:stress_strain_res_pulse}
 \end{figure}
 A parameter fit study has been completed to determine the resistance peak amplitude can be determined with a range of  strain-rates. We can see a repeated phenomena in Figure \ref{fig:poly2_r_strain} whereby the derivative of the resistance signal seems to be equal to the strain curve. The resistance peak curve, $R_p$, can be modelled with a second order polynomial. When differentiated, this peak gives a linear function in a similar form of the linear strain curve seen in Figure \ref{fig:poly2_r_strain}. Hence we form Equation \ref{eqn:dR_dt_strain} which relates resistance to strain as a function of time.
@@ -271,7 +270,7 @@ where $J$ is a function of strain, $\varepsilon(t)$, and c is an offset bias det
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\linewidth]{Figures/strain_velocity_res_80mms_2_7-5_E4pin_20mm_v11_0.2Strain_velocityprof.png}
-	\caption{Strain-rate resistance relationship showing the specimen returning to a 0\% tensile strain state from 20\% at a strain-rate of 3.33\%$\cdot s^{-1}$ from four tests for a 7.5\% CBSR specimen}
+	\caption{Strain-rate resistance relationship showing the specimen returning to a 0\% tensile strain state from 20\% at a strain-rate of 3.33\%$\cdot s^{-1}$ from four tests for a 7.5 wt\% CBSR specimen}
 	\label{fig:poly2_r_strain}
 \end{figure}
 To show the strain-rate resistance relationship, more strain pulse train tests of 20\% strain were completed. Using 20\% strain allowed observation of sufficient data points to observe a trend. The pulses had four repetitions with a range of strain-rates, $\dot{\varepsilon}(t)$, of 1.67, 3.33, 5.00, and 6.67 \%${\cdot s^{-1}}$. Using a 7.5 w.t.\% CBSR specimen we obtain a relationship that agrees with the strain resistance component equation \ref{eqn:dR_dt_strain}. As $\dot{\varepsilon}(t)$ increases through strain-rates in parallel with the magnitude of the resistance peak relative to the previous steady state of value resistance. Two formulae are fitting to the linear strain and resistance peak features given by Equations \ref{eqn:strain-t-lin-fit} and \ref{eqn:res-t-ploy2-fit} respectively.
@@ -302,6 +301,7 @@ The resulting plots fitting of the averaged data points for the strain and resis
 	\caption{Fitting curves to a range of different tensile falling edge strain strain-rates.}
 	\label{fig:poly2_strain_relation}
 \end{figure}
+Each of the four falling edge strain rates, $\dot{\varepsilon}$, were repeated four times with the 7.5 wt\% specimen to ensure repeatability and determine any variance.
 \begin{table}[H]
 	\centering
 	\caption{The fitted parameters for relationship between the specimen tensile strain-rate the resulting resistance peak for a strain signal falling edge.}
@@ -329,7 +329,9 @@ The resulting plots fitting of the averaged data points for the strain and resis
 
 \subsection{Resistive Relaxation Fitting}
 \label{subsec:resistive relaxation Fitting}
-The initial model chosen to fit the stress and resistive relaxation data was the generalised Kelvin body model shown in Figure \ref{eqn:Kelvin_general} with n = 3 cascading elements using Equation \ref{eqn:Kelvin_general_3elementS} to fit the model. Fitting the data using Levenberg–Marquardt non-linear least square algorithm over 30 data sets showed an instability with the algorithm using this model. When feeding the previously fitted stress relaxation model parameters as initial conditions for the fitting of the next stress relaxation data set, the values of the parameters diverged exhibiting signs of overfitting. This divergence of the model parameters gave a large standard deviation showing the model was changing significantly each iteration of fitting. Hence a more simple model using Equation \ref{eqn:Kelvin_general} with n = 2 was used to fit the stress relaxation data to Equation \ref{eqn:Kelvin_general_2elementS} with lower standard deviation of the model constants. Conversely when the resistive relaxation model analogous to stress relaxation model, shown in Equation \ref{eqn:Kelvin_general_3elementR}, was fitted to the resistive relaxation data there was a stable fit with an improved goodness of fit.
+For a stress relaxation model of a viscoelastic material it is said that the material relaxation can be simplified in a Standard Linear Solid (SLS) macro-model, represented by a series of springs and dashpots. In this instance an assumption was made that the resistance of the material changes due to the change spacing of particles in the composite due to the internal strain and the hence the stress. We check this correlation using the variation of the SLS model with the best fit.
+
+The initial model chosen to fit the stress and resistive relaxation data was the generalised Kelvin body model shown in Figure \ref{eqn:Kelvin_general} with n = 3 cascading elements using Equation \ref{eqn:Kelvin_general_3elementS} to fit the stress relaxation. Fitting the data using Levenberg–Marquardt non-linear least square algorithm over 30 data sets showed an instability with the algorithm using this model. When feeding the previously fitted stress relaxation model parameters as initial conditions for the fitting of the next stress relaxation data set, the values of the parameters diverged exhibiting signs of overfitting. This divergence of the model parameters gave a large standard deviation showing the model was changing significantly each iteration of fitting. Hence a more simple model using Equation \ref{eqn:Kelvin_general} with n = 2 was used to fit the stress relaxation data to Equation \ref{eqn:Kelvin_general_2elementS} with lower standard deviation of the model constants. Conversely when the resistive relaxation model analogous to stress relaxation model, shown in Equation \ref{eqn:Kelvin_general_3elementR}, was fitted using a three element SLS model to the resistive relaxation data there was an improved goodness of fit relative to the equivalent two element SLS model. The relationship between the resistance and stress relaxation models fitted are further explored in Section \ref{subsec:Resistance-Stress Relationship}.
 
 The decay time constants of the two models are different with the resistance having an longer overall decay which can clearly be seen in Figure \ref{fig:diff_tau_res_stress}. Below in stress relaxation models $G_{1,2}(t)$, shown in Equation \ref{eqn:Kelvin_general_3elementS} and \ref{eqn:Kelvin_general_2elementS}, the constants $a_{0-3}$ and $\tau_{S1-S3}$ represent the components of magnitude and time decay of the stress relaxation, respectively.
 \begin{equation}
@@ -431,6 +433,7 @@ The mean magnitude and decay time constants for the resistance and stress relaxa
 
 
 \subsection{Resistance-Stress Relationship}
+\label{subsec:Resistance-Stress Relationship}
 To display the non-linear relationship between the stress and calculated resistance within the material they are plotted against each other over 30 sequential relaxation periods of 300s similar to the relaxation shown in Figure \ref{fig:diff_tau_res_stress}. The non-linear relationship between stress and resistance changes over time for each relaxation as shown in Figure \ref{fig:res_vs_stress_30pulses}, where the data for the first relaxation is displayed in green and the last relaxation in blue.
 \begin{figure}[H]
 	\centering
@@ -445,25 +448,25 @@ The stress-resistive relaxation data was fitted to a generic second order polyno
 \end{equation}
 where $\sigma$ is stress, $R$ is the calculated resistance. When fit to the latter 15 cycles of a 30 cycle 10\% strain pulse train of stress relaxation data we get the constant values for $a$, $b$ and $c$.
 \begin{table}[H]
-	\caption{Fitted constants and their mean, $\mu$, standard deviation, $\sigma$, and coefficient of variation, $CV$, values for 7.5\%, and 10\% CBSR composite specimens using Equation \ref{eqn:poly_res_stress}}
+	\caption{Fitted constants and their mean, $\mu$ and $\pm$ standard deviation values for 7.5\%, and 10\% CBSR composite specimens using Equation \ref{eqn:poly_res_stress}}
 	\begin{center}
 		\label{tab:generalised_model_constants}
-		\begin{tabular}{c l l l}
+		\begin{tabular}{c l}
 			7.5 w.t.\% CB Specimen \\
 			\hline
 			Parameter & $\mu$ \\
 			\hline
-			$a$ & 0.055 & 0.006 \\
-			$b$ & 4.15 & 1.06 \\
-			$c$ & 121.8 & 16.3 \\
+			$a$ & 0.055 $\pm$ 0.006 \\
+			$b$ & 4.15 $\pm$ 1.06 \\
+			$c$ & 121.8 $\pm$ 16.3 \\
 			\hline
 			10 w.t.\% CB Specimen \\
 			\hline
 			Parameter & $\mu$ \\
 			\hline
-			$a$ & 0.098 & 0.007 \\
-			$b$ & 6.37 & 0.76 \\
-			$c$ & 155.8 & 38.8 \\
+			$a$ & 0.098 $\pm$ 0.007 \\
+			$b$ & 6.37 $\pm$ 0.76 \\
+			$c$ & 155.8 $\pm$ 38.8 \\
 			\hline
 		\end{tabular}
 	\end{center}
@@ -474,7 +477,7 @@ where $\sigma$ is stress, $R$ is the calculated resistance. When fit to the latt
 This work has successfully uncovered several mathematical relationships between stress, strain, and resistance. The repeatability has also been display graphically and calculating the variance of the fitted models given. This section analyses the results given in the previous sections and highlights limitations of the experiments given.
 
 \subsection{Fabrication}
-In this work, mixing has been performed using a planetary mixer. It has been shown in other works \cite{Xu2016,Spahr2017} that other mixing methods, such as using a sonication bath and the addition of solvents, can yield more homogeneous particle dispersion. A higher degree of CB particle dispersion has also been shown to alter the viscoelastic creep properties \cite{Xu2016}, and is therefore likely to affect the time constant of resistance.
+In this work, mixing has been performed using a planetary mixer. It has been shown in other works \cite{Xu2016,Spahr2017} that other mixing methods, such as using a sonication bath and the addition of solvents, can yield more homogeneous particle dispersion. A higher degree of CB particle dispersion has also been shown to alter the viscoelastic creep properties \cite{Xu2016}, and is therefore likely to affect the time constant of resistance. The degree of dispersion has been measured using several methods in this thesis, from SEM imaging at a particle level (see Section \ref{subsec:Material Imaging}) to evenly spaced resistance measurements through a material and absolute Electrical Impedance Tomography (see Section \ref{subsec:EIT dev Fabrication} onwards).
 
 Composite imaging and experimentation showed the existence of a thin insulative film on the composite surface inhibiting the use surface electrodes to give a good electrical connection to the percolated CB network. The imaging also showed the existence of voids in the micron scale which contribute towards the material viscoelasticity. The optimisation of particle dispersion and investigation into the effects of void dispersion and sizing could give insight into maximising the material gauge factor.
 
@@ -490,11 +493,11 @@ Increasing strain-rates were shown to increase the offsets in resistance over a 
 
 
 \subsection{Falling Edge Strain-Rate-Resistance}
-A 'falling edge' resistance shoulder phenomena was observed and is clearly seen in Figures \ref{fig:saw-tooth-res-response} and \ref{fig:stress_strain_res_pulse}. This is a result of a change in strain rate. The amplitude of this peak was shown to increase with an increasing change in strain-rate from a steady state strain. The shoulder phenomena may exist on the rising edge of the strain adding to the resistive relaxation response however this was not easily distinguishable. In previous literature, the effects of the strain-rate and sudden change in strain-rate on apparent resistance of the CBSR material has not been modelled or shown. Another characteristic of the falling edge shoulder phenomena is the apparent positive correlation between the strain magnitude prior to the falling edge and the amplitude of the shoulder phenomena, as shown below in Appendix \ref{appendix-B}. Another characteristic of note is that the shoulder phenomena is almost not present on a falling edge that goes from a tensile (positive) strain to a small compressive (negative) strain which is also shown in Figure \ref{fig:strain-hill}.
+A 'falling edge' resistance shoulder phenomena was observed and is clearly seen in Figures \ref{fig:saw-tooth-res-response} and \ref{fig:stress_strain_res_pulse}. This is a result of a change in strain rate. The amplitude of this peak was shown to increase with an increasing change in strain-rate from a steady state strain. The shoulder phenomena may exist on the rising edge of the strain adding to the resistive relaxation response however this was not easily distinguishable. In previous literature, the effects of the strain-rate and sudden change in strain-rate on apparent resistance of the CBSR material has not been modelled or shown. Another characteristic of the falling edge shoulder phenomena is the apparent positive correlation between the strain magnitude prior to the falling edge and the amplitude of the shoulder phenomena, as shown below in Appendix \ref{appendix-B}. Another characteristic of note is that the shoulder phenomena is almost not present on a falling edge that goes from a tensile (positive) strain to a small compressive (negative) strain which is also shown in Figure \ref{fig:strain-hill}. This will be an important characteristic to characterise when using the material as a strain sensor that will compress and stretch during operation.
 
 
 \subsection{Resistive Relaxation Fitting}
-The generalised Kelvin model has been applied to predict the stress relaxation of the CBSR composite and analogously the resistive relaxation seen for a positive strain step input. The data gathered show that the stress relaxation time constant values decrease with an increasing CB percentage, indicating that all constants in Equations \ref{eqn:Kelvin_general_3elementR} and \ref{eqn:Kelvin_general_2elementS} are also functions of CB percentage. The repeatability of this stress relaxation for strain step inputs shows promise to use of this material in controlled environments, such as factory production lines, where there are known periodic strain step inputs. An application for the resistive relaxation decay time characterisation could be for timer with a soft robotic system.
+The generalised Kelvin model has been applied to predict the stress relaxation of the CBSR composite and analogously the resistive relaxation seen for a positive strain step input. The data gathered show that the stress relaxation time constant values decrease with an increasing CB percentage, indicating that all constants in Equations \ref{eqn:Kelvin_general_3elementR} and \ref{eqn:Kelvin_general_2elementS} are also functions of CB percentage. The repeatability of this stress relaxation for strain step inputs shows promise to use of this material in controlled environments, such as factory production lines, where there are known periodic strain step inputs. An application for the resistive relaxation decay time characterisation could be for timer with a soft robotic system since we know that the resistive relaxation is repeatable with a known strain input. The timer circuit could act like a typical RC timer circuit which relies on the charging of a capacitor given a known series resistance.
 
 One aim of this work was to prove the hypothesis that the stress relaxation time constant is different to that of the observed resistive relaxation and able to be modelled mathematically. The apparent difference in time constants and the fitting of the data to two different equations show that the stress relaxation is not linearly related to the resistive relaxation shown clearly in Figure \ref{fig:diff_tau_res_stress}.
 
@@ -510,7 +513,7 @@ The hysteresis loop seen in the 10 w.t.\% CB sample has a larger hysteresis loop
 \subsection{Repeatability}
 The resistive relaxation model must be predictable over many strain cycles for use within high-stretch strain sensor applications. If the resistive relaxation changes over time this needs is to be modelled. Each test sequence showed that there was a downward trend in the calculated magnitude of resistance for each pulse over time. 
 
-The physical phenomena driving this downward trend in resistance magnitude was theorised to have two possible causes. The first cause being; the accumulation of charge within material over time generated by current source, due to the CBSR material having an RC-network-like behaviour. The second potential cause being; the gradual alignment of the CB particle network due to the electrostatic attraction of CB chains. This could be tested by increasing the current used and observing the gradient of the downward trend.
+The physical phenomena driving this downward trend in resistance magnitude was theorised. A potential cause being the gradual alignment of the CB particle network in the viscoelastic silicone matrix due to the electrostatic attraction of CB agglomerations. This could be tested by increasing the current used and observing the gradient of the downward trend.
 
 The charging theory was mitigated by using an alternating polarity measurement technique. The reversible current source was switched at 10 Hz dampened this downward trend, however the downward trend in resistance was still observed as shown in Figure \ref{fig:repeatability_pulse_trains}. An example of an experiment with the previous non-switched DC current is shown in Appendix Figures \ref{fig:strain-train-DC-meas} and \ref{fig:res-AC-DC} for comparison.
 \begin{figure}[H]
@@ -550,11 +553,11 @@ A sufficiently high current source value was required to ensure a SNR that would
 	\label{fig:multi_current}
 \end{figure}
 
-A limitation of using this material as a strain sensor is the non-linearity of the material above a certain strain value, at which the composite's resistivity diverges towards a highly insulative value within the giga-ohms range. This non-linear behaviour of CBSR can be used as a mechanically activated switching device \cite{Henke2018}. If modelled, this non-linearity could extend the range of strains that can be measured.
+A limitation of using this material as a strain sensor is the non-linearity of the material above a certain strain value, at which the composite's resistivity diverges towards a highly insulative value within the giga-ohms range. However, this non-linear behaviour of CBSR can be used as a mechanically activated switching device \cite{Henke2018}. If modelled, this non-linearity could extend the range of strains that can be measured.
 
 The consideration of temperature and strain history \cite{Fung1993} could be used in further research to characterise a CBSR-based strain sensor for a range of application environments.
 
-Future work includes creating a model that incorporates all of the behaviours shown in this work so that an accurate inverse model can be created to use the material as a strain sensor. To capture all of these phenomena models that can capture and recreate time-dependent phenomena such as recurrent neural networks (RNNs) could be used.
+Future work includes creating a model that incorporates all of the behaviours shown in this work so that the resistance data captured can be translated more accurately into stress and strain data. To capture all of the transient time-dependent phenomena machine learning methods such as recurrent neural networks (RNNs) could be explored.
 
 %The capacitance read across the inner pin electrodes of the material decreased with increasing strain as shown in Table \ref{tab:capacitance_v_strain}.
 %%% To do: Unsure how conclusive this is... could be an incresaingly poor electrode connection impedance??
@@ -574,7 +577,7 @@ Future work includes creating a model that incorporates all of the behaviours sh
 \section{Conclusions}
 The CBSR material used in this work provided exaggerated non-linear effects compared to literature where these non-ideal phenomena are often quashed and ignored. The relationships discussed in this work could be used to define a CBSR-based strain sensor models and show the expected behaviours in the composite material for different strain application scenarios. 
 
-In order to improve the accuracy of dynamic strain measurements with CBSR composites a stress and analogous resistive relaxation model was formed. The generalised Kelvin model, Equation \ref{eqn:Kelvin_general_2elementS} was used to fit to the stress relaxation data for three specimen with CB weight percentages of 0, 7.5\% and 10\%. The variation in the fitted stress relaxation parameters was higher than the resistive relaxation parameters. All of the stress relaxation model parameters increased with increasing weight percentage of CB, indicating an increase in viscoelasticity. The resistive relaxation time constant and offset parameters both decreased with increasing CB wt\%. However the change in these parameters is not large and more experimentation with two CB weight percentages would be required to create a model of how the relaxation changes with CB wt\%. The standard deviation of parameters increased with increasing CB wt\%.
+In order to improve the accuracy of dynamic strain measurements with CBSR composites a stress and analogous resistive relaxation model was formed. The generalised Kelvin model, Equation \ref{eqn:Kelvin_general_2elementS} was used to fit to the stress relaxation data for three specimen with CB weight percentages of 0, 7.5\% and 10\%. Using such weight percentages to determine the mechanical properties between unfilled and filled silicone, and to determine how altering the percentage about the percolation threshold affects the material sensing properties. The variation in the fitted stress relaxation parameters was higher than the resistive relaxation parameters. All of the stress relaxation model parameters increased with increasing weight percentage of CB, indicating an increase in viscoelasticity. The resistive relaxation time constant and offset parameters both decreased with increasing CB wt\%. However the change in these parameters is not large and more experimentation with two CB weight percentages would be required to create a model of how the relaxation changes with CB wt\%. The standard deviation of parameters increased with increasing CB wt\%.
 
 With the models developed we have shown that the apparent resistive relaxation can be modelled, which will enable more accurate estimation of dynamic strain when these materials are applied as sensors. 
 
